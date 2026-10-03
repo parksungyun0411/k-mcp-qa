@@ -1,0 +1,152 @@
+{
+  "tool": "mcp-audit",
+  "version": "0.5.0",
+  "server_command": [
+    "/usr/bin/env",
+    "-i",
+    "PATH=/opt/homebrew/bin:/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    "HOME=/tmp/kmcp-work/data-go-nts-business-verification-mcp1/home",
+    "TMPDIR=/tmp/kmcp-work/data-go-nts-business-verification-mcp1/tmp",
+    "LANG=en_US.UTF-8",
+    "LC_ALL=en_US.UTF-8",
+    "npm_config_cache=/tmp/kmcp-work/data-go-nts-business-verification-mcp1/cache/npm",
+    "npm_config_update_notifier=false",
+    "UV_CACHE_DIR=/tmp/kmcp-work/data-go-nts-business-verification-mcp1/cache/uv",
+    "UV_PYTHON_INSTALL_DIR=~/.local/share/uv/python",
+    "UV_PYTHON_DOWNLOADS=never",
+    "PYTHONUNBUFFERED=1",
+    "NO_COLOR=1",
+    "API_KEY=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+    ".venv/bin/python",
+    "-m",
+    "data_go_mcp.nts_business_verification.server"
+  ],
+  "timestamp": "2026-10-03T07:15:03+00:00",
+  "summary": {
+    "total": 9,
+    "status": {
+      "pass": 9,
+      "fail": 0,
+      "skip": 0
+    },
+    "failed_by_severity": {
+      "error": 0,
+      "warning": 0
+    }
+  },
+  "exit_code": 0,
+  "strict": false,
+  "error": null,
+  "results": [
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "validate_business: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "validate_business",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "check_business_status: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "check_business_status",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "batch_validate_businesses: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "batch_validate_businesses",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 3 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "validate_business",
+      "details": {
+        "probed_required_fields": [
+          "business_number",
+          "start_date",
+          "representative_name"
+        ],
+        "inconclusive": [
+          {
+            "omitted": "start_date",
+            "error": "Error executing tool validate_business: 1 validation error for validate_businessArguments\nstart_date\n  Field required [type=missing, input_value={'business_number': 'mcp-...ame': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+            "note": "error names another required field 'business_number'"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "check_business_status",
+      "details": {
+        "probed_required_fields": [
+          "business_numbers"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "batch_validate_businesses",
+      "details": {
+        "probed_required_fields": [
+          "businesses_json"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "validate_business",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "check_business_status",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "batch_validate_businesses",
+      "details": {
+        "problems": []
+      }
+    }
+  ]
+}

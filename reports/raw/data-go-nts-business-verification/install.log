@@ -1,0 +1,6 @@
+
+$ uv venv -q -p 3.12 .venv
+[exit 0]
+
+$ uv pip install -q -p .venv -e .
+[exit 0]

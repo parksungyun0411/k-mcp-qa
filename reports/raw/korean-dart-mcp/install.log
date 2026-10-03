@@ -1,0 +1,9 @@
+
+$ npm ci --ignore-scripts --no-audit --no-fund
+npm warn deprecated prebuild-install@7.1.3: No longer maintained. Please contact the author of the relevant native addon; alternatives are available.
+
+added 157 packages in 1s
+[exit 0]
+
+$ npx --no-install tsc
+[exit 0]

@@ -1,0 +1,397 @@
+[10/03/26 16:13:55] INFO     Processing request of type            server.py:720
+                             ListToolsRequest                                   
+                    INFO     Processing request of type            server.py:720
+                             PingRequest                                        
+                    WARNING  Failed to validate request: 31       session.py:383
+                             validation errors for ClientRequest                
+                             PingRequest.method                                 
+                               Input should be 'ping'                           
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             InitializeRequest.method                           
+                               Input should be 'initialize'                     
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             InitializeRequest.params.protocolVer               
+                             sion                                               
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                             InitializeRequest.params.capabilitie               
+                             s                                                  
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                             InitializeRequest.params.clientInfo                
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                             CompleteRequest.method                             
+                               Input should be                                  
+                             'completion/complete'                              
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             CompleteRequest.params.ref                         
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                             CompleteRequest.params.argument                    
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                             SetLevelRequest.method                             
+                               Input should be 'logging/setLevel'               
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             SetLevelRequest.params.level                       
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                             GetPromptRequest.method                            
+                               Input should be 'prompts/get'                    
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             GetPromptRequest.params.name                       
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                             ListPromptsRequest.method                          
+                               Input should be 'prompts/list'                   
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             ListResourcesRequest.method                        
+                               Input should be 'resources/list'                 
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             ListResourceTemplatesRequest.method                
+                               Input should be                                  
+                             'resources/templates/list'                         
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             ReadResourceRequest.method                         
+                               Input should be 'resources/read'                 
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             ReadResourceRequest.params.uri                     
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                             SubscribeRequest.method                            
+                               Input should be                                  
+                             'resources/subscribe'                              
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             SubscribeRequest.params.uri                        
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                             UnsubscribeRequest.method                          
+                               Input should be                                  
+                             'resources/unsubscribe'                            
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             UnsubscribeRequest.params.uri                      
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                             CallToolRequest.method                             
+                               Input should be 'tools/call'                     
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             CallToolRequest.params.name                        
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                             ListToolsRequest.method                            
+                               Input should be 'tools/list'                     
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             GetTaskRequest.method                              
+                               Input should be 'tasks/get'                      
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             GetTaskRequest.params.taskId                       
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                             GetTaskPayloadRequest.method                       
+                               Input should be 'tasks/result'                   
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             GetTaskPayloadRequest.params.taskId                
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                             ListTasksRequest.method                            
+                               Input should be 'tasks/list'                     
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             CancelTaskRequest.method                           
+                               Input should be 'tasks/cancel'                   
+                             [type=literal_error,                               
+                             input_value='kmcpqa/unknown_method',               
+                             input_type=str]                                    
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/l               
+                             iteral_error                                       
+                             CancelTaskRequest.params.taskId                    
+                               Field required [type=missing,                    
+                             input_value={}, input_type=dict]                   
+                                 For further information visit                  
+                             https://errors.pydantic.dev/2.12/v/m               
+                             issing                                             
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    WARNING  Tool 'kmcpqa_no_such_tool' not        server.py:488
+                             listed, no validation will be                      
+                             performed                                          
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+[10/03/26 16:13:56] INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+[10/03/26 16:13:57] INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+[10/03/26 16:13:58] INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     HTTP Request: GET                   _client.py:1740
+                             https://apis.data.go.kr/1613000/RTM                
+                             SDataSvcAptRent/getRTMSDataSvcAptRe                
+                             nt?serviceKey=KMCPQA_PLACEHOLDER_NO                
+                             T_A_REAL_KEY&LAWD_CD=11110&DEAL_YMD                
+                             =2024&numOfRows=100&pageNo=1                       
+                             "HTTP/1.1 403 Forbidden"                           
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     HTTP Request: GET                   _client.py:1740
+                             https://apis.data.go.kr/1613000/RTM                
+                             SDataSvcOffiRent/getRTMSDataSvcOffi                
+                             Rent?serviceKey=KMCPQA_PLACEHOLDER_                
+                             NOT_A_REAL_KEY&LAWD_CD=11110&DEAL_Y                
+                             MD=2024&numOfRows=100&pageNo=1                     
+                             "HTTP/1.1 403 Forbidden"                           
+[10/03/26 16:13:59] INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     HTTP Request: GET                   _client.py:1740
+                             https://apis.data.go.kr/1613000/RTM                
+                             SDataSvcRHRent/getRTMSDataSvcRHRent                
+                             ?serviceKey=KMCPQA_PLACEHOLDER_NOT_                
+                             A_REAL_KEY&LAWD_CD=11110&DEAL_YMD=2                
+                             024&numOfRows=100&pageNo=1                         
+                             "HTTP/1.1 403 Forbidden"                           
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+[10/03/26 16:14:00] INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     HTTP Request: GET                   _client.py:1740
+                             https://apis.data.go.kr/1613000/RTM                
+                             SDataSvcSHRent/getRTMSDataSvcSHRent                
+                             ?serviceKey=KMCPQA_PLACEHOLDER_NOT_                
+                             A_REAL_KEY&LAWD_CD=11110&DEAL_YMD=2                
+                             024&numOfRows=100&pageNo=1                         
+                             "HTTP/1.1 403 Forbidden"                           
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     HTTP Request: GET                   _client.py:1740
+                             https://api.odcloud.kr/api/15101046                
+                             /v1/uddi:14a46595-03dd-47d3-a418-d6                
+                             4e52820598?page=1&perPage=100&retur                
+                             nType=JSON&serviceKey=KMCPQA_PLACEH                
+                             OLDER_NOT_A_REAL_KEY "HTTP/1.1 401                 
+                             Unauthorized"                                      
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+[10/03/26 16:14:01] INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+[10/03/26 16:14:02] INFO     HTTP Request: GET                   _client.py:1740
+                             https://apis.data.go.kr/1613000/RTM                
+                             SDataSvcAptTrade/getRTMSDataSvcAptT                
+                             rade?serviceKey=KMCPQA_PLACEHOLDER_                
+                             NOT_A_REAL_KEY&LAWD_CD=11110&DEAL_Y                
+                             MD=2024&numOfRows=100&pageNo=1                     
+                             "HTTP/1.1 403 Forbidden"                           
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     HTTP Request: GET                   _client.py:1740
+                             https://apis.data.go.kr/1613000/RTM                
+                             SDataSvcOffiTrade/getRTMSDataSvcOff                
+                             iTrade?serviceKey=KMCPQA_PLACEHOLDE                
+                             R_NOT_A_REAL_KEY&LAWD_CD=11110&DEAL                
+                             _YMD=2024&numOfRows=100&pageNo=1                   
+                             "HTTP/1.1 403 Forbidden"                           
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+[10/03/26 16:14:03] INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     HTTP Request: GET                   _client.py:1740
+                             https://apis.data.go.kr/1613000/RTM                
+                             SDataSvcRHTrade/getRTMSDataSvcRHTra                
+                             de?serviceKey=KMCPQA_PLACEHOLDER_NO                
+                             T_A_REAL_KEY&LAWD_CD=11110&DEAL_YMD                
+                             =2024&numOfRows=100&pageNo=1                       
+                             "HTTP/1.1 403 Forbidden"                           
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+[10/03/26 16:14:04] INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     HTTP Request: GET                   _client.py:1740
+                             https://apis.data.go.kr/1613000/RTM                
+                             SDataSvcSHTrade/getRTMSDataSvcSHTra                
+                             de?serviceKey=KMCPQA_PLACEHOLDER_NO                
+                             T_A_REAL_KEY&LAWD_CD=11110&DEAL_YMD                
+                             =2024&numOfRows=100&pageNo=1                       
+                             "HTTP/1.1 403 Forbidden"                           
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     HTTP Request: GET                   _client.py:1740
+                             https://apis.data.go.kr/1613000/RTM                
+                             SDataSvcNrgTrade/getRTMSDataSvcNrgT                
+                             rade?serviceKey=KMCPQA_PLACEHOLDER_                
+                             NOT_A_REAL_KEY&LAWD_CD=11110&DEAL_Y                
+                             MD=2024&numOfRows=100&pageNo=1                     
+                             "HTTP/1.1 403 Forbidden"                           
+[10/03/26 16:14:05] INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    

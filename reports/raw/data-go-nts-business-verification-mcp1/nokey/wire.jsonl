@@ -1,0 +1,6 @@
+{"t": 0.0014, "dir": "send", "line": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"initialize\", \"params\": {\"protocolVersion\": \"2025-11-25\", \"capabilities\": {}, \"clientInfo\": {\"name\": \"k-mcp-qa\", \"version\": \"0.1.0\"}}}"}
+{"t": 0.8565, "dir": "recv", "line": "Warning: API_KEY environment variable is not set"}
+{"t": 0.8565, "dir": "recv", "line": "Please set it to use the NTS Business Verification API"}
+{"t": 0.8565, "dir": "recv", "line": "You can get an API key from: https://www.data.go.kr"}
+{"t": 0.8758, "dir": "recv", "line": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"protocolVersion\":\"2025-11-25\",\"capabilities\":{\"experimental\":{},\"prompts\":{\"listChanged\":false},\"resources\":{\"subscribe\":false,\"listChanged\":false},\"tools\":{\"listChanged\":false}},\"serverInfo\":{\"name\":\"NTS Business Verification\",\"version\":\"1.30.0\"}}}"}
+{"t": 0.8759, "dir": "send", "line": "{\"jsonrpc\": \"2.0\", \"method\": \"notifications/initialized\"}"}

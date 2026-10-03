@@ -1,0 +1,161 @@
+mcp-audit results                                                               
+┏━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ check      ┃ sev   ┃ status ┃ tool                   ┃ message               ┃
+┡━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ HYGIENE001 │ error │ skip   │ buffett_quality_snaps… │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ skip   │ disclosure_anomaly     │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ skip   │ download_document      │ cannot synthesize     │
+│            │       │        │                        │ baseline arguments    │
+│            │       │        │                        │ from inputSchema;     │
+│            │       │        │                        │ nothing to scan       │
+│ HYGIENE001 │ error │ skip   │ get_attachments        │ cannot synthesize     │
+│            │       │        │                        │ baseline arguments    │
+│            │       │        │                        │ from inputSchema;     │
+│            │       │        │                        │ nothing to scan       │
+│ HYGIENE001 │ error │ skip   │ get_company            │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ skip   │ get_corporate_event    │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ skip   │ get_executive_compens… │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ skip   │ get_financials         │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ skip   │ get_major_holdings     │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ skip   │ get_periodic_report    │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ skip   │ get_shareholders       │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ skip   │ get_xbrl               │ cannot synthesize     │
+│            │       │        │                        │ baseline arguments    │
+│            │       │        │                        │ from inputSchema;     │
+│            │       │        │                        │ nothing to scan       │
+│ HYGIENE001 │ error │ skip   │ insider_signal         │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ skip   │ resolve_corp_code      │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ skip   │ search_disclosures     │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ RUNTIME001 │ error │ skip   │ buffett_quality_snaps… │ baseline call with    │
+│            │       │        │                        │ all required fields   │
+│            │       │        │                        │ failed; cannot        │
+│            │       │        │                        │ attribute failures to │
+│            │       │        │                        │ individual omissions  │
+│ RUNTIME001 │ error │ skip   │ disclosure_anomaly     │ baseline call with    │
+│            │       │        │                        │ all required fields   │
+│            │       │        │                        │ failed; cannot        │
+│            │       │        │                        │ attribute failures to │
+│            │       │        │                        │ individual omissions  │
+│ RUNTIME001 │ error │ skip   │ download_document      │ cannot synthesize     │
+│            │       │        │                        │ baseline arguments    │
+│            │       │        │                        │ from inputSchema      │
+│            │       │        │                        │ (unsupported property │
+│            │       │        │                        │ shapes); skipping     │
+│            │       │        │                        │ probes                │
+│ RUNTIME001 │ error │ skip   │ get_attachments        │ cannot synthesize     │
+│            │       │        │                        │ baseline arguments    │
+│            │       │        │                        │ from inputSchema      │
+│            │       │        │                        │ (unsupported property │
+│            │       │        │                        │ shapes); skipping     │
+│            │       │        │                        │ probes                │
+│ RUNTIME001 │ error │ skip   │ get_company            │ baseline call with    │
+│            │       │        │                        │ all required fields   │
+│            │       │        │                        │ failed; cannot        │
+│            │       │        │                        │ attribute failures to │
+│            │       │        │                        │ individual omissions  │
+│ RUNTIME001 │ error │ skip   │ get_corporate_event    │ baseline call with    │
+│            │       │        │                        │ all required fields   │
+│            │       │        │                        │ failed; cannot        │
+│            │       │        │                        │ attribute failures to │
+│            │       │        │                        │ individual omissions  │
+│ RUNTIME001 │ error │ skip   │ get_executive_compens… │ baseline call with    │
+│            │       │        │                        │ all required fields   │
+│            │       │        │                        │ failed; cannot        │
+│            │       │        │                        │ attribute failures to │
+│            │       │        │                        │ individual omissions  │
+│ RUNTIME001 │ error │ skip   │ get_financials         │ baseline call with    │
+│            │       │        │                        │ all required fields   │
+│            │       │        │                        │ failed; cannot        │
+│            │       │        │                        │ attribute failures to │
+│            │       │        │                        │ individual omissions  │
+│ RUNTIME001 │ error │ skip   │ get_major_holdings     │ baseline call with    │
+│            │       │        │                        │ all required fields   │
+│            │       │        │                        │ failed; cannot        │
+│            │       │        │                        │ attribute failures to │
+│            │       │        │                        │ individual omissions  │
+│ RUNTIME001 │ error │ skip   │ get_periodic_report    │ baseline call with    │
+│            │       │        │                        │ all required fields   │
+│            │       │        │                        │ failed; cannot        │
+│            │       │        │                        │ attribute failures to │
+│            │       │        │                        │ individual omissions  │
+│ RUNTIME001 │ error │ skip   │ get_shareholders       │ baseline call with    │
+│            │       │        │                        │ all required fields   │
+│            │       │        │                        │ failed; cannot        │
+│            │       │        │                        │ attribute failures to │
+│            │       │        │                        │ individual omissions  │
+│ RUNTIME001 │ error │ skip   │ get_xbrl               │ cannot synthesize     │
+│            │       │        │                        │ baseline arguments    │
+│            │       │        │                        │ from inputSchema      │
+│            │       │        │                        │ (unsupported property │
+│            │       │        │                        │ shapes); skipping     │
+│            │       │        │                        │ probes                │
+│ RUNTIME001 │ error │ skip   │ insider_signal         │ baseline call with    │
+│            │       │        │                        │ all required fields   │
+│            │       │        │                        │ failed; cannot        │
+│            │       │        │                        │ attribute failures to │
+│            │       │        │                        │ individual omissions  │
+│ RUNTIME001 │ error │ skip   │ resolve_corp_code      │ baseline call with    │
+│            │       │        │                        │ all required fields   │
+│            │       │        │                        │ failed; cannot        │
+│            │       │        │                        │ attribute failures to │
+│            │       │        │                        │ individual omissions  │
+│ RUNTIME001 │ error │ pass   │ search_disclosures     │ no required fields    │
+│            │       │        │                        │ advertised; nothing   │
+│            │       │        │                        │ to probe              │
+│ SCHEMA001  │ error │ pass   │ buffett_quality_snaps… │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ disclosure_anomaly     │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ download_document      │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_attachments        │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_company            │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_corporate_event    │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_executive_compens… │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_financials         │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_major_holdings     │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_periodic_report    │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_shareholders       │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_xbrl               │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ insider_signal         │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ resolve_corp_code      │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ search_disclosures     │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+└────────────┴───────┴────────┴────────────────────────┴───────────────────────┘
+45 checks · 16 pass · 0 fail (error:0, warning:0) · 29 skip
+report written to /tmp/kmcp-work/korean-dart-mcp/mcp-audit.json

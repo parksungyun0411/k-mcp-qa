@@ -1,0 +1,220 @@
+{
+  "tool": "mcp-audit",
+  "version": "0.5.0",
+  "server_command": [
+    "/usr/bin/env",
+    "-i",
+    "PATH=/opt/homebrew/bin:/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    "HOME=/tmp/kmcp-work/assembly-api-mcp/home",
+    "TMPDIR=/tmp/kmcp-work/assembly-api-mcp/tmp",
+    "LANG=en_US.UTF-8",
+    "LC_ALL=en_US.UTF-8",
+    "npm_config_cache=/tmp/kmcp-work/assembly-api-mcp/cache/npm",
+    "npm_config_update_notifier=false",
+    "UV_CACHE_DIR=/tmp/kmcp-work/assembly-api-mcp/cache/uv",
+    "UV_PYTHON_INSTALL_DIR=~/.local/share/uv/python",
+    "UV_PYTHON_DOWNLOADS=never",
+    "PYTHONUNBUFFERED=1",
+    "NO_COLOR=1",
+    "ASSEMBLY_API_KEY=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+    "node",
+    "dist/index.js"
+  ],
+  "timestamp": "2026-10-03T07:14:36+00:00",
+  "summary": {
+    "total": 18,
+    "status": {
+      "pass": 18,
+      "fail": 0,
+      "skip": 0
+    },
+    "failed_by_severity": {
+      "error": 0,
+      "warning": 0
+    }
+  },
+  "exit_code": 0,
+  "strict": false,
+  "error": null,
+  "results": [
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "assembly_member: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "assembly_member",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "assembly_bill: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "assembly_bill",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "assembly_session: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "assembly_session",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "assembly_org: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "assembly_org",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "discover_apis: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "discover_apis",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "query_assembly: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "query_assembly",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_member",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_bill",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_session",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_org",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "discover_apis",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "query_assembly",
+      "details": {
+        "probed_required_fields": [
+          "api_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_member",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_bill",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_session",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_org",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "discover_apis",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "query_assembly",
+      "details": {
+        "problems": []
+      }
+    }
+  ]
+}

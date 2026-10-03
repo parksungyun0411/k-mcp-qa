@@ -1,0 +1,3 @@
+[assembly-api-mcp] 설정 오류: 환경 변수 ASSEMBLY_API_KEY이(가) 설정되지 않았습니다.
+설정 방법: https://open.assembly.go.kr → 회원가입 → 마이페이지 → OPEN API → 인증키 발급
+자세한 내용은 .env.example 파일을 참조하세요.

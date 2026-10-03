@@ -1,0 +1,502 @@
+{
+ "id": "data-go-nts-business-verification-mcp1",
+ "repo": "Koomook/data-go-mcp-servers",
+ "sha_expected": "dd27f99490400b31fa14f96045a138fa217580a4",
+ "started_at": "2026-10-03T07:12:44+00:00",
+ "protocol_version_requested": "2025-11-25",
+ "sandbox": true,
+ "command": [
+  ".venv/bin/python",
+  "-m",
+  "data_go_mcp.nts_business_verification.server"
+ ],
+ "install_steps": [
+  [
+   "uv",
+   "venv",
+   "-q",
+   "-p",
+   "3.12",
+   ".venv"
+  ],
+  [
+   "uv",
+   "pip",
+   "install",
+   "-q",
+   "-p",
+   ".venv",
+   "-e",
+   ".",
+   "mcp[cli]<2"
+  ]
+ ],
+ "sha_tested": "dd27f99490400b31fa14f96045a138fa217580a4",
+ "install": {
+  "ok": true,
+  "steps": [
+   {
+    "argv": [
+     "uv",
+     "venv",
+     "-q",
+     "-p",
+     "3.12",
+     ".venv"
+    ],
+    "returncode": 0,
+    "seconds": 0.03,
+    "timed_out": false
+   },
+   {
+    "argv": [
+     "uv",
+     "pip",
+     "install",
+     "-q",
+     "-p",
+     ".venv",
+     "-e",
+     ".",
+     "mcp[cli]<2"
+    ],
+    "returncode": 0,
+    "seconds": 1.05,
+    "timed_out": false
+   }
+  ]
+ },
+ "sdk": {
+  "mcp": "1.30.0"
+ },
+ "start_without_key": {
+  "initialize": "result",
+  "alive": true,
+  "returncode": null,
+  "elapsed_ms": 874.5,
+  "stderr_tail": []
+ },
+ "probe": {
+  "restarts": 0,
+  "initialize": {
+   "outcome": "result",
+   "elapsed_ms": 187.0,
+   "protocolVersion": "2025-11-25",
+   "serverInfo": {
+    "name": "NTS Business Verification",
+    "version": "1.30.0"
+   },
+   "capabilities": {
+    "experimental": {},
+    "prompts": {
+     "listChanged": false
+    },
+    "resources": {
+     "subscribe": false,
+     "listChanged": false
+    },
+    "tools": {
+     "listChanged": false
+    }
+   },
+   "spec_violations": []
+  },
+  "idle_alive": true,
+  "tools_list": {
+   "count": 3,
+   "pages": 1,
+   "spec_violations": [],
+   "elapsed_ms": 9.7
+  },
+  "ping": {
+   "outcome": "result",
+   "spec_violations": []
+  },
+  "unknown_method": {
+   "outcome": "error",
+   "error_code": -32602,
+   "alive_after": true
+  },
+  "unknown_tool": {
+   "outcome": "tool_error",
+   "elapsed_ms": 1.9,
+   "text_excerpt": "Unknown tool: kmcpqa_no_such_tool",
+   "auth_marker": null,
+   "error_marker": null,
+   "traceback": false,
+   "spec_violations": [],
+   "has_structured": false,
+   "alive_after": true
+  },
+  "tools": [
+   {
+    "name": "validate_business",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "business_number",
+     "start_date",
+     "representative_name"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.1,
+      "text_excerpt": "Error executing tool validate_business: 3 validation errors for validate_businessArguments\nbusiness_number\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nstart_date\n  Field required [type=missing, input_va",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.2,
+      "text_excerpt": "Error executing tool validate_business: 3 validation errors for validate_businessArguments\nbusiness_number\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\nstart_date\n  Input should",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "business_number": 12345,
+       "start_date": 12345,
+       "representative_name": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 137.5,
+      "text_excerpt": "{\n  \"error\": \"HTTP error occurred: 401\",\n  \"business_number\": \"1248100998\"\n}",
+      "auth_marker": "401",
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "business_number": "1248100998",
+       "start_date": "20250101",
+       "representative_name": "서울"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "check_business_status",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "business_numbers"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 3.6,
+      "text_excerpt": "Error executing tool check_business_status: 1 validation error for check_business_statusArguments\nbusiness_numbers\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 3.8,
+      "text_excerpt": "Error executing tool check_business_status: 1 validation error for check_business_statusArguments\nbusiness_numbers\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "business_numbers": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 66.1,
+      "text_excerpt": "{\n  \"error\": \"HTTP error occurred: 401\",\n  \"business_numbers\": [\n    \"1248100998\"\n  ]\n}",
+      "auth_marker": "401",
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "business_numbers": "1248100998"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "batch_validate_businesses",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "businesses_json"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 3.3,
+      "text_excerpt": "Error executing tool batch_validate_businesses: 1 validation error for batch_validate_businessesArguments\nbusinesses_json\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.9,
+      "text_excerpt": "Error executing tool batch_validate_businesses: 1 validation error for batch_validate_businessesArguments\nbusinesses_json\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "businesses_json": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 1.6,
+      "text_excerpt": "{\n  \"error\": \"JSON 파싱 오류: Expecting value: line 1 column 1 (char 0)\",\n  \"hint\": \"올바른 JSON 형식으로 입력해주세요.\"\n}",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "businesses_json": "test"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   }
+  ],
+  "stdout_noise": {
+   "count": 0,
+   "sample": []
+  },
+  "server_initiated_messages": 0
+ },
+ "finished_at": "2026-10-03T07:12:56+00:00",
+ "external": {
+  "conformance_version": "0.1.16",
+  "conformance": {
+   "server-initialize": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "server-initialize",
+      "status": "SUCCESS",
+      "description": "Server responds to initialize request with valid structure",
+      "errorMessage": null
+     }
+    ]
+   },
+   "ping": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "ping",
+      "status": "SUCCESS",
+      "description": "Server responds to ping requests",
+      "errorMessage": null
+     }
+    ]
+   },
+   "tools-list": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "tools-list",
+      "status": "SUCCESS",
+      "description": "Server lists available tools with valid structure",
+      "errorMessage": null
+     }
+    ]
+   }
+  },
+  "mcp_audit_sha": "b14487ff9af2ea539fa946755949173459c2cbb9",
+  "mcp_audit": {
+   "returncode": 0,
+   "report": {
+    "tool": "mcp-audit",
+    "version": "0.5.0",
+    "server_command": [
+     "/usr/bin/env",
+     "-i",
+     "PATH=/opt/homebrew/bin:/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+     "HOME=/tmp/kmcp-work/data-go-nts-business-verification-mcp1/home",
+     "TMPDIR=/tmp/kmcp-work/data-go-nts-business-verification-mcp1/tmp",
+     "LANG=en_US.UTF-8",
+     "LC_ALL=en_US.UTF-8",
+     "npm_config_cache=/tmp/kmcp-work/data-go-nts-business-verification-mcp1/cache/npm",
+     "npm_config_update_notifier=false",
+     "UV_CACHE_DIR=/tmp/kmcp-work/data-go-nts-business-verification-mcp1/cache/uv",
+     "UV_PYTHON_INSTALL_DIR=~/.local/share/uv/python",
+     "UV_PYTHON_DOWNLOADS=never",
+     "PYTHONUNBUFFERED=1",
+     "NO_COLOR=1",
+     "API_KEY=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+     ".venv/bin/python",
+     "-m",
+     "data_go_mcp.nts_business_verification.server"
+    ],
+    "timestamp": "2026-10-03T07:15:03+00:00",
+    "summary": {
+     "total": 9,
+     "status": {
+      "pass": 9,
+      "fail": 0,
+      "skip": 0
+     },
+     "failed_by_severity": {
+      "error": 0,
+      "warning": 0
+     }
+    },
+    "exit_code": 0,
+    "strict": false,
+    "error": null,
+    "results": [
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "validate_business: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "validate_business",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "check_business_status: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "check_business_status",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "batch_validate_businesses: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "batch_validate_businesses",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 3 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "validate_business",
+      "details": {
+       "probed_required_fields": [
+        "business_number",
+        "start_date",
+        "representative_name"
+       ],
+       "inconclusive": [
+        {
+         "omitted": "start_date",
+         "error": "Error executing tool validate_business: 1 validation error for validate_businessArguments\nstart_date\n  Field required [type=missing, input_value={'business_number': 'mcp-...ame': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+         "note": "error names another required field 'business_number'"
+        }
+       ]
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "check_business_status",
+      "details": {
+       "probed_required_fields": [
+        "business_numbers"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "batch_validate_businesses",
+      "details": {
+       "probed_required_fields": [
+        "businesses_json"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "validate_business",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "check_business_status",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "batch_validate_businesses",
+      "details": {
+       "problems": []
+      }
+     }
+    ]
+   }
+  }
+ }
+}

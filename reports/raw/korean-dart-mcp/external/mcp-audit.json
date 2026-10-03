@@ -1,0 +1,546 @@
+{
+  "tool": "mcp-audit",
+  "version": "0.5.0",
+  "server_command": [
+    "/usr/bin/env",
+    "-i",
+    "PATH=/opt/homebrew/bin:/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    "HOME=/tmp/kmcp-work/korean-dart-mcp/home",
+    "TMPDIR=/tmp/kmcp-work/korean-dart-mcp/tmp",
+    "LANG=en_US.UTF-8",
+    "LC_ALL=en_US.UTF-8",
+    "npm_config_cache=/tmp/kmcp-work/korean-dart-mcp/cache/npm",
+    "npm_config_update_notifier=false",
+    "UV_CACHE_DIR=/tmp/kmcp-work/korean-dart-mcp/cache/uv",
+    "UV_PYTHON_INSTALL_DIR=~/.local/share/uv/python",
+    "UV_PYTHON_DOWNLOADS=never",
+    "PYTHONUNBUFFERED=1",
+    "NO_COLOR=1",
+    "DART_API_KEY=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+    "node",
+    "build/index.js"
+  ],
+  "timestamp": "2026-10-03T07:14:39+00:00",
+  "summary": {
+    "total": 45,
+    "status": {
+      "pass": 16,
+      "fail": 0,
+      "skip": 29
+    },
+    "failed_by_severity": {
+      "error": 0,
+      "warning": 0
+    }
+  },
+  "exit_code": 0,
+  "strict": false,
+  "error": null,
+  "results": [
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "resolve_corp_code",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "search_disclosures",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_company",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_financials",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "cannot synthesize baseline arguments from inputSchema; nothing to scan",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "download_document",
+      "details": {
+        "required": [
+          "rcept_no"
+        ]
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "cannot synthesize baseline arguments from inputSchema; nothing to scan",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_xbrl",
+      "details": {
+        "required": [
+          "rcept_no"
+        ]
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_periodic_report",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_shareholders",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_executive_compensation",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_major_holdings",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_corporate_event",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "insider_signal",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "disclosure_anomaly",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "buffett_quality_snapshot",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "cannot synthesize baseline arguments from inputSchema; nothing to scan",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_attachments",
+      "details": {
+        "required": [
+          "rcept_no"
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "resolve_corp_code",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_disclosures",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_company",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_financials",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "cannot synthesize baseline arguments from inputSchema (unsupported property shapes); skipping probes",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "download_document",
+      "details": {
+        "required": [
+          "rcept_no"
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "cannot synthesize baseline arguments from inputSchema (unsupported property shapes); skipping probes",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_xbrl",
+      "details": {
+        "required": [
+          "rcept_no"
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_periodic_report",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_shareholders",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_executive_compensation",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_major_holdings",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_corporate_event",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "insider_signal",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "disclosure_anomaly",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "buffett_quality_snapshot",
+      "details": {
+        "baseline_error": "MCPError: DART corpCode.xml \u2192 \ube44-ZIP \uc751\ub2f5 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>\ub4f1\ub85d\ub418\uc9c0 \uc54a\uc740 \uc778\uc99d\ud0a4\uc785\ub2c8\ub2e4.</message></result>"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "cannot synthesize baseline arguments from inputSchema (unsupported property shapes); skipping probes",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_attachments",
+      "details": {
+        "required": [
+          "rcept_no"
+        ]
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "resolve_corp_code",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_disclosures",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_company",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_financials",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "download_document",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_xbrl",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_periodic_report",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_shareholders",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_executive_compensation",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_major_holdings",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_corporate_event",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "insider_signal",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "disclosure_anomaly",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "buffett_quality_snapshot",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_attachments",
+      "details": {
+        "problems": []
+      }
+    }
+  ]
+}

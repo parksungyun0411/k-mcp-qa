@@ -1,0 +1,38 @@
+mcp-audit results                                                               
+┏━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ check      ┃ sev   ┃ status ┃ tool                  ┃ message                ┃
+┡━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ HYGIENE001 │ error │ pass   │ batch_validate_busin… │ batch_validate_busine… │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ pass   │ check_business_status │ check_business_status: │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ pass   │ validate_business     │ validate_business:     │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ RUNTIME001 │ error │ pass   │ batch_validate_busin… │ all 1                  │
+│            │       │        │                       │ advertised-required    │
+│            │       │        │                       │ fields enforced at     │
+│            │       │        │                       │ runtime                │
+│ RUNTIME001 │ error │ pass   │ check_business_status │ all 1                  │
+│            │       │        │                       │ advertised-required    │
+│            │       │        │                       │ fields enforced at     │
+│            │       │        │                       │ runtime                │
+│ RUNTIME001 │ error │ pass   │ validate_business     │ all 3                  │
+│            │       │        │                       │ advertised-required    │
+│            │       │        │                       │ fields enforced at     │
+│            │       │        │                       │ runtime                │
+│ SCHEMA001  │ error │ pass   │ batch_validate_busin… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ check_business_status │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ validate_business     │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+└────────────┴───────┴────────┴───────────────────────┴────────────────────────┘
+9 checks · 9 pass · 0 fail (error:0, warning:0) · 0 skip
+report written to 
+/tmp/kmcp-work/data-go-nts-business-verification-mcp1/mcp-audit.json

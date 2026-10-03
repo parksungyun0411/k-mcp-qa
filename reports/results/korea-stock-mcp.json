@@ -1,0 +1,821 @@
+{
+ "id": "korea-stock-mcp",
+ "repo": "jjlabsio/korea-stock-mcp",
+ "sha_expected": "210595eec73a39cd04e2fb175f6e69b1516f0dd4",
+ "started_at": "2026-10-03T07:10:20+00:00",
+ "protocol_version_requested": "2025-11-25",
+ "sandbox": true,
+ "command": [
+  "node",
+  "dist/index.js"
+ ],
+ "install_steps": [
+  [
+   "npm",
+   "ci",
+   "--ignore-scripts",
+   "--no-audit",
+   "--no-fund"
+  ],
+  [
+   "npx",
+   "--no-install",
+   "tsc"
+  ]
+ ],
+ "sha_tested": "210595eec73a39cd04e2fb175f6e69b1516f0dd4",
+ "install": {
+  "ok": true,
+  "steps": [
+   {
+    "argv": [
+     "npm",
+     "ci",
+     "--ignore-scripts",
+     "--no-audit",
+     "--no-fund"
+    ],
+    "returncode": 0,
+    "seconds": 1.47,
+    "timed_out": false
+   },
+   {
+    "argv": [
+     "npx",
+     "--no-install",
+     "tsc"
+    ],
+    "returncode": 0,
+    "seconds": 0.78,
+    "timed_out": false
+   }
+  ]
+ },
+ "sdk": {
+  "@modelcontextprotocol/sdk": "1.29.0"
+ },
+ "start_without_key": {
+  "initialize": "result",
+  "alive": true,
+  "returncode": null,
+  "elapsed_ms": 114.5,
+  "stderr_tail": [
+   "Korea Dart MCP Server running on stdio"
+  ]
+ },
+ "probe": {
+  "restarts": 0,
+  "initialize": {
+   "outcome": "result",
+   "elapsed_ms": 125.2,
+   "protocolVersion": "2025-11-25",
+   "serverInfo": {
+    "name": "korea-stock-mcp",
+    "version": "1.0.0"
+   },
+   "capabilities": {
+    "tools": {
+     "listChanged": true
+    }
+   },
+   "spec_violations": []
+  },
+  "idle_alive": true,
+  "tools_list": {
+   "count": 8,
+   "pages": 1,
+   "spec_violations": [],
+   "elapsed_ms": 6.1
+  },
+  "ping": {
+   "outcome": "result",
+   "spec_violations": []
+  },
+  "unknown_method": {
+   "outcome": "error",
+   "error_code": -32601,
+   "alive_after": true
+  },
+  "unknown_tool": {
+   "outcome": "tool_error",
+   "elapsed_ms": 2.1,
+   "text_excerpt": "MCP error -32602: Tool kmcpqa_no_such_tool not found",
+   "auth_marker": null,
+   "error_marker": "error",
+   "traceback": false,
+   "spec_violations": [],
+   "has_structured": false,
+   "alive_after": true
+  },
+  "tools": [
+   {
+    "name": "get_corp_code",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.3,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_corp_code: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"number\",\n    \"path\": [\n      \"corp_name\"\n    ],\n    \"message\": \"Expected string, received number\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    ",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "corp_name": 12345,
+       "stock_code": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.9,
+      "text_excerpt": "corp_name 또는 stock_code 중 하나를 입력해주세요.",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_disclosure_list",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.9,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_disclosure_list: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"number\",\n    \"path\": [\n      \"corp_code\"\n    ],\n    \"message\": \"Expected string, received number\"\n  },\n  {\n    \"code\": \"invalid_type\"",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "corp_code": 12345,
+       "bgn_de": 12345,
+       "end_de": 12345,
+       "last_reprt_at": 12345,
+       "pblntf_ty": 12345,
+       "pblntf_detail_ty": 12345,
+       "corp_cls": 12345,
+       "sort": 12345,
+       "sort_mth": 12345,
+       "page_no": 12345,
+       "page_count": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 110.7,
+      "text_excerpt": "DART API 오류 (status: 010): 등록되지 않은 인증키입니다.",
+      "auth_marker": "등록되지 않은",
+      "error_marker": "오류",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_disclosure",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "rcept_no"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.6,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_disclosure: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"rcept_no\"\n    ],\n    \"message\": \"Required\"\n  }\n]",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.3,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_disclosure: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"number\",\n    \"path\": [\n      \"rcept_no\"\n    ],\n    \"message\": \"Expected string, received number\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    ",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "rcept_no": 12345,
+       "section_id": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 25.0,
+      "text_excerpt": "DART API 오류 (status: 10): 등록되지 않은 인증키입니다.",
+      "auth_marker": "등록되지 않은",
+      "error_marker": "오류",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "rcept_no": "20240312000736"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_financial_statement",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "corp_code",
+     "bsns_year",
+     "reprt_code",
+     "fs_div"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.6,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_financial_statement: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"corp_code\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"code\": \"invalid_type\",\n    \"expected\":",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.1,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_financial_statement: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"number\",\n    \"path\": [\n      \"corp_code\"\n    ],\n    \"message\": \"Expected string, received number\"\n  },\n  {\n    \"code\": \"invalid_t",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "corp_code": 12345,
+       "bsns_year": 12345,
+       "reprt_code": 12345,
+       "fs_div": 12345,
+       "sj_nm": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 16.4,
+      "text_excerpt": "DART API 오류 (status: 010): 등록되지 않은 인증키입니다.",
+      "auth_marker": "등록되지 않은",
+      "error_marker": "오류",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "corp_code": "00126380",
+       "bsns_year": "2024",
+       "reprt_code": "11013",
+       "fs_div": "OFS"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_market_type",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "corp_code"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.0,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_market_type: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"corp_code\"\n    ],\n    \"message\": \"Required\"\n  }\n]",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.4,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_market_type: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"string\",\n    \"received\": \"number\",\n    \"path\": [\n      \"corp_code\"\n    ],\n    \"message\": \"Expected string, received number\"\n  }\n]",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "corp_code": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 20.8,
+      "text_excerpt": "DART API 오류 (status: 010): 등록되지 않은 인증키입니다.",
+      "auth_marker": "등록되지 않은",
+      "error_marker": "오류",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "corp_code": "00126380"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_stock_base_info",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "basDdList",
+     "market",
+     "codeList"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "valid": {
+      "outcome": "unsynthesizable"
+     },
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.4,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_stock_base_info: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"basDdList\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"expected\": \"'KOSPI' | 'KOSDAQ' | 'KONEX'\",\n",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.8,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_stock_base_info: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"string\",\n    \"path\": [\n      \"basDdList\"\n    ],\n    \"message\": \"Expected array, received string\"\n  },\n  {\n    \"expected\": \"'KOSPI' | '",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "basDdList": "not-an-array",
+       "market": 12345,
+       "codeList": "not-an-array"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_stock_trade_info",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "basDdList",
+     "market",
+     "codeList"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "valid": {
+      "outcome": "unsynthesizable"
+     },
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.1,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_stock_trade_info: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"basDdList\"\n    ],\n    \"message\": \"Required\"\n  },\n  {\n    \"expected\": \"'KOSPI' | 'KOSDAQ' | 'KONEX'\",",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.4,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_stock_trade_info: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"string\",\n    \"path\": [\n      \"basDdList\"\n    ],\n    \"message\": \"Expected array, received string\"\n  },\n  {\n    \"expected\": \"'KOSPI' | ",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "basDdList": "not-an-array",
+       "market": 12345,
+       "codeList": "not-an-array"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_today_date",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 4.0,
+      "text_excerpt": "{\"todayKST\":\"20261003\",\"todayUTC\":\"20261003\"}",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   }
+  ],
+  "stdout_noise": {
+   "count": 0,
+   "sample": []
+  },
+  "server_initiated_messages": 0
+ },
+ "finished_at": "2026-10-03T07:10:35+00:00",
+ "external": {
+  "conformance_version": "0.1.16",
+  "conformance": {
+   "server-initialize": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "server-initialize",
+      "status": "SUCCESS",
+      "description": "Server responds to initialize request with valid structure",
+      "errorMessage": null
+     }
+    ]
+   },
+   "ping": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "ping",
+      "status": "SUCCESS",
+      "description": "Server responds to ping requests",
+      "errorMessage": null
+     }
+    ]
+   },
+   "tools-list": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "tools-list",
+      "status": "SUCCESS",
+      "description": "Server lists available tools with valid structure",
+      "errorMessage": null
+     }
+    ]
+   }
+  },
+  "mcp_audit_sha": "b14487ff9af2ea539fa946755949173459c2cbb9",
+  "mcp_audit": {
+   "returncode": 0,
+   "report": {
+    "tool": "mcp-audit",
+    "version": "0.5.0",
+    "server_command": [
+     "/usr/bin/env",
+     "-i",
+     "PATH=/opt/homebrew/bin:/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+     "HOME=/tmp/kmcp-work/korea-stock-mcp/home",
+     "TMPDIR=/tmp/kmcp-work/korea-stock-mcp/tmp",
+     "LANG=en_US.UTF-8",
+     "LC_ALL=en_US.UTF-8",
+     "npm_config_cache=/tmp/kmcp-work/korea-stock-mcp/cache/npm",
+     "npm_config_update_notifier=false",
+     "UV_CACHE_DIR=/tmp/kmcp-work/korea-stock-mcp/cache/uv",
+     "UV_PYTHON_INSTALL_DIR=~/.local/share/uv/python",
+     "UV_PYTHON_DOWNLOADS=never",
+     "PYTHONUNBUFFERED=1",
+     "NO_COLOR=1",
+     "DART_API_KEY=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+     "KRX_API_KEY=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+     "node",
+     "dist/index.js"
+    ],
+    "timestamp": "2026-10-03T07:14:37+00:00",
+    "summary": {
+     "total": 24,
+     "status": {
+      "pass": 12,
+      "fail": 0,
+      "skip": 12
+     },
+     "failed_by_severity": {
+      "error": 0,
+      "warning": 0
+     }
+    },
+    "exit_code": 0,
+    "strict": false,
+    "error": null,
+    "results": [
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_corp_code",
+      "details": {
+       "baseline_error": "corp_name 또는 stock_code 중 하나를 입력해주세요."
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_disclosure_list",
+      "details": {
+       "baseline_error": "DART API 오류 (status: 010): 등록되지 않은 인증키입니다."
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_disclosure",
+      "details": {
+       "baseline_error": "DART API 오류 (status: 10): 등록되지 않은 인증키입니다."
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_financial_statement",
+      "details": {
+       "baseline_error": "DART API 오류 (status: 010): 등록되지 않은 인증키입니다."
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_market_type",
+      "details": {
+       "baseline_error": "DART API 오류 (status: 010): 등록되지 않은 인증키입니다."
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_stock_base_info",
+      "details": {
+       "baseline_error": "KRX API HTTP 오류 (status: 401):"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_stock_trade_info",
+      "details": {
+       "baseline_error": "KRX API HTTP 오류 (status: 401):"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_today_date: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_today_date",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_corp_code",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_disclosure_list",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_disclosure",
+      "details": {
+       "baseline_error": "DART API 오류 (status: 10): 등록되지 않은 인증키입니다."
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_financial_statement",
+      "details": {
+       "baseline_error": "DART API 오류 (status: 010): 등록되지 않은 인증키입니다."
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_market_type",
+      "details": {
+       "baseline_error": "DART API 오류 (status: 010): 등록되지 않은 인증키입니다."
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_stock_base_info",
+      "details": {
+       "baseline_error": "KRX API HTTP 오류 (status: 401):"
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_stock_trade_info",
+      "details": {
+       "baseline_error": "KRX API HTTP 오류 (status: 401):"
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_today_date",
+      "details": {}
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_corp_code",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_disclosure_list",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_disclosure",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_financial_statement",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_market_type",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_stock_base_info",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_stock_trade_info",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_today_date",
+      "details": {
+       "problems": []
+      }
+     }
+    ]
+   }
+  }
+ }
+}

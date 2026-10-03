@@ -1,0 +1,147 @@
+mcp-audit results                                                               
+┏━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ check      ┃ sev   ┃ status ┃ tool                   ┃ message               ┃
+┡━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ HYGIENE001 │ error │ pass   │ analyze_time_series    │ analyze_time_series:  │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ compare_statistics     │ compare_statistics:   │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ skip   │ get_indicator          │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ skip   │ get_microdata_info     │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ pass   │ get_recommended_stati… │ get_recommended_stat… │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_statistics_data    │ get_statistics_data:  │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ skip   │ get_statistics_list    │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ pass   │ get_table_info         │ get_table_info:       │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ quick_stats            │ quick_stats: baseline │
+│            │       │        │                        │ response free of      │
+│            │       │        │                        │ absolute owner        │
+│            │       │        │                        │ filesystem paths      │
+│ HYGIENE001 │ error │ pass   │ quick_trend            │ quick_trend: baseline │
+│            │       │        │                        │ response free of      │
+│            │       │        │                        │ absolute owner        │
+│            │       │        │                        │ filesystem paths      │
+│ HYGIENE001 │ error │ skip   │ search_businesses      │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ skip   │ search_indicators      │ baseline call failed; │
+│            │       │        │                        │ no response to scan   │
+│            │       │        │                        │ for path leakage      │
+│ HYGIENE001 │ error │ pass   │ search_microdata       │ search_microdata:     │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ search_statistics      │ search_statistics:    │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ RUNTIME001 │ error │ pass   │ analyze_time_series    │ all 4                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ compare_statistics     │ all 4                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ get_indicator          │ no required fields    │
+│            │       │        │                        │ advertised; nothing   │
+│            │       │        │                        │ to probe              │
+│ RUNTIME001 │ error │ pass   │ get_microdata_info     │ no required fields    │
+│            │       │        │                        │ advertised; nothing   │
+│            │       │        │                        │ to probe              │
+│ RUNTIME001 │ error │ pass   │ get_recommended_stati… │ all 1                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ get_statistics_data    │ all 4                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ skip   │ get_statistics_list    │ baseline call with    │
+│            │       │        │                        │ all required fields   │
+│            │       │        │                        │ failed; cannot        │
+│            │       │        │                        │ attribute failures to │
+│            │       │        │                        │ individual omissions  │
+│ RUNTIME001 │ error │ pass   │ get_table_info         │ all 2                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ quick_stats            │ all 1                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ quick_trend            │ all 1                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ search_businesses      │ no required fields    │
+│            │       │        │                        │ advertised; nothing   │
+│            │       │        │                        │ to probe              │
+│ RUNTIME001 │ error │ skip   │ search_indicators      │ baseline call with    │
+│            │       │        │                        │ all required fields   │
+│            │       │        │                        │ failed; cannot        │
+│            │       │        │                        │ attribute failures to │
+│            │       │        │                        │ individual omissions  │
+│ RUNTIME001 │ error │ pass   │ search_microdata       │ no required fields    │
+│            │       │        │                        │ advertised; nothing   │
+│            │       │        │                        │ to probe              │
+│ RUNTIME001 │ error │ pass   │ search_statistics      │ all 1                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ SCHEMA001  │ error │ pass   │ analyze_time_series    │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ compare_statistics     │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_indicator          │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_microdata_info     │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_recommended_stati… │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_statistics_data    │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_statistics_list    │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_table_info         │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ quick_stats            │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ quick_trend            │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ search_businesses      │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ search_indicators      │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ search_microdata       │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ search_statistics      │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+└────────────┴───────┴────────┴────────────────────────┴───────────────────────┘
+42 checks · 35 pass · 0 fail (error:0, warning:0) · 7 skip
+report written to /tmp/kmcp-work/korea-stats-mcp/mcp-audit.json

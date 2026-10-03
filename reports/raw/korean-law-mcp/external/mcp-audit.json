@@ -1,0 +1,367 @@
+{
+  "tool": "mcp-audit",
+  "version": "0.5.0",
+  "server_command": [
+    "/usr/bin/env",
+    "-i",
+    "PATH=/opt/homebrew/bin:/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    "HOME=/tmp/kmcp-work/korean-law-mcp/home",
+    "TMPDIR=/tmp/kmcp-work/korean-law-mcp/tmp",
+    "LANG=en_US.UTF-8",
+    "LC_ALL=en_US.UTF-8",
+    "npm_config_cache=/tmp/kmcp-work/korean-law-mcp/cache/npm",
+    "npm_config_update_notifier=false",
+    "UV_CACHE_DIR=/tmp/kmcp-work/korean-law-mcp/cache/uv",
+    "UV_PYTHON_INSTALL_DIR=~/.local/share/uv/python",
+    "UV_PYTHON_DOWNLOADS=never",
+    "PYTHONUNBUFFERED=1",
+    "NO_COLOR=1",
+    "LAW_OC=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+    "node",
+    "build/index.js"
+  ],
+  "timestamp": "2026-10-03T07:14:32+00:00",
+  "summary": {
+    "total": 30,
+    "status": {
+      "pass": 17,
+      "fail": 2,
+      "skip": 11
+    },
+    "failed_by_severity": {
+      "error": 2,
+      "warning": 0
+    }
+  },
+  "exit_code": 1,
+  "strict": false,
+  "error": null,
+  "results": [
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "search_law",
+      "details": {
+        "baseline_error": "[NOT_FOUND] \ubc95\ub839 'mcp-audit-probe' \uac80\uc0c9 \uacb0\uacfc\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.\n\n\u26a0\ufe0f \uc774 \ub3c4\uad6c\ub294 \uc2e4\uc81c \ub370\uc774\ud130\ub97c \ucc3e\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4. LLM\uc774 \uacb0\uacfc\ub97c \ucd94\uce21\ud558\uac70\ub098 \uc9c0\uc5b4\ub0b4\uc9c0 \ub9c8\uc138\uc694. \uc0ac\uc6a9\uc790\uc5d0\uac8c '\uac80\uc0c9 \uc2e4\ud328'\ub97c \ubcf4\uace0\ud558\uace0 \uc544\ub798 \uc81c\uc548\uc744 \uc6b0\uc120 \uc2dc\ub3c4\ud558\uc138\uc694.\n\ub2e4\ub978 \ud0a4\uc6cc\ub4dc\ub85c \uc7ac\uc2dc\ub3c4\ud558\uc138\uc694."
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_law_text",
+      "details": {
+        "baseline_error": "[INVALID_PARAMETER] : mst \ub610\ub294 lawId \uc911 \ud558\ub098\ub294 \ud544\uc218\uc785\ub2c8\ub2e4\n\ub3c4\uad6c: get_law_text\n\uc81c\uc548:\n  1. \ud30c\ub77c\ubbf8\ud130 \ud615\uc2dd\uacfc \ud544\uc218 \uac12\uc744 \ud655\uc778\ud558\uc138\uc694."
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "ordinance_radar",
+      "details": {
+        "baseline_error": "[INVALID_PARAMETER] : ordinSeq(\ub610\ub294 \ubcc4\uce6d id)\u00b7ordinanceName\u00b7query \uc911 \ud558\ub098\ub294 \ud544\uc218\uc785\ub2c8\ub2e4\n\ub3c4\uad6c: ordinance_radar\n\uc81c\uc548:\n  1. \ud30c\ub77c\ubbf8\ud130 \ud615\uc2dd\uacfc \ud544\uc218 \uac12\uc744 \ud655\uc778\ud558\uc138\uc694."
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_annexes",
+      "details": {
+        "baseline_error": "[NOT_FOUND] \"mcp-audit-probe\"\uc5d0 \ub300\ud55c \ubcc4\ud45c/\uc11c\uc2dd\uc774 \ubc95\uc81c\ucc98 DB\uc5d0 \uc5c6\uc2b5\ub2c8\ub2e4.\n\n\u26a0\ufe0f \uc774 \ub3c4\uad6c\ub294 \uc694\uccad\ud55c \ub370\uc774\ud130\ub97c \ucc3e\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4. LLM\uc774 \uc784\uc758\ub85c \ub2f5\ubcc0\uc744 \uc0dd\uc131\ud558\uc9c0 \ub9c8\uc138\uc694. '\ud574\ub2f9 \ub370\uc774\ud130 \uc5c6\uc74c'\uc744 \uc0ac\uc6a9\uc790\uc5d0\uac8c \uba85\uc2dc\ud558\uc138\uc694.\n\n\uc7ac\uc2dc\ub3c4 \uc81c\uc548:\n  - \ubc95\ub839\uba85 \uc624\ud0c8\uc790 \ud655\uc778 (\uc608: '\uad00\uc138\ubc95 \uc2dc\ud589\ub839' vs '\uad00\uc138\ubc95')\n  - search_law({ query: \"mcp-audit-probe\" }) \ub85c \uc815\ud655\ud55c \ubc95\ub839\uba85 \ud655\uc778\n  - \ubaa8\ubc95\uc5d0 \ubcc4\ud45c\uac00 \uc788\uc744 \uc218 \uc788\uc74c (\uc2dc\ud589\uaddc\uce59 \ub300\uc2e0 \uc2dc\ud589\ub839\uc73c\ub85c \uc7ac\uc2dc\ub3c4)"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "legal_research",
+      "details": {
+        "baseline_error": "task=full_research\uc5d0\ub294 query\uac00 \ud544\uc694\ud569\ub2c8\ub2e4."
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "legal_analysis",
+      "details": {
+        "baseline_error": "mode=verify_citations\uc5d0\ub294 text\uac00 \ud544\uc694\ud569\ub2c8\ub2e4."
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "discover_tools: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "discover_tools",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "execute_tool",
+      "details": {
+        "baseline_error": "\ub3c4\uad6c\ub97c \ucc3e\uc744 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4: mcp-audit-probe\ndiscover_tools\ub85c \uc0ac\uc6a9 \uac00\ub2a5\ud55c \ub3c4\uad6c\ub97c \uba3c\uc800 \ud655\uc778\ud558\uc138\uc694."
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "search_decisions: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "search_decisions",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_decision_text",
+      "details": {
+        "baseline_error": "[EXTERNAL_API_ERROR] \ubc95\uc81c\ucc98 \uc11c\ubc84 \uc624\ub958 (500) - fetchApi(prec)\n\ub3c4\uad6c: get_precedent_text"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_law",
+      "details": {
+        "baseline_error": "[NOT_FOUND] \ubc95\ub839 'mcp-audit-probe' \uac80\uc0c9 \uacb0\uacfc\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.\n\n\u26a0\ufe0f \uc774 \ub3c4\uad6c\ub294 \uc2e4\uc81c \ub370\uc774\ud130\ub97c \ucc3e\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4. LLM\uc774 \uacb0\uacfc\ub97c \ucd94\uce21\ud558\uac70\ub098 \uc9c0\uc5b4\ub0b4\uc9c0 \ub9c8\uc138\uc694. \uc0ac\uc6a9\uc790\uc5d0\uac8c '\uac80\uc0c9 \uc2e4\ud328'\ub97c \ubcf4\uace0\ud558\uace0 \uc544\ub798 \uc81c\uc548\uc744 \uc6b0\uc120 \uc2dc\ub3c4\ud558\uc138\uc694.\n\ub2e4\ub978 \ud0a4\uc6cc\ub4dc\ub85c \uc7ac\uc2dc\ub3c4\ud558\uc138\uc694."
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_law_text",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "ordinance_radar",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "fail",
+      "message": "runtime validation requires ['query'] but inputSchema.required omits them (advertised required: ['lawName']) \u2014 schema/runtime mismatch",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_annexes",
+      "details": {
+        "baseline_error": "[NOT_FOUND] \"mcp-audit-probe\"\uc5d0 \ub300\ud55c \ubcc4\ud45c/\uc11c\uc2dd\uc774 \ubc95\uc81c\ucc98 DB\uc5d0 \uc5c6\uc2b5\ub2c8\ub2e4.\n\n\u26a0\ufe0f \uc774 \ub3c4\uad6c\ub294 \uc694\uccad\ud55c \ub370\uc774\ud130\ub97c \ucc3e\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4. LLM\uc774 \uc784\uc758\ub85c \ub2f5\ubcc0\uc744 \uc0dd\uc131\ud558\uc9c0 \ub9c8\uc138\uc694. '\ud574\ub2f9 \ub370\uc774\ud130 \uc5c6\uc74c'\uc744 \uc0ac\uc6a9\uc790\uc5d0\uac8c \uba85\uc2dc\ud558\uc138\uc694.\n\n\uc7ac\uc2dc\ub3c4 \uc81c\uc548:\n  - \ubc95\ub839\uba85 \uc624\ud0c8\uc790 \ud655\uc778 (\uc608: '\uad00\uc138\ubc95 \uc2dc\ud589\ub839' vs '\uad00\uc138\ubc95')\n  - search_law({ query: \"mcp-audit-probe\" }) \ub85c \uc815\ud655\ud55c \ubc95\ub839\uba85 \ud655\uc778\n  - \ubaa8\ubc95\uc5d0 \ubcc4\ud45c\uac00 \uc788\uc744 \uc218 \uc788\uc74c (\uc2dc\ud589\uaddc\uce59 \ub300\uc2e0 \uc2dc\ud589\ub839\uc73c\ub85c \uc7ac\uc2dc\ub3c4)"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "legal_research",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "fail",
+      "message": "runtime validation requires ['text'] but inputSchema.required omits them (advertised required: ['mode']) \u2014 schema/runtime mismatch",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "legal_analysis",
+      "details": {
+        "baseline_error": "mode=verify_citations\uc5d0\ub294 text\uac00 \ud544\uc694\ud569\ub2c8\ub2e4."
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "discover_tools",
+      "details": {
+        "probed_required_fields": [
+          "intent"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "execute_tool",
+      "details": {
+        "baseline_error": "\ub3c4\uad6c\ub97c \ucc3e\uc744 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4: mcp-audit-probe\ndiscover_tools\ub85c \uc0ac\uc6a9 \uac00\ub2a5\ud55c \ub3c4\uad6c\ub97c \uba3c\uc800 \ud655\uc778\ud558\uc138\uc694."
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_decisions",
+      "details": {
+        "probed_required_fields": [
+          "domain"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_decision_text",
+      "details": {
+        "baseline_error": "[EXTERNAL_API_ERROR] \ubc95\uc81c\ucc98 \uc11c\ubc84 \uc624\ub958 (500) - fetchApi(prec)\n\ub3c4\uad6c: get_precedent_text"
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_law",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_law_text",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "ordinance_radar",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_annexes",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "legal_research",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "legal_analysis",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "discover_tools",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "execute_tool",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_decisions",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_decision_text",
+      "details": {
+        "problems": []
+      }
+    }
+  ]
+}

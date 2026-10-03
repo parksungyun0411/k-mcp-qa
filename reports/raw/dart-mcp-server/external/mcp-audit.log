@@ -1,0 +1,1237 @@
+mcp-audit results                                                               
+┏━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ check      ┃ sev     ┃ status ┃ tool                 ┃ message               ┃
+┡━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ HYGIENE001 │ error   │ pass   │ get_asset_acquisiti… │ get_asset_acquisitio… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_audit_service_c… │ get_audit_service_co… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_auditor_opinion  │ get_auditor_opinion:  │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_board_approved_… │ get_board_approved_c… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_board_compensat… │ get_board_compensati… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_board_total_com… │ get_board_total_comp… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_bond_with_warra… │ get_bond_with_warran… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_business_suspen… │ get_business_suspens… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_business_transf… │ get_business_transfe… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_business_transf… │ get_business_transfe… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_capital_reducti… │ get_capital_reductio… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_capitalstatus    │ get_capitalstatus:    │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_commercial_pape… │ get_commercial_paper… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_complete_financ… │ get_complete_financi… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_comprehensive_s… │ get_comprehensive_st… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_contingent_capi… │ get_contingent_capit… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_contingent_conv… │ get_contingent_conve… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_convertible_bon… │ get_convertible_bond… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_corp_candidates  │ get_corp_candidates:  │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_corpcode         │ get_corpcode:         │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_corpinfo         │ get_corpinfo:         │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_corporate_bond_… │ get_corporate_bond_b… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_creditor_manage… │ get_creditor_managem… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_creditor_manage… │ get_creditor_managem… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_debt_securities… │ get_debt_securities_… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_debt_securities… │ get_debt_securities_… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_default_occurre… │ get_default_occurren… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_depositary_rece… │ get_depositary_recei… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ fail   │ get_disclosure       │ get_disclosure:       │
+│            │         │        │                      │ response leaks        │
+│            │         │        │                      │ absolute owner        │
+│            │         │        │                      │ filesystem path       │
+│            │         │        │                      │ (posix_home_path;     │
+│            │         │        │                      │ e.g.                  │
+│            │         │        │                      │ /Users/<redacted>/…)  │
+│            │         │        │                      │ — never shi...        │
+│ HYGIENE001 │ error   │ pass   │ get_disclosurelist   │ get_disclosurelist:   │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_dissolution_eve… │ get_dissolution_even… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_dividend_info    │ get_dividend_info:    │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_employees        │ get_employees:        │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_equity_securiti… │ get_equity_securitie… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_equity_securiti… │ get_equity_securitie… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_equity_securiti… │ get_equity_securitie… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_exchangeable_bo… │ get_exchangeable_bon… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_executive_major… │ get_executive_major_… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_executives       │ get_executives:       │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_free_capital_in… │ get_free_capital_inc… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_hybrid_securiti… │ get_hybrid_securitie… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_individual_comp… │ get_individual_compe… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_investment_in_o… │ get_investment_in_ot… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_litigation_fili… │ get_litigation_filin… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_major_holding_r… │ get_major_holding_re… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_major_sharehold… │ get_major_shareholde… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_major_sharehold… │ get_major_shareholde… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_merger_decision  │ get_merger_decision:  │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_merger_registra… │ get_merger_registrat… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_minority_shareh… │ get_minority_shareho… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_mixed_capital_i… │ get_mixed_capital_in… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_multi_company_a… │ get_multi_company_ac… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_multi_company_k… │ get_multi_company_ke… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_non_audit_servi… │ get_non_audit_servic… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_outside_directo… │ get_outside_director… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_overseas_delist… │ get_overseas_delisti… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_overseas_delist… │ get_overseas_delisti… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_overseas_listing │ get_overseas_listing: │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_overseas_listin… │ get_overseas_listing… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_paid_capital_in… │ get_paid_capital_inc… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_private_fund_us… │ get_private_fund_usa… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_public_fund_usa… │ get_public_fund_usag… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_rehabilitation_… │ get_rehabilitation_f… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_short_term_bond… │ get_short_term_bond_… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_single_company_… │ get_single_company_a… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_single_company_… │ get_single_company_k… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_split_decision   │ get_split_decision:   │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_split_merger_de… │ get_split_merger_dec… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_split_registrat… │ get_split_registrati… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_stock_exchange_… │ get_stock_exchange_t… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_stock_related_b… │ get_stock_related_bo… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_stock_related_b… │ get_stock_related_bo… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_tangible_asset_… │ get_tangible_asset_a… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_tangible_asset_… │ get_tangible_asset_d… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_top5_compensati… │ get_top5_compensatio… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_total_shares     │ get_total_shares:     │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_treasury_stock   │ get_treasury_stock:   │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_treasury_stock_… │ get_treasury_stock_a… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_treasury_stock_… │ get_treasury_stock_d… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_treasury_stock_… │ get_treasury_stock_t… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_treasury_stock_… │ get_treasury_stock_t… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ get_unregistered_ex… │ get_unregistered_exe… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ fail   │ get_xbrl_financial_… │ get_xbrl_financial_s… │
+│            │         │        │                      │ response leaks        │
+│            │         │        │                      │ absolute owner        │
+│            │         │        │                      │ filesystem path       │
+│            │         │        │                      │ (posix_home_path;     │
+│            │         │        │                      │ e.g.                  │
+│            │         │        │                      │ /Users/<redacted>...  │
+│ HYGIENE001 │ error   │ pass   │ get_xbrl_taxonomy_f… │ get_xbrl_taxonomy_fo… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ fail   │ update_corplist      │ update_corplist:      │
+│            │         │        │                      │ response leaks        │
+│            │         │        │                      │ absolute owner        │
+│            │         │        │                      │ filesystem path       │
+│            │         │        │                      │ (posix_home_path;     │
+│            │         │        │                      │ e.g.                  │
+│            │         │        │                      │ /Users/<redacted>/…)  │
+│            │         │        │                      │ — never sh...         │
+│ HYGIENE001 │ error   │ pass   │ xmlparser_get_table… │ xmlparser_get_table_… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ xmlparser_step1_str… │ xmlparser_step1_stru… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ xmlparser_step2_con… │ xmlparser_step2_cont… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ HYGIENE001 │ error   │ pass   │ xmlparser_step3_que… │ xmlparser_step3_quer… │
+│            │         │        │                      │ baseline response     │
+│            │         │        │                      │ free of absolute      │
+│            │         │        │                      │ owner filesystem      │
+│            │         │        │                      │ paths                 │
+│ RUNTIME001 │ warning │ fail   │ get_asset_acquisiti… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_audit_service_c… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_auditor_opinion  │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_board_approved_… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_board_compensat… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_board_total_com… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_bond_with_warra… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_business_suspen… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_business_transf… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_business_transf… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_capital_reducti… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_capitalstatus    │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_commercial_pape… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_complete_financ… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_comprehensive_s… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_contingent_capi… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_contingent_conv… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_convertible_bon… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_corp_candidates  │ omit 'corp_name':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit 'n':    │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than runtime │
+│ RUNTIME001 │ warning │ fail   │ get_corpcode         │ omit 'corp_name':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than runtime │
+│ RUNTIME001 │ warning │ fail   │ get_corpinfo         │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than runtime │
+│ RUNTIME001 │ warning │ fail   │ get_corporate_bond_… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_creditor_manage… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_creditor_manage… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_debt_securities… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_debt_securities… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_default_occurre… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_depositary_rece… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_disclosure       │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'rcept_no': accepted  │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime          │
+│ RUNTIME001 │ warning │ fail   │ get_disclosurelist   │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_dissolution_eve… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_dividend_info    │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_employees        │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_equity_securiti… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_equity_securiti… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_equity_securiti… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_exchangeable_bo… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_executive_major… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than runtime │
+│ RUNTIME001 │ warning │ fail   │ get_executives       │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_free_capital_in… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_hybrid_securiti… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_individual_comp… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_investment_in_o… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_litigation_fili… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_major_holding_r… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than runtime │
+│ RUNTIME001 │ warning │ fail   │ get_major_sharehold… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_major_sharehold… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_merger_decision  │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_merger_registra… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_minority_shareh… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_mixed_capital_i… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_multi_company_a… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_multi_company_k… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_non_audit_servi… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_outside_directo… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_overseas_delist… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_overseas_delist… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_overseas_listing │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_overseas_listin… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_paid_capital_in… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_private_fund_us… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_public_fund_usa… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_rehabilitation_… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_short_term_bond… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_single_company_… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_single_company_… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_split_decision   │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_split_merger_de… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_split_registrat… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_stock_exchange_… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_stock_related_b… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_stock_related_b… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_tangible_asset_… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_tangible_asset_… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_top5_compensati… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_total_shares     │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_treasury_stock   │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_treasury_stock_… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_treasury_stock_… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_treasury_stock_… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_treasury_stock_… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bgn_de': accepted —  │
+│            │         │        │                      │ schema stricter than  │
+│            │         │        │                      │ runtime; om...        │
+│ RUNTIME001 │ warning │ fail   │ get_unregistered_ex… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'bsns_year': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime;...      │
+│ RUNTIME001 │ warning │ fail   │ get_xbrl_financial_… │ omit 'corp_code':     │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'rcept_no': accepted  │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime; ...     │
+│ RUNTIME001 │ warning │ fail   │ get_xbrl_taxonomy_f… │ omit 'sj_div':        │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than runtime │
+│ RUNTIME001 │ error   │ pass   │ update_corplist      │ no required fields    │
+│            │         │        │                      │ advertised; nothing   │
+│            │         │        │                      │ to probe              │
+│ RUNTIME001 │ warning │ fail   │ xmlparser_get_table… │ omit 'path_xml':      │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'table_index':        │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than runtime │
+│ RUNTIME001 │ warning │ fail   │ xmlparser_step1_str… │ omit 'path_xml':      │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'max_depth': accepted │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime          │
+│ RUNTIME001 │ warning │ fail   │ xmlparser_step2_con… │ omit 'path_xml':      │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'title_tags':         │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime;...           │
+│ RUNTIME001 │ warning │ fail   │ xmlparser_step3_que… │ omit 'path_xml':      │
+│            │         │        │                      │ accepted — schema     │
+│            │         │        │                      │ stricter than         │
+│            │         │        │                      │ runtime; omit         │
+│            │         │        │                      │ 'selector': accepted  │
+│            │         │        │                      │ — schema stricter     │
+│            │         │        │                      │ than runtime; o...    │
+│ SCHEMA001  │ error   │ pass   │ get_asset_acquisiti… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_audit_service_c… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_auditor_opinion  │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_board_approved_… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_board_compensat… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_board_total_com… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_bond_with_warra… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_business_suspen… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_business_transf… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_business_transf… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_capital_reducti… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_capitalstatus    │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_commercial_pape… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_complete_financ… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_comprehensive_s… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_contingent_capi… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_contingent_conv… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_convertible_bon… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_corp_candidates  │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_corpcode         │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_corpinfo         │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_corporate_bond_… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_creditor_manage… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_creditor_manage… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_debt_securities… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_debt_securities… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_default_occurre… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_depositary_rece… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_disclosure       │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_disclosurelist   │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_dissolution_eve… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_dividend_info    │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_employees        │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_equity_securiti… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_equity_securiti… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_equity_securiti… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_exchangeable_bo… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_executive_major… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_executives       │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_free_capital_in… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_hybrid_securiti… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_individual_comp… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_investment_in_o… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_litigation_fili… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_major_holding_r… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_major_sharehold… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_major_sharehold… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_merger_decision  │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_merger_registra… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_minority_shareh… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_mixed_capital_i… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_multi_company_a… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_multi_company_k… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_non_audit_servi… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_outside_directo… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_overseas_delist… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_overseas_delist… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_overseas_listing │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_overseas_listin… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_paid_capital_in… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_private_fund_us… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_public_fund_usa… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_rehabilitation_… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_short_term_bond… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_single_company_… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_single_company_… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_split_decision   │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_split_merger_de… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_split_registrat… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_stock_exchange_… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_stock_related_b… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_stock_related_b… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_tangible_asset_… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_tangible_asset_… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_top5_compensati… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_total_shares     │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_treasury_stock   │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_treasury_stock_… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_treasury_stock_… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_treasury_stock_… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_treasury_stock_… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_unregistered_ex… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_xbrl_financial_… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ get_xbrl_taxonomy_f… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ update_corplist      │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ xmlparser_get_table… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ xmlparser_step1_str… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ xmlparser_step2_con… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+│ SCHEMA001  │ error   │ pass   │ xmlparser_step3_que… │ inputSchema           │
+│            │         │        │                      │ internally consistent │
+└────────────┴─────────┴────────┴──────────────────────┴───────────────────────┘
+267 checks · 176 pass · 91 fail (error:3, warning:88) · 0 skip
+report written to /tmp/kmcp-work/dart-mcp-server/mcp-audit.json

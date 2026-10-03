@@ -1,0 +1,8 @@
+2026-10-03 16:12:59,267 - __main__ - INFO - Starting Korea Tourism API MCP Server with transport: stdio
+2026-10-03 16:12:59,267 - __main__ - INFO - Using stdio transport - connect via MCP client
+[10/03/26 16:12:59] INFO     Starting MCP server 'Korea Tourism   server.py:1246
+                             API' with transport 'stdio'                        
+2026-10-03 16:12:59,277 - FastMCP.fastmcp.server.server - INFO - Starting MCP server 'Korea Tourism API' with transport 'stdio'
+2026-10-03 16:12:59,781 - __main__ - INFO - Cleaning up resources...
+2026-10-03 16:12:59,781 - __main__ - INFO - No event loop available, creating temporary loop for cleanup
+2026-10-03 16:12:59,781 - __main__ - INFO - Resources cleaned up successfully.

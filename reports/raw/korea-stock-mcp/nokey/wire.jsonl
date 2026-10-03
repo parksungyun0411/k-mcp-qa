@@ -1,0 +1,3 @@
+{"t": 0.0015, "dir": "send", "line": "{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"initialize\", \"params\": {\"protocolVersion\": \"2025-11-25\", \"capabilities\": {}, \"clientInfo\": {\"name\": \"k-mcp-qa\", \"version\": \"0.1.0\"}}}"}
+{"t": 0.1159, "dir": "recv", "line": "{\"result\":{\"protocolVersion\":\"2025-11-25\",\"capabilities\":{\"tools\":{\"listChanged\":true}},\"serverInfo\":{\"name\":\"korea-stock-mcp\",\"version\":\"1.0.0\"}},\"jsonrpc\":\"2.0\",\"id\":1}"}
+{"t": 0.116, "dir": "send", "line": "{\"jsonrpc\": \"2.0\", \"method\": \"notifications/initialized\"}"}

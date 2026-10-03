@@ -1,0 +1,661 @@
+{
+  "tool": "mcp-audit",
+  "version": "0.5.0",
+  "server_command": [
+    "/usr/bin/env",
+    "-i",
+    "PATH=/opt/homebrew/bin:/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    "HOME=/tmp/kmcp-work/real-estate-mcp/home",
+    "TMPDIR=/tmp/kmcp-work/real-estate-mcp/tmp",
+    "LANG=en_US.UTF-8",
+    "LC_ALL=en_US.UTF-8",
+    "npm_config_cache=/tmp/kmcp-work/real-estate-mcp/cache/npm",
+    "npm_config_update_notifier=false",
+    "UV_CACHE_DIR=/tmp/kmcp-work/real-estate-mcp/cache/uv",
+    "UV_PYTHON_INSTALL_DIR=~/.local/share/uv/python",
+    "UV_PYTHON_DOWNLOADS=never",
+    "PYTHONUNBUFFERED=1",
+    "NO_COLOR=1",
+    "DATA_GO_KR_API_KEY=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+    ".venv/bin/real-estate-mcp"
+  ],
+  "timestamp": "2026-10-03T07:15:11+00:00",
+  "summary": {
+    "total": 48,
+    "status": {
+      "pass": 48,
+      "fail": 0,
+      "skip": 0
+    },
+    "failed_by_severity": {
+      "error": 0,
+      "warning": 0
+    }
+  },
+  "exit_code": 0,
+  "strict": false,
+  "error": null,
+  "results": [
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "calculate_loan_payment: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "calculate_loan_payment",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "calculate_compound_growth: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "calculate_compound_growth",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "calculate_monthly_cashflow: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "calculate_monthly_cashflow",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_apartment_rent: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_apartment_rent",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_officetel_rent: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_officetel_rent",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_villa_rent: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_villa_rent",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_single_house_rent: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_single_house_rent",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_apt_subscription_info: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_apt_subscription_info",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_apt_subscription_results: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_apt_subscription_results",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_apartment_trades: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_apartment_trades",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_officetel_trades: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_officetel_trades",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_villa_trades: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_villa_trades",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_single_house_trades: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_single_house_trades",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_commercial_trade: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_commercial_trade",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_region_code: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_region_code",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_current_year_month: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_current_year_month",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 3 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "calculate_loan_payment",
+      "details": {
+        "probed_required_fields": [
+          "principal_10k",
+          "annual_rate_pct",
+          "years"
+        ],
+        "inconclusive": [
+          {
+            "omitted": "principal_10k",
+            "error": "Error executing tool calculate_loan_payment: 1 validation error for calculate_loan_paymentArguments\nprincipal_10k\n  Field required [type=missing, input_value={'annual_rate_pct': 1, 'years': 1}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+            "note": "error names another required field 'annual_rate_pct'"
+          },
+          {
+            "omitted": "years",
+            "error": "Error executing tool calculate_loan_payment: 1 validation error for calculate_loan_paymentArguments\nyears\n  Field required [type=missing, input_value={'principal_10k': 1, 'annual_rate_pct': 1}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+            "note": "error names another required field 'annual_rate_pct'"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 4 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "calculate_compound_growth",
+      "details": {
+        "probed_required_fields": [
+          "initial_10k",
+          "monthly_contribution_10k",
+          "annual_rate_pct",
+          "years"
+        ],
+        "inconclusive": [
+          {
+            "omitted": "years",
+            "error": "Error executing tool calculate_compound_growth: 1 validation error for calculate_compound_growthArguments\nyears\n  Field required [type=missing, input_value={'initial_10k': 1, 'month...1, 'annual_rate_pct': 1}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+            "note": "error names another required field 'annual_rate_pct'"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 3 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "calculate_monthly_cashflow",
+      "details": {
+        "probed_required_fields": [
+          "monthly_income_10k",
+          "monthly_loan_payment_10k",
+          "monthly_living_cost_10k"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apartment_rent",
+      "details": {
+        "probed_required_fields": [
+          "region_code",
+          "year_month"
+        ],
+        "inconclusive": [
+          {
+            "omitted": "year_month",
+            "error": "Error executing tool get_apartment_rent: 1 validation error for get_apartment_rentArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+            "note": "error names another required field 'region_code'"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_officetel_rent",
+      "details": {
+        "probed_required_fields": [
+          "region_code",
+          "year_month"
+        ],
+        "inconclusive": [
+          {
+            "omitted": "year_month",
+            "error": "Error executing tool get_officetel_rent: 1 validation error for get_officetel_rentArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+            "note": "error names another required field 'region_code'"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_villa_rent",
+      "details": {
+        "probed_required_fields": [
+          "region_code",
+          "year_month"
+        ],
+        "inconclusive": [
+          {
+            "omitted": "year_month",
+            "error": "Error executing tool get_villa_rent: 1 validation error for get_villa_rentArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+            "note": "error names another required field 'region_code'"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_single_house_rent",
+      "details": {
+        "probed_required_fields": [
+          "region_code",
+          "year_month"
+        ],
+        "inconclusive": [
+          {
+            "omitted": "year_month",
+            "error": "Error executing tool get_single_house_rent: 1 validation error for get_single_house_rentArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+            "note": "error names another required field 'region_code'"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apt_subscription_info",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apt_subscription_results",
+      "details": {
+        "probed_required_fields": [
+          "stat_kind"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apartment_trades",
+      "details": {
+        "probed_required_fields": [
+          "region_code",
+          "year_month"
+        ],
+        "inconclusive": [
+          {
+            "omitted": "year_month",
+            "error": "Error executing tool get_apartment_trades: 1 validation error for get_apartment_tradesArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+            "note": "error names another required field 'region_code'"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_officetel_trades",
+      "details": {
+        "probed_required_fields": [
+          "region_code",
+          "year_month"
+        ],
+        "inconclusive": [
+          {
+            "omitted": "year_month",
+            "error": "Error executing tool get_officetel_trades: 1 validation error for get_officetel_tradesArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+            "note": "error names another required field 'region_code'"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_villa_trades",
+      "details": {
+        "probed_required_fields": [
+          "region_code",
+          "year_month"
+        ],
+        "inconclusive": [
+          {
+            "omitted": "year_month",
+            "error": "Error executing tool get_villa_trades: 1 validation error for get_villa_tradesArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+            "note": "error names another required field 'region_code'"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_single_house_trades",
+      "details": {
+        "probed_required_fields": [
+          "region_code",
+          "year_month"
+        ],
+        "inconclusive": [
+          {
+            "omitted": "year_month",
+            "error": "Error executing tool get_single_house_trades: 1 validation error for get_single_house_tradesArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+            "note": "error names another required field 'region_code'"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_commercial_trade",
+      "details": {
+        "probed_required_fields": [
+          "region_code",
+          "year_month"
+        ],
+        "inconclusive": [
+          {
+            "omitted": "year_month",
+            "error": "Error executing tool get_commercial_trade: 1 validation error for get_commercial_tradeArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+            "note": "error names another required field 'region_code'"
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_region_code",
+      "details": {
+        "probed_required_fields": [
+          "query"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_current_year_month",
+      "details": {}
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "calculate_loan_payment",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "calculate_compound_growth",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "calculate_monthly_cashflow",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apartment_rent",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_officetel_rent",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_villa_rent",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_single_house_rent",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apt_subscription_info",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apt_subscription_results",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apartment_trades",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_officetel_trades",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_villa_trades",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_single_house_trades",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_commercial_trade",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_region_code",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_current_year_month",
+      "details": {
+        "problems": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,860 @@
+{
+ "id": "mcp-korea-tourism-api",
+ "repo": "harimkang/mcp-korea-tourism-api",
+ "sha_expected": "c4d4585cb8e5c3085e3e7631467f7c6d096aa5c1",
+ "started_at": "2026-10-03T07:12:56+00:00",
+ "protocol_version_requested": "2025-11-25",
+ "sandbox": true,
+ "command": [
+  ".venv/bin/python",
+  "-m",
+  "mcp_tourism.server"
+ ],
+ "install_steps": [
+  [
+   "uv",
+   "sync",
+   "--frozen",
+   "--no-dev"
+  ]
+ ],
+ "sha_tested": "c4d4585cb8e5c3085e3e7631467f7c6d096aa5c1",
+ "install": {
+  "ok": true,
+  "steps": [
+   {
+    "argv": [
+     "uv",
+     "sync",
+     "--frozen",
+     "--no-dev"
+    ],
+    "returncode": 0,
+    "seconds": 0.79,
+    "timed_out": false
+   }
+  ]
+ },
+ "sdk": {
+  "mcp": "1.9.4",
+  "fastmcp": "2.9.0"
+ },
+ "start_without_key": {
+  "initialize": "result",
+  "alive": true,
+  "returncode": null,
+  "elapsed_ms": 1129.7,
+  "stderr_tail": [
+   "                             API' with transport 'stdio'                        ",
+   "2026-10-03 16:12:59,277 - FastMCP.fastmcp.server.server - INFO - Starting MCP server 'Korea Tourism API' with transport 'stdio'",
+   "2026-10-03 16:12:59,781 - __main__ - INFO - Cleaning up resources...",
+   "2026-10-03 16:12:59,781 - __main__ - INFO - No event loop available, creating temporary loop for cleanup",
+   "2026-10-03 16:12:59,781 - __main__ - INFO - Resources cleaned up successfully."
+  ]
+ },
+ "probe": {
+  "restarts": 0,
+  "initialize": {
+   "outcome": "result",
+   "elapsed_ms": 247.9,
+   "protocolVersion": "2025-03-26",
+   "serverInfo": {
+    "name": "Korea Tourism API",
+    "version": "1.9.4"
+   },
+   "capabilities": {
+    "experimental": {},
+    "prompts": {
+     "listChanged": false
+    },
+    "resources": {
+     "subscribe": false,
+     "listChanged": false
+    },
+    "tools": {
+     "listChanged": true
+    }
+   },
+   "spec_violations": []
+  },
+  "idle_alive": true,
+  "tools_list": {
+   "count": 8,
+   "pages": 1,
+   "spec_violations": [],
+   "elapsed_ms": 4.6
+  },
+  "ping": {
+   "outcome": "result",
+   "spec_violations": []
+  },
+  "unknown_method": {
+   "outcome": "error",
+   "error_code": -32602,
+   "alive_after": true
+  },
+  "unknown_tool": {
+   "outcome": "tool_error",
+   "elapsed_ms": 3.3,
+   "text_excerpt": "Unknown tool: kmcpqa_no_such_tool",
+   "auth_marker": null,
+   "error_marker": null,
+   "traceback": false,
+   "spec_violations": [],
+   "has_structured": false,
+   "alive_after": true
+  },
+  "tools": [
+   {
+    "name": "search_tourism_by_keyword",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "keyword"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 43.3,
+      "text_excerpt": "Error calling tool 'search_tourism_by_keyword': 1 validation error for call[search_tourism_by_keyword]\nkeyword\n  Missing required argument [type=missing_argument, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 37.4,
+      "text_excerpt": "Error calling tool 'search_tourism_by_keyword': 3 validation errors for call[search_tourism_by_keyword]\nkeyword\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\npage\n  Input should ",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "keyword": 12345,
+       "page": "not-a-number",
+       "rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 249.9,
+      "text_excerpt": "Error calling tool 'search_tourism_by_keyword': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchKeyword2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&keyword=%EC%84%9C%EC%9A%B8&arr",
+      "auth_marker": "403",
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "keyword": "서울"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_tourism_by_area",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "area_code"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 29.7,
+      "text_excerpt": "Error calling tool 'get_tourism_by_area': 1 validation error for call[get_tourism_by_area]\narea_code\n  Missing required argument [type=missing_argument, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 46.4,
+      "text_excerpt": "Error calling tool 'get_tourism_by_area': 3 validation errors for call[get_tourism_by_area]\narea_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\npage\n  Input should be a valid",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "area_code": 12345,
+       "page": "not-a-number",
+       "rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 141.2,
+      "text_excerpt": "Error calling tool 'get_tourism_by_area': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&arrange=Q&pageNo=1&numOfRows=20&area",
+      "auth_marker": "403",
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "area_code": "test"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "find_nearby_attractions",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "longitude",
+     "latitude"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 27.5,
+      "text_excerpt": "Error calling tool 'find_nearby_attractions': 2 validation errors for call[find_nearby_attractions]\nlongitude\n  Missing required argument [type=missing_argument, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nlatitude\n  Missing ",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 36.9,
+      "text_excerpt": "Error calling tool 'find_nearby_attractions': 5 validation errors for call[find_nearby_attractions]\nlongitude\n  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='not-a-number', input_type=str]\n    For further information visit https://errors.pydanti",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "longitude": "not-a-number",
+       "latitude": "not-a-number",
+       "radius": "not-a-number",
+       "page": "not-a-number",
+       "rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 132.4,
+      "text_excerpt": "Error calling tool 'find_nearby_attractions': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/locationBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrang",
+      "auth_marker": "403",
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "longitude": 1.0,
+       "latitude": 1.0
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "search_festivals_by_date",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "start_date"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 25.0,
+      "text_excerpt": "Error calling tool 'search_festivals_by_date': 1 validation error for call[search_festivals_by_date]\nstart_date\n  Missing required argument [type=missing_argument, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 32.0,
+      "text_excerpt": "Error calling tool 'search_festivals_by_date': 3 validation errors for call[search_festivals_by_date]\nstart_date\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\npage\n  Input should",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "start_date": 12345,
+       "page": "not-a-number",
+       "rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 152.4,
+      "text_excerpt": "Error calling tool 'search_festivals_by_date': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchFestival2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&eventStartDate=20250101&pageNo",
+      "auth_marker": "403",
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "start_date": "20250101"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "find_accommodations",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 31.1,
+      "text_excerpt": "Error calling tool 'find_accommodations': 2 validation errors for call[find_accommodations]\npage\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "page": "not-a-number",
+       "rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 138.0,
+      "text_excerpt": "Error calling tool 'find_accommodations': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchStay2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q)",
+      "auth_marker": "403",
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_detailed_information",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "content_id"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 25.8,
+      "text_excerpt": "Error calling tool 'get_detailed_information': 1 validation error for call[get_detailed_information]\ncontent_id\n  Missing required argument [type=missing_argument, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 43.1,
+      "text_excerpt": "Error calling tool 'get_detailed_information': 1 validation error for call[get_detailed_information]\ncontent_id\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "content_id": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 178.9,
+      "text_excerpt": "Error calling tool 'get_detailed_information': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailCommon2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&pageNo=1&numOfRow",
+      "auth_marker": "403",
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "content_id": "test"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_tourism_images",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "content_id"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 28.1,
+      "text_excerpt": "Error calling tool 'get_tourism_images': 1 validation error for call[get_tourism_images]\ncontent_id\n  Missing required argument [type=missing_argument, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 112.4,
+      "text_excerpt": "Error calling tool 'get_tourism_images': 3 validation errors for call[get_tourism_images]\ncontent_id\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\npage\n  Input should be a valid ",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "content_id": 12345,
+       "page": "not-a-number",
+       "rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 186.3,
+      "text_excerpt": "Error calling tool 'get_tourism_images': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailImage2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&numOfRows=20&pageNo=1)",
+      "auth_marker": "403",
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "content_id": "test"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_area_codes",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 28.3,
+      "text_excerpt": "Error calling tool 'get_area_codes': 2 validation errors for call[get_area_codes]\npage\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/int_parsi",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "page": "not-a-number",
+       "rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 224.9,
+      "text_excerpt": "Error calling tool 'get_area_codes': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaCode2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&numOfRows=100&pageNo=1)",
+      "auth_marker": "403",
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   }
+  ],
+  "stdout_noise": {
+   "count": 0,
+   "sample": []
+  },
+  "server_initiated_messages": 0
+ },
+ "finished_at": "2026-10-03T07:13:11+00:00",
+ "external": {
+  "conformance_version": "0.1.16",
+  "conformance": {
+   "server-initialize": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "server-initialize",
+      "status": "SUCCESS",
+      "description": "Server responds to initialize request with valid structure",
+      "errorMessage": null
+     }
+    ]
+   },
+   "ping": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "ping",
+      "status": "SUCCESS",
+      "description": "Server responds to ping requests",
+      "errorMessage": null
+     }
+    ]
+   },
+   "tools-list": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "tools-list",
+      "status": "SUCCESS",
+      "description": "Server lists available tools with valid structure",
+      "errorMessage": null
+     }
+    ]
+   }
+  },
+  "mcp_audit_sha": "b14487ff9af2ea539fa946755949173459c2cbb9",
+  "mcp_audit": {
+   "returncode": 1,
+   "report": {
+    "tool": "mcp-audit",
+    "version": "0.5.0",
+    "server_command": [
+     "/usr/bin/env",
+     "-i",
+     "PATH=/opt/homebrew/bin:/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+     "HOME=/tmp/kmcp-work/mcp-korea-tourism-api/home",
+     "TMPDIR=/tmp/kmcp-work/mcp-korea-tourism-api/tmp",
+     "LANG=en_US.UTF-8",
+     "LC_ALL=en_US.UTF-8",
+     "npm_config_cache=/tmp/kmcp-work/mcp-korea-tourism-api/cache/npm",
+     "npm_config_update_notifier=false",
+     "UV_CACHE_DIR=/tmp/kmcp-work/mcp-korea-tourism-api/cache/uv",
+     "UV_PYTHON_INSTALL_DIR=~/.local/share/uv/python",
+     "UV_PYTHON_DOWNLOADS=never",
+     "PYTHONUNBUFFERED=1",
+     "NO_COLOR=1",
+     "KOREA_TOURISM_API_KEY=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+     ".venv/bin/python",
+     "-m",
+     "mcp_tourism.server"
+    ],
+    "timestamp": "2026-10-03T07:15:04+00:00",
+    "summary": {
+     "total": 24,
+     "status": {
+      "pass": 10,
+      "fail": 1,
+      "skip": 13
+     },
+     "failed_by_severity": {
+      "error": 1,
+      "warning": 0
+     }
+    },
+    "exit_code": 1,
+    "strict": false,
+    "error": null,
+    "results": [
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "search_tourism_by_keyword",
+      "details": {
+       "baseline_error": "Error calling tool 'search_tourism_by_keyword': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchKeyword2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&keyword=mcp-audit-probe&arrange=Q&pageNo=1&numOfRows=20)"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_tourism_by_area",
+      "details": {
+       "baseline_error": "Error calling tool 'get_tourism_by_area': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&arrange=Q&pageNo=1&numOfRows=20&areaCode=mcp-audit-probe)"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "find_nearby_attractions",
+      "details": {
+       "baseline_error": "Error calling tool 'find_nearby_attractions': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/locationBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q&mapX=1.0&mapY=1.0&radius=1000)"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "search_festivals_by_date",
+      "details": {
+       "baseline_error": "Error calling tool 'search_festivals_by_date': event_start_date must be in YYYYMMDD format"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "find_accommodations",
+      "details": {
+       "baseline_error": "Error calling tool 'find_accommodations': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchStay2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q)"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_detailed_information",
+      "details": {
+       "baseline_error": "Error calling tool 'get_detailed_information': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailCommon2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=mcp-audit-probe&pageNo=1&numOfRows=20)"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_tourism_images",
+      "details": {
+       "baseline_error": "Error calling tool 'get_tourism_images': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailImage2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=mcp-audit-probe&numOfRows=20&pageNo=1)"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_area_codes",
+      "details": {
+       "baseline_error": "Error calling tool 'get_area_codes': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaCode2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&numOfRows=100&pageNo=1)"
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_tourism_by_keyword",
+      "details": {
+       "baseline_error": "Error calling tool 'search_tourism_by_keyword': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchKeyword2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&keyword=mcp-audit-probe&arrange=Q&pageNo=1&numOfRows=20)"
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_tourism_by_area",
+      "details": {
+       "baseline_error": "Error calling tool 'get_tourism_by_area': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&arrange=Q&pageNo=1&numOfRows=20&areaCode=mcp-audit-probe)"
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "fail",
+      "message": "runtime validation requires ['radius'] but inputSchema.required omits them (advertised required: ['longitude', 'latitude']) — schema/runtime mismatch",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "find_nearby_attractions",
+      "details": {
+       "baseline_error": "Error calling tool 'find_nearby_attractions': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/locationBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q&mapX=1.0&mapY=1.0&radius=1000)"
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_festivals_by_date",
+      "details": {
+       "baseline_error": "Error calling tool 'search_festivals_by_date': event_start_date must be in YYYYMMDD format"
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "find_accommodations",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_detailed_information",
+      "details": {
+       "baseline_error": "Error calling tool 'get_detailed_information': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailCommon2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=mcp-audit-probe&pageNo=1&numOfRows=20)"
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_tourism_images",
+      "details": {
+       "baseline_error": "Error calling tool 'get_tourism_images': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailImage2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=mcp-audit-probe&numOfRows=20&pageNo=1)"
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_area_codes",
+      "details": {}
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_tourism_by_keyword",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_tourism_by_area",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "find_nearby_attractions",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_festivals_by_date",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "find_accommodations",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_detailed_information",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_tourism_images",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_area_codes",
+      "details": {
+       "problems": []
+      }
+     }
+    ]
+   }
+  }
+ }
+}

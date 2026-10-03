@@ -1,0 +1,511 @@
+{
+  "tool": "mcp-audit",
+  "version": "0.5.0",
+  "server_command": [
+    "/usr/bin/env",
+    "-i",
+    "PATH=/opt/homebrew/bin:/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    "HOME=/tmp/kmcp-work/korea-stats-mcp/home",
+    "TMPDIR=/tmp/kmcp-work/korea-stats-mcp/tmp",
+    "LANG=en_US.UTF-8",
+    "LC_ALL=en_US.UTF-8",
+    "npm_config_cache=/tmp/kmcp-work/korea-stats-mcp/cache/npm",
+    "npm_config_update_notifier=false",
+    "UV_CACHE_DIR=/tmp/kmcp-work/korea-stats-mcp/cache/uv",
+    "UV_PYTHON_INSTALL_DIR=~/.local/share/uv/python",
+    "UV_PYTHON_DOWNLOADS=never",
+    "PYTHONUNBUFFERED=1",
+    "NO_COLOR=1",
+    "KOSIS_API_KEY=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+    "node",
+    "dist/index.js"
+  ],
+  "timestamp": "2026-10-03T07:15:08+00:00",
+  "summary": {
+    "total": 42,
+    "status": {
+      "pass": 35,
+      "fail": 0,
+      "skip": 7
+    },
+    "failed_by_severity": {
+      "error": 0,
+      "warning": 0
+    }
+  },
+  "exit_code": 0,
+  "strict": false,
+  "error": null,
+  "results": [
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "search_statistics: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "search_statistics",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_statistics_list",
+      "details": {
+        "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool get_statistics_list: Invalid enum value. Expected 'MT_ZTITLE' | 'MT_OTITLE' | 'MT_GTITLE01' | 'MT_GTITLE02' | 'MT_RTITLE' | 'MT_BUKHAN' | 'MT_TM1_TITLE' | 'MT_TM2_TITLE', received 'mcp-audit-probe' at viewCode"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_statistics_data: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_statistics_data",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "compare_statistics: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "compare_statistics",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "analyze_time_series: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "analyze_time_series",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_recommended_statistics: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_recommended_statistics",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "search_indicators",
+      "details": {
+        "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool search_indicators: filters must contain at least one filter at filters"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_indicator",
+      "details": {
+        "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool get_indicator: Required at indicatorId\nRequired at kind"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "search_businesses",
+      "details": {
+        "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool search_businesses: \uc9c0\uc5ed \ub610\ub294 \uc5c5\uc885 \uc870\ud68c \uc870\uac74\uc774 \ud544\uc694\ud569\ub2c8\ub2e4. at regionType"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "search_microdata: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "search_microdata",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_microdata_info",
+      "details": {
+        "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool get_microdata_info: survey_detail\uc5d0\ub294 survId\uc640 itmDiv\uac00 \ud544\uc694\ud569\ub2c8\ub2e4. at survId"
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_table_info: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_table_info",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "quick_stats: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "quick_stats",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "quick_trend: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "quick_trend",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_statistics",
+      "details": {
+        "probed_required_fields": [
+          "query"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_statistics_list",
+      "details": {
+        "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool get_statistics_list: Invalid enum value. Expected 'MT_ZTITLE' | 'MT_OTITLE' | 'MT_GTITLE01' | 'MT_GTITLE02' | 'MT_RTITLE' | 'MT_BUKHAN' | 'MT_TM1_TITLE' | 'MT_TM2_TITLE', received 'mcp-audit-probe' at viewCode"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 4 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_statistics_data",
+      "details": {
+        "probed_required_fields": [
+          "orgId",
+          "tableId",
+          "objL1",
+          "periodType"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 4 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "compare_statistics",
+      "details": {
+        "probed_required_fields": [
+          "orgId",
+          "tableId",
+          "compareType",
+          "periodType"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 4 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "analyze_time_series",
+      "details": {
+        "probed_required_fields": [
+          "orgId",
+          "tableId",
+          "objL1",
+          "periodType"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_recommended_statistics",
+      "details": {
+        "probed_required_fields": [
+          "topic"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_indicators",
+      "details": {
+        "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool search_indicators: filters must contain at least one filter at filters"
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_indicator",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_businesses",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_microdata",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_microdata_info",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_table_info",
+      "details": {
+        "probed_required_fields": [
+          "orgId",
+          "tableId"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "quick_stats",
+      "details": {
+        "probed_required_fields": [
+          "query"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "quick_trend",
+      "details": {
+        "probed_required_fields": [
+          "keyword"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_statistics",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_statistics_list",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_statistics_data",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "compare_statistics",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "analyze_time_series",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_recommended_statistics",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_indicators",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_indicator",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_businesses",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_microdata",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_microdata_info",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_table_info",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "quick_stats",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "quick_trend",
+      "details": {
+        "problems": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+mcp-audit results                                                               
+┏━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ check      ┃ sev   ┃ status ┃ tool                  ┃ message                ┃
+┡━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ HYGIENE001 │ error │ skip   │ check_book_availabil… │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema;      │
+│            │       │        │                       │ nothing to scan        │
+│ HYGIENE001 │ error │ skip   │ get_book_detail       │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema;      │
+│            │       │        │                       │ nothing to scan        │
+│ HYGIENE001 │ error │ skip   │ get_book_keywords     │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema;      │
+│            │       │        │                       │ nothing to scan        │
+│ HYGIENE001 │ error │ skip   │ get_book_usage_analy… │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema;      │
+│            │       │        │                       │ nothing to scan        │
+│ HYGIENE001 │ error │ pass   │ get_detailed_region_… │ get_detailed_region_c… │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ skip   │ get_detailed_subject… │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema;      │
+│            │       │        │                       │ nothing to scan        │
+│ HYGIENE001 │ error │ skip   │ get_hot_trend         │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema;      │
+│            │       │        │                       │ nothing to scan        │
+│ HYGIENE001 │ error │ pass   │ get_library_info      │ get_library_info:      │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ skip   │ get_mania_recommenda… │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ pass   │ get_monthly_keywords  │ get_monthly_keywords:  │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ skip   │ get_new_arrival_books │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema;      │
+│            │       │        │                       │ nothing to scan        │
+│ HYGIENE001 │ error │ skip   │ get_popular_books_by… │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema;      │
+│            │       │        │                       │ nothing to scan        │
+│ HYGIENE001 │ error │ skip   │ get_reader_recommend… │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ pass   │ get_reading_quantity  │ get_reading_quantity:  │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ pass   │ get_region_codes      │ get_region_codes:      │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ pass   │ get_subject_codes     │ get_subject_codes:     │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ skip   │ get_usage_trend       │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema;      │
+│            │       │        │                       │ nothing to scan        │
+│ HYGIENE001 │ error │ pass   │ search_books          │ search_books: baseline │
+│            │       │        │                       │ response free of       │
+│            │       │        │                       │ absolute owner         │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ pass   │ search_detailed_kdc_… │ search_detailed_kdc_c… │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ pass   │ search_detailed_regi… │ search_detailed_regio… │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ skip   │ search_items          │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema;      │
+│            │       │        │                       │ nothing to scan        │
+│ HYGIENE001 │ error │ pass   │ search_libraries      │ search_libraries:      │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ skip   │ search_libraries_by_… │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema;      │
+│            │       │        │                       │ nothing to scan        │
+│ HYGIENE001 │ error │ pass   │ search_library_codes  │ search_library_codes:  │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ pass   │ search_nearby_librar… │ search_nearby_librari… │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ pass   │ search_popular_books  │ search_popular_books:  │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ HYGIENE001 │ error │ pass   │ search_popular_books… │ search_popular_books_… │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ RUNTIME001 │ error │ skip   │ check_book_availabil… │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema       │
+│            │       │        │                       │ (unsupported property  │
+│            │       │        │                       │ shapes); skipping      │
+│            │       │        │                       │ probes                 │
+│ RUNTIME001 │ error │ skip   │ get_book_detail       │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema       │
+│            │       │        │                       │ (unsupported property  │
+│            │       │        │                       │ shapes); skipping      │
+│            │       │        │                       │ probes                 │
+│ RUNTIME001 │ error │ skip   │ get_book_keywords     │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema       │
+│            │       │        │                       │ (unsupported property  │
+│            │       │        │                       │ shapes); skipping      │
+│            │       │        │                       │ probes                 │
+│ RUNTIME001 │ error │ skip   │ get_book_usage_analy… │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema       │
+│            │       │        │                       │ (unsupported property  │
+│            │       │        │                       │ shapes); skipping      │
+│            │       │        │                       │ probes                 │
+│ RUNTIME001 │ error │ pass   │ get_detailed_region_… │ all 1                  │
+│            │       │        │                       │ advertised-required    │
+│            │       │        │                       │ fields enforced at     │
+│            │       │        │                       │ runtime                │
+│ RUNTIME001 │ error │ skip   │ get_detailed_subject… │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema       │
+│            │       │        │                       │ (unsupported property  │
+│            │       │        │                       │ shapes); skipping      │
+│            │       │        │                       │ probes                 │
+│ RUNTIME001 │ error │ skip   │ get_hot_trend         │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema       │
+│            │       │        │                       │ (unsupported property  │
+│            │       │        │                       │ shapes); skipping      │
+│            │       │        │                       │ probes                 │
+│ RUNTIME001 │ error │ pass   │ get_library_info      │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ skip   │ get_mania_recommenda… │ baseline call with all │
+│            │       │        │                       │ required fields        │
+│            │       │        │                       │ failed; cannot         │
+│            │       │        │                       │ attribute failures to  │
+│            │       │        │                       │ individual omissions   │
+│ RUNTIME001 │ error │ pass   │ get_monthly_keywords  │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ skip   │ get_new_arrival_books │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema       │
+│            │       │        │                       │ (unsupported property  │
+│            │       │        │                       │ shapes); skipping      │
+│            │       │        │                       │ probes                 │
+│ RUNTIME001 │ error │ skip   │ get_popular_books_by… │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema       │
+│            │       │        │                       │ (unsupported property  │
+│            │       │        │                       │ shapes); skipping      │
+│            │       │        │                       │ probes                 │
+│ RUNTIME001 │ error │ skip   │ get_reader_recommend… │ baseline call with all │
+│            │       │        │                       │ required fields        │
+│            │       │        │                       │ failed; cannot         │
+│            │       │        │                       │ attribute failures to  │
+│            │       │        │                       │ individual omissions   │
+│ RUNTIME001 │ error │ pass   │ get_reading_quantity  │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ pass   │ get_region_codes      │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ pass   │ get_subject_codes     │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ skip   │ get_usage_trend       │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema       │
+│            │       │        │                       │ (unsupported property  │
+│            │       │        │                       │ shapes); skipping      │
+│            │       │        │                       │ probes                 │
+│ RUNTIME001 │ error │ pass   │ search_books          │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ pass   │ search_detailed_kdc_… │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ pass   │ search_detailed_regi… │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ skip   │ search_items          │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema       │
+│            │       │        │                       │ (unsupported property  │
+│            │       │        │                       │ shapes); skipping      │
+│            │       │        │                       │ probes                 │
+│ RUNTIME001 │ error │ pass   │ search_libraries      │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ skip   │ search_libraries_by_… │ cannot synthesize      │
+│            │       │        │                       │ baseline arguments     │
+│            │       │        │                       │ from inputSchema       │
+│            │       │        │                       │ (unsupported property  │
+│            │       │        │                       │ shapes); skipping      │
+│            │       │        │                       │ probes                 │
+│ RUNTIME001 │ error │ pass   │ search_library_codes  │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ pass   │ search_nearby_librar… │ all 2                  │
+│            │       │        │                       │ advertised-required    │
+│            │       │        │                       │ fields enforced at     │
+│            │       │        │                       │ runtime                │
+│ RUNTIME001 │ error │ pass   │ search_popular_books  │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ pass   │ search_popular_books… │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ SCHEMA001  │ error │ pass   │ check_book_availabil… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_book_detail       │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_book_keywords     │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_book_usage_analy… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_detailed_region_… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_detailed_subject… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_hot_trend         │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_library_info      │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_mania_recommenda… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_monthly_keywords  │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_new_arrival_books │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_popular_books_by… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_reader_recommend… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_reading_quantity  │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_region_codes      │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_subject_codes     │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_usage_trend       │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ search_books          │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ search_detailed_kdc_… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ search_detailed_regi… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ search_items          │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ search_libraries      │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ search_libraries_by_… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ search_library_codes  │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ search_nearby_librar… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ search_popular_books  │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ search_popular_books… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+└────────────┴───────┴────────┴───────────────────────┴────────────────────────┘
+81 checks · 55 pass · 0 fail (error:0, warning:0) · 26 skip
+report written to /tmp/kmcp-work/data4library-mcp/mcp-audit.json

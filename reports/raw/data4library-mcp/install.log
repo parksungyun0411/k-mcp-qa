@@ -1,0 +1,11 @@
+
+$ npm ci --ignore-scripts --no-audit --no-fund
+
+added 110 packages in 685ms
+[exit 0]
+
+$ npx --no-install tsc
+[exit 0]
+
+$ node scripts/copy-data.mjs
+[exit 0]

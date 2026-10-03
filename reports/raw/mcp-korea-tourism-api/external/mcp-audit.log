@@ -1,0 +1,86 @@
+mcp-audit results                                                               
+┏━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ check      ┃ sev   ┃ status ┃ tool                  ┃ message                ┃
+┡━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ HYGIENE001 │ error │ skip   │ find_accommodations   │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ skip   │ find_nearby_attracti… │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ skip   │ get_area_codes        │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ skip   │ get_detailed_informa… │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ skip   │ get_tourism_by_area   │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ skip   │ get_tourism_images    │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ skip   │ search_festivals_by_… │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ skip   │ search_tourism_by_ke… │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ RUNTIME001 │ error │ pass   │ find_accommodations   │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ fail   │ find_nearby_attracti… │ runtime validation     │
+│            │       │        │                       │ requires ['radius']    │
+│            │       │        │                       │ but                    │
+│            │       │        │                       │ inputSchema.required   │
+│            │       │        │                       │ omits them (advertised │
+│            │       │        │                       │ required:              │
+│            │       │        │                       │ ['longitude',          │
+│            │       │        │                       │ 'latit...              │
+│ RUNTIME001 │ error │ pass   │ get_area_codes        │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ skip   │ get_detailed_informa… │ baseline call with all │
+│            │       │        │                       │ required fields        │
+│            │       │        │                       │ failed; cannot         │
+│            │       │        │                       │ attribute failures to  │
+│            │       │        │                       │ individual omissions   │
+│ RUNTIME001 │ error │ skip   │ get_tourism_by_area   │ baseline call with all │
+│            │       │        │                       │ required fields        │
+│            │       │        │                       │ failed; cannot         │
+│            │       │        │                       │ attribute failures to  │
+│            │       │        │                       │ individual omissions   │
+│ RUNTIME001 │ error │ skip   │ get_tourism_images    │ baseline call with all │
+│            │       │        │                       │ required fields        │
+│            │       │        │                       │ failed; cannot         │
+│            │       │        │                       │ attribute failures to  │
+│            │       │        │                       │ individual omissions   │
+│ RUNTIME001 │ error │ skip   │ search_festivals_by_… │ baseline call with all │
+│            │       │        │                       │ required fields        │
+│            │       │        │                       │ failed; cannot         │
+│            │       │        │                       │ attribute failures to  │
+│            │       │        │                       │ individual omissions   │
+│ RUNTIME001 │ error │ skip   │ search_tourism_by_ke… │ baseline call with all │
+│            │       │        │                       │ required fields        │
+│            │       │        │                       │ failed; cannot         │
+│            │       │        │                       │ attribute failures to  │
+│            │       │        │                       │ individual omissions   │
+│ SCHEMA001  │ error │ pass   │ find_accommodations   │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ find_nearby_attracti… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_area_codes        │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_detailed_informa… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_tourism_by_area   │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_tourism_images    │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ search_festivals_by_… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ search_tourism_by_ke… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+└────────────┴───────┴────────┴───────────────────────┴────────────────────────┘
+24 checks · 10 pass · 1 fail (error:1, warning:0) · 13 skip
+report written to /tmp/kmcp-work/mcp-korea-tourism-api/mcp-audit.json

@@ -1,0 +1,92 @@
+mcp-audit results                                                               
+┏━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ check      ┃ sev   ┃ status ┃ tool              ┃ message                    ┃
+┡━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ HYGIENE001 │ error │ pass   │ discover_tools    │ discover_tools: baseline   │
+│            │       │        │                   │ response free of absolute  │
+│            │       │        │                   │ owner filesystem paths     │
+│ HYGIENE001 │ error │ skip   │ execute_tool      │ baseline call failed; no   │
+│            │       │        │                   │ response to scan for path  │
+│            │       │        │                   │ leakage                    │
+│ HYGIENE001 │ error │ skip   │ get_annexes       │ baseline call failed; no   │
+│            │       │        │                   │ response to scan for path  │
+│            │       │        │                   │ leakage                    │
+│ HYGIENE001 │ error │ skip   │ get_decision_text │ baseline call failed; no   │
+│            │       │        │                   │ response to scan for path  │
+│            │       │        │                   │ leakage                    │
+│ HYGIENE001 │ error │ skip   │ get_law_text      │ baseline call failed; no   │
+│            │       │        │                   │ response to scan for path  │
+│            │       │        │                   │ leakage                    │
+│ HYGIENE001 │ error │ skip   │ legal_analysis    │ baseline call failed; no   │
+│            │       │        │                   │ response to scan for path  │
+│            │       │        │                   │ leakage                    │
+│ HYGIENE001 │ error │ skip   │ legal_research    │ baseline call failed; no   │
+│            │       │        │                   │ response to scan for path  │
+│            │       │        │                   │ leakage                    │
+│ HYGIENE001 │ error │ skip   │ ordinance_radar   │ baseline call failed; no   │
+│            │       │        │                   │ response to scan for path  │
+│            │       │        │                   │ leakage                    │
+│ HYGIENE001 │ error │ pass   │ search_decisions  │ search_decisions: baseline │
+│            │       │        │                   │ response free of absolute  │
+│            │       │        │                   │ owner filesystem paths     │
+│ HYGIENE001 │ error │ skip   │ search_law        │ baseline call failed; no   │
+│            │       │        │                   │ response to scan for path  │
+│            │       │        │                   │ leakage                    │
+│ RUNTIME001 │ error │ pass   │ discover_tools    │ all 1 advertised-required  │
+│            │       │        │                   │ fields enforced at runtime │
+│ RUNTIME001 │ error │ skip   │ execute_tool      │ baseline call with all     │
+│            │       │        │                   │ required fields failed;    │
+│            │       │        │                   │ cannot attribute failures  │
+│            │       │        │                   │ to individual omissions    │
+│ RUNTIME001 │ error │ fail   │ get_annexes       │ runtime validation         │
+│            │       │        │                   │ requires ['query'] but     │
+│            │       │        │                   │ inputSchema.required omits │
+│            │       │        │                   │ them (advertised required: │
+│            │       │        │                   │ ['lawName']) — schema...   │
+│ RUNTIME001 │ error │ skip   │ get_decision_text │ baseline call with all     │
+│            │       │        │                   │ required fields failed;    │
+│            │       │        │                   │ cannot attribute failures  │
+│            │       │        │                   │ to individual omissions    │
+│ RUNTIME001 │ error │ pass   │ get_law_text      │ no required fields         │
+│            │       │        │                   │ advertised; nothing to     │
+│            │       │        │                   │ probe                      │
+│ RUNTIME001 │ error │ fail   │ legal_analysis    │ runtime validation         │
+│            │       │        │                   │ requires ['text'] but      │
+│            │       │        │                   │ inputSchema.required omits │
+│            │       │        │                   │ them (advertised required: │
+│            │       │        │                   │ ['mode']) — schema/run...  │
+│ RUNTIME001 │ error │ pass   │ legal_research    │ no required fields         │
+│            │       │        │                   │ advertised; nothing to     │
+│            │       │        │                   │ probe                      │
+│ RUNTIME001 │ error │ pass   │ ordinance_radar   │ no required fields         │
+│            │       │        │                   │ advertised; nothing to     │
+│            │       │        │                   │ probe                      │
+│ RUNTIME001 │ error │ pass   │ search_decisions  │ all 1 advertised-required  │
+│            │       │        │                   │ fields enforced at runtime │
+│ RUNTIME001 │ error │ skip   │ search_law        │ baseline call with all     │
+│            │       │        │                   │ required fields failed;    │
+│            │       │        │                   │ cannot attribute failures  │
+│            │       │        │                   │ to individual omissions    │
+│ SCHEMA001  │ error │ pass   │ discover_tools    │ inputSchema internally     │
+│            │       │        │                   │ consistent                 │
+│ SCHEMA001  │ error │ pass   │ execute_tool      │ inputSchema internally     │
+│            │       │        │                   │ consistent                 │
+│ SCHEMA001  │ error │ pass   │ get_annexes       │ inputSchema internally     │
+│            │       │        │                   │ consistent                 │
+│ SCHEMA001  │ error │ pass   │ get_decision_text │ inputSchema internally     │
+│            │       │        │                   │ consistent                 │
+│ SCHEMA001  │ error │ pass   │ get_law_text      │ inputSchema internally     │
+│            │       │        │                   │ consistent                 │
+│ SCHEMA001  │ error │ pass   │ legal_analysis    │ inputSchema internally     │
+│            │       │        │                   │ consistent                 │
+│ SCHEMA001  │ error │ pass   │ legal_research    │ inputSchema internally     │
+│            │       │        │                   │ consistent                 │
+│ SCHEMA001  │ error │ pass   │ ordinance_radar   │ inputSchema internally     │
+│            │       │        │                   │ consistent                 │
+│ SCHEMA001  │ error │ pass   │ search_decisions  │ inputSchema internally     │
+│            │       │        │                   │ consistent                 │
+│ SCHEMA001  │ error │ pass   │ search_law        │ inputSchema internally     │
+│            │       │        │                   │ consistent                 │
+└────────────┴───────┴────────┴───────────────────┴────────────────────────────┘
+30 checks · 17 pass · 2 fail (error:2, warning:0) · 11 skip
+report written to /tmp/kmcp-work/korean-law-mcp/mcp-audit.json

@@ -1,0 +1,7 @@
+Running client scenario 'ping' against server: http://127.0.0.1:52596/mcp
+Results saved to reports/raw/data-go-nts-business-verification-mcp1/external/conformance/ping/server-ping-2026-10-03T07-15-02-410Z
+Checks:
+[90m2026-10-03T07:15:02.452Z[0m [ping] [32mSUCCESS[0m Server responds to ping requests
+
+Test Results:
+Passed: 1/1, 0 failed, 0 warnings

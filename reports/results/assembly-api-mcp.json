@@ -1,0 +1,690 @@
+{
+ "id": "assembly-api-mcp",
+ "repo": "hollobit/assembly-api-mcp",
+ "sha_expected": "f74c6b452c59d87e2fa7265fd985b90e4057a8ef",
+ "started_at": "2026-10-03T07:10:07+00:00",
+ "protocol_version_requested": "2025-11-25",
+ "sandbox": true,
+ "command": [
+  "node",
+  "dist/index.js"
+ ],
+ "install_steps": [
+  [
+   "npm",
+   "ci",
+   "--ignore-scripts",
+   "--no-audit",
+   "--no-fund"
+  ],
+  [
+   "npx",
+   "--no-install",
+   "tsc"
+  ]
+ ],
+ "sha_tested": "f74c6b452c59d87e2fa7265fd985b90e4057a8ef",
+ "install": {
+  "ok": true,
+  "steps": [
+   {
+    "argv": [
+     "npm",
+     "ci",
+     "--ignore-scripts",
+     "--no-audit",
+     "--no-fund"
+    ],
+    "returncode": 0,
+    "seconds": 1.11,
+    "timed_out": false
+   },
+   {
+    "argv": [
+     "npx",
+     "--no-install",
+     "tsc"
+    ],
+    "returncode": 0,
+    "seconds": 1.0,
+    "timed_out": false
+   }
+  ]
+ },
+ "sdk": {
+  "@modelcontextprotocol/sdk": "1.29.0"
+ },
+ "start_without_key": {
+  "initialize": "closed",
+  "alive": false,
+  "returncode": 1,
+  "elapsed_ms": 128.7,
+  "stderr_tail": [
+   "[assembly-api-mcp] 설정 오류: 환경 변수 ASSEMBLY_API_KEY이(가) 설정되지 않았습니다.",
+   "설정 방법: https://open.assembly.go.kr → 회원가입 → 마이페이지 → OPEN API → 인증키 발급",
+   "자세한 내용은 .env.example 파일을 참조하세요."
+  ]
+ },
+ "probe": {
+  "restarts": 0,
+  "initialize": {
+   "outcome": "result",
+   "elapsed_ms": 154.3,
+   "protocolVersion": "2025-11-25",
+   "serverInfo": {
+    "name": "assembly-api-mcp",
+    "version": "0.7.0"
+   },
+   "capabilities": {
+    "tools": {
+     "listChanged": true
+    },
+    "resources": {
+     "listChanged": true
+    },
+    "prompts": {
+     "listChanged": true
+    }
+   },
+   "spec_violations": []
+  },
+  "idle_alive": true,
+  "tools_list": {
+   "count": 6,
+   "pages": 1,
+   "spec_violations": [],
+   "elapsed_ms": 3.9
+  },
+  "ping": {
+   "outcome": "result",
+   "spec_violations": []
+  },
+  "unknown_method": {
+   "outcome": "error",
+   "error_code": -32601,
+   "alive_after": true
+  },
+  "unknown_tool": {
+   "outcome": "tool_error",
+   "elapsed_ms": 2.2,
+   "text_excerpt": "MCP error -32602: Tool kmcpqa_no_such_tool not found",
+   "auth_marker": null,
+   "error_marker": "error",
+   "traceback": false,
+   "spec_violations": [],
+   "has_structured": false,
+   "alive_after": true
+  },
+  "tools": [
+   {
+    "name": "assembly_member",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.8,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool assembly_member: [\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"name\"\n    ],\n    \"message\": \"Invalid input: expected string, received number\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "name": 12345,
+       "party": 12345,
+       "district": 12345,
+       "committee": 12345,
+       "analyze": "not-a-boolean",
+       "lang": 12345,
+       "age": "not-a-number",
+       "page": "not-a-number",
+       "page_size": "not-a-number",
+       "scope": 12345,
+       "mode": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 169.3,
+      "text_excerpt": "{\"total\":0,\"items\":[],\"query\":{}}",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "assembly_bill",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.0,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool assembly_bill: [\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"bill_name\"\n    ],\n    \"message\": \"Invalid input: expected string, received number\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"inva",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "bill_name": 12345,
+       "bill_id": 12345,
+       "proposer": 12345,
+       "committee": 12345,
+       "status": 12345,
+       "bill_type": 12345,
+       "keywords": 12345,
+       "mode": 12345,
+       "include_history": "not-a-boolean",
+       "lang": 12345,
+       "age": "not-a-number",
+       "page": "not-a-number",
+       "page_size": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 38.1,
+      "text_excerpt": "{\"total\":0,\"items\":[]}",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "assembly_session",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.6,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool assembly_session: [\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"schedule\",\n      \"meeting\",\n      \"vote\"\n    ],\n    \"path\": [\n      \"type\"\n    ],\n    \"message\": \"Invalid option: expected one of \\\"schedule\\\"|\\\"meeting\\\"|",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "type": 12345,
+       "date_from": 12345,
+       "date_to": 12345,
+       "meeting_type": 12345,
+       "conf_id": 12345,
+       "include_explanations": "not-a-boolean",
+       "keyword": 12345,
+       "committee": 12345,
+       "bill_id": 12345,
+       "vote_type": 12345,
+       "lang": 12345,
+       "age": "not-a-number",
+       "page": "not-a-number",
+       "page_size": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 31.0,
+      "text_excerpt": "{\"mode\":\"schedule\",\"total\":0,\"items\":[]}",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "assembly_org",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.5,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool assembly_org: [\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"committee\",\n      \"petition\",\n      \"legislation_notice\",\n      \"press\",\n      \"lawmaking\"\n    ],\n    \"path\": [\n      \"type\"\n    ],\n    \"message\": \"Invalid opt",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "type": 12345,
+       "category": 12345,
+       "committee_name": 12345,
+       "include_members": "not-a-boolean",
+       "petition_id": 12345,
+       "petition_status": 12345,
+       "bill_name": 12345,
+       "lang": 12345,
+       "age": "not-a-number",
+       "page": "not-a-number",
+       "page_size": "not-a-number",
+       "keyword": 12345,
+       "diff": 12345,
+       "ls_cls_cd": 12345,
+       "cpt_ofi_org_cd": 12345,
+       "st_dt_fmt": 12345,
+       "ed_dt_fmt": 12345,
+       "lm_pln_yy": 12345,
+       "pmt_cls_cd": 12345,
+       "search_knd": 12345,
+       "srch_txt": 12345,
+       "detail_seq": 12345,
+       "closing": 12345,
+       "prd_fr_day": 12345,
+       "prd_to_day": 12345,
+       "ls_cpt_org": 12345,
+       "sc_fm_dt": 12345,
+       "sc_to_dt": 12345,
+       "sc_text_type": 12345,
+       "sc_text": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 36.5,
+      "text_excerpt": "{\"type\":\"committee\",\"total\":0,\"items\":[]}",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "discover_apis",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.5,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool discover_apis: [\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"keyword\"\n    ],\n    \"message\": \"Invalid input: expected string, received number\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invali",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "keyword": 12345,
+       "category": 12345,
+       "page_size": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 36.6,
+      "text_excerpt": "{\"total\":0,\"matched\":0,\"returned\":0,\"items\":[]}",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "query_assembly",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "api_code"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.3,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool query_assembly: [\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"api_code\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  }\n]",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.6,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool query_assembly: [\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"api_code\"\n    ],\n    \"message\": \"Invalid input: expected string, received number\"\n  },\n  {\n    \"expected\": \"record\",\n    \"code\": \"inva",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "api_code": 12345,
+       "params": "not-an-object",
+       "page": "not-a-number",
+       "page_size": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 31.8,
+      "text_excerpt": "{\"api\":\"test\",\"total\":0,\"returned\":0,\"fields\":[],\"items\":[]}",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "api_code": "test"
+      },
+      "alive_after": true
+     }
+    }
+   }
+  ],
+  "stdout_noise": {
+   "count": 0,
+   "sample": []
+  },
+  "server_initiated_messages": 0
+ },
+ "finished_at": "2026-10-03T07:10:20+00:00",
+ "external": {
+  "conformance_version": "0.1.16",
+  "conformance": {
+   "server-initialize": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "server-initialize",
+      "status": "SUCCESS",
+      "description": "Server responds to initialize request with valid structure",
+      "errorMessage": null
+     }
+    ]
+   },
+   "ping": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "ping",
+      "status": "SUCCESS",
+      "description": "Server responds to ping requests",
+      "errorMessage": null
+     }
+    ]
+   },
+   "tools-list": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "tools-list",
+      "status": "SUCCESS",
+      "description": "Server lists available tools with valid structure",
+      "errorMessage": null
+     }
+    ]
+   }
+  },
+  "mcp_audit_sha": "b14487ff9af2ea539fa946755949173459c2cbb9",
+  "mcp_audit": {
+   "returncode": 0,
+   "report": {
+    "tool": "mcp-audit",
+    "version": "0.5.0",
+    "server_command": [
+     "/usr/bin/env",
+     "-i",
+     "PATH=/opt/homebrew/bin:/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+     "HOME=/tmp/kmcp-work/assembly-api-mcp/home",
+     "TMPDIR=/tmp/kmcp-work/assembly-api-mcp/tmp",
+     "LANG=en_US.UTF-8",
+     "LC_ALL=en_US.UTF-8",
+     "npm_config_cache=/tmp/kmcp-work/assembly-api-mcp/cache/npm",
+     "npm_config_update_notifier=false",
+     "UV_CACHE_DIR=/tmp/kmcp-work/assembly-api-mcp/cache/uv",
+     "UV_PYTHON_INSTALL_DIR=~/.local/share/uv/python",
+     "UV_PYTHON_DOWNLOADS=never",
+     "PYTHONUNBUFFERED=1",
+     "NO_COLOR=1",
+     "ASSEMBLY_API_KEY=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+     "node",
+     "dist/index.js"
+    ],
+    "timestamp": "2026-10-03T07:14:36+00:00",
+    "summary": {
+     "total": 18,
+     "status": {
+      "pass": 18,
+      "fail": 0,
+      "skip": 0
+     },
+     "failed_by_severity": {
+      "error": 0,
+      "warning": 0
+     }
+    },
+    "exit_code": 0,
+    "strict": false,
+    "error": null,
+    "results": [
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "assembly_member: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "assembly_member",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "assembly_bill: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "assembly_bill",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "assembly_session: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "assembly_session",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "assembly_org: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "assembly_org",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "discover_apis: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "discover_apis",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "query_assembly: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "query_assembly",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_member",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_bill",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_session",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_org",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "discover_apis",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "query_assembly",
+      "details": {
+       "probed_required_fields": [
+        "api_code"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_member",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_bill",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_session",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "assembly_org",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "discover_apis",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "query_assembly",
+      "details": {
+       "problems": []
+      }
+     }
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,7 @@
+Running client scenario 'server-initialize' against server: http://127.0.0.1:52360/mcp
+Results saved to reports/raw/korean-law-mcp/external/conformance/server-initialize/server-server-initialize-2026-10-03T07-14-31-493Z
+Checks:
+[90m2026-10-03T07:14:31.521Z[0m [server-initialize] [32mSUCCESS[0m Server responds to initialize request with valid structure
+
+Test Results:
+Passed: 1/1, 0 failed, 0 warnings

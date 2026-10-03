@@ -1,0 +1,181 @@
+mcp-audit results                                                               
+┏━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ check      ┃ sev   ┃ status ┃ tool                   ┃ message               ┃
+┡━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ HYGIENE001 │ error │ pass   │ calculate_compound_gr… │ calculate_compound_g… │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ calculate_loan_payment │ calculate_loan_payme… │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ calculate_monthly_cas… │ calculate_monthly_ca… │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_apartment_rent     │ get_apartment_rent:   │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_apartment_trades   │ get_apartment_trades: │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_apt_subscription_… │ get_apt_subscription… │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_apt_subscription_… │ get_apt_subscription… │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_commercial_trade   │ get_commercial_trade: │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_current_year_month │ get_current_year_mon… │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_officetel_rent     │ get_officetel_rent:   │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_officetel_trades   │ get_officetel_trades: │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_region_code        │ get_region_code:      │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_single_house_rent  │ get_single_house_ren… │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_single_house_trad… │ get_single_house_tra… │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_villa_rent         │ get_villa_rent:       │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ HYGIENE001 │ error │ pass   │ get_villa_trades       │ get_villa_trades:     │
+│            │       │        │                        │ baseline response     │
+│            │       │        │                        │ free of absolute      │
+│            │       │        │                        │ owner filesystem      │
+│            │       │        │                        │ paths                 │
+│ RUNTIME001 │ error │ pass   │ calculate_compound_gr… │ all 4                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ calculate_loan_payment │ all 3                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ calculate_monthly_cas… │ all 3                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ get_apartment_rent     │ all 2                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ get_apartment_trades   │ all 2                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ get_apt_subscription_… │ no required fields    │
+│            │       │        │                        │ advertised; nothing   │
+│            │       │        │                        │ to probe              │
+│ RUNTIME001 │ error │ pass   │ get_apt_subscription_… │ all 1                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ get_commercial_trade   │ all 2                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ get_current_year_month │ no required fields    │
+│            │       │        │                        │ advertised; nothing   │
+│            │       │        │                        │ to probe              │
+│ RUNTIME001 │ error │ pass   │ get_officetel_rent     │ all 2                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ get_officetel_trades   │ all 2                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ get_region_code        │ all 1                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ get_single_house_rent  │ all 2                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ get_single_house_trad… │ all 2                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ get_villa_rent         │ all 2                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ RUNTIME001 │ error │ pass   │ get_villa_trades       │ all 2                 │
+│            │       │        │                        │ advertised-required   │
+│            │       │        │                        │ fields enforced at    │
+│            │       │        │                        │ runtime               │
+│ SCHEMA001  │ error │ pass   │ calculate_compound_gr… │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ calculate_loan_payment │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ calculate_monthly_cas… │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_apartment_rent     │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_apartment_trades   │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_apt_subscription_… │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_apt_subscription_… │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_commercial_trade   │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_current_year_month │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_officetel_rent     │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_officetel_trades   │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_region_code        │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_single_house_rent  │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_single_house_trad… │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_villa_rent         │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+│ SCHEMA001  │ error │ pass   │ get_villa_trades       │ inputSchema           │
+│            │       │        │                        │ internally consistent │
+└────────────┴───────┴────────┴────────────────────────┴───────────────────────┘
+48 checks · 48 pass · 0 fail (error:0, warning:0) · 0 skip
+report written to /tmp/kmcp-work/real-estate-mcp/mcp-audit.json

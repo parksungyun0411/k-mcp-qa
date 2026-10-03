@@ -1,0 +1,1691 @@
+{
+ "id": "real-estate-mcp",
+ "repo": "tae0y/real-estate-mcp",
+ "sha_expected": "1119eb1069d1b1bae15f7b38c6c0268fe07995c0",
+ "started_at": "2026-10-03T07:13:46+00:00",
+ "protocol_version_requested": "2025-11-25",
+ "sandbox": true,
+ "command": [
+  ".venv/bin/real-estate-mcp"
+ ],
+ "install_steps": [
+  [
+   "uv",
+   "sync",
+   "--frozen",
+   "--no-dev"
+  ]
+ ],
+ "sha_tested": "1119eb1069d1b1bae15f7b38c6c0268fe07995c0",
+ "install": {
+  "ok": true,
+  "steps": [
+   {
+    "argv": [
+     "uv",
+     "sync",
+     "--frozen",
+     "--no-dev"
+    ],
+    "returncode": 0,
+    "seconds": 0.63,
+    "timed_out": false
+   }
+  ]
+ },
+ "sdk": {
+  "mcp": "1.26.0"
+ },
+ "start_without_key": {
+  "initialize": "result",
+  "alive": true,
+  "returncode": null,
+  "elapsed_ms": 1215.2,
+  "stderr_tail": []
+ },
+ "probe": {
+  "restarts": 0,
+  "initialize": {
+   "outcome": "result",
+   "elapsed_ms": 199.4,
+   "protocolVersion": "2025-11-25",
+   "serverInfo": {
+    "name": "real-estate",
+    "version": "1.26.0"
+   },
+   "capabilities": {
+    "experimental": {},
+    "prompts": {
+     "listChanged": false
+    },
+    "resources": {
+     "subscribe": false,
+     "listChanged": false
+    },
+    "tools": {
+     "listChanged": false
+    }
+   },
+   "spec_violations": []
+  },
+  "idle_alive": true,
+  "tools_list": {
+   "count": 16,
+   "pages": 1,
+   "spec_violations": [],
+   "elapsed_ms": 9.6
+  },
+  "ping": {
+   "outcome": "result",
+   "spec_violations": []
+  },
+  "unknown_method": {
+   "outcome": "error",
+   "error_code": -32602,
+   "alive_after": true
+  },
+  "unknown_tool": {
+   "outcome": "tool_error",
+   "elapsed_ms": 2.6,
+   "text_excerpt": "Unknown tool: kmcpqa_no_such_tool",
+   "auth_marker": null,
+   "error_marker": null,
+   "traceback": false,
+   "spec_violations": [],
+   "has_structured": false,
+   "alive_after": true
+  },
+  "tools": [
+   {
+    "name": "calculate_loan_payment",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "principal_10k",
+     "annual_rate_pct",
+     "years"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 4.2,
+      "text_excerpt": "Error executing tool calculate_loan_payment: 3 validation errors for calculate_loan_paymentArguments\nprincipal_10k\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nannual_rate_pct\n  Field required [type=miss",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 3.9,
+      "text_excerpt": "Error executing tool calculate_loan_payment: 3 validation errors for calculate_loan_paymentArguments\nprincipal_10k\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]\n    For further information visit https://errors.p",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "principal_10k": "not-a-number",
+       "annual_rate_pct": "not-a-number",
+       "years": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 4.9,
+      "text_excerpt": "{\n  \"monthly_payment_10k\": 0.08,\n  \"total_payment_10k\": 1.01,\n  \"total_interest_10k\": 0.01,\n  \"principal_10k\": 1,\n  \"annual_rate_pct\": 1.0,\n  \"years\": 1\n}",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "principal_10k": 1,
+       "annual_rate_pct": 1.0,
+       "years": 1
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "calculate_compound_growth",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "initial_10k",
+     "monthly_contribution_10k",
+     "annual_rate_pct",
+     "years"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.0,
+      "text_excerpt": "Error executing tool calculate_compound_growth: 4 validation errors for calculate_compound_growthArguments\ninitial_10k\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nmonthly_contribution_10k\n  Field requir",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.0,
+      "text_excerpt": "Error executing tool calculate_compound_growth: 4 validation errors for calculate_compound_growthArguments\ninitial_10k\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]\n    For further information visit https://erro",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "initial_10k": "not-a-number",
+       "monthly_contribution_10k": "not-a-number",
+       "annual_rate_pct": "not-a-number",
+       "years": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 5.4,
+      "text_excerpt": "{\n  \"final_value_10k\": 13.07,\n  \"total_contributed_10k\": 13.0,\n  \"total_gain_10k\": 0.07,\n  \"initial_10k\": 1,\n  \"monthly_contribution_10k\": 1.0,\n  \"annual_rate_pct\": 1.0,\n  \"years\": 1\n}",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "initial_10k": 1,
+       "monthly_contribution_10k": 1.0,
+       "annual_rate_pct": 1.0,
+       "years": 1
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "calculate_monthly_cashflow",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "monthly_income_10k",
+     "monthly_loan_payment_10k",
+     "monthly_living_cost_10k"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 4.4,
+      "text_excerpt": "Error executing tool calculate_monthly_cashflow: 3 validation errors for calculate_monthly_cashflowArguments\nmonthly_income_10k\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nmonthly_loan_payment_10k\n  Fie",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.9,
+      "text_excerpt": "Error executing tool calculate_monthly_cashflow: 4 validation errors for calculate_monthly_cashflowArguments\nmonthly_income_10k\n  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='not-a-number', input_type=str]\n    For further information visit http",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "monthly_income_10k": "not-a-number",
+       "monthly_loan_payment_10k": "not-a-number",
+       "monthly_living_cost_10k": "not-a-number",
+       "other_monthly_costs_10k": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 5.8,
+      "text_excerpt": "{\n  \"monthly_cashflow_10k\": -1.0,\n  \"monthly_income_10k\": 1.0,\n  \"monthly_loan_payment_10k\": 1.0,\n  \"monthly_living_cost_10k\": 1.0,\n  \"other_monthly_costs_10k\": 0.0,\n  \"living_cost_auto_applied\": false\n}",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "monthly_income_10k": 1.0,
+       "monthly_loan_payment_10k": 1.0,
+       "monthly_living_cost_10k": 1.0
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "get_apartment_rent",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "region_code",
+     "year_month"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 3.0,
+      "text_excerpt": "Error executing tool get_apartment_rent: 2 validation errors for get_apartment_rentArguments\nregion_code\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nyear_month\n  Field required [type=missing, input_valu",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 4.5,
+      "text_excerpt": "Error executing tool get_apartment_rent: 3 validation errors for get_apartment_rentArguments\nregion_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type\nyear_month\n  Input should b",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "region_code": 12345,
+       "year_month": 12345,
+       "num_of_rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 126.7,
+      "text_excerpt": "{\n  \"error\": \"network_error\",\n  \"message\": \"HTTP error: 403\"\n}",
+      "auth_marker": "403",
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "region_code": "11110",
+       "year_month": "2024"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "get_officetel_rent",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "region_code",
+     "year_month"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.4,
+      "text_excerpt": "Error executing tool get_officetel_rent: 2 validation errors for get_officetel_rentArguments\nregion_code\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nyear_month\n  Field required [type=missing, input_valu",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 4.0,
+      "text_excerpt": "Error executing tool get_officetel_rent: 3 validation errors for get_officetel_rentArguments\nregion_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type\nyear_month\n  Input should b",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "region_code": 12345,
+       "year_month": 12345,
+       "num_of_rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 99.3,
+      "text_excerpt": "{\n  \"error\": \"network_error\",\n  \"message\": \"HTTP error: 403\"\n}",
+      "auth_marker": "403",
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "region_code": "11110",
+       "year_month": "2024"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "get_villa_rent",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "region_code",
+     "year_month"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 3.8,
+      "text_excerpt": "Error executing tool get_villa_rent: 2 validation errors for get_villa_rentArguments\nregion_code\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nyear_month\n  Field required [type=missing, input_value={}, in",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.2,
+      "text_excerpt": "Error executing tool get_villa_rent: 3 validation errors for get_villa_rentArguments\nregion_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type\nyear_month\n  Input should be a vali",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "region_code": 12345,
+       "year_month": 12345,
+       "num_of_rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 96.7,
+      "text_excerpt": "{\n  \"error\": \"network_error\",\n  \"message\": \"HTTP error: 403\"\n}",
+      "auth_marker": "403",
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "region_code": "11110",
+       "year_month": "2024"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "get_single_house_rent",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "region_code",
+     "year_month"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.7,
+      "text_excerpt": "Error executing tool get_single_house_rent: 2 validation errors for get_single_house_rentArguments\nregion_code\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nyear_month\n  Field required [type=missing, inpu",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 4.0,
+      "text_excerpt": "Error executing tool get_single_house_rent: 3 validation errors for get_single_house_rentArguments\nregion_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type\nyear_month\n  Input sh",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "region_code": 12345,
+       "year_month": 12345,
+       "num_of_rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 108.8,
+      "text_excerpt": "{\n  \"error\": \"network_error\",\n  \"message\": \"HTTP error: 403\"\n}",
+      "auth_marker": "403",
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "region_code": "11110",
+       "year_month": "2024"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "get_apt_subscription_info",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.4,
+      "text_excerpt": "Error executing tool get_apt_subscription_info: 3 validation errors for get_apt_subscription_infoArguments\npage\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]\n    For further information visit https://errors.pyda",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "page": "not-a-number",
+       "per_page": "not-a-number",
+       "return_type": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 76.4,
+      "text_excerpt": "{\n  \"error\": \"network_error\",\n  \"message\": \"HTTP error: 401\"\n}",
+      "auth_marker": "401",
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {},
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "get_apt_subscription_results",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "stat_kind"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 3.5,
+      "text_excerpt": "Error executing tool get_apt_subscription_results: 1 validation error for get_apt_subscription_resultsArguments\nstat_kind\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.7,
+      "text_excerpt": "Error executing tool get_apt_subscription_results: 4 validation errors for get_apt_subscription_resultsArguments\nstat_kind\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type\npage\n  In",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "stat_kind": 12345,
+       "page": "not-a-number",
+       "per_page": "not-a-number",
+       "return_type": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 1.6,
+      "text_excerpt": "{\n  \"error\": \"validation_error\",\n  \"message\": \"Invalid stat_kind. Expected one of: reqst_area, reqst_age, przwner_area, przwner_age, cmpetrt_area, aps_przwner\"\n}",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "stat_kind": "test"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "get_apartment_trades",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "region_code",
+     "year_month"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.6,
+      "text_excerpt": "Error executing tool get_apartment_trades: 2 validation errors for get_apartment_tradesArguments\nregion_code\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nyear_month\n  Field required [type=missing, input_",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 4.0,
+      "text_excerpt": "Error executing tool get_apartment_trades: 3 validation errors for get_apartment_tradesArguments\nregion_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type\nyear_month\n  Input shou",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "region_code": 12345,
+       "year_month": 12345,
+       "num_of_rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 83.6,
+      "text_excerpt": "{\n  \"error\": \"network_error\",\n  \"message\": \"HTTP error: 403\"\n}",
+      "auth_marker": "403",
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "region_code": "11110",
+       "year_month": "2024"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "get_officetel_trades",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "region_code",
+     "year_month"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.9,
+      "text_excerpt": "Error executing tool get_officetel_trades: 2 validation errors for get_officetel_tradesArguments\nregion_code\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nyear_month\n  Field required [type=missing, input_",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.2,
+      "text_excerpt": "Error executing tool get_officetel_trades: 3 validation errors for get_officetel_tradesArguments\nregion_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type\nyear_month\n  Input shou",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "region_code": 12345,
+       "year_month": 12345,
+       "num_of_rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 89.6,
+      "text_excerpt": "{\n  \"error\": \"network_error\",\n  \"message\": \"HTTP error: 403\"\n}",
+      "auth_marker": "403",
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "region_code": "11110",
+       "year_month": "2024"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "get_villa_trades",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "region_code",
+     "year_month"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 3.8,
+      "text_excerpt": "Error executing tool get_villa_trades: 2 validation errors for get_villa_tradesArguments\nregion_code\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nyear_month\n  Field required [type=missing, input_value={}",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 5.0,
+      "text_excerpt": "Error executing tool get_villa_trades: 3 validation errors for get_villa_tradesArguments\nregion_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type\nyear_month\n  Input should be a ",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "region_code": 12345,
+       "year_month": 12345,
+       "num_of_rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 108.1,
+      "text_excerpt": "{\n  \"error\": \"network_error\",\n  \"message\": \"HTTP error: 403\"\n}",
+      "auth_marker": "403",
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "region_code": "11110",
+       "year_month": "2024"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "get_single_house_trades",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "region_code",
+     "year_month"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.8,
+      "text_excerpt": "Error executing tool get_single_house_trades: 2 validation errors for get_single_house_tradesArguments\nregion_code\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nyear_month\n  Field required [type=missing, ",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.3,
+      "text_excerpt": "Error executing tool get_single_house_trades: 3 validation errors for get_single_house_tradesArguments\nregion_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type\nyear_month\n  Inpu",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "region_code": 12345,
+       "year_month": 12345,
+       "num_of_rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 97.9,
+      "text_excerpt": "{\n  \"error\": \"network_error\",\n  \"message\": \"HTTP error: 403\"\n}",
+      "auth_marker": "403",
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "region_code": "11110",
+       "year_month": "2024"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "get_commercial_trade",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "region_code",
+     "year_month"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.2,
+      "text_excerpt": "Error executing tool get_commercial_trade: 2 validation errors for get_commercial_tradeArguments\nregion_code\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing\nyear_month\n  Field required [type=missing, input_",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.3,
+      "text_excerpt": "Error executing tool get_commercial_trade: 3 validation errors for get_commercial_tradeArguments\nregion_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type\nyear_month\n  Input shou",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "region_code": 12345,
+       "year_month": 12345,
+       "num_of_rows": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 84.5,
+      "text_excerpt": "{\n  \"error\": \"network_error\",\n  \"message\": \"HTTP error: 403\"\n}",
+      "auth_marker": "403",
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "region_code": "11110",
+       "year_month": "2024"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "get_region_code",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [
+     "query"
+    ],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.3,
+      "text_excerpt": "Error executing tool get_region_code: 1 validation error for get_region_codeArguments\nquery\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.1,
+      "text_excerpt": "Error executing tool get_region_code: 1 validation error for get_region_codeArguments\nquery\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.12/v/string_type",
+      "auth_marker": null,
+      "error_marker": "Error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "query": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 31.5,
+      "text_excerpt": "{\n  \"region_code\": \"11000\",\n  \"full_name\": \"서울특별시\",\n  \"matches\": [\n    {\n      \"code\": \"1100000000\",\n      \"name\": \"서울특별시\"\n    },\n    {\n      \"code\": \"1111000000\",\n      \"name\": \"서울특별시 종로구\"\n    },\n    {\n      \"code\": \"1114000000\",\n      \"name\": \"서울특별시 중구\"\n    },\n    {\n      \"code\": \"1117000000\",\n   ",
+      "auth_marker": null,
+      "error_marker": "오류",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {
+       "query": "서울"
+      },
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   },
+   {
+    "name": "get_current_year_month",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": true,
+    "annotations": null,
+    "probes": {
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 3.8,
+      "text_excerpt": "{\n  \"year_month\": \"202610\"\n}",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": true,
+      "args": {},
+      "alive_after": true,
+      "output_mismatch": []
+     }
+    },
+    "output_schema_problems": []
+   }
+  ],
+  "stdout_noise": {
+   "count": 0,
+   "sample": []
+  },
+  "server_initiated_messages": 0
+ },
+ "finished_at": "2026-10-03T07:14:05+00:00",
+ "external": {
+  "conformance_version": "0.1.16",
+  "conformance": {
+   "server-initialize": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "server-initialize",
+      "status": "SUCCESS",
+      "description": "Server responds to initialize request with valid structure",
+      "errorMessage": null
+     }
+    ]
+   },
+   "ping": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "ping",
+      "status": "SUCCESS",
+      "description": "Server responds to ping requests",
+      "errorMessage": null
+     }
+    ]
+   },
+   "tools-list": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "tools-list",
+      "status": "SUCCESS",
+      "description": "Server lists available tools with valid structure",
+      "errorMessage": null
+     }
+    ]
+   }
+  },
+  "mcp_audit_sha": "b14487ff9af2ea539fa946755949173459c2cbb9",
+  "mcp_audit": {
+   "returncode": 0,
+   "report": {
+    "tool": "mcp-audit",
+    "version": "0.5.0",
+    "server_command": [
+     "/usr/bin/env",
+     "-i",
+     "PATH=/opt/homebrew/bin:/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+     "HOME=/tmp/kmcp-work/real-estate-mcp/home",
+     "TMPDIR=/tmp/kmcp-work/real-estate-mcp/tmp",
+     "LANG=en_US.UTF-8",
+     "LC_ALL=en_US.UTF-8",
+     "npm_config_cache=/tmp/kmcp-work/real-estate-mcp/cache/npm",
+     "npm_config_update_notifier=false",
+     "UV_CACHE_DIR=/tmp/kmcp-work/real-estate-mcp/cache/uv",
+     "UV_PYTHON_INSTALL_DIR=~/.local/share/uv/python",
+     "UV_PYTHON_DOWNLOADS=never",
+     "PYTHONUNBUFFERED=1",
+     "NO_COLOR=1",
+     "DATA_GO_KR_API_KEY=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+     ".venv/bin/real-estate-mcp"
+    ],
+    "timestamp": "2026-10-03T07:15:11+00:00",
+    "summary": {
+     "total": 48,
+     "status": {
+      "pass": 48,
+      "fail": 0,
+      "skip": 0
+     },
+     "failed_by_severity": {
+      "error": 0,
+      "warning": 0
+     }
+    },
+    "exit_code": 0,
+    "strict": false,
+    "error": null,
+    "results": [
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "calculate_loan_payment: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "calculate_loan_payment",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "calculate_compound_growth: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "calculate_compound_growth",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "calculate_monthly_cashflow: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "calculate_monthly_cashflow",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_apartment_rent: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_apartment_rent",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_officetel_rent: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_officetel_rent",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_villa_rent: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_villa_rent",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_single_house_rent: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_single_house_rent",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_apt_subscription_info: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_apt_subscription_info",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_apt_subscription_results: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_apt_subscription_results",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_apartment_trades: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_apartment_trades",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_officetel_trades: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_officetel_trades",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_villa_trades: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_villa_trades",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_single_house_trades: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_single_house_trades",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_commercial_trade: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_commercial_trade",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_region_code: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_region_code",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_current_year_month: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_current_year_month",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 3 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "calculate_loan_payment",
+      "details": {
+       "probed_required_fields": [
+        "principal_10k",
+        "annual_rate_pct",
+        "years"
+       ],
+       "inconclusive": [
+        {
+         "omitted": "principal_10k",
+         "error": "Error executing tool calculate_loan_payment: 1 validation error for calculate_loan_paymentArguments\nprincipal_10k\n  Field required [type=missing, input_value={'annual_rate_pct': 1, 'years': 1}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+         "note": "error names another required field 'annual_rate_pct'"
+        },
+        {
+         "omitted": "years",
+         "error": "Error executing tool calculate_loan_payment: 1 validation error for calculate_loan_paymentArguments\nyears\n  Field required [type=missing, input_value={'principal_10k': 1, 'annual_rate_pct': 1}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+         "note": "error names another required field 'annual_rate_pct'"
+        }
+       ]
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 4 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "calculate_compound_growth",
+      "details": {
+       "probed_required_fields": [
+        "initial_10k",
+        "monthly_contribution_10k",
+        "annual_rate_pct",
+        "years"
+       ],
+       "inconclusive": [
+        {
+         "omitted": "years",
+         "error": "Error executing tool calculate_compound_growth: 1 validation error for calculate_compound_growthArguments\nyears\n  Field required [type=missing, input_value={'initial_10k': 1, 'month...1, 'annual_rate_pct': 1}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+         "note": "error names another required field 'annual_rate_pct'"
+        }
+       ]
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 3 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "calculate_monthly_cashflow",
+      "details": {
+       "probed_required_fields": [
+        "monthly_income_10k",
+        "monthly_loan_payment_10k",
+        "monthly_living_cost_10k"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apartment_rent",
+      "details": {
+       "probed_required_fields": [
+        "region_code",
+        "year_month"
+       ],
+       "inconclusive": [
+        {
+         "omitted": "year_month",
+         "error": "Error executing tool get_apartment_rent: 1 validation error for get_apartment_rentArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+         "note": "error names another required field 'region_code'"
+        }
+       ]
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_officetel_rent",
+      "details": {
+       "probed_required_fields": [
+        "region_code",
+        "year_month"
+       ],
+       "inconclusive": [
+        {
+         "omitted": "year_month",
+         "error": "Error executing tool get_officetel_rent: 1 validation error for get_officetel_rentArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+         "note": "error names another required field 'region_code'"
+        }
+       ]
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_villa_rent",
+      "details": {
+       "probed_required_fields": [
+        "region_code",
+        "year_month"
+       ],
+       "inconclusive": [
+        {
+         "omitted": "year_month",
+         "error": "Error executing tool get_villa_rent: 1 validation error for get_villa_rentArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+         "note": "error names another required field 'region_code'"
+        }
+       ]
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_single_house_rent",
+      "details": {
+       "probed_required_fields": [
+        "region_code",
+        "year_month"
+       ],
+       "inconclusive": [
+        {
+         "omitted": "year_month",
+         "error": "Error executing tool get_single_house_rent: 1 validation error for get_single_house_rentArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+         "note": "error names another required field 'region_code'"
+        }
+       ]
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apt_subscription_info",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apt_subscription_results",
+      "details": {
+       "probed_required_fields": [
+        "stat_kind"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apartment_trades",
+      "details": {
+       "probed_required_fields": [
+        "region_code",
+        "year_month"
+       ],
+       "inconclusive": [
+        {
+         "omitted": "year_month",
+         "error": "Error executing tool get_apartment_trades: 1 validation error for get_apartment_tradesArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+         "note": "error names another required field 'region_code'"
+        }
+       ]
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_officetel_trades",
+      "details": {
+       "probed_required_fields": [
+        "region_code",
+        "year_month"
+       ],
+       "inconclusive": [
+        {
+         "omitted": "year_month",
+         "error": "Error executing tool get_officetel_trades: 1 validation error for get_officetel_tradesArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+         "note": "error names another required field 'region_code'"
+        }
+       ]
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_villa_trades",
+      "details": {
+       "probed_required_fields": [
+        "region_code",
+        "year_month"
+       ],
+       "inconclusive": [
+        {
+         "omitted": "year_month",
+         "error": "Error executing tool get_villa_trades: 1 validation error for get_villa_tradesArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+         "note": "error names another required field 'region_code'"
+        }
+       ]
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_single_house_trades",
+      "details": {
+       "probed_required_fields": [
+        "region_code",
+        "year_month"
+       ],
+       "inconclusive": [
+        {
+         "omitted": "year_month",
+         "error": "Error executing tool get_single_house_trades: 1 validation error for get_single_house_tradesArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+         "note": "error names another required field 'region_code'"
+        }
+       ]
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_commercial_trade",
+      "details": {
+       "probed_required_fields": [
+        "region_code",
+        "year_month"
+       ],
+       "inconclusive": [
+        {
+         "omitted": "year_month",
+         "error": "Error executing tool get_commercial_trade: 1 validation error for get_commercial_tradeArguments\nyear_month\n  Field required [type=missing, input_value={'region_code': 'mcp-audit-probe'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.12/v/missing",
+         "note": "error names another required field 'region_code'"
+        }
+       ]
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_region_code",
+      "details": {
+       "probed_required_fields": [
+        "query"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_current_year_month",
+      "details": {}
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "calculate_loan_payment",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "calculate_compound_growth",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "calculate_monthly_cashflow",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apartment_rent",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_officetel_rent",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_villa_rent",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_single_house_rent",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apt_subscription_info",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apt_subscription_results",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_apartment_trades",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_officetel_trades",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_villa_trades",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_single_house_trades",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_commercial_trade",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_region_code",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_current_year_month",
+      "details": {
+       "problems": []
+      }
+     }
+    ]
+   }
+  }
+ }
+}

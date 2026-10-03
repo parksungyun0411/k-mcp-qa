@@ -1,0 +1,8 @@
+[corp-code] 덤프 다운로드 중... (수 초 소요)
+[korean-dart-mcp] v0.9.2 stdio 서버 시작
+[korean-dart-mcp] corp_code 초기화 실패: Error: DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version="1.0" encoding="UTF-8" standalone="yes"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>
+    at DartClient.getZip (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/dart-client.js:49:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async CorpCodeResolver.doInit (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/corp-code.js:55:24)
+    at async file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/server/mcp-server.js:33:9
+    at async wrappedHandler (file:///private/tmp/kmcp-work/korean-dart-mcp/src/node_modules/@modelcontextprotocol/sdk/dist/esm/server/index.js:125:32)

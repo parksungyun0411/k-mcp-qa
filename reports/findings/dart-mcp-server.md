@@ -1,0 +1,211 @@
+# dart-mcp-server
+
+- 저장소: https://github.com/snaiws/DART-mcp-server @ `7fdc7c472c99aef1a0536e43ee4c7963bf4bf4bb`
+- 실행 시각: 2026-10-03T07:10:54+00:00 (UTC), 샌드박스: True
+- 설치: uv sync --frozen --no-dev
+- 실행 명령: `.venv/bin/python run_server.py`, MCP SDK: mcp 1.6.0
+- 원본 로그: `reports/raw/dart-mcp-server/`
+
+## P3 · 알 수 없는 메서드에 -32601 오류로 답하지 않음 (1건)
+
+- 툴 `-` · 입력 `-`
+  - 응답: 'method=kmcpqa/unknown_method outcome=timeout code=None'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server kmcpqa/unknown_method '{}'`
+
+## P6 · 요청 하나를 처리한 뒤 서버 프로세스가 종료됨 (1건)
+
+- 툴 `kmcpqa_no_such_tool` · 입력 `{}`
+  - 응답: 'process exited'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "kmcpqa_no_such_tool", "arguments": {}}'`
+
+## E1 · 기관 API·실행 오류를 isError 없는 결과로 돌려줌 (자리 표시자 키 호출) (87건)
+
+- 툴 `xmlparser_step1_structure` · 입력 `{"path_xml": "test", "max_depth": 1}`
+  - 응답: 'marker=\'error\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_se'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_step1_structure", "arguments": {"path_xml": "test", "max_depth": 1}}'`
+- 툴 `xmlparser_step2_contents` · 입력 `{"path_xml": "test", "title_tags": ["서울"], "section_tags": ["test"]}`
+  - 응답: 'marker=\'error\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_se'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_step2_contents", "arguments": {"path_xml": "test", "title_tags": ["서울"], "section_tags": ["test"]}}'`
+- 툴 `xmlparser_step3_query` · 입력 `{"path_xml": "test", "selector": "20250131", "limit": 1}`
+  - 응답: 'marker=\'error\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_se'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_step3_query", "arguments": {"path_xml": "test", "selector": "20250131", "limit": 1}}'`
+- 툴 `xmlparser_get_table_csv` · 입력 `{"path_xml": "test", "table_index": 1}`
+  - 응답: 'marker=\'error\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_se'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_get_table_csv", "arguments": {"path_xml": "test", "table_index": 1}}'`
+- 툴 `get_disclosurelist` · 입력 `{"corp_code": "00126380", "bgn_de": "20250101", "end_de": "20250131"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_disclosurelist", "arguments": {"corp_code": "00126380", "bgn_de": "20250101", "end_de": "20250131"}}'`
+- 툴 `get_corpinfo` · 입력 `{"corp_code": "00126380"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_corpinfo", "arguments": {"corp_code": "00126380"}}'`
+- 툴 `get_disclosure` · 입력 `{"corp_code": "00126380", "rcept_no": "20240312000736"}`
+  - 응답: 'marker=\'error\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_se'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_disclosure", "arguments": {"corp_code": "00126380", "rcept_no": "20240312000736"}}'`
+- 툴 `update_corplist` · 입력 `{}`
+  - 응답: 'marker=\'error\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_se'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "update_corplist", "arguments": {}}'`
+- 툴 `get_capitalstatus` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_capitalstatus", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_dividend_info` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_dividend_info", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_treasury_stock` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_treasury_stock", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_major_shareholders` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_major_shareholders", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_major_shareholders_changes` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_major_shareholders_changes", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_minority_shareholders` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_minority_shareholders", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_executives` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_executives", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_employees` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_employees", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_individual_compensation_over_500m` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_individual_compensation_over_500m", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_board_total_compensation` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_board_total_compensation", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_top5_compensation_over_500m` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_top5_compensation_over_500m", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_investment_in_other_corp` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'marker=\'등록되지 않은\': [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_investment_in_other_corp", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 외 67건은 `reports/results/dart-mcp-server.json` 참고
+
+## E3 · 입력 검증 오류를 isError 없는 결과로 돌려줌 (176건)
+
+- 툴 `get_corpcode` · 입력 `{}`
+  - 응답: 'missing_required → isError 없음: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_corpcode\ncorp_name\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_corpcode", "arguments": {}}'`
+- 툴 `get_corpcode` · 입력 `{"corp_name": 12345}`
+  - 응답: 'wrong_type → isError 없음: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_corpcode\ncorp_name\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_corpcode", "arguments": {"corp_name": 12345}}'`
+- 툴 `get_corp_candidates` · 입력 `{}`
+  - 응답: 'missing_required → isError 없음: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_get_corp_candidates\ncorp_name\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nn\n  Field required [type='
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_corp_candidates", "arguments": {}}'`
+- 툴 `get_corp_candidates` · 입력 `{"corp_name": 12345, "n": "not-a-number"}`
+  - 응답: 'wrong_type → isError 없음: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_get_corp_candidates\ncorp_name\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\nn\n  I'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_corp_candidates", "arguments": {"corp_name": 12345, "n": "not-a-number"}}'`
+- 툴 `xmlparser_step1_structure` · 입력 `{}`
+  - 응답: 'missing_required → isError 없음: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_xmlparser_step1_structure\npath_xml\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nmax_depth\n  Field re'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_step1_structure", "arguments": {}}'`
+- 툴 `xmlparser_step1_structure` · 입력 `{"path_xml": 12345, "max_depth": "not-a-number"}`
+  - 응답: 'wrong_type → isError 없음: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_xmlparser_step1_structure\npath_xml\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\n'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_step1_structure", "arguments": {"path_xml": 12345, "max_depth": "not-a-number"}}'`
+- 툴 `xmlparser_step2_contents` · 입력 `{}`
+  - 응답: 'missing_required → isError 없음: ERROR: You provided invalid Tool inputs: 3 validation errors for Schema_xmlparser_step2_contents\npath_xml\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntitle_tags\n  Field re'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_step2_contents", "arguments": {}}'`
+- 툴 `xmlparser_step2_contents` · 입력 `{"path_xml": 12345, "title_tags": "not-an-array", "section_tags": "not-an-array"}`
+  - 응답: 'wrong_type → isError 없음: ERROR: You provided invalid Tool inputs: 3 validation errors for Schema_xmlparser_step2_contents\npath_xml\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\nt'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_step2_contents", "arguments": {"path_xml": 12345, "title_tags": "not-an-array", "section_tags": "not-an-array"}}'`
+- 툴 `xmlparser_step3_query` · 입력 `{}`
+  - 응답: 'missing_required → isError 없음: ERROR: You provided invalid Tool inputs: 3 validation errors for Schema_xmlparser_step3_query\npath_xml\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nselector\n  Field require'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_step3_query", "arguments": {}}'`
+- 툴 `xmlparser_step3_query` · 입력 `{"path_xml": 12345, "selector": 12345, "limit": "not-a-number"}`
+  - 응답: 'wrong_type → isError 없음: ERROR: You provided invalid Tool inputs: 3 validation errors for Schema_xmlparser_step3_query\npath_xml\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\nsele'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_step3_query", "arguments": {"path_xml": 12345, "selector": 12345, "limit": "not-a-number"}}'`
+- 툴 `xmlparser_get_table_csv` · 입력 `{}`
+  - 응답: 'missing_required → isError 없음: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_xmlparser_get_table_csv\npath_xml\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\ntable_index\n  Field re'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_get_table_csv", "arguments": {}}'`
+- 툴 `xmlparser_get_table_csv` · 입력 `{"path_xml": 12345, "table_index": "not-a-number"}`
+  - 응답: 'wrong_type → isError 없음: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_xmlparser_get_table_csv\npath_xml\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\nta'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_get_table_csv", "arguments": {"path_xml": 12345, "table_index": "not-a-number"}}'`
+- 툴 `get_disclosurelist` · 입력 `{}`
+  - 응답: 'missing_required → isError 없음: ERROR: You provided invalid Tool inputs: 3 validation errors for Schema_get_disclosurelist\ncorp_code\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nbgn_de\n  Field required [t'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_disclosurelist", "arguments": {}}'`
+- 툴 `get_disclosurelist` · 입력 `{"corp_code": 12345, "bgn_de": 12345, "end_de": 12345, "last_reprt_at": 12345, "pblntf_ty": 12345, "pblntf_detail_ty": 12345, "corp_cls": 12345, "sort": 12345, "sort_mth": 12345, "page_no": "not-a-number", "page_count": "not-a-number"}`
+  - 응답: 'wrong_type → isError 없음: ERROR: You provided invalid Tool inputs: 11 validation errors for Schema_get_disclosurelist\ncorp_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\nbgn_d'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_disclosurelist", "arguments": {"corp_code": 12345, "bgn_de": 12345, "end_de": 12345, "last_reprt_at": 12345, "pblntf_ty": 12345, "pblntf_detail_ty": 12345, "corp_cls": 12345, "sort": 12345, "sort_mth": 12345, "page_no": "not-a-number", "page_count": "not-a-number"}}'`
+- 툴 `get_corpinfo` · 입력 `{}`
+  - 응답: 'missing_required → isError 없음: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_corpinfo\ncorp_code\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_corpinfo", "arguments": {}}'`
+- 툴 `get_corpinfo` · 입력 `{"corp_code": 12345}`
+  - 응답: 'wrong_type → isError 없음: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_corpinfo\ncorp_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_corpinfo", "arguments": {"corp_code": 12345}}'`
+- 툴 `get_disclosure` · 입력 `{}`
+  - 응답: 'missing_required → isError 없음: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_get_disclosure\ncorp_code\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nrcept_no\n  Field required [typ'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_disclosure", "arguments": {}}'`
+- 툴 `get_disclosure` · 입력 `{"corp_code": 12345, "rcept_no": 12345}`
+  - 응답: 'wrong_type → isError 없음: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_get_disclosure\ncorp_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\nrcept_no\n '
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_disclosure", "arguments": {"corp_code": 12345, "rcept_no": 12345}}'`
+- 툴 `get_capitalstatus` · 입력 `{}`
+  - 응답: 'missing_required → isError 없음: ERROR: You provided invalid Tool inputs: 3 validation errors for Schema_get_capitalstatus\ncorp_code\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing\nbsns_year\n  Field required '
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_capitalstatus", "arguments": {}}'`
+- 툴 `get_capitalstatus` · 입력 `{"corp_code": 12345, "bsns_year": 12345, "reprt_code": 12345}`
+  - 응답: 'wrong_type → isError 없음: ERROR: You provided invalid Tool inputs: 3 validation errors for Schema_get_capitalstatus\ncorp_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\nbsns_ye'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_capitalstatus", "arguments": {"corp_code": 12345, "bsns_year": 12345, "reprt_code": 12345}}'`
+- 외 156건은 `reports/results/dart-mcp-server.json` 참고
+
+## H1 · 응답 본문에 Python traceback 과 서버 파일 경로가 담김 (87건)
+
+- 툴 `xmlparser_step1_structure` · 입력 `{"path_xml": "test", "max_depth": 1}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_step1_structure", "arguments": {"path_xml": "test", "max_depth": 1}}'`
+- 툴 `xmlparser_step2_contents` · 입력 `{"path_xml": "test", "title_tags": ["서울"], "section_tags": ["test"]}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_step2_contents", "arguments": {"path_xml": "test", "title_tags": ["서울"], "section_tags": ["test"]}}'`
+- 툴 `xmlparser_step3_query` · 입력 `{"path_xml": "test", "selector": "20250131", "limit": 1}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_step3_query", "arguments": {"path_xml": "test", "selector": "20250131", "limit": 1}}'`
+- 툴 `xmlparser_get_table_csv` · 입력 `{"path_xml": "test", "table_index": 1}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "xmlparser_get_table_csv", "arguments": {"path_xml": "test", "table_index": 1}}'`
+- 툴 `get_disclosurelist` · 입력 `{"corp_code": "00126380", "bgn_de": "20250101", "end_de": "20250131"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_disclosurelist", "arguments": {"corp_code": "00126380", "bgn_de": "20250101", "end_de": "20250131"}}'`
+- 툴 `get_corpinfo` · 입력 `{"corp_code": "00126380"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_corpinfo", "arguments": {"corp_code": "00126380"}}'`
+- 툴 `get_disclosure` · 입력 `{"corp_code": "00126380", "rcept_no": "20240312000736"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_disclosure", "arguments": {"corp_code": "00126380", "rcept_no": "20240312000736"}}'`
+- 툴 `update_corplist` · 입력 `{}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "update_corplist", "arguments": {}}'`
+- 툴 `get_capitalstatus` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_capitalstatus", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_dividend_info` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_dividend_info", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_treasury_stock` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_treasury_stock", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_major_shareholders` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_major_shareholders", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_major_shareholders_changes` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_major_shareholders_changes", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_minority_shareholders` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_minority_shareholders", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_executives` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_executives", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_employees` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_employees", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_individual_compensation_over_500m` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_individual_compensation_over_500m", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_board_total_compensation` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_board_total_compensation", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_top5_compensation_over_500m` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_top5_compensation_over_500m", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 툴 `get_investment_in_other_corp` · 입력 `{"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}`
+  - 응답: 'valid: [Execution result]\n---\nerror : Traceback (most recent call last):\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function\n    responses = await function(*args, **kwargs)\n  File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart'
+  - 재현: `python -m kmcpqa.repro dart-mcp-server tools/call '{"name": "get_investment_in_other_corp", "arguments": {"corp_code": "00126380", "bsns_year": "2024", "reprt_code": "test"}}'`
+- 외 67건은 `reports/results/dart-mcp-server.json` 참고

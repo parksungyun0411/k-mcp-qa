@@ -1,0 +1,102 @@
+{
+ "id": "data-go-nts-business-verification",
+ "repo": "Koomook/data-go-mcp-servers",
+ "sha_expected": "dd27f99490400b31fa14f96045a138fa217580a4",
+ "started_at": "2026-10-03T07:12:40+00:00",
+ "protocol_version_requested": "2025-11-25",
+ "sandbox": true,
+ "command": [
+  ".venv/bin/python",
+  "-m",
+  "data_go_mcp.nts_business_verification.server"
+ ],
+ "install_steps": [
+  [
+   "uv",
+   "venv",
+   "-q",
+   "-p",
+   "3.12",
+   ".venv"
+  ],
+  [
+   "uv",
+   "pip",
+   "install",
+   "-q",
+   "-p",
+   ".venv",
+   "-e",
+   "."
+  ]
+ ],
+ "sha_tested": "dd27f99490400b31fa14f96045a138fa217580a4",
+ "install": {
+  "ok": true,
+  "steps": [
+   {
+    "argv": [
+     "uv",
+     "venv",
+     "-q",
+     "-p",
+     "3.12",
+     ".venv"
+    ],
+    "returncode": 0,
+    "seconds": 0.07,
+    "timed_out": false
+   },
+   {
+    "argv": [
+     "uv",
+     "pip",
+     "install",
+     "-q",
+     "-p",
+     ".venv",
+     "-e",
+     "."
+    ],
+    "returncode": 0,
+    "seconds": 0.94,
+    "timed_out": false
+   }
+  ]
+ },
+ "sdk": {
+  "mcp": "2.3.0"
+ },
+ "start_without_key": {
+  "initialize": "closed",
+  "alive": false,
+  "returncode": 1,
+  "elapsed_ms": 1161.8,
+  "stderr_tail": [
+   "  File \"/private/tmp/kmcp-work/data-go-nts-business-verification/src/src/nts-business-verification/data_go_mcp/nts_business_verification/server.py\", line 6, in <module>",
+   "    from mcp.server.fastmcp import FastMCP",
+   "  File \"/private/tmp/kmcp-work/data-go-nts-business-verification/src/src/nts-business-verification/.venv/lib/python3.12/site-packages/mcp/server/fastmcp.py\", line 16, in <module>",
+   "    raise ModuleNotFoundError(_MESSAGE, name=__name__)",
+   "ModuleNotFoundError: No module named 'mcp.server.fastmcp'. This is mcp 2.x, where FastMCP was renamed to MCPServer (from mcp.server.mcpserver import MCPServer) and other APIs changed; see the migration guide at https://py.sdk.modelcontextprotocol.io/v2/migration/#fastmcp-renamed-to-mcpserver or pin 'mcp<2' to keep running v1 code."
+  ]
+ },
+ "probe": {
+  "restarts": 0,
+  "initialize": {
+   "outcome": "closed",
+   "elapsed_ms": 314.0,
+   "stderr_tail": [
+    "Traceback (most recent call last):",
+    "  File \"<frozen runpy>\", line 198, in _run_module_as_main",
+    "  File \"<frozen runpy>\", line 88, in _run_code",
+    "  File \"/private/tmp/kmcp-work/data-go-nts-business-verification/src/src/nts-business-verification/data_go_mcp/nts_business_verification/server.py\", line 6, in <module>",
+    "    from mcp.server.fastmcp import FastMCP",
+    "  File \"/private/tmp/kmcp-work/data-go-nts-business-verification/src/src/nts-business-verification/.venv/lib/python3.12/site-packages/mcp/server/fastmcp.py\", line 16, in <module>",
+    "    raise ModuleNotFoundError(_MESSAGE, name=__name__)",
+    "ModuleNotFoundError: No module named 'mcp.server.fastmcp'. This is mcp 2.x, where FastMCP was renamed to MCPServer (from mcp.server.mcpserver import MCPServer) and other APIs changed; see the migration guide at https://py.sdk.modelcontextprotocol.io/v2/migration/#fastmcp-renamed-to-mcpserver or pin 'mcp<2' to keep running v1 code."
+   ],
+   "returncode": 1
+  }
+ },
+ "finished_at": "2026-10-03T07:12:44+00:00"
+}

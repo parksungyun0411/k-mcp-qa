@@ -1,0 +1,3248 @@
+{
+  "tool": "mcp-audit",
+  "version": "0.5.0",
+  "server_command": [
+    "/usr/bin/env",
+    "-i",
+    "PATH=/opt/homebrew/bin:/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    "HOME=/tmp/kmcp-work/dart-mcp-server/home",
+    "TMPDIR=/tmp/kmcp-work/dart-mcp-server/tmp",
+    "LANG=en_US.UTF-8",
+    "LC_ALL=en_US.UTF-8",
+    "npm_config_cache=/tmp/kmcp-work/dart-mcp-server/cache/npm",
+    "npm_config_update_notifier=false",
+    "UV_CACHE_DIR=/tmp/kmcp-work/dart-mcp-server/cache/uv",
+    "UV_PYTHON_INSTALL_DIR=~/.local/share/uv/python",
+    "UV_PYTHON_DOWNLOADS=never",
+    "PYTHONUNBUFFERED=1",
+    "NO_COLOR=1",
+    "DART_API_KEY=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+    ".venv/bin/python",
+    "run_server.py"
+  ],
+  "timestamp": "2026-10-03T07:14:45+00:00",
+  "summary": {
+    "total": 267,
+    "status": {
+      "pass": 176,
+      "fail": 91,
+      "skip": 0
+    },
+    "failed_by_severity": {
+      "error": 3,
+      "warning": 88
+    }
+  },
+  "exit_code": 1,
+  "strict": false,
+  "error": null,
+  "results": [
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_corpcode: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_corpcode",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_corp_candidates: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_corp_candidates",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "xmlparser_step1_structure: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "xmlparser_step1_structure",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "xmlparser_step2_contents: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "xmlparser_step2_contents",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "xmlparser_step3_query: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "xmlparser_step3_query",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "xmlparser_get_table_csv: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "xmlparser_get_table_csv",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_disclosurelist: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_disclosurelist",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_corpinfo: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_corpinfo",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "fail",
+      "message": "get_disclosure: response leaks absolute owner filesystem path (posix_home_path; e.g. /Users/<redacted>/\u2026) \u2014 never ship machine-local paths to clients",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_disclosure",
+      "details": {
+        "pattern_classes": [
+          "posix_home_path"
+        ],
+        "masked_examples": [
+          "/Users/<redacted>/\u2026"
+        ]
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "fail",
+      "message": "update_corplist: response leaks absolute owner filesystem path (posix_home_path; e.g. /Users/<redacted>/\u2026) \u2014 never ship machine-local paths to clients",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "update_corplist",
+      "details": {
+        "pattern_classes": [
+          "posix_home_path"
+        ],
+        "masked_examples": [
+          "/Users/<redacted>/\u2026"
+        ]
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_capitalstatus: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_capitalstatus",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_dividend_info: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_dividend_info",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_treasury_stock: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_treasury_stock",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_major_shareholders: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_major_shareholders",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_major_shareholders_changes: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_major_shareholders_changes",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_minority_shareholders: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_minority_shareholders",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_executives: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_executives",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_employees: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_employees",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_individual_compensation_over_500m: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_individual_compensation_over_500m",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_board_total_compensation: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_board_total_compensation",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_top5_compensation_over_500m: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_top5_compensation_over_500m",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_investment_in_other_corp: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_investment_in_other_corp",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_total_shares: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_total_shares",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_debt_securities_issuance: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_debt_securities_issuance",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_commercial_paper_balance: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_commercial_paper_balance",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_short_term_bond_balance: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_short_term_bond_balance",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_corporate_bond_balance: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_corporate_bond_balance",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_hybrid_securities_balance: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_hybrid_securities_balance",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_contingent_convertible_balance: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_contingent_convertible_balance",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_auditor_opinion: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_auditor_opinion",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_audit_service_contract: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_audit_service_contract",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_non_audit_service_contract: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_non_audit_service_contract",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_outside_directors: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_outside_directors",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_unregistered_executives_compensation: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_unregistered_executives_compensation",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_board_approved_compensation: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_board_approved_compensation",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_board_compensation_by_type: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_board_compensation_by_type",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_public_fund_usage: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_public_fund_usage",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_private_fund_usage: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_private_fund_usage",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_single_company_accounts: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_single_company_accounts",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_multi_company_accounts: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_multi_company_accounts",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "fail",
+      "message": "get_xbrl_financial_statements: response leaks absolute owner filesystem path (posix_home_path; e.g. /Users/<redacted>/\u2026) \u2014 never ship machine-local paths to clients",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_xbrl_financial_statements",
+      "details": {
+        "pattern_classes": [
+          "posix_home_path"
+        ],
+        "masked_examples": [
+          "/Users/<redacted>/\u2026"
+        ]
+      }
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_complete_financial_statements: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_complete_financial_statements",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_xbrl_taxonomy_format: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_xbrl_taxonomy_format",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_single_company_key_indicators: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_single_company_key_indicators",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_multi_company_key_indicators: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_multi_company_key_indicators",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_major_holding_reports: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_major_holding_reports",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_executive_major_shareholders_reports: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_executive_major_shareholders_reports",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_asset_acquisition_disposal: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_asset_acquisition_disposal",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_default_occurrence: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_default_occurrence",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_business_suspension: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_business_suspension",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_rehabilitation_filing: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_rehabilitation_filing",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_dissolution_event: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_dissolution_event",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_paid_capital_increase: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_paid_capital_increase",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_free_capital_increase: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_free_capital_increase",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_mixed_capital_increase: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_mixed_capital_increase",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_capital_reduction: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_capital_reduction",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_creditor_management_start: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_creditor_management_start",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_litigation_filing: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_litigation_filing",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_overseas_listing_decision: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_overseas_listing_decision",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_overseas_delisting_decision: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_overseas_delisting_decision",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_overseas_listing: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_overseas_listing",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_overseas_delisting: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_overseas_delisting",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_convertible_bond_issuance: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_convertible_bond_issuance",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_bond_with_warrants_issuance: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_bond_with_warrants_issuance",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_exchangeable_bond_issuance: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_exchangeable_bond_issuance",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_creditor_management_suspension: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_creditor_management_suspension",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_contingent_capital_securities_issuance: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_contingent_capital_securities_issuance",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_treasury_stock_acquisition: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_treasury_stock_acquisition",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_treasury_stock_disposal: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_treasury_stock_disposal",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_treasury_stock_trust_contract: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_treasury_stock_trust_contract",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_treasury_stock_trust_termination: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_treasury_stock_trust_termination",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_business_transfer_acquisition: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_business_transfer_acquisition",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_business_transfer_disposal: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_business_transfer_disposal",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_tangible_asset_acquisition: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_tangible_asset_acquisition",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_tangible_asset_disposal: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_tangible_asset_disposal",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_equity_securities_acquisition: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_equity_securities_acquisition",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_equity_securities_disposal: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_equity_securities_disposal",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_stock_related_bond_acquisition: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_stock_related_bond_acquisition",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_stock_related_bond_disposal: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_stock_related_bond_disposal",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_merger_decision: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_merger_decision",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_split_decision: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_split_decision",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_split_merger_decision: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_split_merger_decision",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_stock_exchange_transfer_decision: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_stock_exchange_transfer_decision",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_equity_securities_registration: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_equity_securities_registration",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_debt_securities_registration: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_debt_securities_registration",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_depositary_receipts_registration: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_depositary_receipts_registration",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_merger_registration: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_merger_registration",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_comprehensive_stock_exchange_transfer_registration: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_comprehensive_stock_exchange_transfer_registration",
+      "details": {}
+    },
+    {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_split_registration: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_split_registration",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_name': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_corpcode",
+      "details": {
+        "probed_required_fields": [
+          "corp_name"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_name': accepted \u2014 schema stricter than runtime; omit 'n': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_corp_candidates",
+      "details": {
+        "probed_required_fields": [
+          "corp_name",
+          "n"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'path_xml': accepted \u2014 schema stricter than runtime; omit 'max_depth': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "xmlparser_step1_structure",
+      "details": {
+        "probed_required_fields": [
+          "path_xml",
+          "max_depth"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'path_xml': accepted \u2014 schema stricter than runtime; omit 'title_tags': accepted \u2014 schema stricter than runtime; omit 'section_tags': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "xmlparser_step2_contents",
+      "details": {
+        "probed_required_fields": [
+          "path_xml",
+          "title_tags",
+          "section_tags"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'path_xml': accepted \u2014 schema stricter than runtime; omit 'selector': accepted \u2014 schema stricter than runtime; omit 'limit': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "xmlparser_step3_query",
+      "details": {
+        "probed_required_fields": [
+          "path_xml",
+          "selector",
+          "limit"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'path_xml': accepted \u2014 schema stricter than runtime; omit 'table_index': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "xmlparser_get_table_csv",
+      "details": {
+        "probed_required_fields": [
+          "path_xml",
+          "table_index"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_disclosurelist",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_corpinfo",
+      "details": {
+        "probed_required_fields": [
+          "corp_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'rcept_no': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_disclosure",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "rcept_no"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "update_corplist",
+      "details": {}
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_capitalstatus",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_dividend_info",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_treasury_stock",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_major_shareholders",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_major_shareholders_changes",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_minority_shareholders",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_executives",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_employees",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_individual_compensation_over_500m",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_board_total_compensation",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_top5_compensation_over_500m",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_investment_in_other_corp",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_total_shares",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_debt_securities_issuance",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_commercial_paper_balance",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_short_term_bond_balance",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_corporate_bond_balance",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_hybrid_securities_balance",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_contingent_convertible_balance",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_auditor_opinion",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_audit_service_contract",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_non_audit_service_contract",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_outside_directors",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_unregistered_executives_compensation",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_board_approved_compensation",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_board_compensation_by_type",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_public_fund_usage",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_private_fund_usage",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_single_company_accounts",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_multi_company_accounts",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'rcept_no': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_xbrl_financial_statements",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "rcept_no",
+          "reprt_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime; omit 'fs_div': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_complete_financial_statements",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code",
+          "fs_div"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'sj_div': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_xbrl_taxonomy_format",
+      "details": {
+        "probed_required_fields": [
+          "sj_div"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime; omit 'idx_cl_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_single_company_key_indicators",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code",
+          "idx_cl_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bsns_year': accepted \u2014 schema stricter than runtime; omit 'reprt_code': accepted \u2014 schema stricter than runtime; omit 'idx_cl_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_multi_company_key_indicators",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bsns_year",
+          "reprt_code",
+          "idx_cl_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_major_holding_reports",
+      "details": {
+        "probed_required_fields": [
+          "corp_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_executive_major_shareholders_reports",
+      "details": {
+        "probed_required_fields": [
+          "corp_code"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_asset_acquisition_disposal",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_default_occurrence",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_business_suspension",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_rehabilitation_filing",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_dissolution_event",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_paid_capital_increase",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_free_capital_increase",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_mixed_capital_increase",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_capital_reduction",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_creditor_management_start",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_litigation_filing",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_overseas_listing_decision",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_overseas_delisting_decision",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_overseas_listing",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_overseas_delisting",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_convertible_bond_issuance",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_bond_with_warrants_issuance",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_exchangeable_bond_issuance",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_creditor_management_suspension",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_contingent_capital_securities_issuance",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_treasury_stock_acquisition",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_treasury_stock_disposal",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_treasury_stock_trust_contract",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_treasury_stock_trust_termination",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_business_transfer_acquisition",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_business_transfer_disposal",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_tangible_asset_acquisition",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_tangible_asset_disposal",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_equity_securities_acquisition",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_equity_securities_disposal",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_stock_related_bond_acquisition",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_stock_related_bond_disposal",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_merger_decision",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_split_decision",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_split_merger_decision",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_stock_exchange_transfer_decision",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_equity_securities_registration",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_debt_securities_registration",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_depositary_receipts_registration",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_merger_registration",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_comprehensive_stock_exchange_transfer_registration",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "RUNTIME001",
+      "severity": "warning",
+      "status": "fail",
+      "message": "omit 'corp_code': accepted \u2014 schema stricter than runtime; omit 'bgn_de': accepted \u2014 schema stricter than runtime; omit 'end_de': accepted \u2014 schema stricter than runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_split_registration",
+      "details": {
+        "probed_required_fields": [
+          "corp_code",
+          "bgn_de",
+          "end_de"
+        ],
+        "inconclusive": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_corpcode",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_corp_candidates",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "xmlparser_step1_structure",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "xmlparser_step2_contents",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "xmlparser_step3_query",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "xmlparser_get_table_csv",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_disclosurelist",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_corpinfo",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_disclosure",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "update_corplist",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_capitalstatus",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_dividend_info",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_treasury_stock",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_major_shareholders",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_major_shareholders_changes",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_minority_shareholders",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_executives",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_employees",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_individual_compensation_over_500m",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_board_total_compensation",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_top5_compensation_over_500m",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_investment_in_other_corp",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_total_shares",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_debt_securities_issuance",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_commercial_paper_balance",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_short_term_bond_balance",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_corporate_bond_balance",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_hybrid_securities_balance",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_contingent_convertible_balance",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_auditor_opinion",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_audit_service_contract",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_non_audit_service_contract",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_outside_directors",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_unregistered_executives_compensation",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_board_approved_compensation",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_board_compensation_by_type",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_public_fund_usage",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_private_fund_usage",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_single_company_accounts",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_multi_company_accounts",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_xbrl_financial_statements",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_complete_financial_statements",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_xbrl_taxonomy_format",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_single_company_key_indicators",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_multi_company_key_indicators",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_major_holding_reports",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_executive_major_shareholders_reports",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_asset_acquisition_disposal",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_default_occurrence",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_business_suspension",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_rehabilitation_filing",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_dissolution_event",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_paid_capital_increase",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_free_capital_increase",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_mixed_capital_increase",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_capital_reduction",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_creditor_management_start",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_litigation_filing",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_overseas_listing_decision",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_overseas_delisting_decision",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_overseas_listing",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_overseas_delisting",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_convertible_bond_issuance",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_bond_with_warrants_issuance",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_exchangeable_bond_issuance",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_creditor_management_suspension",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_contingent_capital_securities_issuance",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_treasury_stock_acquisition",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_treasury_stock_disposal",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_treasury_stock_trust_contract",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_treasury_stock_trust_termination",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_business_transfer_acquisition",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_business_transfer_disposal",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_tangible_asset_acquisition",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_tangible_asset_disposal",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_equity_securities_acquisition",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_equity_securities_disposal",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_stock_related_bond_acquisition",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_stock_related_bond_disposal",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_merger_decision",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_split_decision",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_split_merger_decision",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_stock_exchange_transfer_decision",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_equity_securities_registration",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_debt_securities_registration",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_depositary_receipts_registration",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_merger_registration",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_comprehensive_stock_exchange_transfer_registration",
+      "details": {
+        "problems": []
+      }
+    },
+    {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_split_registration",
+      "details": {
+        "problems": []
+      }
+    }
+  ]
+}

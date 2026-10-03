@@ -1,0 +1,8 @@
+
+$ npm ci --ignore-scripts --no-audit --no-fund
+
+added 266 packages in 1s
+[exit 0]
+
+$ npx --no-install tsc
+[exit 0]

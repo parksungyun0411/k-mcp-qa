@@ -1,0 +1,82 @@
+mcp-audit results                                                               
+┏━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ check      ┃ sev   ┃ status ┃ tool                  ┃ message                ┃
+┡━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ HYGIENE001 │ error │ skip   │ get_corp_code         │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ skip   │ get_disclosure        │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ skip   │ get_disclosure_list   │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ skip   │ get_financial_statem… │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ skip   │ get_market_type       │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ skip   │ get_stock_base_info   │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ skip   │ get_stock_trade_info  │ baseline call failed;  │
+│            │       │        │                       │ no response to scan    │
+│            │       │        │                       │ for path leakage       │
+│ HYGIENE001 │ error │ pass   │ get_today_date        │ get_today_date:        │
+│            │       │        │                       │ baseline response free │
+│            │       │        │                       │ of absolute owner      │
+│            │       │        │                       │ filesystem paths       │
+│ RUNTIME001 │ error │ pass   │ get_corp_code         │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ skip   │ get_disclosure        │ baseline call with all │
+│            │       │        │                       │ required fields        │
+│            │       │        │                       │ failed; cannot         │
+│            │       │        │                       │ attribute failures to  │
+│            │       │        │                       │ individual omissions   │
+│ RUNTIME001 │ error │ pass   │ get_disclosure_list   │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ RUNTIME001 │ error │ skip   │ get_financial_statem… │ baseline call with all │
+│            │       │        │                       │ required fields        │
+│            │       │        │                       │ failed; cannot         │
+│            │       │        │                       │ attribute failures to  │
+│            │       │        │                       │ individual omissions   │
+│ RUNTIME001 │ error │ skip   │ get_market_type       │ baseline call with all │
+│            │       │        │                       │ required fields        │
+│            │       │        │                       │ failed; cannot         │
+│            │       │        │                       │ attribute failures to  │
+│            │       │        │                       │ individual omissions   │
+│ RUNTIME001 │ error │ skip   │ get_stock_base_info   │ baseline call with all │
+│            │       │        │                       │ required fields        │
+│            │       │        │                       │ failed; cannot         │
+│            │       │        │                       │ attribute failures to  │
+│            │       │        │                       │ individual omissions   │
+│ RUNTIME001 │ error │ skip   │ get_stock_trade_info  │ baseline call with all │
+│            │       │        │                       │ required fields        │
+│            │       │        │                       │ failed; cannot         │
+│            │       │        │                       │ attribute failures to  │
+│            │       │        │                       │ individual omissions   │
+│ RUNTIME001 │ error │ pass   │ get_today_date        │ no required fields     │
+│            │       │        │                       │ advertised; nothing to │
+│            │       │        │                       │ probe                  │
+│ SCHEMA001  │ error │ pass   │ get_corp_code         │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_disclosure        │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_disclosure_list   │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_financial_statem… │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_market_type       │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_stock_base_info   │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_stock_trade_info  │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+│ SCHEMA001  │ error │ pass   │ get_today_date        │ inputSchema internally │
+│            │       │        │                       │ consistent             │
+└────────────┴───────┴────────┴───────────────────────┴────────────────────────┘
+24 checks · 12 pass · 0 fail (error:0, warning:0) · 12 skip
+report written to /tmp/kmcp-work/korea-stock-mcp/mcp-audit.json

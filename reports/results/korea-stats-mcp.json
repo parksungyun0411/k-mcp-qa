@@ -1,0 +1,1389 @@
+{
+ "id": "korea-stats-mcp",
+ "repo": "Dayoooun/korea-stats-mcp",
+ "sha_expected": "cf8af3dc52eee8f3085f947adc43bb7f65c8ea9b",
+ "started_at": "2026-10-03T07:13:11+00:00",
+ "protocol_version_requested": "2025-11-25",
+ "sandbox": true,
+ "command": [
+  "node",
+  "dist/index.js"
+ ],
+ "install_steps": [
+  [
+   "npm",
+   "install",
+   "--ignore-scripts",
+   "--no-audit",
+   "--no-fund",
+   "--no-package-lock"
+  ],
+  [
+   "npx",
+   "--no-install",
+   "tsc"
+  ]
+ ],
+ "sha_tested": "cf8af3dc52eee8f3085f947adc43bb7f65c8ea9b",
+ "install": {
+  "ok": true,
+  "steps": [
+   {
+    "argv": [
+     "npm",
+     "install",
+     "--ignore-scripts",
+     "--no-audit",
+     "--no-fund",
+     "--no-package-lock"
+    ],
+    "returncode": 0,
+    "seconds": 14.96,
+    "timed_out": false
+   },
+   {
+    "argv": [
+     "npx",
+     "--no-install",
+     "tsc"
+    ],
+    "returncode": 0,
+    "seconds": 1.42,
+    "timed_out": false
+   }
+  ]
+ },
+ "sdk": {
+  "@modelcontextprotocol/sdk": "1.32.0"
+ },
+ "start_without_key": {
+  "initialize": "result",
+  "alive": true,
+  "returncode": null,
+  "elapsed_ms": 406.2,
+  "stderr_tail": [
+   "Korea Stats MCP: 키 없이 공개 원격 서버에 연결했습니다. 조회 조건은 원격 서버로 전달됩니다."
+  ]
+ },
+ "probe": {
+  "restarts": 0,
+  "initialize": {
+   "outcome": "result",
+   "elapsed_ms": 177.7,
+   "protocolVersion": "2025-11-25",
+   "serverInfo": {
+    "name": "korea-stats-mcp",
+    "version": "2.0.0",
+    "description": "한국 통계청 KOSIS OpenAPI 기반 MCP 서버 - 자연어로 통계 데이터를 검색하고 분석합니다."
+   },
+   "capabilities": {
+    "tools": {
+     "listChanged": true
+    },
+    "resources": {
+     "listChanged": true
+    },
+    "prompts": {
+     "listChanged": true
+    }
+   },
+   "spec_violations": []
+  },
+  "idle_alive": true,
+  "tools_list": {
+   "count": 14,
+   "pages": 1,
+   "spec_violations": [],
+   "elapsed_ms": 8.1
+  },
+  "ping": {
+   "outcome": "result",
+   "spec_violations": []
+  },
+  "unknown_method": {
+   "outcome": "error",
+   "error_code": -32601,
+   "alive_after": true
+  },
+  "unknown_tool": {
+   "outcome": "tool_error",
+   "elapsed_ms": 3.0,
+   "text_excerpt": "MCP error -32602: Tool kmcpqa_no_such_tool not found",
+   "auth_marker": null,
+   "error_marker": "error",
+   "traceback": false,
+   "spec_violations": [],
+   "has_structured": false,
+   "alive_after": true
+  },
+  "tools": [
+   {
+    "name": "search_statistics",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "query"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.5,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_statistics: Required at query",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.7,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_statistics: Expected string, received number at query\nExpected string, received number at orgId\nExpected 'RANK' | 'DATE', received number at sort\nExpected number, received string at limit",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "query": 12345,
+       "orgId": 12345,
+       "sort": 12345,
+       "limit": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 305.6,
+      "text_excerpt": "{\n  \"totalCount\": 0,\n  \"results\": [],\n  \"queryAnalysis\": {\n    \"topics\": [],\n    \"regions\": [\n      \"11\"\n    ],\n    \"intent\": \"search\"\n  },\n  \"success\": false,\n  \"error\": \"알 수 없는 오류가 발생했습니다.\",\n  \"code\": \"11\"\n}",
+      "auth_marker": null,
+      "error_marker": "\"success\": false",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "query": "서울"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_statistics_list",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "viewCode"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 3.1,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_statistics_list: Required at viewCode",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.9,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_statistics_list: Expected string, received number at viewCode\nExpected string, received number at parentId",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "viewCode": 12345,
+       "parentId": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.5,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_statistics_list: Invalid enum value. Expected 'MT_ZTITLE' | 'MT_OTITLE' | 'MT_GTITLE01' | 'MT_GTITLE02' | 'MT_RTITLE' | 'MT_BUKHAN' | 'MT_TM1_TITLE' | 'MT_TM2_TITLE', received 'test' at viewCode",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "viewCode": "test"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_statistics_data",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "orgId",
+     "tableId",
+     "objL1",
+     "periodType"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.3,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_statistics_data: Required at orgId\nRequired at tableId\nRequired at objL1\nRequired at periodType",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.3,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_statistics_data: Expected string, received number at orgId\nExpected string, received number at tableId\nExpected string, received number at objL1\nExpected string, received number at objL2\nExpected string, received number at objL",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "orgId": 12345,
+       "tableId": 12345,
+       "objL1": 12345,
+       "objL2": 12345,
+       "objL3": 12345,
+       "objL4": 12345,
+       "objL5": 12345,
+       "objL6": 12345,
+       "objL7": 12345,
+       "objL8": 12345,
+       "itemId": 12345,
+       "periodType": 12345,
+       "startPeriod": 12345,
+       "endPeriod": 12345,
+       "recentCount": "not-a-number",
+       "pageSize": "not-a-number",
+       "cursor": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 34.9,
+      "text_excerpt": "{\n  \"providerTotalCount\": null,\n  \"providerSnapshot\": \"unproven\",\n  \"snapshotScope\": \"active_partition\",\n  \"completionScope\": \"requested_period_traversal\",\n  \"success\": false,\n  \"data\": [],\n  \"validationLevel\": \"unverified\",\n  \"metadata\": {\n    \"orgId\": \"test\",\n    \"tableId\": \"test\",\n    \"periodType",
+      "auth_marker": null,
+      "error_marker": "\"success\": false",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "orgId": "test",
+       "tableId": "test",
+       "objL1": "test",
+       "periodType": "Y"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "compare_statistics",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "orgId",
+     "tableId",
+     "compareType",
+     "periodType"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.6,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool compare_statistics: Required at orgId\nRequired at tableId\nRequired at compareType\nRequired at periodType",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.1,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool compare_statistics: Expected string, received number at orgId\nExpected string, received number at tableId\nExpected 'period' | 'item', received number at compareType\nExpected 'Y' | 'M' | 'Q', received number at periodType\nExpected a",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "orgId": 12345,
+       "tableId": 12345,
+       "compareType": 12345,
+       "periodType": 12345,
+       "periods": "not-an-array",
+       "objL1": 12345,
+       "objL2": 12345,
+       "objL3": 12345,
+       "objL4": 12345,
+       "objL5": 12345,
+       "objL6": 12345,
+       "objL7": 12345,
+       "objL8": 12345,
+       "itemId": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 46.0,
+      "text_excerpt": "{\n  \"success\": false,\n  \"compareType\": \"period\",\n  \"validationLevel\": \"unverified\",\n  \"errorCode\": \"11\",\n  \"provenance\": {\n    \"provider\": \"kosis\",\n    \"orgId\": \"test\",\n    \"tableId\": \"test\",\n    \"sourceUrl\": \"https://kosis.kr/openapi/Param/statisticsParameterData.do?format=json&jsonVD=Y&method=getL",
+      "auth_marker": null,
+      "error_marker": "\"success\": false",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "orgId": "test",
+       "tableId": "test",
+       "compareType": "period",
+       "periodType": "Y"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "analyze_time_series",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "orgId",
+     "tableId",
+     "objL1",
+     "periodType"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.7,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool analyze_time_series: Required at orgId\nRequired at tableId\nRequired at objL1\nRequired at periodType",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.0,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool analyze_time_series: Expected string, received number at orgId\nExpected string, received number at tableId\nExpected string, received number at objL1\nExpected string, received number at objL2\nExpected string, received number at objL",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "orgId": 12345,
+       "tableId": 12345,
+       "objL1": 12345,
+       "objL2": 12345,
+       "objL3": 12345,
+       "objL4": 12345,
+       "objL5": 12345,
+       "objL6": 12345,
+       "objL7": 12345,
+       "objL8": 12345,
+       "itemId": 12345,
+       "periodType": 12345,
+       "yearCount": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 41.1,
+      "text_excerpt": "{\n  \"success\": false,\n  \"validationLevel\": \"unverified\",\n  \"errorCode\": \"11\",\n  \"provenance\": {\n    \"provider\": \"kosis\",\n    \"orgId\": \"test\",\n    \"tableId\": \"test\",\n    \"sourceUrl\": \"https://kosis.kr/openapi/Param/statisticsParameterData.do?format=json&jsonVD=Y&method=getList&newEstPrdCnt=10&objL1=t",
+      "auth_marker": null,
+      "error_marker": "\"success\": false",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "orgId": "test",
+       "tableId": "test",
+       "objL1": "test",
+       "periodType": "Y"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_recommended_statistics",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "topic"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.8,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_recommended_statistics: Required at topic",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.8,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_recommended_statistics: Expected 'population' | 'economy' | 'employment' | 'housing' | 'education' | 'health' | 'environment' | 'transport' | 'social', received number at topic\nExpected number, received string at limit",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "topic": 12345,
+       "limit": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 2.4,
+      "text_excerpt": "{\n  \"success\": true,\n  \"topic\": {\n    \"code\": \"population\",\n    \"name\": \"인구\",\n    \"description\": \"인구수, 출생, 사망, 혼인, 이혼 등\"\n  },\n  \"recommendations\": [\n    {\n      \"orgId\": \"101\",\n      \"orgName\": \"통계청\",\n      \"tableId\": \"DT_1B04005\",\n      \"tableName\": \"시도/성/연령별 주민등록인구\",\n      \"statisticsName\": \"인구 통계",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "topic": "population"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "search_indicators",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "filters"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.8,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_indicators: Required at filters",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.5,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_indicators: Expected object, received string at filters\nExpected number, received string at pageSize\nExpected number, received string at page",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "filters": "not-an-object",
+       "pageSize": "not-a-number",
+       "page": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.9,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_indicators: filters must contain at least one filter at filters",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "filters": {}
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_indicator",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.9,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_indicator: Required at indicatorId\nRequired at kind",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "search_businesses",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 2.2,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_businesses: 지역 또는 업종 조회 조건이 필요합니다. at regionType",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "search_microdata",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.5,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_microdata: Expected string, received number at query\nExpected number, received string at page\nExpected number, received string at pageSize",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "query": 12345,
+       "page": "not-a-number",
+       "pageSize": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 1762.1,
+      "text_excerpt": "{\n  \"success\": true,\n  \"items\": [\n    {\n      \"survId\": \"23\",\n      \"name\": \"국내인구이동통계\",\n      \"anchorId\": \"STAT_23\",\n      \"prefix\": \"STAT\",\n      \"itmDiv\": \"1\",\n      \"rowText\": \"인구(5종) 국가데이터처 국내인구이동통계 1995~2025(1년, 계속) 국민의 지역별 인구 이동량 및 이동방향 등을 파악하여 주택공급, 교통망 구축, 교육수요 예측, 노동시장 등의 정책수립이나 지역 간의 균형적인 ",
+      "auth_marker": null,
+      "error_marker": null,
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_microdata_info",
+    "input_dialect": "default(2020-12)",
+    "input_schema_problems": [],
+    "required": [],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "valid": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.8,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_microdata_info: survey_detail에는 survId와 itmDiv가 필요합니다. at survId",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "get_table_info",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "orgId",
+     "tableId"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.5,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_table_info: Required at orgId\nRequired at tableId",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.7,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_table_info: Expected string, received number at orgId\nExpected string, received number at tableId\nExpected 'ITM' | 'TBL' | 'PRD' | 'UNIT' | 'SOURCE', received number at infoType\nExpected string, received number at objId\nExpecte",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "orgId": 12345,
+       "tableId": 12345,
+       "infoType": 12345,
+       "objId": 12345,
+       "parentId": 12345,
+       "query": 12345,
+       "pageSize": "not-a-number",
+       "cursor": 12345
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 103.5,
+      "text_excerpt": "{\n  \"success\": false,\n  \"orgId\": \"test\",\n  \"tableId\": \"test\",\n  \"infoType\": \"ITM\",\n  \"errorCode\": \"11\",\n  \"errorMessage\": \"알 수 없는 오류가 발생했습니다.\",\n  \"usageHint\": \"알 수 없는 오류가 발생했습니다.\"\n}",
+      "auth_marker": null,
+      "error_marker": "\"success\": false",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "orgId": "test",
+       "tableId": "test"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "quick_stats",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "query"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.4,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool quick_stats: Required at query",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 0.6,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool quick_stats: Expected string, received number at query\nExpected string, received number at region\nExpected number, received string at year\nExpected 'Y' | 'Q' | 'M', received number at period\nExpected number, received string at mont",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "query": 12345,
+       "region": 12345,
+       "year": "not-a-number",
+       "period": 12345,
+       "month": "not-a-number",
+       "quarter": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 3.1,
+      "text_excerpt": "{\n  \"success\": false,\n  \"answer\": \"\\\"서울\\\"에 대한 빠른 조회가 지원되지 않습니다.\",\n  \"note\": \"📊 지원 키워드 (카테고리별 대표 예시):\\n• 인구/출산: 인구, 출산율, 출생아수, 사망률, 기대수명\\n• 고령화: 고령인구, 노인인구, 노령화지수, 65세이상인구\\n• 고용/노동: 실업률, 고용률, 취업자수, 임금\\n• 경제: GDP, GRDP, 경제성장률, 물가\\n• 무역: 수출, 수입, 무역수지\\n• 혼인/이혼: 혼인율, 이혼율, 초혼연령, 여성초혼연령\\n• 부동산: 주택가격, 아파트가격",
+      "auth_marker": null,
+      "error_marker": "\"success\": false",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "query": "서울"
+      },
+      "alive_after": true
+     }
+    }
+   },
+   {
+    "name": "quick_trend",
+    "input_dialect": "http://json-schema.org/draft-07/schema#",
+    "input_schema_problems": [],
+    "required": [
+     "keyword"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.5,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool quick_trend: Required at keyword",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {},
+      "alive_after": true
+     },
+     "wrong_type": {
+      "outcome": "tool_error",
+      "elapsed_ms": 1.4,
+      "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool quick_trend: Expected string, received number at keyword\nExpected string, received number at region\nExpected number, received string at yearCount\nExpected number, received string at startYear\nExpected number, received string at end",
+      "auth_marker": null,
+      "error_marker": "error",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "keyword": 12345,
+       "region": 12345,
+       "yearCount": "not-a-number",
+       "startYear": "not-a-number",
+       "endYear": "not-a-number"
+      },
+      "alive_after": true
+     },
+     "valid": {
+      "outcome": "ok",
+      "elapsed_ms": 1.0,
+      "text_excerpt": "{\n  \"success\": false,\n  \"keyword\": \"서울\",\n  \"region\": \"전국\",\n  \"trend\": \"stable\",\n  \"trendDescription\": \"\",\n  \"summary\": \"\\\"서울\\\"에 대한 추세 분석이 지원되지 않습니다.\",\n  \"dataPoints\": [],\n  \"insights\": [],\n  \"note\": \"지원 키워드: 인구, 총인구, 출산율, 합계출산율, 실업률, 고용률, GDP, 국내총생산, 물가, 소비자물가, 소비자물가지수, 혼인율, 기대수명, 기대여명, 평균수명, 수출액, 수",
+      "auth_marker": null,
+      "error_marker": "\"success\": false",
+      "traceback": false,
+      "spec_violations": [],
+      "has_structured": false,
+      "args": {
+       "keyword": "서울"
+      },
+      "alive_after": true
+     }
+    }
+   }
+  ],
+  "stdout_noise": {
+   "count": 0,
+   "sample": []
+  },
+  "server_initiated_messages": 0
+ },
+ "finished_at": "2026-10-03T07:13:46+00:00",
+ "external": {
+  "conformance_version": "0.1.16",
+  "conformance": {
+   "server-initialize": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "server-initialize",
+      "status": "SUCCESS",
+      "description": "Server responds to initialize request with valid structure",
+      "errorMessage": null
+     }
+    ]
+   },
+   "ping": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "ping",
+      "status": "SUCCESS",
+      "description": "Server responds to ping requests",
+      "errorMessage": null
+     }
+    ]
+   },
+   "tools-list": {
+    "returncode": 0,
+    "checks": [
+     {
+      "id": "tools-list",
+      "status": "SUCCESS",
+      "description": "Server lists available tools with valid structure",
+      "errorMessage": null
+     }
+    ]
+   }
+  },
+  "mcp_audit_sha": "b14487ff9af2ea539fa946755949173459c2cbb9",
+  "mcp_audit": {
+   "returncode": 0,
+   "report": {
+    "tool": "mcp-audit",
+    "version": "0.5.0",
+    "server_command": [
+     "/usr/bin/env",
+     "-i",
+     "PATH=/opt/homebrew/bin:/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+     "HOME=/tmp/kmcp-work/korea-stats-mcp/home",
+     "TMPDIR=/tmp/kmcp-work/korea-stats-mcp/tmp",
+     "LANG=en_US.UTF-8",
+     "LC_ALL=en_US.UTF-8",
+     "npm_config_cache=/tmp/kmcp-work/korea-stats-mcp/cache/npm",
+     "npm_config_update_notifier=false",
+     "UV_CACHE_DIR=/tmp/kmcp-work/korea-stats-mcp/cache/uv",
+     "UV_PYTHON_INSTALL_DIR=~/.local/share/uv/python",
+     "UV_PYTHON_DOWNLOADS=never",
+     "PYTHONUNBUFFERED=1",
+     "NO_COLOR=1",
+     "KOSIS_API_KEY=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY",
+     "node",
+     "dist/index.js"
+    ],
+    "timestamp": "2026-10-03T07:15:08+00:00",
+    "summary": {
+     "total": 42,
+     "status": {
+      "pass": 35,
+      "fail": 0,
+      "skip": 7
+     },
+     "failed_by_severity": {
+      "error": 0,
+      "warning": 0
+     }
+    },
+    "exit_code": 0,
+    "strict": false,
+    "error": null,
+    "results": [
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "search_statistics: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "search_statistics",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_statistics_list",
+      "details": {
+       "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool get_statistics_list: Invalid enum value. Expected 'MT_ZTITLE' | 'MT_OTITLE' | 'MT_GTITLE01' | 'MT_GTITLE02' | 'MT_RTITLE' | 'MT_BUKHAN' | 'MT_TM1_TITLE' | 'MT_TM2_TITLE', received 'mcp-audit-probe' at viewCode"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_statistics_data: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_statistics_data",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "compare_statistics: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "compare_statistics",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "analyze_time_series: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "analyze_time_series",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_recommended_statistics: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_recommended_statistics",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "search_indicators",
+      "details": {
+       "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool search_indicators: filters must contain at least one filter at filters"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_indicator",
+      "details": {
+       "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool get_indicator: Required at indicatorId\nRequired at kind"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "search_businesses",
+      "details": {
+       "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool search_businesses: 지역 또는 업종 조회 조건이 필요합니다. at regionType"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "search_microdata: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "search_microdata",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call failed; no response to scan for path leakage",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_microdata_info",
+      "details": {
+       "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool get_microdata_info: survey_detail에는 survId와 itmDiv가 필요합니다. at survId"
+      }
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "get_table_info: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "get_table_info",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "quick_stats: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "quick_stats",
+      "details": {}
+     },
+     {
+      "check_id": "HYGIENE001",
+      "severity": "error",
+      "status": "pass",
+      "message": "quick_trend: baseline response free of absolute owner filesystem paths",
+      "citation": "https://github.com/Alpha-W0lf/mcp-audit#why",
+      "tool_name": "quick_trend",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_statistics",
+      "details": {
+       "probed_required_fields": [
+        "query"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_statistics_list",
+      "details": {
+       "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool get_statistics_list: Invalid enum value. Expected 'MT_ZTITLE' | 'MT_OTITLE' | 'MT_GTITLE01' | 'MT_GTITLE02' | 'MT_RTITLE' | 'MT_BUKHAN' | 'MT_TM1_TITLE' | 'MT_TM2_TITLE', received 'mcp-audit-probe' at viewCode"
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 4 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_statistics_data",
+      "details": {
+       "probed_required_fields": [
+        "orgId",
+        "tableId",
+        "objL1",
+        "periodType"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 4 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "compare_statistics",
+      "details": {
+       "probed_required_fields": [
+        "orgId",
+        "tableId",
+        "compareType",
+        "periodType"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 4 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "analyze_time_series",
+      "details": {
+       "probed_required_fields": [
+        "orgId",
+        "tableId",
+        "objL1",
+        "periodType"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_recommended_statistics",
+      "details": {
+       "probed_required_fields": [
+        "topic"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "skip",
+      "message": "baseline call with all required fields failed; cannot attribute failures to individual omissions",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_indicators",
+      "details": {
+       "baseline_error": "MCP error -32602: Input validation error: Invalid arguments for tool search_indicators: filters must contain at least one filter at filters"
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_indicator",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_businesses",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_microdata",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "no required fields advertised; nothing to probe",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_microdata_info",
+      "details": {}
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 2 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_table_info",
+      "details": {
+       "probed_required_fields": [
+        "orgId",
+        "tableId"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "quick_stats",
+      "details": {
+       "probed_required_fields": [
+        "query"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "RUNTIME001",
+      "severity": "error",
+      "status": "pass",
+      "message": "all 1 advertised-required fields enforced at runtime",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "quick_trend",
+      "details": {
+       "probed_required_fields": [
+        "keyword"
+       ],
+       "inconclusive": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_statistics",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_statistics_list",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_statistics_data",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "compare_statistics",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "analyze_time_series",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_recommended_statistics",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_indicators",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_indicator",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_businesses",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "search_microdata",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_microdata_info",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "get_table_info",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "quick_stats",
+      "details": {
+       "problems": []
+      }
+     },
+     {
+      "check_id": "SCHEMA001",
+      "severity": "error",
+      "status": "pass",
+      "message": "inputSchema internally consistent",
+      "citation": "https://github.com/modelcontextprotocol/servers/issues/4651",
+      "tool_name": "quick_trend",
+      "details": {
+       "problems": []
+      }
+     }
+    ]
+   }
+  }
+ }
+}

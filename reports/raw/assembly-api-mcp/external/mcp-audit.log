@@ -1,0 +1,54 @@
+mcp-audit results                                                               
+┏━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ check      ┃ sev   ┃ status ┃ tool             ┃ message                     ┃
+┡━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ HYGIENE001 │ error │ pass   │ assembly_bill    │ assembly_bill: baseline     │
+│            │       │        │                  │ response free of absolute   │
+│            │       │        │                  │ owner filesystem paths      │
+│ HYGIENE001 │ error │ pass   │ assembly_member  │ assembly_member: baseline   │
+│            │       │        │                  │ response free of absolute   │
+│            │       │        │                  │ owner filesystem paths      │
+│ HYGIENE001 │ error │ pass   │ assembly_org     │ assembly_org: baseline      │
+│            │       │        │                  │ response free of absolute   │
+│            │       │        │                  │ owner filesystem paths      │
+│ HYGIENE001 │ error │ pass   │ assembly_session │ assembly_session: baseline  │
+│            │       │        │                  │ response free of absolute   │
+│            │       │        │                  │ owner filesystem paths      │
+│ HYGIENE001 │ error │ pass   │ discover_apis    │ discover_apis: baseline     │
+│            │       │        │                  │ response free of absolute   │
+│            │       │        │                  │ owner filesystem paths      │
+│ HYGIENE001 │ error │ pass   │ query_assembly   │ query_assembly: baseline    │
+│            │       │        │                  │ response free of absolute   │
+│            │       │        │                  │ owner filesystem paths      │
+│ RUNTIME001 │ error │ pass   │ assembly_bill    │ no required fields          │
+│            │       │        │                  │ advertised; nothing to      │
+│            │       │        │                  │ probe                       │
+│ RUNTIME001 │ error │ pass   │ assembly_member  │ no required fields          │
+│            │       │        │                  │ advertised; nothing to      │
+│            │       │        │                  │ probe                       │
+│ RUNTIME001 │ error │ pass   │ assembly_org     │ no required fields          │
+│            │       │        │                  │ advertised; nothing to      │
+│            │       │        │                  │ probe                       │
+│ RUNTIME001 │ error │ pass   │ assembly_session │ no required fields          │
+│            │       │        │                  │ advertised; nothing to      │
+│            │       │        │                  │ probe                       │
+│ RUNTIME001 │ error │ pass   │ discover_apis    │ no required fields          │
+│            │       │        │                  │ advertised; nothing to      │
+│            │       │        │                  │ probe                       │
+│ RUNTIME001 │ error │ pass   │ query_assembly   │ all 1 advertised-required   │
+│            │       │        │                  │ fields enforced at runtime  │
+│ SCHEMA001  │ error │ pass   │ assembly_bill    │ inputSchema internally      │
+│            │       │        │                  │ consistent                  │
+│ SCHEMA001  │ error │ pass   │ assembly_member  │ inputSchema internally      │
+│            │       │        │                  │ consistent                  │
+│ SCHEMA001  │ error │ pass   │ assembly_org     │ inputSchema internally      │
+│            │       │        │                  │ consistent                  │
+│ SCHEMA001  │ error │ pass   │ assembly_session │ inputSchema internally      │
+│            │       │        │                  │ consistent                  │
+│ SCHEMA001  │ error │ pass   │ discover_apis    │ inputSchema internally      │
+│            │       │        │                  │ consistent                  │
+│ SCHEMA001  │ error │ pass   │ query_assembly   │ inputSchema internally      │
+│            │       │        │                  │ consistent                  │
+└────────────┴───────┴────────┴──────────────────┴─────────────────────────────┘
+18 checks · 18 pass · 0 fail (error:0, warning:0) · 0 skip
+report written to /tmp/kmcp-work/assembly-api-mcp/mcp-audit.json

@@ -1,0 +1,7 @@
+Running client scenario 'tools-list' against server: http://127.0.0.1:52413/mcp
+Results saved to reports/raw/dart-mcp-server/external/conformance/tools-list/server-tools-list-2026-10-03T07-14-41-624Z
+Checks:
+[90m2026-10-03T07:14:41.682Z[0m [tools-list] [32mSUCCESS[0m Server lists available tools with valid structure
+
+Test Results:
+Passed: 1/1, 0 failed, 0 warnings
