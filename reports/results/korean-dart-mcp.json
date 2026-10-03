@@ -1,8 +1,8 @@
 {
  "id": "korean-dart-mcp",
  "repo": "aesthetic-legalism5470/korean-dart-mcp",
- "sha_expected": "96315645798697abec785bc7204c237e0f0f0618",
- "started_at": "2026-10-03T07:10:35+00:00",
+ "sha_expected": "4b2e072491f193833efb01c7fc76af1699ec176f",
+ "started_at": "2026-10-03T11:05:40+00:00",
  "protocol_version_requested": "2025-11-25",
  "sandbox": true,
  "command": [
@@ -23,7 +23,7 @@
    "tsc"
   ]
  ],
- "sha_tested": "96315645798697abec785bc7204c237e0f0f0618",
+ "sha_tested": "4b2e072491f193833efb01c7fc76af1699ec176f",
  "install": {
   "ok": true,
   "steps": [
@@ -36,7 +36,7 @@
      "--no-fund"
     ],
     "returncode": 0,
-    "seconds": 1.56,
+    "seconds": 1.7,
     "timed_out": false
    },
    {
@@ -46,7 +46,7 @@
      "tsc"
     ],
     "returncode": 0,
-    "seconds": 0.87,
+    "seconds": 0.9,
     "timed_out": false
    }
   ]
@@ -58,7 +58,7 @@
   "initialize": "closed",
   "alive": false,
   "returncode": 1,
-  "elapsed_ms": 131.3,
+  "elapsed_ms": 121.3,
   "stderr_tail": [
    "[korean-dart-mcp] DART_API_KEY 가 설정되지 않았습니다.",
    "발급: https://opendart.fss.or.kr/ (가입 → 인증키 신청)",
@@ -69,7 +69,7 @@
   "restarts": 3,
   "initialize": {
    "outcome": "result",
-   "elapsed_ms": 189.0,
+   "elapsed_ms": 183.2,
    "protocolVersion": "2025-11-25",
    "serverInfo": {
     "name": "korean-dart-mcp",
@@ -84,6 +84,16 @@
   "idle_exit": {
    "returncode": 1,
    "stderr_tail": [
+    "[corp-code] 덤프 다운로드 중... (수 초 소요)",
+    "[korean-dart-mcp] v0.9.2 stdio 서버 시작",
+    "[korean-dart-mcp] corp_code 초기화 실패: Error: DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+    "    at DartClient.getZip (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/dart-client.js:49:15)",
+    "    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+    "    at async CorpCodeResolver.doInit (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/corp-code.js:55:24)",
+    "node:internal/process/promises:332",
+    "    triggerUncaughtException(err, true /* fromPromise */);",
+    "    ^",
+    "",
     "Error: DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
     "    at DartClient.getZip (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/dart-client.js:49:15)",
     "    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
@@ -96,7 +106,7 @@
    "count": 15,
    "pages": 1,
    "spec_violations": [],
-   "elapsed_ms": 0.9
+   "elapsed_ms": 1.6
   },
   "ping": {
    "outcome": "result",
@@ -105,15 +115,52 @@
   "unknown_method": {
    "outcome": "error",
    "error_code": -32601,
-   "alive_after": false
+   "error_message": "Method not found",
+   "alive_after": false,
+   "responsive_after": false,
+   "stderr_delta": [
+    "[korean-dart-mcp] corp_code 초기화 실패: Error: DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+    "    at DartClient.getZip (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/dart-client.js:49:15)",
+    "    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+    "    at async CorpCodeResolver.doInit (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/corp-code.js:55:24)",
+    "node:internal/process/promises:332",
+    "    triggerUncaughtException(err, true /* fromPromise */);",
+    "    ^",
+    "",
+    "Error: DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+    "    at DartClient.getZip (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/dart-client.js:49:15)",
+    "    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+    "    at async CorpCodeResolver.doInit (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/corp-code.js:55:24)",
+    "",
+    "Node.js v26.0.0"
+   ],
+   "restarted": true
   },
   "unknown_tool": {
    "outcome": "error",
-   "elapsed_ms": 0.8,
+   "elapsed_ms": 0.7,
    "error_code": -32603,
    "error_message": "unknown tool: kmcpqa_no_such_tool",
    "auth_marker": null,
-   "alive_after": false
+   "alive_after": false,
+   "responsive_after": false,
+   "stderr_delta": [
+    "[korean-dart-mcp] corp_code 초기화 실패: Error: DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+    "    at DartClient.getZip (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/dart-client.js:49:15)",
+    "    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+    "    at async CorpCodeResolver.doInit (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/corp-code.js:55:24)",
+    "node:internal/process/promises:332",
+    "    triggerUncaughtException(err, true /* fromPromise */);",
+    "    ^",
+    "",
+    "Error: DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+    "    at DartClient.getZip (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/dart-client.js:49:15)",
+    "    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+    "    at async CorpCodeResolver.doInit (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/corp-code.js:55:24)",
+    "",
+    "Node.js v26.0.0"
+   ],
+   "restarted": true
   },
   "tools": [
    {
@@ -123,40 +170,57 @@
     "required": [
      "query"
     ],
+    "properties": [
+     "limit",
+     "query"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "error",
-      "elapsed_ms": 75.2,
+      "elapsed_ms": 62.5,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "[korean-dart-mcp] corp_code 초기화 실패: Error: DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+       "    at DartClient.getZip (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/dart-client.js:49:15)",
+       "    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+       "    at async CorpCodeResolver.doInit (file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/lib/corp-code.js:55:24)",
+       "    at async file:///private/tmp/kmcp-work/korean-dart-mcp/src/build/server/mcp-server.js:33:9",
+       "    at async wrappedHandler (file:///private/tmp/kmcp-work/korean-dart-mcp/src/node_modules/@modelcontextprotocol/sdk/dist/esm/server/index.js:125:32)"
+      ],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "error",
-      "elapsed_ms": 1.5,
+      "elapsed_ms": 1.4,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "query": 12345,
        "limit": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "error",
-      "elapsed_ms": 1.6,
+      "elapsed_ms": 1.0,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "query": "서울"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -165,15 +229,33 @@
     "input_dialect": "https://json-schema.org/draft/2020-12/schema",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "all_pages",
+     "begin",
+     "concurrency",
+     "corp",
+     "days",
+     "end",
+     "final_only",
+     "include_corrections",
+     "kind",
+     "limit",
+     "page",
+     "preset",
+     "size"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "error",
-      "elapsed_ms": 0.6,
+      "elapsed_ms": 1.3,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": 12345,
        "begin": 12345,
@@ -188,17 +270,18 @@
        "size": "not-a-number",
        "limit": "not-a-number",
        "concurrency": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "error",
-      "elapsed_ms": 1.3,
+      "elapsed_ms": 1.5,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -207,6 +290,9 @@
     "input_dialect": "https://json-schema.org/draft/2020-12/schema",
     "input_schema_problems": [],
     "required": [
+     "corp"
+    ],
+    "properties": [
      "corp"
     ],
     "output_schema": false,
@@ -218,8 +304,10 @@
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "error",
@@ -227,10 +315,12 @@
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "error",
@@ -238,10 +328,12 @@
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": "test"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -253,56 +345,13 @@
      "corps",
      "year"
     ],
-    "output_schema": false,
-    "annotations": null,
-    "probes": {
-     "missing_required": {
-      "outcome": "error",
-      "elapsed_ms": 0.6,
-      "error_code": -32603,
-      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
-      "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
-     },
-     "wrong_type": {
-      "outcome": "error",
-      "elapsed_ms": 1.1,
-      "error_code": -32603,
-      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
-      "auth_marker": "등록되지 않은",
-      "args": {
-       "corps": "not-an-array",
-       "year": "not-a-number",
-       "report": 12345,
-       "scope": 12345,
-       "fs": 12345,
-       "sj_div": "not-an-array"
-      },
-      "alive_after": true
-     },
-     "valid": {
-      "outcome": "error",
-      "elapsed_ms": 1.2,
-      "error_code": -32603,
-      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
-      "auth_marker": "등록되지 않은",
-      "args": {
-       "corps": [
-        "test"
-       ],
-       "year": 2015
-      },
-      "alive_after": true
-     }
-    }
-   },
-   {
-    "name": "download_document",
-    "input_dialect": "https://json-schema.org/draft/2020-12/schema",
-    "input_schema_problems": [],
-    "required": [
-     "rcept_no"
+    "properties": [
+     "corps",
+     "fs",
+     "report",
+     "scope",
+     "sj_div",
+     "year"
     ],
     "output_schema": false,
     "annotations": null,
@@ -313,32 +362,100 @@
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "error",
-      "elapsed_ms": 1.1,
+      "elapsed_ms": 1.2,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {
+       "corps": "not-an-array",
+       "year": "not-a-number",
+       "report": 12345,
+       "scope": 12345,
+       "fs": 12345,
+       "sj_div": "not-an-array"
+      }
+     },
+     "valid": {
+      "outcome": "error",
+      "elapsed_ms": 1.4,
+      "error_code": -32603,
+      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+      "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {
+       "corps": [
+        "test"
+       ],
+       "year": 2015
+      }
+     }
+    }
+   },
+   {
+    "name": "download_document",
+    "input_dialect": "https://json-schema.org/draft/2020-12/schema",
+    "input_schema_problems": [],
+    "required": [
+     "rcept_no"
+    ],
+    "properties": [
+     "format",
+     "rcept_no",
+     "truncate_at"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "error",
+      "elapsed_ms": 1.3,
+      "error_code": -32603,
+      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+      "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
+     },
+     "wrong_type": {
+      "outcome": "error",
+      "elapsed_ms": 1.2,
+      "error_code": -32603,
+      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+      "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "rcept_no": 12345,
        "format": 12345,
        "truncate_at": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "error",
-      "elapsed_ms": 0.4,
+      "elapsed_ms": 1.3,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "rcept_no": "20240312000736"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -349,24 +466,37 @@
     "required": [
      "rcept_no"
     ],
+    "properties": [
+     "format",
+     "fs_div",
+     "out_dir",
+     "rcept_no",
+     "report",
+     "sections"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "error",
-      "elapsed_ms": 0.5,
+      "elapsed_ms": 1.2,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "error",
-      "elapsed_ms": 0.9,
+      "elapsed_ms": 1.1,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "rcept_no": 12345,
        "report": 12345,
@@ -374,19 +504,20 @@
        "fs_div": 12345,
        "sections": "not-an-array",
        "out_dir": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "error",
-      "elapsed_ms": 0.4,
+      "elapsed_ms": 0.9,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "rcept_no": "20240312000736"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -399,44 +530,56 @@
      "year",
      "report_type"
     ],
+    "properties": [
+     "corp",
+     "report",
+     "report_type",
+     "year"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "error",
-      "elapsed_ms": 0.5,
+      "elapsed_ms": 1.2,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
-      "outcome": "error",
-      "elapsed_ms": 0.6,
-      "error_code": -32603,
-      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
-      "auth_marker": "등록되지 않은",
-      "args": {
-       "corp": 12345,
-       "year": "not-a-number",
-       "report": 12345,
-       "report_type": 12345
-      },
-      "alive_after": true
-     },
-     "valid": {
       "outcome": "error",
       "elapsed_ms": 1.2,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {
+       "corp": 12345,
+       "year": "not-a-number",
+       "report": 12345,
+       "report_type": 12345
+      }
+     },
+     "valid": {
+      "outcome": "error",
+      "elapsed_ms": 1.1,
+      "error_code": -32603,
+      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+      "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": "test",
        "year": 2015,
        "report_type": "largest_shareholder"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -448,43 +591,55 @@
      "corp",
      "year"
     ],
+    "properties": [
+     "corp",
+     "report",
+     "sections",
+     "year"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "error",
-      "elapsed_ms": 0.4,
+      "elapsed_ms": 1.2,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "error",
-      "elapsed_ms": 1.3,
+      "elapsed_ms": 0.9,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": 12345,
        "year": "not-a-number",
        "report": 12345,
        "sections": "not-an-array"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "error",
-      "elapsed_ms": 1.3,
+      "elapsed_ms": 1.1,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": "test",
        "year": 2015
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -496,31 +651,41 @@
      "corp",
      "year"
     ],
+    "properties": [
+     "corp",
+     "report",
+     "sections",
+     "year"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "error",
-      "elapsed_ms": 0.6,
-      "error_code": -32603,
-      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
-      "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
-     },
-     "wrong_type": {
-      "outcome": "error",
       "elapsed_ms": 1.0,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
+     },
+     "wrong_type": {
+      "outcome": "error",
+      "elapsed_ms": 1.1,
+      "error_code": -32603,
+      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+      "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": 12345,
        "year": "not-a-number",
        "report": 12345,
        "sections": "not-an-array"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "error",
@@ -528,11 +693,13 @@
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": "test",
        "year": 2015
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -543,43 +710,56 @@
     "required": [
      "corp"
     ],
+    "properties": [
+     "corp",
+     "end",
+     "include",
+     "limit",
+     "start"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "error",
-      "elapsed_ms": 1.3,
+      "elapsed_ms": 0.4,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "error",
-      "elapsed_ms": 0.7,
+      "elapsed_ms": 1.0,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": 12345,
        "include": "not-an-array",
        "start": 12345,
        "end": 12345,
        "limit": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "error",
-      "elapsed_ms": 0.7,
+      "elapsed_ms": 1.1,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": "test"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -590,53 +770,13 @@
     "required": [
      "corp"
     ],
-    "output_schema": false,
-    "annotations": null,
-    "probes": {
-     "missing_required": {
-      "outcome": "error",
-      "elapsed_ms": 1.0,
-      "error_code": -32603,
-      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
-      "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
-     },
-     "wrong_type": {
-      "outcome": "error",
-      "elapsed_ms": 1.3,
-      "error_code": -32603,
-      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
-      "auth_marker": "등록되지 않은",
-      "args": {
-       "corp": 12345,
-       "mode": 12345,
-       "event_type": 12345,
-       "event_types": "not-an-array",
-       "start": 12345,
-       "end": 12345
-      },
-      "alive_after": true
-     },
-     "valid": {
-      "outcome": "error",
-      "elapsed_ms": 1.3,
-      "error_code": -32603,
-      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
-      "auth_marker": "등록되지 않은",
-      "args": {
-       "corp": "test"
-      },
-      "alive_after": true
-     }
-    }
-   },
-   {
-    "name": "insider_signal",
-    "input_dialect": "https://json-schema.org/draft/2020-12/schema",
-    "input_schema_problems": [],
-    "required": [
-     "corp"
+    "properties": [
+     "corp",
+     "end",
+     "event_type",
+     "event_types",
+     "mode",
+     "start"
     ],
     "output_schema": false,
     "annotations": null,
@@ -647,34 +787,101 @@
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "error",
-      "elapsed_ms": 0.6,
+      "elapsed_ms": 1.2,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {
+       "corp": 12345,
+       "mode": 12345,
+       "event_type": 12345,
+       "event_types": "not-an-array",
+       "start": 12345,
+       "end": 12345
+      }
+     },
+     "valid": {
+      "outcome": "error",
+      "elapsed_ms": 0.4,
+      "error_code": -32603,
+      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+      "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {
+       "corp": "test"
+      }
+     }
+    }
+   },
+   {
+    "name": "insider_signal",
+    "input_dialect": "https://json-schema.org/draft/2020-12/schema",
+    "input_schema_problems": [],
+    "required": [
+     "corp"
+    ],
+    "properties": [
+     "cluster_threshold",
+     "corp",
+     "end",
+     "reporters_topn",
+     "start"
+    ],
+    "output_schema": false,
+    "annotations": null,
+    "probes": {
+     "missing_required": {
+      "outcome": "error",
+      "elapsed_ms": 0.8,
+      "error_code": -32603,
+      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+      "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
+     },
+     "wrong_type": {
+      "outcome": "error",
+      "elapsed_ms": 1.1,
+      "error_code": -32603,
+      "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
+      "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": 12345,
        "start": 12345,
        "end": 12345,
        "cluster_threshold": "not-a-number",
        "reporters_topn": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "error",
-      "elapsed_ms": 0.5,
+      "elapsed_ms": 1.2,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": "test"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -685,17 +892,25 @@
     "required": [
      "corp"
     ],
+    "properties": [
+     "audit_years",
+     "corp",
+     "end",
+     "start"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "error",
-      "elapsed_ms": 0.4,
+      "elapsed_ms": 1.2,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "error",
@@ -703,24 +918,28 @@
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": 12345,
        "start": 12345,
        "end": 12345,
        "audit_years": "not-an-array"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "error",
-      "elapsed_ms": 0.4,
+      "elapsed_ms": 1.0,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corp": "test"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -731,31 +950,41 @@
     "required": [
      "corps"
     ],
+    "properties": [
+     "corps",
+     "end_year",
+     "prefer_consolidated",
+     "years"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "error",
-      "elapsed_ms": 0.6,
+      "elapsed_ms": 1.1,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "error",
-      "elapsed_ms": 1.0,
+      "elapsed_ms": 1.1,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corps": "not-an-array",
        "years": "not-a-number",
        "end_year": "not-a-number",
        "prefer_consolidated": "not-a-boolean"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "error",
@@ -763,12 +992,14 @@
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "corps": [
         "test"
        ]
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -779,24 +1010,38 @@
     "required": [
      "rcept_no"
     ],
+    "properties": [
+     "filename",
+     "index",
+     "mode",
+     "outline_max_items",
+     "rcept_no",
+     "truncate_at",
+     "zip_index"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "error",
-      "elapsed_ms": 0.5,
+      "elapsed_ms": 0.4,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "error",
-      "elapsed_ms": 1.4,
+      "elapsed_ms": 0.9,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "rcept_no": 12345,
        "mode": 12345,
@@ -805,19 +1050,20 @@
        "truncate_at": "not-a-number",
        "outline_max_items": "not-a-number",
        "zip_index": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "error",
-      "elapsed_ms": 0.8,
+      "elapsed_ms": 1.1,
       "error_code": -32603,
       "error_message": "DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>",
       "auth_marker": "등록되지 않은",
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "rcept_no": "20240312000736"
-      },
-      "alive_after": true
+      }
      }
     }
    }
@@ -828,40 +1074,64 @@
   },
   "server_initiated_messages": 0
  },
- "finished_at": "2026-10-03T07:10:54+00:00",
+ "finished_at": "2026-10-03T11:06:00+00:00",
  "external": {
   "conformance_version": "0.1.16",
   "conformance": {
    "server-initialize": {
-    "returncode": 0,
+    "returncode": 1,
+    "measurable": false,
+    "bridge_events": [
+     {
+      "id": 0,
+      "kind": "server_not_running",
+      "returncode": 1
+     }
+    ],
     "checks": [
      {
       "id": "server-initialize",
-      "status": "SUCCESS",
+      "status": "FAILURE",
       "description": "Server responds to initialize request with valid structure",
-      "errorMessage": null
+      "errorMessage": "Failed to initialize: MCP error -32099: k-mcp-qa bridge: server process not running (exit 1)"
      }
     ]
    },
    "ping": {
     "returncode": 1,
+    "measurable": false,
+    "bridge_events": [
+     {
+      "id": 0,
+      "kind": "server_not_running",
+      "returncode": 1
+     }
+    ],
     "checks": [
      {
       "id": "ping",
       "status": "FAILURE",
       "description": "Server responds to ping requests",
-      "errorMessage": "Failed: MCP error -32000: k-mcp-qa bridge: no response from server"
+      "errorMessage": "Failed: MCP error -32099: k-mcp-qa bridge: server process not running (exit 1)"
      }
     ]
    },
    "tools-list": {
     "returncode": 1,
+    "measurable": false,
+    "bridge_events": [
+     {
+      "id": 0,
+      "kind": "server_not_running",
+      "returncode": 1
+     }
+    ],
     "checks": [
      {
       "id": "tools-list",
       "status": "FAILURE",
       "description": "Server lists available tools with valid structure",
-      "errorMessage": "Failed: MCP error -32000: k-mcp-qa bridge: no response from server"
+      "errorMessage": "Failed: MCP error -32099: k-mcp-qa bridge: server process not running (exit 1)"
      }
     ]
    }
@@ -891,7 +1161,7 @@
      "node",
      "build/index.js"
     ],
-    "timestamp": "2026-10-03T07:14:39+00:00",
+    "timestamp": "2026-10-03T11:07:45+00:00",
     "summary": {
      "total": 45,
      "status": {

@@ -2,7 +2,7 @@
  "id": "korean-law-mcp",
  "repo": "chrisryugj/korean-law-mcp",
  "sha_expected": "ff33a713970d7b504bb08cd1fc3b03944aca5757",
- "started_at": "2026-10-03T07:09:46+00:00",
+ "started_at": "2026-10-03T10:55:33+00:00",
  "protocol_version_requested": "2025-11-25",
  "sandbox": true,
  "command": [
@@ -36,7 +36,7 @@
      "--no-fund"
     ],
     "returncode": 0,
-    "seconds": 4.88,
+    "seconds": 5.03,
     "timed_out": false
    },
    {
@@ -46,7 +46,7 @@
      "tsc"
     ],
     "returncode": 0,
-    "seconds": 1.82,
+    "seconds": 1.7,
     "timed_out": false
    }
   ]
@@ -58,14 +58,14 @@
   "initialize": "result",
   "alive": true,
   "returncode": null,
-  "elapsed_ms": 224.7,
+  "elapsed_ms": 169.3,
   "stderr_tail": []
  },
  "probe": {
   "restarts": 0,
   "initialize": {
    "outcome": "result",
-   "elapsed_ms": 176.5,
+   "elapsed_ms": 189.5,
    "protocolVersion": "2025-11-25",
    "serverInfo": {
     "name": "korean-law",
@@ -81,7 +81,7 @@
    "count": 10,
    "pages": 1,
    "spec_violations": [],
-   "elapsed_ms": 3.4
+   "elapsed_ms": 7.1
   },
   "ping": {
    "outcome": "result",
@@ -90,18 +90,23 @@
   "unknown_method": {
    "outcome": "error",
    "error_code": -32601,
-   "alive_after": true
+   "error_message": "Method not found",
+   "alive_after": true,
+   "responsive_after": true,
+   "stderr_delta": []
   },
   "unknown_tool": {
    "outcome": "tool_error",
-   "elapsed_ms": 1.2,
+   "elapsed_ms": 3.3,
    "text_excerpt": "Unknown tool: kmcpqa_no_such_tool",
    "auth_marker": null,
    "error_marker": null,
    "traceback": false,
    "spec_violations": [],
    "has_structured": false,
-   "alive_after": true
+   "alive_after": true,
+   "responsive_after": true,
+   "stderr_delta": []
   },
   "tools": [
    {
@@ -109,6 +114,10 @@
     "input_dialect": "default(2020-12)",
     "input_schema_problems": [],
     "required": [
+     "query"
+    ],
+    "properties": [
+     "display",
      "query"
     ],
     "output_schema": false,
@@ -121,44 +130,50 @@
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.1,
+      "elapsed_ms": 2.9,
       "text_excerpt": "[INVALID_PARAMETER] query: Invalid input: expected string, received undefined\n도구: search_law\n제안:\n  1. 파라미터 형식과 필수 값을 확인하세요.",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.6,
+      "elapsed_ms": 0.7,
       "text_excerpt": "[INVALID_PARAMETER] query: Invalid input: expected string, received number; display: Invalid input: expected number, received string\n도구: search_law\n제안:\n  1. 파라미터 형식과 필수 값을 확인하세요.",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "query": 12345,
        "display": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 250.2,
+      "elapsed_ms": 296.9,
       "text_excerpt": "검색 결과 (총 11건):\n\n📂 부분매칭 (11건 중 11건 표시):\n1. 국립대학법인 서울대학교 설립ㆍ운영에 관한 법률 [현행]\n   - 법령ID: 011316\n   - MST: 276167\n   - 공포일: 20251001 / 시행일: 20260102\n   - 구분: 법률\n\n2. 국립대학법인 서울대학교 설립ㆍ운영에 관한 법률 시행령 [현행]\n   - 법령ID: 011451\n   - MST: 280957\n   - 공포일: 20251230 / 시행일: 20260102\n   - 구분: 대통령령\n\n3. 국립대학법인 서울대학교 설립ㆍ운영",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "query": "서울"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -167,6 +182,12 @@
     "input_dialect": "default(2020-12)",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "efYd",
+     "jo",
+     "lawId",
+     "mst"
+    ],
     "output_schema": false,
     "annotations": {
      "readOnlyHint": true,
@@ -177,32 +198,36 @@
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.7,
+      "elapsed_ms": 2.5,
       "text_excerpt": "[INVALID_PARAMETER] mst: Invalid input: expected string, received number; lawId: Invalid input: expected string, received number; jo: Invalid input: expected string, received number; efYd: Invalid input: expected string, received number\n도구: get_law_text\n제안:\n  1. 파라미터 형식과 필수 값을 확인하세요.",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "mst": 12345,
        "lawId": 12345,
        "jo": 12345,
        "efYd": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.6,
+      "elapsed_ms": 2.0,
       "text_excerpt": "[INVALID_PARAMETER] : mst 또는 lawId 중 하나는 필수입니다\n도구: get_law_text\n제안:\n  1. 파라미터 형식과 필수 값을 확인하세요.",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -211,6 +236,12 @@
     "input_dialect": "default(2020-12)",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "id",
+     "ordinSeq",
+     "ordinanceName",
+     "query"
+    ],
     "output_schema": false,
     "annotations": {
      "readOnlyHint": true,
@@ -221,32 +252,36 @@
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.6,
+      "elapsed_ms": 2.0,
       "text_excerpt": "[INVALID_PARAMETER] ordinSeq: Invalid input: expected string, received number; id: Invalid input: expected string, received number; ordinanceName: Invalid input: expected string, received number; query: Invalid input: expected string, received number\n도구: ordinance_radar\n제안:\n  1. 파라미터 형식과 필수 값을 확인하세요",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "ordinSeq": 12345,
        "id": 12345,
        "ordinanceName": 12345,
        "query": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.4,
+      "elapsed_ms": 1.4,
       "text_excerpt": "[INVALID_PARAMETER] : ordinSeq(또는 별칭 id)·ordinanceName·query 중 하나는 필수입니다\n도구: ordinance_radar\n제안:\n  1. 파라미터 형식과 필수 값을 확인하세요.",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -256,6 +291,15 @@
     "input_schema_problems": [],
     "required": [
      "lawName"
+    ],
+    "properties": [
+     "annexNo",
+     "bylSeq",
+     "date",
+     "jo",
+     "knd",
+     "lawName",
+     "query"
     ],
     "output_schema": false,
     "annotations": {
@@ -267,25 +311,30 @@
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.7,
+      "elapsed_ms": 1.9,
       "text_excerpt": "[INVALID_PARAMETER] lawName: Invalid input: expected string, received undefined\n도구: get_annexes\n제안:\n  1. 파라미터 형식과 필수 값을 확인하세요.",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.5,
+      "elapsed_ms": 1.7,
       "text_excerpt": "[INVALID_PARAMETER] lawName: Invalid input: expected string, received number; knd: Invalid option: expected one of \"1\"|\"2\"|\"3\"|\"4\"|\"5\"; bylSeq: Invalid input: expected string, received number; annexNo: Invalid input: expected string, received number; query: Invalid input: expected string, received n",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "lawName": 12345,
        "knd": 12345,
@@ -294,22 +343,23 @@
        "query": 12345,
        "jo": 12345,
        "date": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 439.2,
+      "elapsed_ms": 213.6,
       "text_excerpt": "⚠️ 신설 별표 병합 확인 불가 (대상 법령일련번호 미확정) — 아래는 검색 인덱스(licbyl) 기준 목록이며,\n   최근 개정으로 신설된 별표가 빠져 있을 수 있습니다. 찾는 별표가 없으면 법령 본문에서 직접 확인하세요.\n\n법령명: 서울\n별표/서식 목록 (총 27건):\n\n1. [000000] 과태료의 부과기준(제21조 관련) (별표)\n   관련법령: 서울대학교치과병원 설치법 시행령\n\n2. [000000] 과태료의 부과기준(제23조 관련) (별표)\n   관련법령: 서울대학교병원 설치법 시행령\n\n3. [001700] 가수금 명세서 ",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "lawName": "서울"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -318,6 +368,21 @@
     "input_dialect": "default(2020-12)",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "articles",
+     "domain",
+     "fromDate",
+     "includeHistory",
+     "lawId",
+     "maxClauses",
+     "mst",
+     "parentLaw",
+     "query",
+     "scenario",
+     "task",
+     "text",
+     "toDate"
+    ],
     "output_schema": false,
     "annotations": {
      "readOnlyHint": true,
@@ -328,13 +393,16 @@
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.0,
+      "elapsed_ms": 2.6,
       "text_excerpt": "[INVALID_PARAMETER] query: Invalid input: expected string, received number; task: Invalid option: expected one of \"full_research\"|\"law_system\"|\"action_basis\"|\"dispute_prep\"|\"amendment_track\"|\"ordinance_compare\"|\"procedure_detail\"|\"document_review\"; scenario: Invalid option: expected one of \"delegati",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "query": 12345,
        "task": 12345,
@@ -349,20 +417,21 @@
        "includeHistory": "not-a-boolean",
        "text": 12345,
        "maxClauses": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.5,
+      "elapsed_ms": 1.4,
       "text_excerpt": "task=full_research에는 query가 필요합니다.",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -372,6 +441,19 @@
     "input_schema_problems": [],
     "required": [
      "mode"
+    ],
+    "properties": [
+     "caseNumber",
+     "date",
+     "deepScan",
+     "display",
+     "includeMermaid",
+     "includeOrdinances",
+     "jo",
+     "lawName",
+     "maxCitations",
+     "mode",
+     "text"
     ],
     "output_schema": false,
     "annotations": {
@@ -383,15 +465,17 @@
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.7,
+      "elapsed_ms": 2.3,
       "text_excerpt": "[INVALID_PARAMETER] mode: Invalid option: expected one of \"verify_citations\"|\"cite_check\"|\"applicable_law\"|\"impact_map\"\n도구: legal_analysis\n제안:\n  1. 파라미터 형식과 필수 값을 확인하세요.",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
@@ -402,6 +486,9 @@
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "mode": 12345,
        "text": 12345,
@@ -414,22 +501,23 @@
        "deepScan": "not-a-boolean",
        "includeOrdinances": "not-a-boolean",
        "includeMermaid": "not-a-boolean"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.5,
+      "elapsed_ms": 1.3,
       "text_excerpt": "mode=verify_citations에는 text가 필요합니다.",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "mode": "verify_citations"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -438,6 +526,9 @@
     "input_dialect": "default(2020-12)",
     "input_schema_problems": [],
     "required": [
+     "intent"
+    ],
+    "properties": [
      "intent"
     ],
     "output_schema": false,
@@ -450,43 +541,49 @@
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.5,
+      "elapsed_ms": 1.6,
       "text_excerpt": "[INVALID_PARAMETER] intent: Invalid input: expected string, received undefined\n도구: discover_tools\n제안:\n  1. 파라미터 형식과 필수 값을 확인하세요.",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.4,
+      "elapsed_ms": 1.4,
       "text_excerpt": "[INVALID_PARAMETER] intent: Invalid input: expected string, received number\n도구: discover_tools\n제안:\n  1. 파라미터 형식과 필수 값을 확인하세요.",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "intent": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 1.4,
+      "elapsed_ms": 3.3,
       "text_excerpt": "\"test\"에 해당하는 도구를 찾지 못했습니다.\n카테고리 40개 — 법령검색·법령조회·자치법규·별표서식 같은 넓은 말이나 도구 이름으로 다시 시도하세요.",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "intent": "test"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -497,6 +594,10 @@
     "required": [
      "tool_name",
      "params"
+    ],
+    "properties": [
+     "params",
+     "tool_name"
     ],
     "output_schema": false,
     "annotations": {
@@ -515,38 +616,44 @@
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.3,
+      "elapsed_ms": 1.1,
       "text_excerpt": "[INVALID_PARAMETER] tool_name: Invalid input: expected string, received number; params: Invalid input: expected record, received string\n도구: execute_tool\n제안:\n  1. 파라미터 형식과 필수 값을 확인하세요.",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "tool_name": 12345,
        "params": "not-an-object"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.4,
+      "elapsed_ms": 1.3,
       "text_excerpt": "도구를 찾을 수 없습니다: 20250131\ndiscover_tools로 사용 가능한 도구를 먼저 확인하세요.",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "tool_name": "20250131",
        "params": {}
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -556,6 +663,14 @@
     "input_schema_problems": [],
     "required": [
      "domain"
+    ],
+    "properties": [
+     "display",
+     "domain",
+     "options",
+     "page",
+     "query",
+     "sort"
     ],
     "output_schema": false,
     "annotations": {
@@ -567,25 +682,30 @@
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.7,
+      "elapsed_ms": 2.6,
       "text_excerpt": "[INVALID_PARAMETER] domain: Invalid option: expected one of \"precedent\"|\"interpretation\"|\"tax_tribunal\"|\"customs\"|\"nts\"|\"constitutional\"|\"admin_appeal\"|\"ftc\"|\"pipc\"|\"nlrc\"|\"acr\"|\"appeal_review\"|\"acr_special\"|\"school\"|\"public_corp\"|\"public_inst\"|\"treaty\"|\"english_law\"\n도구: search_decisions\n제안:\n  1. 파라",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.5,
+      "elapsed_ms": 1.4,
       "text_excerpt": "[INVALID_PARAMETER] domain: Invalid option: expected one of \"precedent\"|\"interpretation\"|\"tax_tribunal\"|\"customs\"|\"nts\"|\"constitutional\"|\"admin_appeal\"|\"ftc\"|\"pipc\"|\"nlrc\"|\"acr\"|\"appeal_review\"|\"acr_special\"|\"school\"|\"public_corp\"|\"public_inst\"|\"treaty\"|\"english_law\"; query: Invalid input: expected ",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "domain": 12345,
        "query": 12345,
@@ -593,22 +713,23 @@
        "page": "not-a-number",
        "sort": 12345,
        "options": "not-an-object"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 177.5,
+      "elapsed_ms": 210.6,
       "text_excerpt": "판례 검색 결과 (총 173625건, 1페이지):\n\n[613735] 보유주식을 배우자게 증여하고 다시 회사가 증여가액으로 매수하여 소각한 이 거래를 의제배당에 대한 회피로 본 당초 처분은 적법함\n  사건번호: 대법원-2025-두-34754\n  법원: N/A\n  선고일: 20261211\n  판결유형: N/A\n\n[624349] 이 사건 부품의 수입은 원고의 사업과 직접 관련성이 없고, 원고는 ‘수입자’에 해당하지 않으므로, 이 사건 매입세액공제는 위법함\n  사건번호: 대법원-2026-두-30644\n  법원: N/A\n  선고일: 2026",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "domain": "precedent"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -620,6 +741,12 @@
      "domain",
      "id"
     ],
+    "properties": [
+     "domain",
+     "full",
+     "id",
+     "options"
+    ],
     "output_schema": false,
     "annotations": {
      "readOnlyHint": true,
@@ -630,47 +757,53 @@
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.7,
+      "elapsed_ms": 2.2,
       "text_excerpt": "[INVALID_PARAMETER] domain: Invalid option: expected one of \"precedent\"|\"interpretation\"|\"tax_tribunal\"|\"customs\"|\"nts\"|\"constitutional\"|\"admin_appeal\"|\"ftc\"|\"pipc\"|\"nlrc\"|\"acr\"|\"appeal_review\"|\"acr_special\"|\"school\"|\"public_corp\"|\"public_inst\"|\"treaty\"|\"english_law\"; id: Invalid input: expected str",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.4,
+      "elapsed_ms": 1.4,
       "text_excerpt": "[INVALID_PARAMETER] domain: Invalid option: expected one of \"precedent\"|\"interpretation\"|\"tax_tribunal\"|\"customs\"|\"nts\"|\"constitutional\"|\"admin_appeal\"|\"ftc\"|\"pipc\"|\"nlrc\"|\"acr\"|\"appeal_review\"|\"acr_special\"|\"school\"|\"public_corp\"|\"public_inst\"|\"treaty\"|\"english_law\"; id: Invalid input: expected str",
       "auth_marker": null,
       "error_marker": "INVALID",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "domain": 12345,
        "id": 12345,
        "full": "not-a-boolean",
        "options": "not-an-object"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 93.1,
+      "elapsed_ms": 115.4,
       "text_excerpt": "[EXTERNAL_API_ERROR] 법제처 서버 오류 (500) - fetchApi(prec)\n도구: get_precedent_text",
       "auth_marker": null,
       "error_marker": "오류",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "domain": "precedent",
        "id": "test"
-      },
-      "alive_after": true
+      }
      }
     }
    }
@@ -681,12 +814,14 @@
   },
   "server_initiated_messages": 0
  },
- "finished_at": "2026-10-03T07:10:07+00:00",
+ "finished_at": "2026-10-03T10:55:54+00:00",
  "external": {
   "conformance_version": "0.1.16",
   "conformance": {
    "server-initialize": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "server-initialize",
@@ -698,6 +833,8 @@
    },
    "ping": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "ping",
@@ -709,6 +846,8 @@
    },
    "tools-list": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "tools-list",
@@ -744,7 +883,7 @@
      "node",
      "build/index.js"
     ],
-    "timestamp": "2026-10-03T07:14:32+00:00",
+    "timestamp": "2026-10-03T11:00:00+00:00",
     "summary": {
      "total": 30,
      "status": {

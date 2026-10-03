@@ -1,57 +1,30 @@
 # data4library-mcp
 
 - 저장소: https://github.com/isnow890/data4library-mcp @ `5708f84552076359847ae9ba4b912383c6cf6183`
-- 실행 시각: 2026-10-03T07:14:06+00:00 (UTC), 샌드박스: True
+- 실행 시각: 2026-10-03T10:59:33+00:00 (UTC), 샌드박스: True
 - 설치: npm ci --ignore-scripts --no-audit --no-fund && npx --no-install tsc && node scripts/copy-data.mjs
 - 실행 명령: `node dist/src/index.js`, MCP SDK: @modelcontextprotocol/sdk 1.30.0
-- 원본 로그: `reports/raw/data4library-mcp/`
+- 툴 수: 27, 원본 로그: `reports/raw/data4library-mcp/`
 
-## P4 · 알 수 없는 툴 호출을 JSON-RPC 오류가 아닌 isError 결과로 답함 (1건)
+## 서버 코드
 
-> 같은 SDK(@modelcontextprotocol/sdk 1.30.0)를 쓰는 korean-law-mcp 에서도 같은 유형이 관찰됨
+### E1 · 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) — 발생 13건
 
-- 툴 `kmcpqa_no_such_tool` · 입력 `{}`
-  - 응답: 'outcome=tool_error: MCP error -32602: Tool kmcpqa_no_such_tool not found'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "kmcpqa_no_such_tool", "arguments": {}}'`
+- 툴: get_book_detail, get_book_keywords, get_book_usage_analysis, get_library_info, get_mania_recommendations, get_monthly_keywords, get_reader_recommendations, get_reading_quantity 외
+- 소스 위치: 소스 위치 미확인
+- 예시 입력: `{}`
+- 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
+- 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "search_libraries", "arguments": {}}'`
+- 근거: [https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling](https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) (서술적 설명(규범 키워드 없음))
 
-## E1 · 기관 API·실행 오류를 isError 없는 결과로 돌려줌 (자리 표시자 키 호출) (13건)
+## SDK 기본 동작(확인)
 
-- 툴 `search_libraries` · 입력 `{}`
-  - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "search_libraries", "arguments": {}}'`
-- 툴 `search_books` · 입력 `{}`
-  - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "search_books", "arguments": {}}'`
-- 툴 `search_popular_books` · 입력 `{}`
-  - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "search_popular_books", "arguments": {}}'`
-- 툴 `get_book_detail` · 입력 `{"isbn13": "9788936434267"}`
-  - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "get_book_detail", "arguments": {"isbn13": "9788936434267"}}'`
-- 툴 `search_libraries_by_book` · 입력 `{"isbn": "9788936434267", "region": "11"}`
-  - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "search_libraries_by_book", "arguments": {"isbn": "9788936434267", "region": "11"}}'`
-- 툴 `get_reading_quantity` · 입력 `{}`
-  - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "get_reading_quantity", "arguments": {}}'`
-- 툴 `get_monthly_keywords` · 입력 `{}`
-  - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "get_monthly_keywords", "arguments": {}}'`
-- 툴 `get_mania_recommendations` · 입력 `{"isbn13": "9788936434267"}`
-  - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "get_mania_recommendations", "arguments": {"isbn13": "9788936434267"}}'`
-- 툴 `get_reader_recommendations` · 입력 `{"isbn13": "9788936434267"}`
-  - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "get_reader_recommendations", "arguments": {"isbn13": "9788936434267"}}'`
-- 툴 `get_book_keywords` · 입력 `{"isbn13": "9788936434267"}`
-  - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "get_book_keywords", "arguments": {"isbn13": "9788936434267"}}'`
-- 툴 `get_book_usage_analysis` · 입력 `{"isbn13": "9788936434267"}`
-  - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "get_book_usage_analysis", "arguments": {"isbn13": "9788936434267"}}'`
-- 툴 `search_popular_books_by_library` · 입력 `{}`
-  - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "search_popular_books_by_library", "arguments": {}}'`
-- 툴 `get_library_info` · 입력 `{}`
-  - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-  - 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "get_library_info", "arguments": {}}'`
+### P4 · 알 수 없는 툴 호출에 JSON-RPC 오류가 아닌 isError 결과로 응답 — 발생 1건
+
+- 툴: kmcpqa_no_such_tool
+- 소스 위치: `node_modules/@modelcontextprotocol/sdk/dist/esm/server/mcp.js:104`
+- 예시 입력: `{}`
+- 응답: 'tool_error: MCP error -32602: Tool kmcpqa_no_such_tool not found'
+- 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "kmcpqa_no_such_tool", "arguments": {}}'`
+- 근거: [https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling](https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) (서술적 설명(규범 키워드 없음))
+

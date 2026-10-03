@@ -1,7 +1,7 @@
 <!-- k-mcp-qa 이슈 초안. 자동 생성. 제출하지 않았음. 올리기 전 내용을 직접 재현·검토할 것. -->
-# [재현 보고] data-go-nts-business-verification: MCP 공통 시험에서 관찰한 동작
+# [재현 보고] data-go-nts-business-verification: 공통 시험에서 관찰한 동작
 
-안녕하세요. 한국 공공데이터 MCP 서버들에 같은 시험을 돌려 보다가 아래 동작을 관찰해 공유드립니다. 실제 API 키 없이(자리 표시자 값) 실행한 결과입니다.
+한국 공공데이터 MCP 서버 여러 개에 같은 시험을 돌려 보다가 아래 동작을 관찰해 공유드립니다. 실제 API 키 없이(자리 표시자 값) 실행한 결과입니다. SDK 기본 동작으로 확인된 항목은 뺐습니다.
 
 ## 환경
 
@@ -12,11 +12,12 @@
 
 ## 관찰
 
-### 자리 표시자 키를 넣어도 initialize 응답이 오지 않음
+### 자리 표시자 키를 넣어도 initialize 응답이 오지 않음 (발생 1건, 원인 1개)
 
-- 툴 `-`, 입력 `-` (같은 유형 1건)
-- 응답: `initialize closed, stderr 마지막 줄:     raise ModuleNotFoundError(_MESSAGE, name=__name__) | ModuleNotFoundError: No module named 'mcp.server.fastmcp'. This is mcp 2.x, where FastMCP was renamed to MCPSe`
+- 예시: 툴 `-`, 입력 `-`
+- 응답: `initialize closed, stderr 마지막 줄:     raise ModuleNotFoundError(_MESSAGE, name=__name__) | ModuleNotFoundError: No module named 'mcp.server.fastmcp'. This is mcp 2.x, where FastMCP was renamed to MCPServer (from mcp.server.mcpserver import M`
+- 소스 위치: `pyproject.toml:24`, `.venv/lib/python3.12/site-packages/mcp/server/fastmcp.py:16`, `data_go_mcp/nts_business_verification/server.py:6` — 의존성 선언과 설치된 SDK 의 조합
 
 ## 재현
 
-요청·응답 원문 로그(JSON-RPC 송수신 기록)는 필요하시면 첨부하겠습니다. MCP 2025-11-25 스펙의 해당 항목과 다르게 보이는 부분만 적었습니다. 의도된 동작이라면 알려 주세요.
+요청·응답 원문 로그(JSON-RPC 송수신 기록)는 필요하시면 첨부하겠습니다.

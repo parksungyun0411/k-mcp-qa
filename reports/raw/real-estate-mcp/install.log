@@ -7,15 +7,15 @@ Creating virtual environment at: .venv
 warning: `build_system.requires = ["uv-build>=0.9.28,<0.10.0"]` does not contain the current uv version 0.12.22
       Built real-estate @ file:///private/tmp/kmcp-work/real-estate-mcp/src
 Downloading pillow (4.4MiB)
-Downloading pygments (1.2MiB)
-Downloading pydantic-core (1.8MiB)
 Downloading cryptography (6.8MiB)
+Downloading pydantic-core (1.8MiB)
+Downloading pygments (1.2MiB)
  Downloaded pygments
  Downloaded pydantic-core
  Downloaded pillow
  Downloaded cryptography
-Prepared 40 packages in 506ms
-Installed 40 packages in 25ms
+Prepared 40 packages in 455ms
+Installed 40 packages in 30ms
  + annotated-doc==0.0.4
  + annotated-types==0.7.0
  + anyio==4.12.1

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "server-initialize",
+    "name": "ServerInitialize",
+    "description": "Server responds to initialize request with valid structure",
+    "status": "FAILURE",
+    "timestamp": "2026-10-03T11:07:45.221Z",
+    "errorMessage": "Failed to initialize: MCP error -32099: k-mcp-qa bridge: server process not running (exit 1)",
+    "specReferences": [
+      {
+        "id": "MCP-Initialize",
+        "url": "https://modelcontextprotocol.io/specification/2025-06-18/basic/lifecycle#initialization"
+      }
+    ]
+  }
+]

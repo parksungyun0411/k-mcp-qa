@@ -3,16 +3,16 @@ $ uv sync --frozen --no-dev
 Using CPython 3.12.15
 Creating virtual environment at: .venv
    Building mcp-korea-tourism-api @ file:///private/tmp/kmcp-work/mcp-korea-tourism-api/src
+   Building ratelimit==2.2.1
+Downloading pydantic-core (1.8MiB)
 Downloading cryptography (6.7MiB)
 Downloading pygments (1.2MiB)
-Downloading pydantic-core (1.8MiB)
-   Building ratelimit==2.2.1
  Downloaded pygments
  Downloaded pydantic-core
  Downloaded cryptography
       Built mcp-korea-tourism-api @ file:///private/tmp/kmcp-work/mcp-korea-tourism-api/src
       Built ratelimit==2.2.1
-Prepared 38 packages in 638ms
+Prepared 38 packages in 525ms
 Installed 38 packages in 21ms
  + annotated-types==0.7.0
  + anyio==4.9.0

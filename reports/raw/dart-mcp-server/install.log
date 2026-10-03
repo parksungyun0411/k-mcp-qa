@@ -3,18 +3,18 @@ $ uv sync --frozen --no-dev
 Using CPython 3.10.22
 Creating virtual environment at: .venv
 warning: Skipping installation of entry points (`project.scripts`) for package `dart` because this project is not packaged; to install entry points, set `tool.uv.package = true` or define a `build-system`
-Downloading numpy (5.2MiB)
-Downloading lxml (7.8MiB)
 Downloading pygments (1.2MiB)
+Downloading numpy (5.2MiB)
 Downloading pydantic-core (1.8MiB)
 Downloading pandas (10.8MiB)
+Downloading lxml (7.8MiB)
  Downloaded pygments
  Downloaded pydantic-core
  Downloaded numpy
  Downloaded lxml
  Downloaded pandas
-Prepared 36 packages in 719ms
-Installed 36 packages in 51ms
+Prepared 36 packages in 728ms
+Installed 36 packages in 59ms
  + annotated-types==0.7.0
  + anyio==4.9.0
  + beautifulsoup4==4.13.4

@@ -1,7 +1,7 @@
-Running client scenario 'ping' against server: http://127.0.0.1:52413/mcp
-Results saved to reports/raw/dart-mcp-server/external/conformance/ping/server-ping-2026-10-03T07-14-41-374Z
+Running client scenario 'ping' against server: http://127.0.0.1:56298/mcp
+Results saved to reports/raw/dart-mcp-server/external/conformance/ping/server-ping-2026-10-03T11-07-46-947Z
 Checks:
-[90m2026-10-03T07:14:41.420Z[0m [ping] [32mSUCCESS[0m Server responds to ping requests
+[90m2026-10-03T11:07:46.988Z[0m [ping] [32mSUCCESS[0m Server responds to ping requests
 
 Test Results:
 Passed: 1/1, 0 failed, 0 warnings

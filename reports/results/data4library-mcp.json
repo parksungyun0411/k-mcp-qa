@@ -2,7 +2,7 @@
  "id": "data4library-mcp",
  "repo": "isnow890/data4library-mcp",
  "sha_expected": "5708f84552076359847ae9ba4b912383c6cf6183",
- "started_at": "2026-10-03T07:14:06+00:00",
+ "started_at": "2026-10-03T10:59:33+00:00",
  "protocol_version_requested": "2025-11-25",
  "sandbox": true,
  "command": [
@@ -40,7 +40,7 @@
      "--no-fund"
     ],
     "returncode": 0,
-    "seconds": 0.83,
+    "seconds": 0.75,
     "timed_out": false
    },
    {
@@ -50,7 +50,7 @@
      "tsc"
     ],
     "returncode": 0,
-    "seconds": 0.95,
+    "seconds": 0.82,
     "timed_out": false
    },
    {
@@ -59,7 +59,7 @@
      "scripts/copy-data.mjs"
     ],
     "returncode": 0,
-    "seconds": 0.06,
+    "seconds": 0.05,
     "timed_out": false
    }
   ]
@@ -71,7 +71,7 @@
   "initialize": "closed",
   "alive": false,
   "returncode": 1,
-  "elapsed_ms": 140.6,
+  "elapsed_ms": 131.5,
   "stderr_tail": [
    "Data4Library MCP server failed: LIBRARY_API_KEY 환경변수가 필요합니다.",
    "Server failed to start: LIBRARY_API_KEY 환경변수가 필요합니다."
@@ -81,7 +81,7 @@
   "restarts": 0,
   "initialize": {
    "outcome": "result",
-   "elapsed_ms": 163.6,
+   "elapsed_ms": 162.5,
    "protocolVersion": "2025-11-25",
    "serverInfo": {
     "name": "data4library-mcp",
@@ -99,7 +99,7 @@
    "count": 27,
    "pages": 1,
    "spec_violations": [],
-   "elapsed_ms": 5.9
+   "elapsed_ms": 6.7
   },
   "ping": {
    "outcome": "result",
@@ -108,18 +108,23 @@
   "unknown_method": {
    "outcome": "error",
    "error_code": -32601,
-   "alive_after": true
+   "error_message": "Method not found",
+   "alive_after": true,
+   "responsive_after": true,
+   "stderr_delta": []
   },
   "unknown_tool": {
    "outcome": "tool_error",
-   "elapsed_ms": 2.6,
+   "elapsed_ms": 3.2,
    "text_excerpt": "MCP error -32602: Tool kmcpqa_no_such_tool not found",
    "auth_marker": null,
    "error_marker": "error",
    "traceback": false,
    "spec_violations": [],
    "has_structured": false,
-   "alive_after": true
+   "alive_after": true,
+   "responsive_after": true,
+   "stderr_delta": []
   },
   "tools": [
    {
@@ -127,38 +132,49 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "dtl_region",
+     "libCode",
+     "pageNo",
+     "pageSize",
+     "region"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 2.6,
+      "elapsed_ms": 2.1,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_libraries: Expected string, received number at libCode\nExpected '11' | '21' | '22' | '23' | '24' | '25' | '26' | '29' | '31' | '32' | '33' | '34' | '35' | '36' | '37' | '38' | '39', received number at region\nExpected string,",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "libCode": 12345,
        "region": 12345,
        "dtl_region": 12345,
        "pageNo": "not-a-number",
        "pageSize": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 381.0,
+      "elapsed_ms": 488.7,
       "text_excerpt": "{\n  \"response\": {\n    \"errCode\": \"authErr\",\n    \"error\": \"인증정보가 일치하지 않습니다.\"\n  }\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -167,18 +183,33 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "author",
+     "exactMatch",
+     "isbn13",
+     "keyword",
+     "order",
+     "pageNo",
+     "pageSize",
+     "publisher",
+     "sort",
+     "title"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.3,
+      "elapsed_ms": 0.8,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_books: Expected string, received number at title\nExpected string, received number at author\nExpected string, received number at isbn13\nExpected string, received number at keyword\nExpected string, received number at publisher",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "title": 12345,
        "author": 12345,
@@ -190,20 +221,21 @@
        "exactMatch": "not-a-boolean",
        "pageNo": "not-a-number",
        "pageSize": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 21.1,
+      "elapsed_ms": 21.4,
       "text_excerpt": "{\n  \"response\": {\n    \"errCode\": \"authErr\",\n    \"error\": \"인증정보가 일치하지 않습니다.\"\n  }\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -212,18 +244,37 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "addCode",
+     "age",
+     "book_dvsn",
+     "dtl_kdc",
+     "dtl_region",
+     "endDt",
+     "from_age",
+     "gender",
+     "kdc",
+     "pageNo",
+     "pageSize",
+     "region",
+     "startDt",
+     "to_age"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.4,
+      "elapsed_ms": 1.7,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_popular_books: Expected string, received number at startDt\nExpected '0' | '1' | '2', received number at gender\nExpected number, received string at from_age\nExpected number, received string at to_age\nExpected '0' | '6' | '8' ",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "startDt": 12345,
        "gender": 12345,
@@ -238,20 +289,21 @@
        "dtl_kdc": 12345,
        "pageNo": "not-a-number",
        "pageSize": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 322.5,
+      "elapsed_ms": 382.9,
       "text_excerpt": "{\n  \"response\": {\n    \"errCode\": \"authErr\",\n    \"error\": \"인증정보가 일치하지 않습니다.\"\n  }\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -260,6 +312,11 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "libraryName",
+     "limit",
+     "regionName"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
@@ -272,24 +329,28 @@
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "libraryName": 12345,
        "regionName": 12345,
        "limit": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 1.9,
+      "elapsed_ms": 1.8,
       "text_excerpt": "검색 결과: 1539개 도서관 중 20개 표시\n\n📚 2.28도서관 (127058)\n📍 주소: 대구광역시 중구 2·28길 9\n📞 전화: 053-257-2280\n🌐 홈페이지: http://library.daegu.go.kr/228lib/index.do\n\n📚 KB국민은행과 함께하는 나무 작은도서관 (711618)\n📍 주소: 서울특별시 노원구 동일로 1405\n📞 전화: 070-4158-9660\n🌐 홈페이지: https://www.nowonlib.kr/\n\n📚 U보라작은도서관 (148096)\n📍 주소: 경상남도 김해시 전하로176번길 71, ",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -301,51 +362,62 @@
      "latitude",
      "longitude"
     ],
+    "properties": [
+     "count",
+     "latitude",
+     "longitude"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.8,
+      "elapsed_ms": 1.4,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_nearby_libraries: Required at latitude\nRequired at longitude",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.5,
+      "elapsed_ms": 1.3,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_nearby_libraries: Expected number, received string at latitude\nExpected number, received string at longitude\nExpected number, received string at count",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "latitude": "not-a-number",
        "longitude": "not-a-number",
        "count": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 4.5,
+      "elapsed_ms": 2.2,
       "text_excerpt": "{\n  \"success\": true,\n  \"userLocation\": {\n    \"latitude\": -90,\n    \"longitude\": -180\n  },\n  \"totalFound\": 1539,\n  \"returned\": 15,\n  \"libraries\": [\n    {\n      \"libName\": \"제주 삼매봉도서관\",\n      \"region\": \"제주특별자치도 서귀포시\",\n      \"address\": \"제주특별자치도 서귀포시 남성중로153번길 15\",\n      \"tel\": \"064-733-1524\",\n      \"oper",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "latitude": -90.0,
        "longitude": -180.0
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -356,50 +428,61 @@
     "required": [
      "isbn13"
     ],
+    "properties": [
+     "displayInfo",
+     "isbn13",
+     "loaninfoYN"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 2.8,
+      "elapsed_ms": 1.0,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_book_detail: Required at isbn13",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.6,
+      "elapsed_ms": 1.3,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_book_detail: Expected string, received number at isbn13\nExpected 'Y' | 'N', received number at loaninfoYN\nExpected 'gender' | 'age' | 'region', received number at displayInfo",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "isbn13": 12345,
        "loaninfoYN": 12345,
        "displayInfo": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 318.6,
+      "elapsed_ms": 316.6,
       "text_excerpt": "{\n  \"response\": {\n    \"errCode\": \"authErr\",\n    \"error\": \"인증정보가 일치하지 않습니다.\"\n  }\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "isbn13": "9788936434267"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -411,6 +494,10 @@
      "libCode",
      "isbn13"
     ],
+    "properties": [
+     "isbn13",
+     "libCode"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
@@ -419,30 +506,34 @@
      },
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.7,
+      "elapsed_ms": 1.2,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool check_book_availability: Required at libCode\nRequired at isbn13",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.9,
+      "elapsed_ms": 1.3,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool check_book_availability: Expected string, received number at libCode\nExpected string, received number at isbn13",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "libCode": 12345,
        "isbn13": 12345
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -453,6 +544,9 @@
     "required": [
      "searchDt"
     ],
+    "properties": [
+     "searchDt"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
@@ -461,29 +555,33 @@
      },
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.8,
+      "elapsed_ms": 1.4,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_hot_trend: Required at searchDt",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.5,
+      "elapsed_ms": 1.3,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_hot_trend: Expected string, received number at searchDt",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "searchDt": 12345
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -495,53 +593,66 @@
      "isbn",
      "region"
     ],
+    "properties": [
+     "dtl_region",
+     "isbn",
+     "pageNo",
+     "pageSize",
+     "region"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.5,
+      "elapsed_ms": 0.4,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_libraries_by_book: Required at isbn\nRequired at region",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.7,
+      "elapsed_ms": 1.1,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_libraries_by_book: Expected string, received number at isbn\nExpected '11' | '21' | '22' | '23' | '24' | '25' | '26' | '29' | '31' | '32' | '33' | '34' | '35' | '36' | '37' | '38' | '39', received number at region\nExpected st",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "isbn": 12345,
        "region": 12345,
        "dtl_region": 12345,
        "pageNo": "not-a-number",
        "pageSize": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 354.1,
+      "elapsed_ms": 327.7,
       "text_excerpt": "{\n  \"response\": {\n    \"errCode\": \"authErr\",\n    \"error\": \"인증정보가 일치하지 않습니다.\"\n  }\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "isbn": "9788936434267",
        "region": "11"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -553,6 +664,10 @@
      "libCode",
      "type"
     ],
+    "properties": [
+     "libCode",
+     "type"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
@@ -561,30 +676,34 @@
      },
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.1,
+      "elapsed_ms": 0.7,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_usage_trend: Required at libCode\nRequired at type",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.7,
+      "elapsed_ms": 1.4,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_usage_trend: Expected string, received number at libCode\nExpected 'D' | 'H', received number at type",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "libCode": 12345,
        "type": 12345
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -594,6 +713,10 @@
     "input_schema_problems": [],
     "required": [
      "libCode"
+    ],
+    "properties": [
+     "libCode",
+     "searchDt"
     ],
     "output_schema": false,
     "annotations": null,
@@ -610,23 +733,27 @@
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.3,
+      "elapsed_ms": 1.5,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_new_arrival_books: Expected string, received number at libCode\nExpected string, received number at searchDt",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "libCode": 12345,
        "searchDt": 12345
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -635,37 +762,47 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "dtl_region",
+     "month",
+     "region",
+     "year"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.9,
+      "elapsed_ms": 1.3,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_reading_quantity: Expected '11' | '21' | '22' | '23' | '24' | '25' | '26' | '29' | '31' | '32' | '33' | '34' | '35' | '36' | '37' | '38' | '39', received number at region\nExpected string, received number at dtl_region\nExpected ",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "region": 12345,
        "dtl_region": 12345,
        "year": 12345,
        "month": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 21.6,
+      "elapsed_ms": 26.3,
       "text_excerpt": "{\n  \"response\": {\n    \"errCode\": \"authErr\",\n    \"error\": \"인증정보가 일치하지 않습니다.\"\n  }\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -674,34 +811,41 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "month"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.5,
+      "elapsed_ms": 1.0,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_monthly_keywords: Expected string, received number at month",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "month": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 27.1,
+      "elapsed_ms": 24.7,
       "text_excerpt": "{\n  \"response\": {\n    \"errCode\": \"authErr\",\n    \"error\": \"인증정보가 일치하지 않습니다.\"\n  }\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -712,48 +856,57 @@
     "required": [
      "region"
     ],
+    "properties": [
+     "region"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.5,
+      "elapsed_ms": 1.3,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_detailed_region_codes: Required at region",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.6,
+      "elapsed_ms": 1.2,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_detailed_region_codes: Expected '11' | '21' | '22' | '23' | '24' | '25' | '26' | '29' | '31' | '32' | '33' | '34' | '35' | '36' | '37' | '38' | '39', received number at region",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "region": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 2.7,
+      "elapsed_ms": 0.7,
       "text_excerpt": "{\n  \"region\": \"11\",\n  \"regionName\": \"서울특별시\",\n  \"count\": 25,\n  \"regions\": [\n    {\n      \"code\": \"11010\",\n      \"province\": \"서울특별시\",\n      \"district\": \"종로구\",\n      \"fullName\": \"서울특별시 종로구\"\n    },\n    {\n      \"code\": \"11020\",\n      \"province\": \"서울특별시\",\n      \"district\": \"중구\",\n      \"fullName\": \"서울특별시 중구",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "region": "11"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -762,20 +915,23 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 2.4,
+      "elapsed_ms": 1.1,
       "text_excerpt": "{\n  \"regionCodes\": {\n    \"11\": \"서울특별시\",\n    \"21\": \"부산광역시\",\n    \"22\": \"대구광역시\",\n    \"23\": \"인천광역시\",\n    \"24\": \"광주광역시\",\n    \"25\": \"대전광역시\",\n    \"26\": \"울산광역시\",\n    \"29\": \"세종특별자치시\",\n    \"31\": \"경기도\",\n    \"32\": \"강원도\",\n    \"33\": \"충청북도\",\n    \"34\": \"충청남도\",\n    \"35\": \"전라북도\",\n    \"36\": \"전라남도\",\n    \"37\": \"경상북도\",\n ",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -786,6 +942,9 @@
     "required": [
      "kdc"
     ],
+    "properties": [
+     "kdc"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
@@ -794,15 +953,17 @@
      },
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.7,
+      "elapsed_ms": 1.3,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_detailed_subject_codes: Required at kdc",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
@@ -813,10 +974,12 @@
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "kdc": 12345
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -825,6 +988,9 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "majorCode"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
@@ -837,22 +1003,26 @@
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "majorCode": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 1.3,
+      "elapsed_ms": 0.6,
       "text_excerpt": "{\n  \"allCodes\": {\n    \"0\": {\n      \"name\": \"총류\",\n      \"subcodes\": [\n        \"00\",\n        \"01\",\n        \"02\",\n        \"03\",\n        \"04\",\n        \"05\",\n        \"06\",\n        \"07\",\n        \"08\",\n        \"09\"\n      ]\n    },\n    \"1\": {\n      \"name\": \"철학\",\n      \"subcodes\": [\n        \"10\",\n        \"11\"",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -861,36 +1031,45 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "keyword",
+     "limit",
+     "majorCode"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.8,
+      "elapsed_ms": 1.0,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_detailed_kdc_codes: Expected string, received number at keyword\nExpected string, received number at majorCode\nExpected number, received string at limit",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "keyword": 12345,
        "majorCode": 12345,
        "limit": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 0.7,
+      "elapsed_ms": 1.8,
       "text_excerpt": "{\n  \"totalFound\": 100,\n  \"resultCount\": 20,\n  \"results\": [\n    {\n      \"code\": \"10\",\n      \"name\": \"철학\",\n      \"majorCategory\": \"철학\"\n    },\n    {\n      \"code\": \"11\",\n      \"name\": \"형이상학\",\n      \"majorCategory\": \"철학\"\n    },\n    {\n      \"code\": \"12\",\n      \"name\": \"인식론, 인과론, 인간학\",\n      \"majorCategory",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -899,36 +1078,45 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "keyword",
+     "limit",
+     "provinceCode"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.7,
+      "elapsed_ms": 1.3,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_detailed_region_codes: Expected string, received number at keyword\nExpected '11' | '21' | '22' | '23' | '24' | '25' | '26' | '29' | '31' | '32' | '33' | '34' | '35' | '36' | '37' | '38' | '39', received number at provinceCod",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "keyword": 12345,
        "provinceCode": 12345,
        "limit": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 0.6,
+      "elapsed_ms": 1.7,
       "text_excerpt": "{\n  \"totalFound\": 261,\n  \"resultCount\": 20,\n  \"results\": [\n    {\n      \"code\": \"11010\",\n      \"province\": \"서울특별시\",\n      \"district\": \"종로구\",\n      \"fullName\": \"서울특별시 종로구\",\n      \"provinceCode\": \"11\"\n    },\n    {\n      \"code\": \"11020\",\n      \"province\": \"서울특별시\",\n      \"district\": \"중구\",\n      \"fullName",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -939,6 +1127,15 @@
     "required": [
      "libCode"
     ],
+    "properties": [
+     "endDt",
+     "isbn13",
+     "libCode",
+     "pageNo",
+     "pageSize",
+     "startDt",
+     "type"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
@@ -947,25 +1144,30 @@
      },
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.4,
+      "elapsed_ms": 0.5,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_items: Required at libCode",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.9,
+      "elapsed_ms": 1.2,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_items: Expected string, received number at libCode\nExpected 'ALL', received number at type\nExpected string, received number at isbn13\nExpected string, received number at startDt\nExpected number, received string at pageNo\nExp",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "libCode": 12345,
        "type": 12345,
@@ -973,8 +1175,7 @@
        "startDt": 12345,
        "pageNo": "not-a-number",
        "pageSize": "not-a-number"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -985,48 +1186,57 @@
     "required": [
      "isbn13"
     ],
+    "properties": [
+     "isbn13"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.5,
+      "elapsed_ms": 1.3,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_mania_recommendations: Required at isbn13",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.7,
+      "elapsed_ms": 1.4,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_mania_recommendations: Expected string, received number at isbn13",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "isbn13": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 332.3,
+      "elapsed_ms": 377.8,
       "text_excerpt": "{\n  \"response\": {\n    \"errCode\": \"authErr\",\n    \"error\": \"인증정보가 일치하지 않습니다.\"\n  }\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "isbn13": "9788936434267"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -1037,20 +1247,25 @@
     "required": [
      "isbn13"
     ],
+    "properties": [
+     "isbn13"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.9,
+      "elapsed_ms": 1.2,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_reader_recommendations: Required at isbn13",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
@@ -1061,24 +1276,28 @@
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "isbn13": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 324.1,
+      "elapsed_ms": 411.0,
       "text_excerpt": "{\n  \"response\": {\n    \"errCode\": \"authErr\",\n    \"error\": \"인증정보가 일치하지 않습니다.\"\n  }\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "isbn13": "9788936434267"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -1089,49 +1308,59 @@
     "required": [
      "isbn13"
     ],
+    "properties": [
+     "additionalYN",
+     "isbn13"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.5,
+      "elapsed_ms": 1.2,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_book_keywords: Required at isbn13",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.4,
+      "elapsed_ms": 1.2,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_book_keywords: Expected string, received number at isbn13\nExpected 'Y' | 'N', received number at additionalYN",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "isbn13": 12345,
        "additionalYN": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 323.1,
+      "elapsed_ms": 359.7,
       "text_excerpt": "{\n  \"response\": {\n    \"errCode\": \"authErr\",\n    \"error\": \"인증정보가 일치하지 않습니다.\"\n  }\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "isbn13": "9788936434267"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -1142,48 +1371,57 @@
     "required": [
      "isbn13"
     ],
+    "properties": [
+     "isbn13"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.5,
+      "elapsed_ms": 1.2,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_book_usage_analysis: Required at isbn13",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.7,
+      "elapsed_ms": 1.3,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_book_usage_analysis: Expected string, received number at isbn13",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "isbn13": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 321.3,
+      "elapsed_ms": 369.9,
       "text_excerpt": "{\n  \"response\": {\n    \"errCode\": \"authErr\",\n    \"error\": \"인증정보가 일치하지 않습니다.\"\n  }\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "isbn13": "9788936434267"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -1192,18 +1430,38 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "addCode",
+     "age",
+     "book_dvsn",
+     "dtl_kdc",
+     "dtl_region",
+     "endDt",
+     "from_age",
+     "gender",
+     "kdc",
+     "libCode",
+     "pageNo",
+     "pageSize",
+     "region",
+     "startDt",
+     "to_age"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.9,
+      "elapsed_ms": 1.5,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool search_popular_books_by_library: Expected string, received number at libCode\nExpected '11' | '21' | '22' | '23' | '24' | '25' | '26' | '29' | '31' | '32' | '33' | '34' | '35' | '36' | '37' | '38' | '39', received number at region\nE",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "libCode": 12345,
        "region": 12345,
@@ -1219,20 +1477,21 @@
        "book_dvsn": 12345,
        "pageNo": "not-a-number",
        "pageSize": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 316.8,
+      "elapsed_ms": 411.6,
       "text_excerpt": "{\n  \"response\": {\n    \"errCode\": \"authErr\",\n    \"error\": \"인증정보가 일치하지 않습니다.\"\n  }\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -1241,38 +1500,49 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "dtl_region",
+     "libCode",
+     "pageNo",
+     "pageSize",
+     "region"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.3,
+      "elapsed_ms": 0.9,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_library_info: Expected string, received number at libCode\nExpected '11' | '21' | '22' | '23' | '24' | '25' | '26' | '29' | '31' | '32' | '33' | '34' | '35' | '36' | '37' | '38' | '39', received number at region\nExpected string,",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "libCode": 12345,
        "region": 12345,
        "dtl_region": 12345,
        "pageNo": "not-a-number",
        "pageSize": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 332.3,
+      "elapsed_ms": 414.4,
       "text_excerpt": "{\n  \"response\": {\n    \"errCode\": \"authErr\",\n    \"error\": \"인증정보가 일치하지 않습니다.\"\n  }\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -1283,6 +1553,9 @@
     "required": [
      "libCode"
     ],
+    "properties": [
+     "libCode"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
@@ -1291,29 +1564,33 @@
      },
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.8,
+      "elapsed_ms": 0.6,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_popular_books_by_library: Required at libCode",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.0,
+      "elapsed_ms": 0.9,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool get_popular_books_by_library: Expected string, received number at libCode",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "libCode": 12345
-      },
-      "alive_after": true
+      }
      }
     }
    }
@@ -1324,12 +1601,14 @@
   },
   "server_initiated_messages": 0
  },
- "finished_at": "2026-10-03T07:14:30+00:00",
+ "finished_at": "2026-10-03T10:59:58+00:00",
  "external": {
   "conformance_version": "0.1.16",
   "conformance": {
    "server-initialize": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "server-initialize",
@@ -1341,6 +1620,8 @@
    },
    "ping": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "ping",
@@ -1352,6 +1633,8 @@
    },
    "tools-list": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "tools-list",
@@ -1387,7 +1670,7 @@
      "node",
      "dist/src/index.js"
     ],
-    "timestamp": "2026-10-03T07:15:14+00:00",
+    "timestamp": "2026-10-03T11:00:42+00:00",
     "summary": {
      "total": 81,
      "status": {

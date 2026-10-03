@@ -2,7 +2,7 @@
  "id": "mcp-korea-tourism-api",
  "repo": "harimkang/mcp-korea-tourism-api",
  "sha_expected": "c4d4585cb8e5c3085e3e7631467f7c6d096aa5c1",
- "started_at": "2026-10-03T07:12:56+00:00",
+ "started_at": "2026-10-03T10:58:24+00:00",
  "protocol_version_requested": "2025-11-25",
  "sandbox": true,
  "command": [
@@ -30,7 +30,7 @@
      "--no-dev"
     ],
     "returncode": 0,
-    "seconds": 0.79,
+    "seconds": 0.61,
     "timed_out": false
    }
   ]
@@ -43,20 +43,20 @@
   "initialize": "result",
   "alive": true,
   "returncode": null,
-  "elapsed_ms": 1129.7,
+  "elapsed_ms": 1228.5,
   "stderr_tail": [
    "                             API' with transport 'stdio'                        ",
-   "2026-10-03 16:12:59,277 - FastMCP.fastmcp.server.server - INFO - Starting MCP server 'Korea Tourism API' with transport 'stdio'",
-   "2026-10-03 16:12:59,781 - __main__ - INFO - Cleaning up resources...",
-   "2026-10-03 16:12:59,781 - __main__ - INFO - No event loop available, creating temporary loop for cleanup",
-   "2026-10-03 16:12:59,781 - __main__ - INFO - Resources cleaned up successfully."
+   "2026-10-03 19:58:27,819 - FastMCP.fastmcp.server.server - INFO - Starting MCP server 'Korea Tourism API' with transport 'stdio'",
+   "2026-10-03 19:58:28,323 - __main__ - INFO - Cleaning up resources...",
+   "2026-10-03 19:58:28,323 - __main__ - INFO - No event loop available, creating temporary loop for cleanup",
+   "2026-10-03 19:58:28,323 - __main__ - INFO - Resources cleaned up successfully."
   ]
  },
  "probe": {
   "restarts": 0,
   "initialize": {
    "outcome": "result",
-   "elapsed_ms": 247.9,
+   "elapsed_ms": 184.5,
    "protocolVersion": "2025-03-26",
    "serverInfo": {
     "name": "Korea Tourism API",
@@ -82,7 +82,7 @@
    "count": 8,
    "pages": 1,
    "spec_violations": [],
-   "elapsed_ms": 4.6
+   "elapsed_ms": 3.6
   },
   "ping": {
    "outcome": "result",
@@ -91,18 +91,41 @@
   "unknown_method": {
    "outcome": "error",
    "error_code": -32602,
-   "alive_after": true
+   "error_message": "Invalid request parameters",
+   "alive_after": true,
+   "responsive_after": true,
+   "stderr_delta": [
+    "UnsubscribeRequest.method",
+    "  Input should be 'resources/unsubscribe' [type=literal_error, input_value='kmcpqa/unknown_method', input_type=str]",
+    "    For further information visit https://errors.pydantic.dev/2.11/v/literal_error",
+    "UnsubscribeRequest.params.uri",
+    "  Field required [type=missing, input_value={}, input_type=dict]",
+    "    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+    "CallToolRequest.method",
+    "  Input should be 'tools/call' [type=literal_error, input_value='kmcpqa/unknown_method', input_type=str]",
+    "    For further information visit https://errors.pydantic.dev/2.11/v/literal_error",
+    "CallToolRequest.params.name",
+    "  Field required [type=missing, input_value={}, input_type=dict]",
+    "    For further information visit https://errors.pydantic.dev/2.11/v/missing",
+    "ListToolsRequest.method",
+    "  Input should be 'tools/list' [type=literal_error, input_value='kmcpqa/unknown_method', input_type=str]",
+    "    For further information visit https://errors.pydantic.dev/2.11/v/literal_error"
+   ]
   },
   "unknown_tool": {
    "outcome": "tool_error",
-   "elapsed_ms": 3.3,
+   "elapsed_ms": 2.2,
    "text_excerpt": "Unknown tool: kmcpqa_no_such_tool",
    "auth_marker": null,
    "error_marker": null,
    "traceback": false,
    "spec_violations": [],
    "has_structured": false,
-   "alive_after": true
+   "alive_after": true,
+   "responsive_after": true,
+   "stderr_delta": [
+    "2026-10-03 19:58:33,758 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest"
+   ]
   },
   "tools": [
    {
@@ -112,50 +135,113 @@
     "required": [
      "keyword"
     ],
+    "properties": [
+     "area_code",
+     "content_type",
+     "filter",
+     "keyword",
+     "language",
+     "page",
+     "rows"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 43.3,
+      "elapsed_ms": 60.7,
       "text_excerpt": "Error calling tool 'search_tourism_by_keyword': 1 validation error for call[search_tourism_by_keyword]\nkeyword\n  Missing required argument [type=missing_argument, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
+       "Traceback (most recent call last):",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py\", line 185, in call_tool",
+       "    return await tool.run(arguments)",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool.py\", line 186, in run",
+       "    result = type_adapter.validate_python(arguments)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py\", line 421, in validate_python",
+       "    return self.validator.validate_python(",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "pydantic_core._pydantic_core.ValidationError: 1 validation error for call[search_tourism_by_keyword]",
+       "keyword",
+       "  Missing required argument [type=missing_argument, input_value={}, input_type=dict]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument"
+      ],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 37.4,
+      "elapsed_ms": 42.1,
       "text_excerpt": "Error calling tool 'search_tourism_by_keyword': 3 validation errors for call[search_tourism_by_keyword]\nkeyword\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\npage\n  Input should ",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    result = type_adapter.validate_python(arguments)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py\", line 421, in validate_python",
+       "    return self.validator.validate_python(",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "pydantic_core._pydantic_core.ValidationError: 3 validation errors for call[search_tourism_by_keyword]",
+       "keyword",
+       "  Input should be a valid string [type=string_type, input_value=12345, input_type=int]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/string_type",
+       "page",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing",
+       "rows",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing"
+      ],
       "args": {
        "keyword": 12345,
        "page": "not-a-number",
        "rows": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 249.9,
+      "elapsed_ms": 243.6,
       "text_excerpt": "Error calling tool 'search_tourism_by_keyword': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchKeyword2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&keyword=%EC%84%9C%EC%9A%B8&arr",
       "auth_marker": "403",
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    return self.__get_result()",
+       "           ^^^^^^^^^^^^^^^^^^^",
+       "  File \"~/.local/share/uv/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result",
+       "    raise self._exception",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 114, in __call__",
+       "    result = await fn(*args, **kwargs)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 446, in _make_request",
+       "    return await result  # type: ignore[misc]",
+       "           ^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 384, in rate_limited_request",
+       "    self._process_response_error(response)",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 285, in _process_response_error",
+       "    raise TourismApiClientError(",
+       "mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchKeyword2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&keyword=%EC%84%9C%EC%9A%B8&arrange=Q&pageNo=1&numOfRows=20)"
+      ],
       "args": {
        "keyword": "서울"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -166,50 +252,113 @@
     "required": [
      "area_code"
     ],
+    "properties": [
+     "area_code",
+     "content_type",
+     "filter",
+     "language",
+     "page",
+     "rows",
+     "sigungu_code"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 29.7,
+      "elapsed_ms": 38.8,
       "text_excerpt": "Error calling tool 'get_tourism_by_area': 1 validation error for call[get_tourism_by_area]\narea_code\n  Missing required argument [type=missing_argument, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
+       "Traceback (most recent call last):",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py\", line 185, in call_tool",
+       "    return await tool.run(arguments)",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool.py\", line 186, in run",
+       "    result = type_adapter.validate_python(arguments)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py\", line 421, in validate_python",
+       "    return self.validator.validate_python(",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "pydantic_core._pydantic_core.ValidationError: 1 validation error for call[get_tourism_by_area]",
+       "area_code",
+       "  Missing required argument [type=missing_argument, input_value={}, input_type=dict]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument"
+      ],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 46.4,
+      "elapsed_ms": 42.4,
       "text_excerpt": "Error calling tool 'get_tourism_by_area': 3 validation errors for call[get_tourism_by_area]\narea_code\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\npage\n  Input should be a valid",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    result = type_adapter.validate_python(arguments)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py\", line 421, in validate_python",
+       "    return self.validator.validate_python(",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "pydantic_core._pydantic_core.ValidationError: 3 validation errors for call[get_tourism_by_area]",
+       "area_code",
+       "  Input should be a valid string [type=string_type, input_value=12345, input_type=int]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/string_type",
+       "page",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing",
+       "rows",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing"
+      ],
       "args": {
        "area_code": 12345,
        "page": "not-a-number",
        "rows": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 141.2,
+      "elapsed_ms": 144.8,
       "text_excerpt": "Error calling tool 'get_tourism_by_area': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&arrange=Q&pageNo=1&numOfRows=20&area",
       "auth_marker": "403",
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    return self.__get_result()",
+       "           ^^^^^^^^^^^^^^^^^^^",
+       "  File \"~/.local/share/uv/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result",
+       "    raise self._exception",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 114, in __call__",
+       "    result = await fn(*args, **kwargs)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 446, in _make_request",
+       "    return await result  # type: ignore[misc]",
+       "           ^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 384, in rate_limited_request",
+       "    self._process_response_error(response)",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 285, in _process_response_error",
+       "    raise TourismApiClientError(",
+       "mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&arrange=Q&pageNo=1&numOfRows=20&areaCode=test)"
+      ],
       "args": {
        "area_code": "test"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -221,53 +370,117 @@
      "longitude",
      "latitude"
     ],
+    "properties": [
+     "content_type",
+     "filter",
+     "language",
+     "latitude",
+     "longitude",
+     "page",
+     "radius",
+     "rows"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 27.5,
+      "elapsed_ms": 40.5,
       "text_excerpt": "Error calling tool 'find_nearby_attractions': 2 validation errors for call[find_nearby_attractions]\nlongitude\n  Missing required argument [type=missing_argument, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nlatitude\n  Missing ",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    return await tool.run(arguments)",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool.py\", line 186, in run",
+       "    result = type_adapter.validate_python(arguments)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py\", line 421, in validate_python",
+       "    return self.validator.validate_python(",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "pydantic_core._pydantic_core.ValidationError: 2 validation errors for call[find_nearby_attractions]",
+       "longitude",
+       "  Missing required argument [type=missing_argument, input_value={}, input_type=dict]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
+       "latitude",
+       "  Missing required argument [type=missing_argument, input_value={}, input_type=dict]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument"
+      ],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 36.9,
+      "elapsed_ms": 43.7,
       "text_excerpt": "Error calling tool 'find_nearby_attractions': 5 validation errors for call[find_nearby_attractions]\nlongitude\n  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='not-a-number', input_type=str]\n    For further information visit https://errors.pydanti",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "longitude",
+       "  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/float_parsing",
+       "latitude",
+       "  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/float_parsing",
+       "radius",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing",
+       "page",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing",
+       "rows",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing"
+      ],
       "args": {
        "longitude": "not-a-number",
        "latitude": "not-a-number",
        "radius": "not-a-number",
        "page": "not-a-number",
        "rows": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 132.4,
+      "elapsed_ms": 168.1,
       "text_excerpt": "Error calling tool 'find_nearby_attractions': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/locationBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrang",
       "auth_marker": "403",
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    return self.__get_result()",
+       "           ^^^^^^^^^^^^^^^^^^^",
+       "  File \"~/.local/share/uv/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result",
+       "    raise self._exception",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 114, in __call__",
+       "    result = await fn(*args, **kwargs)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 446, in _make_request",
+       "    return await result  # type: ignore[misc]",
+       "           ^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 384, in rate_limited_request",
+       "    self._process_response_error(response)",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 285, in _process_response_error",
+       "    raise TourismApiClientError(",
+       "mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/locationBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q&mapX=1.0&mapY=1.0&radius=1000)"
+      ],
       "args": {
        "longitude": 1.0,
        "latitude": 1.0
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -278,50 +491,113 @@
     "required": [
      "start_date"
     ],
+    "properties": [
+     "area_code",
+     "end_date",
+     "filter",
+     "language",
+     "page",
+     "rows",
+     "start_date"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 25.0,
+      "elapsed_ms": 39.3,
       "text_excerpt": "Error calling tool 'search_festivals_by_date': 1 validation error for call[search_festivals_by_date]\nstart_date\n  Missing required argument [type=missing_argument, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
+       "Traceback (most recent call last):",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py\", line 185, in call_tool",
+       "    return await tool.run(arguments)",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool.py\", line 186, in run",
+       "    result = type_adapter.validate_python(arguments)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py\", line 421, in validate_python",
+       "    return self.validator.validate_python(",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "pydantic_core._pydantic_core.ValidationError: 1 validation error for call[search_festivals_by_date]",
+       "start_date",
+       "  Missing required argument [type=missing_argument, input_value={}, input_type=dict]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument"
+      ],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 32.0,
+      "elapsed_ms": 43.5,
       "text_excerpt": "Error calling tool 'search_festivals_by_date': 3 validation errors for call[search_festivals_by_date]\nstart_date\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\npage\n  Input should",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    result = type_adapter.validate_python(arguments)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py\", line 421, in validate_python",
+       "    return self.validator.validate_python(",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "pydantic_core._pydantic_core.ValidationError: 3 validation errors for call[search_festivals_by_date]",
+       "start_date",
+       "  Input should be a valid string [type=string_type, input_value=12345, input_type=int]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/string_type",
+       "page",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing",
+       "rows",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing"
+      ],
       "args": {
        "start_date": 12345,
        "page": "not-a-number",
        "rows": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 152.4,
+      "elapsed_ms": 168.7,
       "text_excerpt": "Error calling tool 'search_festivals_by_date': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchFestival2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&eventStartDate=20250101&pageNo",
       "auth_marker": "403",
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    return self.__get_result()",
+       "           ^^^^^^^^^^^^^^^^^^^",
+       "  File \"~/.local/share/uv/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result",
+       "    raise self._exception",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 114, in __call__",
+       "    result = await fn(*args, **kwargs)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 446, in _make_request",
+       "    return await result  # type: ignore[misc]",
+       "           ^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 384, in rate_limited_request",
+       "    self._process_response_error(response)",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 285, in _process_response_error",
+       "    raise TourismApiClientError(",
+       "mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchFestival2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&eventStartDate=20250101&pageNo=1&numOfRows=20&arrange=Q)"
+      ],
       "args": {
        "start_date": "20250101"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -330,35 +606,79 @@
     "input_dialect": "default(2020-12)",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "area_code",
+     "filter",
+     "language",
+     "page",
+     "rows",
+     "sigungu_code"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 31.1,
+      "elapsed_ms": 31.8,
       "text_excerpt": "Error calling tool 'find_accommodations': 2 validation errors for call[find_accommodations]\npage\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    return await tool.run(arguments)",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool.py\", line 186, in run",
+       "    result = type_adapter.validate_python(arguments)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py\", line 421, in validate_python",
+       "    return self.validator.validate_python(",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "pydantic_core._pydantic_core.ValidationError: 2 validation errors for call[find_accommodations]",
+       "page",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing",
+       "rows",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing"
+      ],
       "args": {
        "page": "not-a-number",
        "rows": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 138.0,
+      "elapsed_ms": 168.2,
       "text_excerpt": "Error calling tool 'find_accommodations': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchStay2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q)",
       "auth_marker": "403",
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    return self.__get_result()",
+       "           ^^^^^^^^^^^^^^^^^^^",
+       "  File \"~/.local/share/uv/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result",
+       "    raise self._exception",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 114, in __call__",
+       "    result = await fn(*args, **kwargs)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 446, in _make_request",
+       "    return await result  # type: ignore[misc]",
+       "           ^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 384, in rate_limited_request",
+       "    self._process_response_error(response)",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 285, in _process_response_error",
+       "    raise TourismApiClientError(",
+       "mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchStay2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q)"
+      ],
+      "args": {}
      }
     }
    },
@@ -369,48 +689,107 @@
     "required": [
      "content_id"
     ],
+    "properties": [
+     "content_id",
+     "content_type",
+     "language"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 25.8,
+      "elapsed_ms": 40.6,
       "text_excerpt": "Error calling tool 'get_detailed_information': 1 validation error for call[get_detailed_information]\ncontent_id\n  Missing required argument [type=missing_argument, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
+       "Traceback (most recent call last):",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py\", line 185, in call_tool",
+       "    return await tool.run(arguments)",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool.py\", line 186, in run",
+       "    result = type_adapter.validate_python(arguments)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py\", line 421, in validate_python",
+       "    return self.validator.validate_python(",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "pydantic_core._pydantic_core.ValidationError: 1 validation error for call[get_detailed_information]",
+       "content_id",
+       "  Missing required argument [type=missing_argument, input_value={}, input_type=dict]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument"
+      ],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 43.1,
+      "elapsed_ms": 23.9,
       "text_excerpt": "Error calling tool 'get_detailed_information': 1 validation error for call[get_detailed_information]\ncontent_id\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    For further information visit https://errors.pydantic.dev/2.11/v/string_type",
+       "Traceback (most recent call last):",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py\", line 185, in call_tool",
+       "    return await tool.run(arguments)",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool.py\", line 186, in run",
+       "    result = type_adapter.validate_python(arguments)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py\", line 421, in validate_python",
+       "    return self.validator.validate_python(",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "pydantic_core._pydantic_core.ValidationError: 1 validation error for call[get_detailed_information]",
+       "content_id",
+       "  Input should be a valid string [type=string_type, input_value=12345, input_type=int]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/string_type"
+      ],
       "args": {
        "content_id": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 178.9,
+      "elapsed_ms": 167.8,
       "text_excerpt": "Error calling tool 'get_detailed_information': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailCommon2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&pageNo=1&numOfRow",
       "auth_marker": "403",
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    return self.__get_result()",
+       "           ^^^^^^^^^^^^^^^^^^^",
+       "  File \"~/.local/share/uv/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result",
+       "    raise self._exception",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 114, in __call__",
+       "    result = await fn(*args, **kwargs)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 446, in _make_request",
+       "    return await result  # type: ignore[misc]",
+       "           ^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 384, in rate_limited_request",
+       "    self._process_response_error(response)",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 285, in _process_response_error",
+       "    raise TourismApiClientError(",
+       "mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailCommon2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&pageNo=1&numOfRows=20)"
+      ],
       "args": {
        "content_id": "test"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -421,50 +800,110 @@
     "required": [
      "content_id"
     ],
+    "properties": [
+     "content_id",
+     "language",
+     "page",
+     "rows"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 28.1,
+      "elapsed_ms": 40.5,
       "text_excerpt": "Error calling tool 'get_tourism_images': 1 validation error for call[get_tourism_images]\ncontent_id\n  Missing required argument [type=missing_argument, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument",
+       "Traceback (most recent call last):",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py\", line 185, in call_tool",
+       "    return await tool.run(arguments)",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool.py\", line 186, in run",
+       "    result = type_adapter.validate_python(arguments)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py\", line 421, in validate_python",
+       "    return self.validator.validate_python(",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "pydantic_core._pydantic_core.ValidationError: 1 validation error for call[get_tourism_images]",
+       "content_id",
+       "  Missing required argument [type=missing_argument, input_value={}, input_type=dict]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument"
+      ],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 112.4,
+      "elapsed_ms": 43.0,
       "text_excerpt": "Error calling tool 'get_tourism_images': 3 validation errors for call[get_tourism_images]\ncontent_id\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/string_type\npage\n  Input should be a valid ",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    result = type_adapter.validate_python(arguments)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py\", line 421, in validate_python",
+       "    return self.validator.validate_python(",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "pydantic_core._pydantic_core.ValidationError: 3 validation errors for call[get_tourism_images]",
+       "content_id",
+       "  Input should be a valid string [type=string_type, input_value=12345, input_type=int]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/string_type",
+       "page",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing",
+       "rows",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing"
+      ],
       "args": {
        "content_id": 12345,
        "page": "not-a-number",
        "rows": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 186.3,
+      "elapsed_ms": 154.3,
       "text_excerpt": "Error calling tool 'get_tourism_images': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailImage2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&numOfRows=20&pageNo=1)",
       "auth_marker": "403",
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    return self.__get_result()",
+       "           ^^^^^^^^^^^^^^^^^^^",
+       "  File \"~/.local/share/uv/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result",
+       "    raise self._exception",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 114, in __call__",
+       "    result = await fn(*args, **kwargs)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 446, in _make_request",
+       "    return await result  # type: ignore[misc]",
+       "           ^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 384, in rate_limited_request",
+       "    self._process_response_error(response)",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 285, in _process_response_error",
+       "    raise TourismApiClientError(",
+       "mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailImage2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&numOfRows=20&pageNo=1)"
+      ],
       "args": {
        "content_id": "test"
-      },
-      "alive_after": true
+      }
      }
     }
    },
@@ -473,35 +912,77 @@
     "input_dialect": "default(2020-12)",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "language",
+     "page",
+     "parent_area_code",
+     "rows"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 28.3,
+      "elapsed_ms": 40.9,
       "text_excerpt": "Error calling tool 'get_area_codes': 2 validation errors for call[get_area_codes]\npage\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/int_parsi",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    return await tool.run(arguments)",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool.py\", line 186, in run",
+       "    result = type_adapter.validate_python(arguments)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/pydantic/type_adapter.py\", line 421, in validate_python",
+       "    return self.validator.validate_python(",
+       "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "pydantic_core._pydantic_core.ValidationError: 2 validation errors for call[get_area_codes]",
+       "page",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing",
+       "rows",
+       "  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]",
+       "    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing"
+      ],
       "args": {
        "page": "not-a-number",
        "rows": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "tool_error",
-      "elapsed_ms": 224.9,
+      "elapsed_ms": 180.9,
       "text_excerpt": "Error calling tool 'get_area_codes': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaCode2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&numOfRows=100&pageNo=1)",
       "auth_marker": "403",
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "    return self.__get_result()",
+       "           ^^^^^^^^^^^^^^^^^^^",
+       "  File \"~/.local/share/uv/python/cpython-3.12.15-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result",
+       "    raise self._exception",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 114, in __call__",
+       "    result = await fn(*args, **kwargs)",
+       "             ^^^^^^^^^^^^^^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 446, in _make_request",
+       "    return await result  # type: ignore[misc]",
+       "           ^^^^^^^^^^^^",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 384, in rate_limited_request",
+       "    self._process_response_error(response)",
+       "  File \"/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py\", line 285, in _process_response_error",
+       "    raise TourismApiClientError(",
+       "mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaCode2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&numOfRows=100&pageNo=1)"
+      ],
+      "args": {}
      }
     }
    }
@@ -512,12 +993,14 @@
   },
   "server_initiated_messages": 0
  },
- "finished_at": "2026-10-03T07:13:11+00:00",
+ "finished_at": "2026-10-03T10:58:40+00:00",
  "external": {
   "conformance_version": "0.1.16",
   "conformance": {
    "server-initialize": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "server-initialize",
@@ -529,6 +1012,8 @@
    },
    "ping": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "ping",
@@ -540,6 +1025,8 @@
    },
    "tools-list": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "tools-list",
@@ -576,7 +1063,7 @@
      "-m",
      "mcp_tourism.server"
     ],
-    "timestamp": "2026-10-03T07:15:04+00:00",
+    "timestamp": "2026-10-03T11:00:32+00:00",
     "summary": {
      "total": 24,
      "status": {

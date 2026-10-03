@@ -1,7 +1,7 @@
-Running client scenario 'server-initialize' against server: http://127.0.0.1:52634/mcp
-Results saved to reports/raw/real-estate-mcp/external/conformance/server-initialize/server-server-initialize-2026-10-03T07-15-10-172Z
+Running client scenario 'server-initialize' against server: http://127.0.0.1:56093/mcp
+Results saved to reports/raw/real-estate-mcp/external/conformance/server-initialize/server-server-initialize-2026-10-03T11-00-38-150Z
 Checks:
-[90m2026-10-03T07:15:10.222Z[0m [server-initialize] [32mSUCCESS[0m Server responds to initialize request with valid structure
+[90m2026-10-03T11:00:38.178Z[0m [server-initialize] [32mSUCCESS[0m Server responds to initialize request with valid structure
 
 Test Results:
 Passed: 1/1, 0 failed, 0 warnings

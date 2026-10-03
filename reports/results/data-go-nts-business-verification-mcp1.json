@@ -2,7 +2,7 @@
  "id": "data-go-nts-business-verification-mcp1",
  "repo": "Koomook/data-go-mcp-servers",
  "sha_expected": "dd27f99490400b31fa14f96045a138fa217580a4",
- "started_at": "2026-10-03T07:12:44+00:00",
+ "started_at": "2026-10-03T10:58:13+00:00",
  "protocol_version_requested": "2025-11-25",
  "sandbox": true,
  "command": [
@@ -61,7 +61,7 @@
      "mcp[cli]<2"
     ],
     "returncode": 0,
-    "seconds": 1.05,
+    "seconds": 0.81,
     "timed_out": false
    }
   ]
@@ -73,14 +73,14 @@
   "initialize": "result",
   "alive": true,
   "returncode": null,
-  "elapsed_ms": 874.5,
+  "elapsed_ms": 818.3,
   "stderr_tail": []
  },
  "probe": {
   "restarts": 0,
   "initialize": {
    "outcome": "result",
-   "elapsed_ms": 187.0,
+   "elapsed_ms": 178.9,
    "protocolVersion": "2025-11-25",
    "serverInfo": {
     "name": "NTS Business Verification",
@@ -106,7 +106,7 @@
    "count": 3,
    "pages": 1,
    "spec_violations": [],
-   "elapsed_ms": 9.7
+   "elapsed_ms": 5.8
   },
   "ping": {
    "outcome": "result",
@@ -115,18 +115,45 @@
   "unknown_method": {
    "outcome": "error",
    "error_code": -32602,
-   "alive_after": true
+   "error_message": "Invalid request parameters",
+   "alive_after": true,
+   "responsive_after": true,
+   "stderr_delta": [
+    "                             iteral_error                                       ",
+    "                             CancelTaskRequest.method                           ",
+    "                               Input should be 'tasks/cancel'                   ",
+    "                             [type=literal_error,                               ",
+    "                             input_value='kmcpqa/unknown_method',               ",
+    "                             input_type=str]                                    ",
+    "                                 For further information visit                  ",
+    "                             https://errors.pydantic.dev/2.13/v/l               ",
+    "                             iteral_error                                       ",
+    "                             CancelTaskRequest.params.taskId                    ",
+    "                               Field required [type=missing,                    ",
+    "                             input_value={}, input_type=dict]                   ",
+    "                                 For further information visit                  ",
+    "                             https://errors.pydantic.dev/2.13/v/m               ",
+    "                             issing                                             "
+   ]
   },
   "unknown_tool": {
    "outcome": "tool_error",
-   "elapsed_ms": 1.9,
+   "elapsed_ms": 4.3,
    "text_excerpt": "Unknown tool: kmcpqa_no_such_tool",
    "auth_marker": null,
    "error_marker": null,
    "traceback": false,
    "spec_violations": [],
    "has_structured": false,
-   "alive_after": true
+   "alive_after": true,
+   "responsive_after": true,
+   "stderr_delta": [
+    "                    INFO     Processing request of type            server.py:733",
+    "                             CallToolRequest                                    ",
+    "                    WARNING  Tool 'kmcpqa_no_such_tool' not        server.py:494",
+    "                             listed, no validation will be                      ",
+    "                             performed                                          "
+   ]
   },
   "tools": [
    {
@@ -138,52 +165,84 @@
      "start_date",
      "representative_name"
     ],
+    "properties": [
+     "business_address",
+     "business_name",
+     "business_number",
+     "business_sector",
+     "business_type",
+     "corp_number",
+     "representative_name",
+     "representative_name2",
+     "start_date"
+    ],
     "output_schema": true,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 2.1,
+      "elapsed_ms": 2.2,
       "text_excerpt": "Error executing tool validate_business: 3 validation errors for validate_businessArguments\nbusiness_number\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nstart_date\n  Field required [type=missing, input_va",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "                    INFO     Processing request of type            server.py:733",
+       "                             CallToolRequest                                    "
+      ],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 2.2,
+      "elapsed_ms": 3.2,
       "text_excerpt": "Error executing tool validate_business: 3 validation errors for validate_businessArguments\nbusiness_number\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\nstart_date\n  Input should",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "                    INFO     Processing request of type            server.py:733",
+       "                             CallToolRequest                                    "
+      ],
       "args": {
        "business_number": 12345,
        "start_date": 12345,
        "representative_name": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 137.5,
+      "elapsed_ms": 145.8,
       "text_excerpt": "{\n  \"error\": \"HTTP error occurred: 401\",\n  \"business_number\": \"1248100998\"\n}",
       "auth_marker": "401",
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": true,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "[10/03/26 19:58:23] INFO     Processing request of type            server.py:733",
+       "                             CallToolRequest                                    ",
+       "                    INFO     HTTP Request: POST                  _client.py:1740",
+       "                             https://api.odcloud.kr/api/nts-busi                ",
+       "                             nessman/v1/validate?serviceKey=KMCP                ",
+       "                             QA_PLACEHOLDER_NOT_A_REAL_KEY&retur                ",
+       "                             nType=JSON \"HTTP/1.1 401                           ",
+       "                             Unauthorized\"                                      "
+      ],
       "args": {
        "business_number": "1248100998",
        "start_date": "20250101",
        "representative_name": "서울"
       },
-      "alive_after": true,
       "output_mismatch": []
      }
     },
@@ -196,48 +255,72 @@
     "required": [
      "business_numbers"
     ],
+    "properties": [
+     "business_numbers"
+    ],
     "output_schema": true,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 3.6,
+      "elapsed_ms": 3.1,
       "text_excerpt": "Error executing tool check_business_status: 1 validation error for check_business_statusArguments\nbusiness_numbers\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "                    INFO     Processing request of type            server.py:733",
+       "                             CallToolRequest                                    "
+      ],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 3.8,
+      "elapsed_ms": 2.2,
       "text_excerpt": "Error executing tool check_business_status: 1 validation error for check_business_statusArguments\nbusiness_numbers\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "                    INFO     Processing request of type            server.py:733",
+       "                             CallToolRequest                                    "
+      ],
       "args": {
        "business_numbers": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 66.1,
+      "elapsed_ms": 68.6,
       "text_excerpt": "{\n  \"error\": \"HTTP error occurred: 401\",\n  \"business_numbers\": [\n    \"1248100998\"\n  ]\n}",
       "auth_marker": "401",
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": true,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "                    INFO     Processing request of type            server.py:733",
+       "                             CallToolRequest                                    ",
+       "                    INFO     HTTP Request: POST                  _client.py:1740",
+       "                             https://api.odcloud.kr/api/nts-busi                ",
+       "                             nessman/v1/status?serviceKey=KMCPQA                ",
+       "                             _PLACEHOLDER_NOT_A_REAL_KEY&returnT                ",
+       "                             ype=JSON \"HTTP/1.1 401                             ",
+       "                             Unauthorized\"                                      "
+      ],
       "args": {
        "business_numbers": "1248100998"
       },
-      "alive_after": true,
       "output_mismatch": []
      }
     },
@@ -250,48 +333,66 @@
     "required": [
      "businesses_json"
     ],
+    "properties": [
+     "businesses_json"
+    ],
     "output_schema": true,
     "annotations": null,
     "probes": {
      "missing_required": {
       "outcome": "tool_error",
-      "elapsed_ms": 3.3,
+      "elapsed_ms": 3.2,
       "text_excerpt": "Error executing tool batch_validate_businesses: 1 validation error for batch_validate_businessesArguments\nbusinesses_json\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "[10/03/26 19:58:24] INFO     Processing request of type            server.py:733",
+       "                             CallToolRequest                                    "
+      ],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 2.9,
+      "elapsed_ms": 1.5,
       "text_excerpt": "Error executing tool batch_validate_businesses: 1 validation error for batch_validate_businessesArguments\nbusinesses_json\n  Input should be a valid string [type=string_type, input_value=12345, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type",
       "auth_marker": null,
       "error_marker": "Error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "                    INFO     Processing request of type            server.py:733",
+       "                             CallToolRequest                                    "
+      ],
       "args": {
        "businesses_json": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 1.6,
+      "elapsed_ms": 4.3,
       "text_excerpt": "{\n  \"error\": \"JSON 파싱 오류: Expecting value: line 1 column 1 (char 0)\",\n  \"hint\": \"올바른 JSON 형식으로 입력해주세요.\"\n}",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": true,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [
+       "                    INFO     Processing request of type            server.py:733",
+       "                             CallToolRequest                                    "
+      ],
       "args": {
        "businesses_json": "test"
       },
-      "alive_after": true,
       "output_mismatch": []
      }
     },
@@ -304,12 +405,14 @@
   },
   "server_initiated_messages": 0
  },
- "finished_at": "2026-10-03T07:12:56+00:00",
+ "finished_at": "2026-10-03T10:58:24+00:00",
  "external": {
   "conformance_version": "0.1.16",
   "conformance": {
    "server-initialize": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "server-initialize",
@@ -321,6 +424,8 @@
    },
    "ping": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "ping",
@@ -332,6 +437,8 @@
    },
    "tools-list": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "tools-list",
@@ -368,7 +475,7 @@
      "-m",
      "data_go_mcp.nts_business_verification.server"
     ],
-    "timestamp": "2026-10-03T07:15:03+00:00",
+    "timestamp": "2026-10-03T11:00:31+00:00",
     "summary": {
      "total": 9,
      "status": {

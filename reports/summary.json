@@ -1,0 +1,135 @@
+{
+ "assembly-api-mcp": {
+  "tools": 6,
+  "server_causes": 0,
+  "server_occurrences": 0,
+  "server_codes": [],
+  "sdk_codes": [
+   "P4"
+  ],
+  "unknown_codes": []
+ },
+ "dart-mcp-server": {
+  "tools": 89,
+  "server_causes": 16,
+  "server_occurrences": 351,
+  "server_codes": [
+   "E1",
+   "E3",
+   "H1",
+   "P4"
+  ],
+  "sdk_codes": [
+   "P3",
+   "P6"
+  ],
+  "unknown_codes": []
+ },
+ "data-go-nts-business-verification-mcp1": {
+  "tools": 3,
+  "server_causes": 3,
+  "server_occurrences": 3,
+  "server_codes": [
+   "E1",
+   "E3"
+  ],
+  "sdk_codes": [
+   "P3",
+   "P4"
+  ],
+  "unknown_codes": []
+ },
+ "data-go-nts-business-verification": {
+  "tools": 0,
+  "server_causes": 1,
+  "server_occurrences": 1,
+  "server_codes": [
+   "I2"
+  ],
+  "sdk_codes": [],
+  "unknown_codes": []
+ },
+ "data4library-mcp": {
+  "tools": 27,
+  "server_causes": 1,
+  "server_occurrences": 13,
+  "server_codes": [
+   "E1"
+  ],
+  "sdk_codes": [
+   "P4"
+  ],
+  "unknown_codes": []
+ },
+ "korea-stats-mcp": {
+  "tools": 14,
+  "server_causes": 8,
+  "server_occurrences": 8,
+  "server_codes": [
+   "E1",
+   "S4"
+  ],
+  "sdk_codes": [
+   "P4"
+  ],
+  "unknown_codes": []
+ },
+ "korea-stock-mcp": {
+  "tools": 8,
+  "server_causes": 1,
+  "server_occurrences": 1,
+  "server_codes": [
+   "R3"
+  ],
+  "sdk_codes": [
+   "P4"
+  ],
+  "unknown_codes": []
+ },
+ "korean-dart-mcp": {
+  "tools": 15,
+  "server_causes": 2,
+  "server_occurrences": 45,
+  "server_codes": [
+   "E2",
+   "I3"
+  ],
+  "sdk_codes": [],
+  "unknown_codes": []
+ },
+ "korean-law-mcp": {
+  "tools": 10,
+  "server_causes": 3,
+  "server_occurrences": 3,
+  "server_codes": [
+   "P4",
+   "R3"
+  ],
+  "sdk_codes": [],
+  "unknown_codes": []
+ },
+ "mcp-korea-tourism-api": {
+  "tools": 8,
+  "server_causes": 0,
+  "server_occurrences": 0,
+  "server_codes": [],
+  "sdk_codes": [
+   "P3",
+   "P4"
+  ],
+  "unknown_codes": []
+ },
+ "real-estate-mcp": {
+  "tools": 16,
+  "server_causes": 3,
+  "server_occurrences": 12,
+  "server_codes": [
+   "E1"
+  ],
+  "sdk_codes": [
+   "P3",
+   "P4"
+  ],
+  "unknown_codes": []
+ }
+}

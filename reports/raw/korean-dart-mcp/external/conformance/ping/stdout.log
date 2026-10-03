@@ -1,7 +1,7 @@
-Running client scenario 'ping' against server: http://127.0.0.1:52402/mcp
-Results saved to reports/raw/korean-dart-mcp/external/conformance/ping/server-ping-2026-10-03T07-14-39-291Z
+Running client scenario 'ping' against server: http://127.0.0.1:56292/mcp
+Results saved to reports/raw/korean-dart-mcp/external/conformance/ping/server-ping-2026-10-03T11-07-45-382Z
 Checks:
-[90m2026-10-03T07:14:39.306Z[0m [ping] [31mFAILURE[0m Server responds to ping requests
+[90m2026-10-03T11:07:45.395Z[0m [ping] [31mFAILURE[0m Server responds to ping requests
 
 Test Results:
 Passed: 0/1, 1 failed, 0 warnings
@@ -9,7 +9,7 @@ Passed: 0/1, 1 failed, 0 warnings
 === Failed Checks ===
 
   - Ping: Server responds to ping requests
-    Error: Failed: MCP error -32000: k-mcp-qa bridge: no response from server
+    Error: Failed: MCP error -32099: k-mcp-qa bridge: server process not running (exit 1)
 
 Test ping utility for connection health check.
 

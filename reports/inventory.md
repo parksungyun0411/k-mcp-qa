@@ -12,7 +12,7 @@
 | chrisryugj/korean-law-mcp | Legal | MIT | 2026-10-01 | `LAW_OC` | 시험 |
 | hollobit/assembly-api-mcp | Legal | MIT | 2026-05-02 | `ASSEMBLY_API_KEY` | 시험 |
 | jjlabsio/korea-stock-mcp | Finance | ISC | 2026-10-02 | `DART_API_KEY`, `KRX_API_KEY` | 시험 |
-| aesthetic-legalism5470/korean-dart-mcp | Finance | MIT | 2026-10-01 | `DART_API_KEY` | 시험 |
+| aesthetic-legalism5470/korean-dart-mcp | Finance | MIT | 2026-10-01 | `DART_API_KEY` | 시험 (처음 고정한 `9631564` 가 같은 날 원격 저장소에서 조회되지 않아 `4b2e072` 로 다시 고정) |
 | snaiws/DART-mcp-server | Finance | MIT | 2025-07-07 | `DART_API_KEY` | 시험 |
 | Koomook/data-go-mcp-servers (nts-business-verification) | Public Data | Apache-2.0 | 2025-09-16 | `API_KEY` | 시험 (+ `mcp<2` 고정 변형) |
 | harimkang/mcp-korea-tourism-api | Tourism | MIT | 2025-08-12 | `KOREA_TOURISM_API_KEY` | 시험 |

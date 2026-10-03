@@ -1,11 +1,11 @@
 Korea Stats MCP: 개인 키로 로컬 통계 서버에 연결했습니다.
 {"kind":"cache_miss","cache":"search_results"}
-{"kind":"provider_outcome","provider":"kosis","operation":"search_statistics","elapsedTimeMs":301,"responseBytes":62,"statusCategory":"success","attempts":1,"retryDisposition":"not_attempted","outcome":"provider_error","sizeLimitBytes":4194304}
+{"kind":"provider_outcome","provider":"kosis","operation":"search_statistics","elapsedTimeMs":322,"responseBytes":62,"statusCategory":"success","attempts":1,"retryDisposition":"not_attempted","outcome":"provider_error","sizeLimitBytes":4194304}
 {"kind":"cache_miss","cache":"statistics_data"}
-{"kind":"provider_outcome","provider":"kosis","operation":"statistics_data","elapsedTimeMs":34,"responseBytes":63,"statusCategory":"success","attempts":1,"retryDisposition":"not_attempted","outcome":"provider_error","sizeLimitBytes":4194304}
+{"kind":"provider_outcome","provider":"kosis","operation":"statistics_data","elapsedTimeMs":44,"responseBytes":63,"statusCategory":"success","attempts":1,"retryDisposition":"not_attempted","outcome":"provider_error","sizeLimitBytes":4194304}
 {"kind":"cache_miss","cache":"statistics_data"}
-{"kind":"provider_outcome","provider":"kosis","operation":"statistics_data","elapsedTimeMs":40,"responseBytes":63,"statusCategory":"success","attempts":1,"retryDisposition":"not_attempted","outcome":"provider_error","sizeLimitBytes":4194304}
+{"kind":"provider_outcome","provider":"kosis","operation":"statistics_data","elapsedTimeMs":43,"responseBytes":63,"statusCategory":"success","attempts":1,"retryDisposition":"not_attempted","outcome":"provider_error","sizeLimitBytes":4194304}
 {"kind":"cache_miss","cache":"statistics_data"}
 {"kind":"provider_outcome","provider":"kosis","operation":"statistics_data","elapsedTimeMs":38,"responseBytes":63,"statusCategory":"success","attempts":1,"retryDisposition":"not_attempted","outcome":"provider_error","sizeLimitBytes":4194304}
 {"kind":"cache_miss","cache":"table_meta"}
-{"kind":"provider_outcome","provider":"kosis","operation":"table_metadata","elapsedTimeMs":100,"responseBytes":62,"statusCategory":"success","attempts":1,"retryDisposition":"not_attempted","outcome":"provider_error","sizeLimitBytes":4194304}
+{"kind":"provider_outcome","provider":"kosis","operation":"table_metadata","elapsedTimeMs":115,"responseBytes":62,"statusCategory":"success","attempts":1,"retryDisposition":"not_attempted","outcome":"provider_error","sizeLimitBytes":4194304}

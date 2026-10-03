@@ -1,4 +1,4 @@
-[10/03/26 16:13:55] INFO     Processing request of type            server.py:720
+[10/03/26 19:59:22] INFO     Processing request of type            server.py:720
                              ListToolsRequest                                   
                     INFO     Processing request of type            server.py:720
                              PingRequest                                        
@@ -230,7 +230,7 @@
                                  For further information visit                  
                              https://errors.pydantic.dev/2.12/v/m               
                              issing                                             
-                    INFO     Processing request of type            server.py:720
+[10/03/26 19:59:23] INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     WARNING  Tool 'kmcpqa_no_such_tool' not        server.py:488
                              listed, no validation will be                      
@@ -239,7 +239,11 @@
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
-[10/03/26 16:13:56] INFO     Processing request of type            server.py:720
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+[10/03/26 19:59:24] INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
@@ -249,15 +253,11 @@
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
-[10/03/26 16:13:57] INFO     Processing request of type            server.py:720
+[10/03/26 19:59:25] INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
-                             CallToolRequest                                    
-                    INFO     Processing request of type            server.py:720
-                             CallToolRequest                                    
-[10/03/26 16:13:58] INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     HTTP Request: GET                   _client.py:1740
                              https://apis.data.go.kr/1613000/RTM                
@@ -268,7 +268,7 @@
                              "HTTP/1.1 403 Forbidden"                           
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
-                    INFO     Processing request of type            server.py:720
+[10/03/26 19:59:26] INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
@@ -279,11 +279,11 @@
                              NOT_A_REAL_KEY&LAWD_CD=11110&DEAL_Y                
                              MD=2024&numOfRows=100&pageNo=1                     
                              "HTTP/1.1 403 Forbidden"                           
-[10/03/26 16:13:59] INFO     Processing request of type            server.py:720
-                             CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+[10/03/26 19:59:27] INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     HTTP Request: GET                   _client.py:1740
                              https://apis.data.go.kr/1613000/RTM                
@@ -296,7 +296,7 @@
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
-[10/03/26 16:14:00] INFO     Processing request of type            server.py:720
+                    INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     HTTP Request: GET                   _client.py:1740
                              https://apis.data.go.kr/1613000/RTM                
@@ -305,7 +305,7 @@
                              A_REAL_KEY&LAWD_CD=11110&DEAL_YMD=2                
                              024&numOfRows=100&pageNo=1                         
                              "HTTP/1.1 403 Forbidden"                           
-                    INFO     Processing request of type            server.py:720
+[10/03/26 19:59:28] INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
@@ -318,17 +318,17 @@
                              Unauthorized"                                      
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
-[10/03/26 16:14:01] INFO     Processing request of type            server.py:720
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+[10/03/26 19:59:29] INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
-                    INFO     Processing request of type            server.py:720
-                             CallToolRequest                                    
-                    INFO     Processing request of type            server.py:720
-                             CallToolRequest                                    
-[10/03/26 16:14:02] INFO     HTTP Request: GET                   _client.py:1740
+                    INFO     HTTP Request: GET                   _client.py:1740
                              https://apis.data.go.kr/1613000/RTM                
                              SDataSvcAptTrade/getRTMSDataSvcAptT                
                              rade?serviceKey=KMCPQA_PLACEHOLDER_                
@@ -337,7 +337,7 @@
                              "HTTP/1.1 403 Forbidden"                           
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
-                    INFO     Processing request of type            server.py:720
+[10/03/26 19:59:30] INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
@@ -350,11 +350,11 @@
                              "HTTP/1.1 403 Forbidden"                           
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
-[10/03/26 16:14:03] INFO     Processing request of type            server.py:720
+                    INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
-                    INFO     HTTP Request: GET                   _client.py:1740
+[10/03/26 19:59:31] INFO     HTTP Request: GET                   _client.py:1740
                              https://apis.data.go.kr/1613000/RTM                
                              SDataSvcRHTrade/getRTMSDataSvcRHTra                
                              de?serviceKey=KMCPQA_PLACEHOLDER_NO                
@@ -365,7 +365,7 @@
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
-[10/03/26 16:14:04] INFO     Processing request of type            server.py:720
+                    INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     HTTP Request: GET                   _client.py:1740
                              https://apis.data.go.kr/1613000/RTM                
@@ -376,7 +376,7 @@
                              "HTTP/1.1 403 Forbidden"                           
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
-                    INFO     Processing request of type            server.py:720
+[10/03/26 19:59:32] INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
@@ -387,11 +387,11 @@
                              NOT_A_REAL_KEY&LAWD_CD=11110&DEAL_Y                
                              MD=2024&numOfRows=100&pageNo=1                     
                              "HTTP/1.1 403 Forbidden"                           
-[10/03/26 16:14:05] INFO     Processing request of type            server.py:720
-                             CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
+                             CallToolRequest                                    
+[10/03/26 19:59:33] INFO     Processing request of type            server.py:720
                              CallToolRequest                                    
                     INFO     Processing request of type            server.py:720
                              CallToolRequest                                    

@@ -1,4 +1,4 @@
-[10/03/26 16:15:02] INFO     Processing request of type            server.py:733
+[10/03/26 20:00:30] INFO     Processing request of type            server.py:733
                              PingRequest                                        
-                    INFO     Processing request of type            server.py:733
+[10/03/26 20:00:31] INFO     Processing request of type            server.py:733
                              ListToolsRequest                                   

@@ -2,7 +2,7 @@
  "id": "assembly-api-mcp",
  "repo": "hollobit/assembly-api-mcp",
  "sha_expected": "f74c6b452c59d87e2fa7265fd985b90e4057a8ef",
- "started_at": "2026-10-03T07:10:07+00:00",
+ "started_at": "2026-10-03T10:55:54+00:00",
  "protocol_version_requested": "2025-11-25",
  "sandbox": true,
  "command": [
@@ -36,7 +36,7 @@
      "--no-fund"
     ],
     "returncode": 0,
-    "seconds": 1.11,
+    "seconds": 1.28,
     "timed_out": false
    },
    {
@@ -58,7 +58,7 @@
   "initialize": "closed",
   "alive": false,
   "returncode": 1,
-  "elapsed_ms": 128.7,
+  "elapsed_ms": 122.8,
   "stderr_tail": [
    "[assembly-api-mcp] 설정 오류: 환경 변수 ASSEMBLY_API_KEY이(가) 설정되지 않았습니다.",
    "설정 방법: https://open.assembly.go.kr → 회원가입 → 마이페이지 → OPEN API → 인증키 발급",
@@ -69,7 +69,7 @@
   "restarts": 0,
   "initialize": {
    "outcome": "result",
-   "elapsed_ms": 154.3,
+   "elapsed_ms": 153.4,
    "protocolVersion": "2025-11-25",
    "serverInfo": {
     "name": "assembly-api-mcp",
@@ -93,7 +93,7 @@
    "count": 6,
    "pages": 1,
    "spec_violations": [],
-   "elapsed_ms": 3.9
+   "elapsed_ms": 5.7
   },
   "ping": {
    "outcome": "result",
@@ -102,18 +102,23 @@
   "unknown_method": {
    "outcome": "error",
    "error_code": -32601,
-   "alive_after": true
+   "error_message": "Method not found",
+   "alive_after": true,
+   "responsive_after": true,
+   "stderr_delta": []
   },
   "unknown_tool": {
    "outcome": "tool_error",
-   "elapsed_ms": 2.2,
+   "elapsed_ms": 2.0,
    "text_excerpt": "MCP error -32602: Tool kmcpqa_no_such_tool not found",
    "auth_marker": null,
    "error_marker": "error",
    "traceback": false,
    "spec_violations": [],
    "has_structured": false,
-   "alive_after": true
+   "alive_after": true,
+   "responsive_after": true,
+   "stderr_delta": []
   },
   "tools": [
    {
@@ -121,18 +126,34 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "age",
+     "analyze",
+     "committee",
+     "district",
+     "lang",
+     "mode",
+     "name",
+     "page",
+     "page_size",
+     "party",
+     "scope"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 2.8,
+      "elapsed_ms": 1.7,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool assembly_member: [\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"name\"\n    ],\n    \"message\": \"Invalid input: expected string, received number\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "name": 12345,
        "party": 12345,
@@ -145,20 +166,21 @@
        "page_size": "not-a-number",
        "scope": 12345,
        "mode": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 169.3,
+      "elapsed_ms": 167.2,
       "text_excerpt": "{\"total\":0,\"items\":[],\"query\":{}}",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -167,18 +189,36 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "age",
+     "bill_id",
+     "bill_name",
+     "bill_type",
+     "committee",
+     "include_history",
+     "keywords",
+     "lang",
+     "mode",
+     "page",
+     "page_size",
+     "proposer",
+     "status"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.0,
+      "elapsed_ms": 1.9,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool assembly_bill: [\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"bill_name\"\n    ],\n    \"message\": \"Invalid input: expected string, received number\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"inva",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "bill_name": 12345,
        "bill_id": 12345,
@@ -193,20 +233,21 @@
        "age": "not-a-number",
        "page": "not-a-number",
        "page_size": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 38.1,
+      "elapsed_ms": 42.1,
       "text_excerpt": "{\"total\":0,\"items\":[]}",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -215,18 +256,37 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "age",
+     "bill_id",
+     "committee",
+     "conf_id",
+     "date_from",
+     "date_to",
+     "include_explanations",
+     "keyword",
+     "lang",
+     "meeting_type",
+     "page",
+     "page_size",
+     "type",
+     "vote_type"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.6,
+      "elapsed_ms": 1.6,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool assembly_session: [\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"schedule\",\n      \"meeting\",\n      \"vote\"\n    ],\n    \"path\": [\n      \"type\"\n    ],\n    \"message\": \"Invalid option: expected one of \\\"schedule\\\"|\\\"meeting\\\"|",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "type": 12345,
        "date_from": 12345,
@@ -242,20 +302,21 @@
        "age": "not-a-number",
        "page": "not-a-number",
        "page_size": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 31.0,
+      "elapsed_ms": 32.8,
       "text_excerpt": "{\"mode\":\"schedule\",\"total\":0,\"items\":[]}",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -264,18 +325,53 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "age",
+     "bill_name",
+     "category",
+     "closing",
+     "committee_name",
+     "cpt_ofi_org_cd",
+     "detail_seq",
+     "diff",
+     "ed_dt_fmt",
+     "include_members",
+     "keyword",
+     "lang",
+     "lm_pln_yy",
+     "ls_cls_cd",
+     "ls_cpt_org",
+     "page",
+     "page_size",
+     "petition_id",
+     "petition_status",
+     "pmt_cls_cd",
+     "prd_fr_day",
+     "prd_to_day",
+     "sc_fm_dt",
+     "sc_text",
+     "sc_text_type",
+     "sc_to_dt",
+     "search_knd",
+     "srch_txt",
+     "st_dt_fmt",
+     "type"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.5,
+      "elapsed_ms": 1.9,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool assembly_org: [\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"committee\",\n      \"petition\",\n      \"legislation_notice\",\n      \"press\",\n      \"lawmaking\"\n    ],\n    \"path\": [\n      \"type\"\n    ],\n    \"message\": \"Invalid opt",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "type": 12345,
        "category": 12345,
@@ -307,20 +403,21 @@
        "sc_to_dt": 12345,
        "sc_text_type": 12345,
        "sc_text": 12345
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 36.5,
+      "elapsed_ms": 39.2,
       "text_excerpt": "{\"type\":\"committee\",\"total\":0,\"items\":[]}",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -329,36 +426,45 @@
     "input_dialect": "http://json-schema.org/draft-07/schema#",
     "input_schema_problems": [],
     "required": [],
+    "properties": [
+     "category",
+     "keyword",
+     "page_size"
+    ],
     "output_schema": false,
     "annotations": null,
     "probes": {
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 1.5,
+      "elapsed_ms": 0.5,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool discover_apis: [\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"keyword\"\n    ],\n    \"message\": \"Invalid input: expected string, received number\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invali",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "keyword": 12345,
        "category": 12345,
        "page_size": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 36.6,
+      "elapsed_ms": 56.0,
       "text_excerpt": "{\"total\":0,\"matched\":0,\"returned\":0,\"items\":[]}",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      }
     }
    },
@@ -368,6 +474,12 @@
     "input_schema_problems": [],
     "required": [
      "api_code"
+    ],
+    "properties": [
+     "api_code",
+     "page",
+     "page_size",
+     "params"
     ],
     "output_schema": false,
     "annotations": null,
@@ -381,39 +493,45 @@
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
-      "args": {},
-      "alive_after": true
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
+      "args": {}
      },
      "wrong_type": {
       "outcome": "tool_error",
-      "elapsed_ms": 0.6,
+      "elapsed_ms": 1.4,
       "text_excerpt": "MCP error -32602: Input validation error: Invalid arguments for tool query_assembly: [\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"api_code\"\n    ],\n    \"message\": \"Invalid input: expected string, received number\"\n  },\n  {\n    \"expected\": \"record\",\n    \"code\": \"inva",
       "auth_marker": null,
       "error_marker": "error",
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "api_code": 12345,
        "params": "not-an-object",
        "page": "not-a-number",
        "page_size": "not-a-number"
-      },
-      "alive_after": true
+      }
      },
      "valid": {
       "outcome": "ok",
-      "elapsed_ms": 31.8,
+      "elapsed_ms": 68.7,
       "text_excerpt": "{\"api\":\"test\",\"total\":0,\"returned\":0,\"fields\":[],\"items\":[]}",
       "auth_marker": null,
       "error_marker": null,
       "traceback": false,
       "spec_violations": [],
       "has_structured": false,
+      "alive_after": true,
+      "responsive_after": true,
+      "stderr_delta": [],
       "args": {
        "api_code": "test"
-      },
-      "alive_after": true
+      }
      }
     }
    }
@@ -424,12 +542,14 @@
   },
   "server_initiated_messages": 0
  },
- "finished_at": "2026-10-03T07:10:20+00:00",
+ "finished_at": "2026-10-03T10:56:07+00:00",
  "external": {
   "conformance_version": "0.1.16",
   "conformance": {
    "server-initialize": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "server-initialize",
@@ -441,6 +561,8 @@
    },
    "ping": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "ping",
@@ -452,6 +574,8 @@
    },
    "tools-list": {
     "returncode": 0,
+    "measurable": true,
+    "bridge_events": [],
     "checks": [
      {
       "id": "tools-list",
@@ -487,7 +611,7 @@
      "node",
      "dist/index.js"
     ],
-    "timestamp": "2026-10-03T07:14:36+00:00",
+    "timestamp": "2026-10-03T11:00:05+00:00",
     "summary": {
      "total": 18,
      "status": {

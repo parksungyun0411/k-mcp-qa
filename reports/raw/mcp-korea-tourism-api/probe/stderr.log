@@ -1,11 +1,11 @@
-2026-10-03 16:13:00,073 - __main__ - INFO - Starting Korea Tourism API MCP Server with transport: stdio
-2026-10-03 16:13:00,073 - __main__ - INFO - Using stdio transport - connect via MCP client
-[10/03/26 16:13:00] INFO     Starting MCP server 'Korea Tourism   server.py:1246
+2026-10-03 19:58:28,542 - __main__ - INFO - Starting Korea Tourism API MCP Server with transport: stdio
+2026-10-03 19:58:28,542 - __main__ - INFO - Using stdio transport - connect via MCP client
+[10/03/26 19:58:28] INFO     Starting MCP server 'Korea Tourism   server.py:1246
                              API' with transport 'stdio'                        
-2026-10-03 16:13:00,076 - FastMCP.fastmcp.server.server - INFO - Starting MCP server 'Korea Tourism API' with transport 'stdio'
-2026-10-03 16:13:05,083 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
-2026-10-03 16:13:05,087 - mcp.server.lowlevel.server - INFO - Processing request of type PingRequest
-2026-10-03 16:13:05,089 - root - WARNING - Failed to validate request: 24 validation errors for ClientRequest
+2026-10-03 19:58:28,544 - FastMCP.fastmcp.server.server - INFO - Starting MCP server 'Korea Tourism API' with transport 'stdio'
+2026-10-03 19:58:33,550 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-10-03 19:58:33,553 - mcp.server.lowlevel.server - INFO - Processing request of type PingRequest
+2026-10-03 19:58:33,554 - root - WARNING - Failed to validate request: 24 validation errors for ClientRequest
 PingRequest.method
   Input should be 'ping' [type=literal_error, input_value='kmcpqa/unknown_method', input_type=str]
     For further information visit https://errors.pydantic.dev/2.11/v/literal_error
@@ -78,9 +78,9 @@ CallToolRequest.params.name
 ListToolsRequest.method
   Input should be 'tools/list' [type=literal_error, input_value='kmcpqa/unknown_method', input_type=str]
     For further information visit https://errors.pydantic.dev/2.11/v/literal_error
-2026-10-03 16:13:05,292 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-2026-10-03 16:13:05,498 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-[10/03/26 16:13:05] ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:33,758 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-03 19:58:33,965 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+[10/03/26 19:58:33] ERROR    Error calling tool              tool_manager.py:194
                              'search_tourism_by_keyword': 1                     
                              validation error for                               
                              call[search_tourism_by_keyword]                    
@@ -148,7 +148,7 @@ ListToolsRequest.method
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/missing_argument                               
-2026-10-03 16:13:05,498 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'search_tourism_by_keyword': 1 validation error for call[search_tourism_by_keyword]
+2026-10-03 19:58:33,965 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'search_tourism_by_keyword': 1 validation error for call[search_tourism_by_keyword]
 keyword
   Missing required argument [type=missing_argument, input_value={}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.11/v/missing_argument
@@ -166,8 +166,8 @@ pydantic_core._pydantic_core.ValidationError: 1 validation error for call[search
 keyword
   Missing required argument [type=missing_argument, input_value={}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.11/v/missing_argument
-2026-10-03 16:13:05,743 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-                    ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:34,228 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+[10/03/26 19:58:34] ERROR    Error calling tool              tool_manager.py:194
                              'search_tourism_by_keyword': 3                     
                              validation errors for                              
                              call[search_tourism_by_keyword]                    
@@ -279,7 +279,7 @@ keyword
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/int_parsing                                    
-2026-10-03 16:13:05,744 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'search_tourism_by_keyword': 3 validation errors for call[search_tourism_by_keyword]
+2026-10-03 19:58:34,228 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'search_tourism_by_keyword': 3 validation errors for call[search_tourism_by_keyword]
 keyword
   Input should be a valid string [type=string_type, input_value=12345, input_type=int]
     For further information visit https://errors.pydantic.dev/2.11/v/string_type
@@ -309,15 +309,15 @@ page
 rows
   Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]
     For further information visit https://errors.pydantic.dev/2.11/v/int_parsing
-2026-10-03 16:13:05,982 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-2026-10-03 16:13:05,983 - __main__ - INFO - Initializing KoreaTourismApiClient with:
-2026-10-03 16:13:05,983 - __main__ - INFO -   Default Language: en
-2026-10-03 16:13:05,983 - __main__ - INFO -   Cache TTL: 86400s
-2026-10-03 16:13:05,983 - __main__ - INFO -   Rate Limit: 5 calls / 1s
-2026-10-03 16:13:05,983 - __main__ - INFO -   Concurrency Limit: 10
-2026-10-03 16:13:05,983 - __main__ - INFO - KoreaTourismApiClient initialized successfully.
-2026-10-03 16:13:06,132 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/searchKeyword2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&keyword=%EC%84%9C%EC%9A%B8&arrange=Q&pageNo=1&numOfRows=20 "HTTP/1.1 403 Forbidden"
-[10/03/26 16:13:06] ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:34,472 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-03 19:58:34,473 - __main__ - INFO - Initializing KoreaTourismApiClient with:
+2026-10-03 19:58:34,473 - __main__ - INFO -   Default Language: en
+2026-10-03 19:58:34,473 - __main__ - INFO -   Cache TTL: 86400s
+2026-10-03 19:58:34,473 - __main__ - INFO -   Rate Limit: 5 calls / 1s
+2026-10-03 19:58:34,473 - __main__ - INFO -   Concurrency Limit: 10
+2026-10-03 19:58:34,473 - __main__ - INFO - KoreaTourismApiClient initialized successfully.
+2026-10-03 19:58:34,612 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/searchKeyword2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&keyword=%EC%84%9C%EC%9A%B8&arrange=Q&pageNo=1&numOfRows=20 "HTTP/1.1 403 Forbidden"
+                    ERROR    Error calling tool              tool_manager.py:194
                              'search_tourism_by_keyword':                       
                              Client error: Tourism API                          
                              error: HTTP 403 (Status Code:                      
@@ -547,7 +547,7 @@ rows
                              p=MobileApp&_type=json&keyword=                    
                              %EC%84%9C%EC%9A%B8&arrange=Q&pa                    
                              geNo=1&numOfRows=20)                               
-2026-10-03 16:13:06,132 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'search_tourism_by_keyword': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchKeyword2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&keyword=%EC%84%9C%EC%9A%B8&arrange=Q&pageNo=1&numOfRows=20)
+2026-10-03 19:58:34,612 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'search_tourism_by_keyword': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchKeyword2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&keyword=%EC%84%9C%EC%9A%B8&arrange=Q&pageNo=1&numOfRows=20)
 Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py", line 185, in call_tool
     return await tool.run(arguments)
@@ -592,7 +592,7 @@ Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py", line 285, in _process_response_error
     raise TourismApiClientError(
 mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchKeyword2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&keyword=%EC%84%9C%EC%9A%B8&arrange=Q&pageNo=1&numOfRows=20)
-2026-10-03 16:13:06,436 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-03 19:58:34,922 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
                     ERROR    Error calling tool              tool_manager.py:194
                              'get_tourism_by_area': 1                           
                              validation error for                               
@@ -661,7 +661,7 @@ mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: H
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/missing_argument                               
-2026-10-03 16:13:06,436 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_tourism_by_area': 1 validation error for call[get_tourism_by_area]
+2026-10-03 19:58:34,923 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_tourism_by_area': 1 validation error for call[get_tourism_by_area]
 area_code
   Missing required argument [type=missing_argument, input_value={}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.11/v/missing_argument
@@ -679,8 +679,8 @@ pydantic_core._pydantic_core.ValidationError: 1 validation error for call[get_to
 area_code
   Missing required argument [type=missing_argument, input_value={}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.11/v/missing_argument
-2026-10-03 16:13:06,668 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-                    ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:35,164 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+[10/03/26 19:58:35] ERROR    Error calling tool              tool_manager.py:194
                              'get_tourism_by_area': 3                           
                              validation errors for                              
                              call[get_tourism_by_area]                          
@@ -792,7 +792,7 @@ area_code
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/int_parsing                                    
-2026-10-03 16:13:06,668 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_tourism_by_area': 3 validation errors for call[get_tourism_by_area]
+2026-10-03 19:58:35,164 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_tourism_by_area': 3 validation errors for call[get_tourism_by_area]
 area_code
   Input should be a valid string [type=string_type, input_value=12345, input_type=int]
     For further information visit https://errors.pydantic.dev/2.11/v/string_type
@@ -822,8 +822,8 @@ page
 rows
   Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]
     For further information visit https://errors.pydantic.dev/2.11/v/int_parsing
-2026-10-03 16:13:06,915 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-2026-10-03 16:13:06,942 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/areaBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&arrange=Q&pageNo=1&numOfRows=20&areaCode=test "HTTP/1.1 403 Forbidden"
+2026-10-03 19:58:35,406 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-03 19:58:35,432 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/areaBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&arrange=Q&pageNo=1&numOfRows=20&areaCode=test "HTTP/1.1 403 Forbidden"
                     ERROR    Error calling tool              tool_manager.py:194
                              'get_tourism_by_area': Client                      
                              error: Tourism API error: HTTP                     
@@ -1054,7 +1054,7 @@ rows
                              p=MobileApp&_type=json&arrange=                    
                              Q&pageNo=1&numOfRows=20&areaCod                    
                              e=test)                                            
-2026-10-03 16:13:06,942 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_tourism_by_area': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&arrange=Q&pageNo=1&numOfRows=20&areaCode=test)
+2026-10-03 19:58:35,432 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_tourism_by_area': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&arrange=Q&pageNo=1&numOfRows=20&areaCode=test)
 Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py", line 185, in call_tool
     return await tool.run(arguments)
@@ -1099,8 +1099,8 @@ Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py", line 285, in _process_response_error
     raise TourismApiClientError(
 mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&arrange=Q&pageNo=1&numOfRows=20&areaCode=test)
-2026-10-03 16:13:07,260 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-[10/03/26 16:13:07] ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:35,757 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+                    ERROR    Error calling tool              tool_manager.py:194
                              'find_nearby_attractions': 2                       
                              validation errors for                              
                              call[find_nearby_attractions]                      
@@ -1186,7 +1186,7 @@ mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: H
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/missing_argument                               
-2026-10-03 16:13:07,260 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'find_nearby_attractions': 2 validation errors for call[find_nearby_attractions]
+2026-10-03 19:58:35,758 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'find_nearby_attractions': 2 validation errors for call[find_nearby_attractions]
 longitude
   Missing required argument [type=missing_argument, input_value={}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.11/v/missing_argument
@@ -1210,8 +1210,8 @@ longitude
 latitude
   Missing required argument [type=missing_argument, input_value={}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.11/v/missing_argument
-2026-10-03 16:13:07,489 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-                    ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:36,001 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+[10/03/26 19:58:36] ERROR    Error calling tool              tool_manager.py:194
                              'find_nearby_attractions': 5                       
                              validation errors for                              
                              call[find_nearby_attractions]                      
@@ -1371,7 +1371,7 @@ latitude
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/int_parsing                                    
-2026-10-03 16:13:07,489 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'find_nearby_attractions': 5 validation errors for call[find_nearby_attractions]
+2026-10-03 19:58:36,001 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'find_nearby_attractions': 5 validation errors for call[find_nearby_attractions]
 longitude
   Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='not-a-number', input_type=str]
     For further information visit https://errors.pydantic.dev/2.11/v/float_parsing
@@ -1413,8 +1413,8 @@ page
 rows
   Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]
     For further information visit https://errors.pydantic.dev/2.11/v/int_parsing
-2026-10-03 16:13:07,727 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-2026-10-03 16:13:07,751 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/locationBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q&mapX=1.0&mapY=1.0&radius=1000 "HTTP/1.1 403 Forbidden"
+2026-10-03 19:58:36,247 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-03 19:58:36,282 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/locationBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q&mapX=1.0&mapY=1.0&radius=1000 "HTTP/1.1 403 Forbidden"
                     ERROR    Error calling tool              tool_manager.py:194
                              'find_nearby_attractions':                         
                              Client error: Tourism API                          
@@ -1646,7 +1646,7 @@ rows
                              leApp=MobileApp&_type=json&page                    
                              No=1&numOfRows=20&arrange=Q&map                    
                              X=1.0&mapY=1.0&radius=1000)                        
-2026-10-03 16:13:07,752 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'find_nearby_attractions': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/locationBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q&mapX=1.0&mapY=1.0&radius=1000)
+2026-10-03 19:58:36,283 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'find_nearby_attractions': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/locationBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q&mapX=1.0&mapY=1.0&radius=1000)
 Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py", line 185, in call_tool
     return await tool.run(arguments)
@@ -1691,8 +1691,8 @@ Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py", line 285, in _process_response_error
     raise TourismApiClientError(
 mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/locationBasedList2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q&mapX=1.0&mapY=1.0&radius=1000)
-2026-10-03 16:13:08,062 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-[10/03/26 16:13:08] ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:36,621 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+                    ERROR    Error calling tool              tool_manager.py:194
                              'search_festivals_by_date': 1                      
                              validation error for                               
                              call[search_festivals_by_date]                     
@@ -1760,7 +1760,7 @@ mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: H
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/missing_argument                               
-2026-10-03 16:13:08,062 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'search_festivals_by_date': 1 validation error for call[search_festivals_by_date]
+2026-10-03 19:58:36,622 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'search_festivals_by_date': 1 validation error for call[search_festivals_by_date]
 start_date
   Missing required argument [type=missing_argument, input_value={}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.11/v/missing_argument
@@ -1778,7 +1778,7 @@ pydantic_core._pydantic_core.ValidationError: 1 validation error for call[search
 start_date
   Missing required argument [type=missing_argument, input_value={}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.11/v/missing_argument
-2026-10-03 16:13:08,288 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-03 19:58:36,863 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
                     ERROR    Error calling tool              tool_manager.py:194
                              'search_festivals_by_date': 3                      
                              validation errors for                              
@@ -1891,7 +1891,7 @@ start_date
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/int_parsing                                    
-2026-10-03 16:13:08,288 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'search_festivals_by_date': 3 validation errors for call[search_festivals_by_date]
+2026-10-03 19:58:36,863 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'search_festivals_by_date': 3 validation errors for call[search_festivals_by_date]
 start_date
   Input should be a valid string [type=string_type, input_value=12345, input_type=int]
     For further information visit https://errors.pydantic.dev/2.11/v/string_type
@@ -1921,9 +1921,9 @@ page
 rows
   Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]
     For further information visit https://errors.pydantic.dev/2.11/v/int_parsing
-2026-10-03 16:13:08,521 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-2026-10-03 16:13:08,542 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/searchFestival2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&eventStartDate=20250101&pageNo=1&numOfRows=20&arrange=Q "HTTP/1.1 403 Forbidden"
-                    ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:37,109 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-03 19:58:37,132 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/searchFestival2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&eventStartDate=20250101&pageNo=1&numOfRows=20&arrange=Q "HTTP/1.1 403 Forbidden"
+[10/03/26 19:58:37] ERROR    Error calling tool              tool_manager.py:194
                              'search_festivals_by_date':                        
                              Client error: Tourism API                          
                              error: HTTP 403 (Status Code:                      
@@ -2153,7 +2153,7 @@ rows
                              pp=MobileApp&_type=json&eventSt                    
                              artDate=20250101&pageNo=1&numOf                    
                              Rows=20&arrange=Q)                                 
-2026-10-03 16:13:08,542 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'search_festivals_by_date': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchFestival2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&eventStartDate=20250101&pageNo=1&numOfRows=20&arrange=Q)
+2026-10-03 19:58:37,133 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'search_festivals_by_date': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchFestival2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&eventStartDate=20250101&pageNo=1&numOfRows=20&arrange=Q)
 Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py", line 185, in call_tool
     return await tool.run(arguments)
@@ -2198,7 +2198,7 @@ Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py", line 285, in _process_response_error
     raise TourismApiClientError(
 mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchFestival2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&eventStartDate=20250101&pageNo=1&numOfRows=20&arrange=Q)
-2026-10-03 16:13:08,876 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-03 19:58:37,483 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
                     ERROR    Error calling tool              tool_manager.py:194
                              'find_accommodations': 2                           
                              validation errors for                              
@@ -2293,7 +2293,7 @@ mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: H
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/int_parsing                                    
-2026-10-03 16:13:08,876 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'find_accommodations': 2 validation errors for call[find_accommodations]
+2026-10-03 19:58:37,483 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'find_accommodations': 2 validation errors for call[find_accommodations]
 page
   Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]
     For further information visit https://errors.pydantic.dev/2.11/v/int_parsing
@@ -2317,9 +2317,9 @@ page
 rows
   Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]
     For further information visit https://errors.pydantic.dev/2.11/v/int_parsing
-2026-10-03 16:13:09,108 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-2026-10-03 16:13:09,133 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/searchStay2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q "HTTP/1.1 403 Forbidden"
-[10/03/26 16:13:09] ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:37,718 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-03 19:58:37,752 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/searchStay2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q "HTTP/1.1 403 Forbidden"
+                    ERROR    Error calling tool              tool_manager.py:194
                              'find_accommodations': Client                      
                              error: Tourism API error: HTTP                     
                              403 (Status Code: 403) (Request                    
@@ -2547,7 +2547,7 @@ rows
                              AL_KEY&MobileOS=ETC&MobileApp=M                    
                              obileApp&_type=json&pageNo=1&nu                    
                              mOfRows=20&arrange=Q)                              
-2026-10-03 16:13:09,133 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'find_accommodations': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchStay2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q)
+2026-10-03 19:58:37,753 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'find_accommodations': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchStay2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q)
 Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py", line 185, in call_tool
     return await tool.run(arguments)
@@ -2592,8 +2592,8 @@ Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py", line 285, in _process_response_error
     raise TourismApiClientError(
 mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/searchStay2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&pageNo=1&numOfRows=20&arrange=Q)
-2026-10-03 16:13:09,449 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-                    ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:38,090 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+[10/03/26 19:58:38] ERROR    Error calling tool              tool_manager.py:194
                              'get_detailed_information': 1                      
                              validation error for                               
                              call[get_detailed_information]                     
@@ -2661,7 +2661,7 @@ mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: H
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/missing_argument                               
-2026-10-03 16:13:09,449 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_detailed_information': 1 validation error for call[get_detailed_information]
+2026-10-03 19:58:38,091 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_detailed_information': 1 validation error for call[get_detailed_information]
 content_id
   Missing required argument [type=missing_argument, input_value={}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.11/v/missing_argument
@@ -2679,7 +2679,7 @@ pydantic_core._pydantic_core.ValidationError: 1 validation error for call[get_de
 content_id
   Missing required argument [type=missing_argument, input_value={}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.11/v/missing_argument
-2026-10-03 16:13:09,677 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-03 19:58:38,333 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
                     ERROR    Error calling tool              tool_manager.py:194
                              'get_detailed_information': 1                      
                              validation error for                               
@@ -2748,7 +2748,7 @@ content_id
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/string_type                                    
-2026-10-03 16:13:09,678 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_detailed_information': 1 validation error for call[get_detailed_information]
+2026-10-03 19:58:38,333 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_detailed_information': 1 validation error for call[get_detailed_information]
 content_id
   Input should be a valid string [type=string_type, input_value=12345, input_type=int]
     For further information visit https://errors.pydantic.dev/2.11/v/string_type
@@ -2766,8 +2766,8 @@ pydantic_core._pydantic_core.ValidationError: 1 validation error for call[get_de
 content_id
   Input should be a valid string [type=string_type, input_value=12345, input_type=int]
     For further information visit https://errors.pydantic.dev/2.11/v/string_type
-2026-10-03 16:13:09,920 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-2026-10-03 16:13:09,952 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/detailCommon2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&pageNo=1&numOfRows=20 "HTTP/1.1 403 Forbidden"
+2026-10-03 19:58:38,560 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-03 19:58:38,582 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/detailCommon2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&pageNo=1&numOfRows=20 "HTTP/1.1 403 Forbidden"
                     ERROR    Error calling tool              tool_manager.py:194
                              'get_detailed_information':                        
                              Client error: Tourism API                          
@@ -2996,7 +2996,7 @@ content_id
                              REAL_KEY&MobileOS=ETC&MobileApp                    
                              =MobileApp&_type=json&contentId                    
                              =test&pageNo=1&numOfRows=20)                       
-2026-10-03 16:13:09,952 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_detailed_information': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailCommon2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&pageNo=1&numOfRows=20)
+2026-10-03 19:58:38,582 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_detailed_information': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailCommon2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&pageNo=1&numOfRows=20)
 Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py", line 185, in call_tool
     return await tool.run(arguments)
@@ -3041,8 +3041,8 @@ Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py", line 285, in _process_response_error
     raise TourismApiClientError(
 mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailCommon2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&pageNo=1&numOfRows=20)
-2026-10-03 16:13:10,301 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-[10/03/26 16:13:10] ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:38,931 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+                    ERROR    Error calling tool              tool_manager.py:194
                              'get_tourism_images': 1                            
                              validation error for                               
                              call[get_tourism_images]                           
@@ -3110,7 +3110,7 @@ mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: H
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/missing_argument                               
-2026-10-03 16:13:10,301 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_tourism_images': 1 validation error for call[get_tourism_images]
+2026-10-03 19:58:38,932 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_tourism_images': 1 validation error for call[get_tourism_images]
 content_id
   Missing required argument [type=missing_argument, input_value={}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.11/v/missing_argument
@@ -3128,8 +3128,8 @@ pydantic_core._pydantic_core.ValidationError: 1 validation error for call[get_to
 content_id
   Missing required argument [type=missing_argument, input_value={}, input_type=dict]
     For further information visit https://errors.pydantic.dev/2.11/v/missing_argument
-2026-10-03 16:13:10,531 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-                    ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:39,175 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+[10/03/26 19:58:39] ERROR    Error calling tool              tool_manager.py:194
                              'get_tourism_images': 3                            
                              validation errors for                              
                              call[get_tourism_images]                           
@@ -3241,7 +3241,7 @@ content_id
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/int_parsing                                    
-2026-10-03 16:13:10,532 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_tourism_images': 3 validation errors for call[get_tourism_images]
+2026-10-03 19:58:39,175 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_tourism_images': 3 validation errors for call[get_tourism_images]
 content_id
   Input should be a valid string [type=string_type, input_value=12345, input_type=int]
     For further information visit https://errors.pydantic.dev/2.11/v/string_type
@@ -3271,8 +3271,8 @@ page
 rows
   Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]
     For further information visit https://errors.pydantic.dev/2.11/v/int_parsing
-2026-10-03 16:13:10,851 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-2026-10-03 16:13:10,883 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/detailImage2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&numOfRows=20&pageNo=1 "HTTP/1.1 403 Forbidden"
+2026-10-03 19:58:39,419 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-03 19:58:39,451 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/detailImage2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&numOfRows=20&pageNo=1 "HTTP/1.1 403 Forbidden"
                     ERROR    Error calling tool              tool_manager.py:194
                              'get_tourism_images': Client                       
                              error: Tourism API error: HTTP                     
@@ -3501,7 +3501,7 @@ rows
                              EAL_KEY&MobileOS=ETC&MobileApp=                    
                              MobileApp&_type=json&contentId=                    
                              test&numOfRows=20&pageNo=1)                        
-2026-10-03 16:13:10,884 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_tourism_images': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailImage2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&numOfRows=20&pageNo=1)
+2026-10-03 19:58:39,452 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_tourism_images': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailImage2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&numOfRows=20&pageNo=1)
 Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py", line 185, in call_tool
     return await tool.run(arguments)
@@ -3546,8 +3546,8 @@ Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py", line 285, in _process_response_error
     raise TourismApiClientError(
 mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/detailImage2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&contentId=test&numOfRows=20&pageNo=1)
-2026-10-03 16:13:11,234 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-[10/03/26 16:13:11] ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:39,779 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+                    ERROR    Error calling tool              tool_manager.py:194
                              'get_area_codes': 2 validation                     
                              errors for call[get_area_codes]                    
                              page                                               
@@ -3639,7 +3639,7 @@ mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: H
                              visit                                              
                              https://errors.pydantic.dev/2.1                    
                              1/v/int_parsing                                    
-2026-10-03 16:13:11,234 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_area_codes': 2 validation errors for call[get_area_codes]
+2026-10-03 19:58:39,779 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_area_codes': 2 validation errors for call[get_area_codes]
 page
   Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]
     For further information visit https://errors.pydantic.dev/2.11/v/int_parsing
@@ -3663,9 +3663,9 @@ page
 rows
   Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='not-a-number', input_type=str]
     For further information visit https://errors.pydantic.dev/2.11/v/int_parsing
-2026-10-03 16:13:11,464 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
-2026-10-03 16:13:11,493 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/areaCode2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&numOfRows=100&pageNo=1 "HTTP/1.1 403 Forbidden"
-                    ERROR    Error calling tool              tool_manager.py:194
+2026-10-03 19:58:40,023 - mcp.server.lowlevel.server - INFO - Processing request of type CallToolRequest
+2026-10-03 19:58:40,052 - httpx - INFO - HTTP Request: GET http://apis.data.go.kr/B551011/EngService2/areaCode2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&numOfRows=100&pageNo=1 "HTTP/1.1 403 Forbidden"
+[10/03/26 19:58:40] ERROR    Error calling tool              tool_manager.py:194
                              'get_area_codes': Client error:                    
                              Tourism API error: HTTP 403                        
                              (Status Code: 403) (Request                        
@@ -3893,7 +3893,7 @@ rows
                              _KEY&MobileOS=ETC&MobileApp=Mob                    
                              ileApp&_type=json&numOfRows=100                    
                              &pageNo=1)                                         
-2026-10-03 16:13:11,494 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_area_codes': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaCode2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&numOfRows=100&pageNo=1)
+2026-10-03 19:58:40,052 - FastMCP.fastmcp.tools.tool_manager - ERROR - Error calling tool 'get_area_codes': Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaCode2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&numOfRows=100&pageNo=1)
 Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/.venv/lib/python3.12/site-packages/fastmcp/tools/tool_manager.py", line 185, in call_tool
     return await tool.run(arguments)
@@ -3938,7 +3938,7 @@ Traceback (most recent call last):
   File "/private/tmp/kmcp-work/mcp-korea-tourism-api/src/src/mcp_tourism/api_client.py", line 285, in _process_response_error
     raise TourismApiClientError(
 mcp_tourism.api_client.TourismApiClientError: Client error: Tourism API error: HTTP 403 (Status Code: 403) (Request URL: http://apis.data.go.kr/B551011/EngService2/areaCode2?serviceKey=KMCPQA_PLACEHOLDER_NOT_A_REAL_KEY&MobileOS=ETC&MobileApp=MobileApp&_type=json&numOfRows=100&pageNo=1)
-2026-10-03 16:13:11,890 - __main__ - INFO - Cleaning up resources...
-2026-10-03 16:13:11,890 - __main__ - INFO - No event loop available, creating temporary loop for cleanup
-2026-10-03 16:13:11,890 - __main__ - WARNING - Temporary loop cleanup failed: Event loop is closed
-2026-10-03 16:13:11,890 - __main__ - INFO - Skipping resource cleanup - connections will be closed by OS
+2026-10-03 19:58:40,406 - __main__ - INFO - Cleaning up resources...
+2026-10-03 19:58:40,406 - __main__ - INFO - No event loop available, creating temporary loop for cleanup
+2026-10-03 19:58:40,406 - __main__ - WARNING - Temporary loop cleanup failed: Event loop is closed
+2026-10-03 19:58:40,406 - __main__ - INFO - Skipping resource cleanup - connections will be closed by OS

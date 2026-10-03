@@ -1,7 +1,25 @@
-Running client scenario 'server-initialize' against server: http://127.0.0.1:52402/mcp
-Results saved to reports/raw/korean-dart-mcp/external/conformance/server-initialize/server-server-initialize-2026-10-03T07-14-39-087Z
+Running client scenario 'server-initialize' against server: http://127.0.0.1:56292/mcp
+Results saved to reports/raw/korean-dart-mcp/external/conformance/server-initialize/server-server-initialize-2026-10-03T11-07-45-206Z
 Checks:
-[90m2026-10-03T07:14:39.115Z[0m [server-initialize] [32mSUCCESS[0m Server responds to initialize request with valid structure
+[90m2026-10-03T11:07:45.221Z[0m [server-initialize] [31mFAILURE[0m Server responds to initialize request with valid structure
 
 Test Results:
-Passed: 1/1, 0 failed, 0 warnings
+Passed: 0/1, 1 failed, 0 warnings
+
+=== Failed Checks ===
+
+  - ServerInitialize: Server responds to initialize request with valid structure
+    Error: Failed to initialize: MCP error -32099: k-mcp-qa bridge: server process not running (exit 1)
+
+Test basic server initialization handshake.
+
+[1mServer Implementation Requirements:[0m
+
+[1mEndpoint[0m: [2minitialize[0m
+
+[1mRequirements[0m:
+- Accept [2minitialize[0m request with client info and capabilities
+- Return valid initialize response with server info, protocol version, and capabilities
+- Accept [2minitialized[0m notification from client after handshake
+
+This test verifies the server can complete the two-phase initialization handshake successfully.
