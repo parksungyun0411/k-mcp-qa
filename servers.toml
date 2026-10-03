@@ -1,0 +1,202 @@
+# 시험 대상 서버 목록. 출발점은 darjeeling/awesome-mcp-korea (2026-10-03 확인).
+# sha 는 시험한 커밋이다. install 은 작업 디렉터리(cwd = 저장소 루트 또는 subdir)에서 순서대로 실행한다.
+# npm 은 항상 --ignore-scripts 로 설치하고(라이프사이클 스크립트 미실행) 빌드는 tsc 를 직접 부른다.
+# placeholder_env 의 값은 실제 키가 아니다. 키가 없으면 시작하지 않는 서버를 띄우기 위한 자리 표시자다.
+
+[[server]]
+id = "korean-law-mcp"
+repo = "chrisryugj/korean-law-mcp"
+sha = "ff33a713970d7b504bb08cd1fc3b03944aca5757"
+license = "MIT"
+runtime = "node"
+upstream_api = "국가법령정보센터 Open API (law.go.kr)"
+install = [["npm", "ci", "--ignore-scripts", "--no-audit", "--no-fund"], ["npx", "--no-install", "tsc"]]
+command = ["node", "build/index.js"]
+key_env = ["LAW_OC"]
+
+[[server]]
+id = "assembly-api-mcp"
+repo = "hollobit/assembly-api-mcp"
+sha = "f74c6b452c59d87e2fa7265fd985b90e4057a8ef"
+license = "MIT"
+runtime = "node"
+upstream_api = "국회 Open API (open.assembly.go.kr)"
+install = [["npm", "ci", "--ignore-scripts", "--no-audit", "--no-fund"], ["npx", "--no-install", "tsc"]]
+command = ["node", "dist/index.js"]
+key_env = ["ASSEMBLY_API_KEY"]
+
+[[server]]
+id = "korea-stock-mcp"
+repo = "jjlabsio/korea-stock-mcp"
+sha = "210595eec73a39cd04e2fb175f6e69b1516f0dd4"
+license = "ISC"
+runtime = "node"
+upstream_api = "OpenDART, KRX Open API"
+install = [["npm", "ci", "--ignore-scripts", "--no-audit", "--no-fund"], ["npx", "--no-install", "tsc"]]
+command = ["node", "dist/index.js"]
+key_env = ["DART_API_KEY", "KRX_API_KEY"]
+
+[[server]]
+id = "korean-dart-mcp"
+repo = "aesthetic-legalism5470/korean-dart-mcp"
+sha = "96315645798697abec785bc7204c237e0f0f0618"
+license = "MIT"
+runtime = "node"
+upstream_api = "OpenDART"
+install = [["npm", "ci", "--ignore-scripts", "--no-audit", "--no-fund"], ["npx", "--no-install", "tsc"]]
+command = ["node", "build/index.js"]
+key_env = ["DART_API_KEY"]
+
+[[server.agreement]]
+tool = "get_company"
+args = { corp = "00126380" }
+direct = "dart_company"
+direct_args = { corp_code = "00126380" }
+fields = ["corp_name", "crno", "bzno"]
+key_map = { DART_API_KEY = "OPENDART_API_KEY" }
+
+[[server.agreement]]
+tool = "get_company"
+args = { corp = "00164779" }
+direct = "dart_company"
+direct_args = { corp_code = "00164779" }
+fields = ["corp_name", "crno", "bzno"]
+key_map = { DART_API_KEY = "OPENDART_API_KEY" }
+
+[[server.agreement]]
+tool = "get_company"
+args = { corp = "00164742" }
+direct = "dart_company"
+direct_args = { corp_code = "00164742" }
+fields = ["corp_name", "crno", "bzno"]
+key_map = { DART_API_KEY = "OPENDART_API_KEY" }
+
+[[server]]
+id = "dart-mcp-server"
+repo = "snaiws/DART-mcp-server"
+sha = "7fdc7c472c99aef1a0536e43ee4c7963bf4bf4bb"
+license = "MIT"
+runtime = "python"
+upstream_api = "OpenDART"
+subdir = "mcp_server"
+install = [["uv", "sync", "--frozen", "--no-dev"]]
+command = [".venv/bin/python", "run_server.py"]
+key_env = ["DART_API_KEY"]
+
+[[server.agreement]]
+tool = "get_corpinfo"
+args = { corp_code = "00126380" }
+direct = "dart_company"
+direct_args = { corp_code = "00126380" }
+fields = ["corp_name", "crno", "bzno"]
+key_map = { DART_API_KEY = "OPENDART_API_KEY" }
+
+[[server.agreement]]
+tool = "get_corpinfo"
+args = { corp_code = "00164779" }
+direct = "dart_company"
+direct_args = { corp_code = "00164779" }
+fields = ["corp_name", "crno", "bzno"]
+key_map = { DART_API_KEY = "OPENDART_API_KEY" }
+
+[[server.agreement]]
+tool = "get_corpinfo"
+args = { corp_code = "00164742" }
+direct = "dart_company"
+direct_args = { corp_code = "00164742" }
+fields = ["corp_name", "crno", "bzno"]
+key_map = { DART_API_KEY = "OPENDART_API_KEY" }
+
+[[server]]
+id = "data-go-nts-business-verification"
+repo = "Koomook/data-go-mcp-servers"
+sha = "dd27f99490400b31fa14f96045a138fa217580a4"
+license = "Apache-2.0"
+runtime = "python"
+upstream_api = "국세청 사업자등록정보 진위확인 및 상태조회 (data.go.kr 15081808)"
+subdir = "src/nts-business-verification"
+install = [["uv", "venv", "-q", "-p", "3.12", ".venv"], ["uv", "pip", "install", "-q", "-p", ".venv", "-e", "."]]
+command = [".venv/bin/python", "-m", "data_go_mcp.nts_business_verification.server"]
+key_env = ["API_KEY"]
+
+# 같은 커밋에 의존성 하나만 고정한 변형. 원본(위)은 pyproject 의 "mcp[cli]>=1.13.0" 이 mcp 2.x 로
+# 해석되어 기동하지 않는다. 프로토콜 동작을 보려고 mcp<2 를 추가로 고정했다(이 프로젝트의 수정).
+[[server]]
+id = "data-go-nts-business-verification-mcp1"
+repo = "Koomook/data-go-mcp-servers"
+sha = "dd27f99490400b31fa14f96045a138fa217580a4"
+license = "Apache-2.0"
+runtime = "python"
+upstream_api = "국세청 사업자등록정보 진위확인 및 상태조회 (data.go.kr 15081808)"
+subdir = "src/nts-business-verification"
+variant_of = "data-go-nts-business-verification"
+modification = "mcp<2 고정"
+install = [["uv", "venv", "-q", "-p", "3.12", ".venv"], ["uv", "pip", "install", "-q", "-p", ".venv", "-e", ".", "mcp[cli]<2"]]
+command = [".venv/bin/python", "-m", "data_go_mcp.nts_business_verification.server"]
+key_env = ["API_KEY"]
+
+[[server.agreement]]
+tool = "check_business_status"
+args = { business_numbers = "1248100998" }
+direct = "nts_status"
+direct_args = { b_no = "1248100998" }
+fields = ["b_no", "b_stt"]
+key_map = { API_KEY = "DATA_GO_KR_SERVICE_KEY" }
+
+
+[[server]]
+id = "mcp-korea-tourism-api"
+repo = "harimkang/mcp-korea-tourism-api"
+sha = "c4d4585cb8e5c3085e3e7631467f7c6d096aa5c1"
+license = "MIT"
+runtime = "python"
+upstream_api = "한국관광공사 TourAPI"
+install = [["uv", "sync", "--frozen", "--no-dev"]]
+command = [".venv/bin/python", "-m", "mcp_tourism.server"]
+key_env = ["KOREA_TOURISM_API_KEY"]
+
+[[server]]
+id = "korea-stats-mcp"
+repo = "Dayoooun/korea-stats-mcp"
+sha = "cf8af3dc52eee8f3085f947adc43bb7f65c8ea9b"
+license = "MIT"
+runtime = "node"
+upstream_api = "KOSIS 국가통계포털 Open API"
+# 저장소는 pnpm-lock.yaml 만 제공한다. npm 으로 설치해 의존성 버전이 잠금 파일과 다를 수 있다.
+install = [["npm", "install", "--ignore-scripts", "--no-audit", "--no-fund", "--no-package-lock"], ["npx", "--no-install", "tsc"]]
+command = ["node", "dist/index.js"]
+key_env = ["KOSIS_API_KEY"]
+
+[[server]]
+id = "real-estate-mcp"
+repo = "tae0y/real-estate-mcp"
+sha = "1119eb1069d1b1bae15f7b38c6c0268fe07995c0"
+license = "MIT"
+runtime = "python"
+upstream_api = "국토교통부 실거래가 외 (data.go.kr), 온비드, 청약홈"
+install = [["uv", "sync", "--frozen", "--no-dev"]]
+command = [".venv/bin/real-estate-mcp"]
+key_env = ["DATA_GO_KR_API_KEY"]
+
+[[server]]
+id = "data4library-mcp"
+repo = "isnow890/data4library-mcp"
+sha = "5708f84552076359847ae9ba4b912383c6cf6183"
+license = "MIT"
+runtime = "node"
+upstream_api = "도서관 정보나루 Open API"
+install = [["npm", "ci", "--ignore-scripts", "--no-audit", "--no-fund"], ["npx", "--no-install", "tsc"], ["node", "scripts/copy-data.mjs"]]
+command = ["node", "dist/src/index.js"]
+key_env = ["LIBRARY_API_KEY"]
+
+# 시험하지 않은 서버와 이유
+[[skipped]]
+repo = "aeriis-kr/opendata-mcp"
+listed_as = "ceami/opendata-mcp"
+sha = "5be040fd5a63996ada234b0dfce4c5404a8d7c33"
+reason = "stdio 진입점이 없다. src/index.ts 가 Smithery 런타임용 createStatelessServer 만 내보내며 실행에는 @smithery/cli 가 필요하다. 목록의 저장소 주소는 aeriis-kr/opendata-mcp 로 옮겨져 있다."
+
+[[skipped]]
+repo = "worker-ants/korea-weather-mcp"
+sha = "2b76e5dc42d7f8122c9e976e3ed99cac34685f2d"
+reason = "표본을 10개로 제한하면서 제외했다. 실행 위험 때문이 아니다."
