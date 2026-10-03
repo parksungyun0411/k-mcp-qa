@@ -3,6 +3,7 @@
     python fixture_server.py good   # 스펙대로 동작
     python fixture_server.py bad    # 관찰 유형을 일부러 재현
     python fixture_server.py skew   # NTS 조회 결과의 사업자번호를 바꿔 돌려줌 (불일치 재현)
+    python fixture_server.py wedge  # 알 수 없는 메서드를 받으면 stderr 에 스택을 쓰고 멈춤(응답 불능)
 
 status 툴은 FIXTURE_NTS_BASE 의 가짜 업스트림을 부른다.
 """
@@ -10,6 +11,7 @@ status 툴은 FIXTURE_NTS_BASE 의 가짜 업스트림을 부른다.
 import json
 import os
 import sys
+import time
 import urllib.request
 
 MODE = sys.argv[1] if len(sys.argv) > 1 else "good"
@@ -77,7 +79,7 @@ def call(mid, name, args):
             return result(mid, text("b_no must be a string", is_error=True))
         try:
             row = nts(args["b_no"])
-        except OSError as e:
+        except (OSError, KeyError) as e:
             return result(mid, text(f"upstream unavailable: {e}", is_error=True))
         if MODE == "skew":
             row["b_no"] = "9999999999"
@@ -113,6 +115,11 @@ def main():
             call(mid, p.get("name"), p.get("arguments") or {})
         elif MODE == "bad":
             sys.exit(1)
+        elif MODE == "wedge":
+            sys.stderr.write('Traceback (most recent call last):\n  File "/x/site-packages/mcp/shared/session.py", '
+                             'line 307, in _receive_loop\nValidationError: unknown method\n')
+            sys.stderr.flush()
+            time.sleep(3600)
         else:
             error(mid, -32601, f"Method not found: {method}")
 

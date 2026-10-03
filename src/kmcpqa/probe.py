@@ -38,6 +38,7 @@ class ProbeConfig:
     pause_s: float = 0.2
     max_tools: int | None = None
     idle_s: float = 5.0
+    health_timeout_s: float = 5.0
 
 
 def text_of(result: dict | None) -> str:
@@ -104,7 +105,7 @@ async def full_probe(argv, cwd, env, cfg: ProbeConfig, dump_dir: Path) -> dict:
     await asyncio.sleep(cfg.idle_s)
     res["idle_alive"] = s.alive()
     if not s.alive():
-        res["idle_exit"] = {"returncode": s.returncode, "stderr_tail": s.stderr[-6:]}
+        res["idle_exit"] = {"returncode": s.returncode, "stderr_tail": s.stderr[-40:]}
     ir = init.result or {}
     res["initialize"].update({
         "protocolVersion": ir.get("protocolVersion"), "serverInfo": ir.get("serverInfo"),
@@ -138,9 +139,7 @@ async def full_probe(argv, cwd, env, cfg: ProbeConfig, dump_dir: Path) -> dict:
 
     noise: list[str] = []
 
-    async def revive(sess: WireSession) -> WireSession:
-        if sess.alive():
-            return sess
+    async def restart(sess: WireSession) -> WireSession:
         await sess.close()
         noise.extend(sess.stdout_noise)
         sess.dump(dump_dir / f"session{res['restarts']}")
@@ -149,16 +148,32 @@ async def full_probe(argv, cwd, env, cfg: ProbeConfig, dump_dir: Path) -> dict:
         await sess.initialize(cfg.start_timeout_s)
         return sess
 
-    um = await s.request("kmcpqa/unknown_method", {}, cfg.call_timeout_s)
-    await asyncio.sleep(cfg.pause_s)
-    res["unknown_method"] = {"outcome": um.kind, "error_code": (um.error or {}).get("code"),
-                             "alive_after": s.alive()}
-    s = await revive(s)
+    async def checked(sess: WireSession, method: str, params: dict | None):
+        """요청 하나를 보내고, 그 뒤 서버가 살아서 응답하는지 확인한다.
+        응답 불능이면 새 프로세스로 바꿔 다음 요청이 앞 요청의 영향을 받지 않게 한다."""
+        if not sess.alive():
+            sess = await restart(sess)
+        before = len(sess.stderr)
+        reply = await sess.request(method, params, cfg.call_timeout_s)
+        await asyncio.sleep(cfg.pause_s)
+        health: dict = {"alive_after": sess.alive()}
+        if sess.alive() and reply.kind == "timeout":
+            pong = await sess.request("ping", None, cfg.health_timeout_s)
+            health["responsive_after"] = pong.kind == "result"
+        else:
+            health["responsive_after"] = sess.alive()
+        health["stderr_delta"] = sess.stderr[before:][-150:]
+        if not health["responsive_after"]:
+            sess = await restart(sess)
+            health["restarted"] = True
+        return sess, reply, health
 
-    ut = await s.request("tools/call", {"name": "kmcpqa_no_such_tool", "arguments": {}}, cfg.call_timeout_s)
-    await asyncio.sleep(cfg.pause_s)
-    res["unknown_tool"] = classify_call(ut) | {"alive_after": s.alive()}
-    s = await revive(s)
+    s, um, h = await checked(s, "kmcpqa/unknown_method", {})
+    res["unknown_method"] = {"outcome": um.kind, "error_code": (um.error or {}).get("code"),
+                             "error_message": str((um.error or {}).get("message", ""))[:300]} | h
+
+    s, ut, h = await checked(s, "tools/call", {"name": "kmcpqa_no_such_tool", "arguments": {}})
+    res["unknown_tool"] = classify_call(ut) | h
 
     per_tool = []
     for tool in tools[: cfg.max_tools] if cfg.max_tools else tools:
@@ -169,6 +184,7 @@ async def full_probe(argv, cwd, env, cfg: ProbeConfig, dump_dir: Path) -> dict:
             "input_dialect": schema_dialect(schema) if isinstance(schema, dict) else None,
             "input_schema_problems": check_json_schema(schema),
             "required": list(schema.get("required") or []) if isinstance(schema, dict) else [],
+            "properties": sorted((schema.get("properties") or {}).keys()) if isinstance(schema, dict) else [],
             "output_schema": "outputSchema" in tool,
             "annotations": tool.get("annotations"),
             "probes": {},
@@ -187,12 +203,9 @@ async def full_probe(argv, cwd, env, cfg: ProbeConfig, dump_dir: Path) -> dict:
             else:
                 probes.append(("valid", va))
         for label, args in probes:
-            s = await revive(s)
-            reply = await s.request("tools/call", {"name": name, "arguments": args}, cfg.call_timeout_s)
-            c = classify_call(reply)
+            s, reply, h = await checked(s, "tools/call", {"name": name, "arguments": args})
+            c = classify_call(reply) | h
             c["args"] = args
-            await asyncio.sleep(cfg.pause_s)
-            c["alive_after"] = s.alive()
             if (label == "valid" and c["outcome"] == "ok" and "outputSchema" in tool
                     and isinstance(reply.result, dict)):
                 sc = reply.result.get("structuredContent")

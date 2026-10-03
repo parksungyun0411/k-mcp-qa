@@ -99,8 +99,8 @@ async def run_conformance(ws: Workspace, spec: ServerSpec, out: Path) -> dict:
     session = WireSession(ws.wrap(spec, spec.command), ws.cwd(spec), ws.env(spec, "placeholder"))
     await session.start()
     port = _free_port()
-    server = uvicorn.Server(uvicorn.Config(StdioBridge(session).app(), host="127.0.0.1", port=port,
-                                           log_level="warning"))
+    bridge = StdioBridge(session)
+    server = uvicorn.Server(uvicorn.Config(bridge.app(), host="127.0.0.1", port=port, log_level="warning"))
     serve = asyncio.create_task(server.serve())
     while not server.started:
         await asyncio.sleep(0.05)
@@ -110,6 +110,7 @@ async def run_conformance(ws: Workspace, spec: ServerSpec, out: Path) -> dict:
         for scenario in CONFORMANCE_SCENARIOS:
             sdir = out / "conformance" / scenario
             sdir.mkdir(parents=True, exist_ok=True)
+            seen = len(bridge.events)
             rc, log = await _sh([conf_bin, "server", "--url", f"http://127.0.0.1:{port}/mcp",
                                  "--scenario", scenario, "--spec-version", "2025-11-25",
                                  "-o", str(sdir)], env=ws.env(spec, "none"), timeout_s=300)
@@ -117,7 +118,11 @@ async def run_conformance(ws: Workspace, spec: ServerSpec, out: Path) -> dict:
             checks = []
             for f in sdir.rglob("checks.json"):
                 checks += json.loads(f.read_text())
-            results[scenario] = {"returncode": rc, "checks": [
+            events = bridge.events[seen:]
+            # 중계기가 서버 대신 만든 응답이 있으면 이 시나리오는 서버를 잰 것이 아니다
+            measurable = not any(e["kind"] in ("server_not_running", "server_exited") for e in events)
+            results[scenario] = {"returncode": rc, "measurable": measurable, "bridge_events": events,
+                                 "checks": [
                 {"id": c.get("id"), "status": c.get("status"), "description": c.get("description"),
                  "errorMessage": c.get("errorMessage")} for c in checks]}
     finally:

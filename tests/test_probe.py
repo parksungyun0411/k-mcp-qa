@@ -61,7 +61,45 @@ async def test_start_check_reports_exit(tmp_path):
 
 
 def test_every_code_is_documented():
-    assert all(len(v) == 2 and v[0] and v[1] for v in TAXONOMY.values())
+    assert all(len(v) == 3 and v[0] and v[1] for v in TAXONOMY.values())
+
+
+async def test_unresponsive_server_is_attributed_to_the_request_that_wedged_it(tmp_path):
+    cfg = ProbeConfig(start_timeout_s=10, call_timeout_s=1.0, pause_s=0.05, idle_s=0.2, health_timeout_s=0.5)
+    res = await full_probe(argv("wedge"), None, {}, cfg, tmp_path)
+    record = {"install": {"ok": True}, "probe": res}
+    assert res["unknown_method"]["outcome"] == "timeout"
+    assert res["unknown_method"]["responsive_after"] is False
+    assert any("ValidationError" in x for x in res["unknown_method"]["stderr_delta"])
+    # 다음 요청은 새 프로세스에서 처리되어, 알 수 없는 툴 요청에는 정상 JSON-RPC 오류가 온다
+    assert res["unknown_tool"]["outcome"] == "error" and res["unknown_tool"]["responsive_after"] is True
+    p6 = [f for f in findings(record) if f["code"] == "P6"]
+    assert len(p6) == 1 and p6[0]["tool"] is None and "unknown_method" in p6[0]["evidence"]
+
+
+async def test_bridge_reports_dead_server_separately():
+    session = WireSession(argv("bad"))
+    await session.start()
+    bridge = StdioBridge(session, timeout_s=2)
+    transport = httpx.ASGITransport(app=bridge.app())
+    async with httpx.AsyncClient(transport=transport, base_url="http://bridge") as client:
+        first = await client.post("/mcp", json={"jsonrpc": "2.0", "id": 1, "method": "nope"})
+        second = await client.post("/mcp", json={"jsonrpc": "2.0", "id": 2, "method": "ping"})
+    await session.close()
+    assert first.json()["error"]["data"]["bridge"] == "server_exited"
+    assert second.json()["error"]["data"]["bridge"] == "server_not_running"
+    assert [e["kind"] for e in bridge.events] == ["server_exited", "server_not_running"]
+
+
+async def test_bridge_reports_no_response_while_running():
+    session = WireSession(argv("wedge"))
+    await session.start()
+    bridge = StdioBridge(session, timeout_s=0.5)
+    transport = httpx.ASGITransport(app=bridge.app())
+    async with httpx.AsyncClient(transport=transport, base_url="http://bridge") as client:
+        r = await client.post("/mcp", json={"jsonrpc": "2.0", "id": 1, "method": "nope"})
+    await session.close()
+    assert r.json()["error"]["data"]["bridge"] == "no_response"
 
 
 async def test_bridge_passes_server_lines_through_unchanged():
