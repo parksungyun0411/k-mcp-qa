@@ -80,10 +80,9 @@ def test_render_writes_results_findings_and_drafts(tmp_path):
     render({"run_at": "2026-10-03", "tools": {}}, {"korea-stock-mcp": record}, ROOT / "servers.toml",
            tmp_path / "work", tmp_path)
     md = (tmp_path / "RESULTS.md").read_text()
-    assert "korea-stock-mcp" in md and "P4" in md
-    draft = (tmp_path / "upstream-drafts" / "korea-stock-mcp.md").read_text()
-    assert "제출하지 않았음" in draft
-    assert "## P4" in (tmp_path / "findings" / "korea-stock-mcp.md").read_text()
+    assert "korea-stock-mcp" in md and "출처를 확인하지 못한 관찰" in md  # 소스 트리가 없으면 출처 미확인
+    assert "P4" in (tmp_path / "findings" / "korea-stock-mcp.md").read_text()
+    assert not (tmp_path / "upstream-drafts" / "korea-stock-mcp.md").exists()  # 서버 코드 관찰만 초안
 
 
 def test_redact_tree_replaces_home_path(tmp_path):

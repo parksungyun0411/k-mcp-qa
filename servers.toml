@@ -39,7 +39,7 @@ key_env = ["DART_API_KEY", "KRX_API_KEY"]
 [[server]]
 id = "korean-dart-mcp"
 repo = "aesthetic-legalism5470/korean-dart-mcp"
-sha = "96315645798697abec785bc7204c237e0f0f0618"
+sha = "4b2e072491f193833efb01c7fc76af1699ec176f"
 license = "MIT"
 runtime = "node"
 upstream_api = "OpenDART"
