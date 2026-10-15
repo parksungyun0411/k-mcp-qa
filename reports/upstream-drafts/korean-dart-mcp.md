@@ -12,13 +12,13 @@
 
 ## 관찰
 
-### 자리 표시자 키로 시작한 뒤 요청 없이 5초 안에 프로세스가 종료됨 (발생 1건, 원인 1개)
+### 자리 표시자 키로 시작한 뒤 요청 없이 5초 안에 프로세스가 종료됨 (발생 1건)
 
 - 예시: 툴 `-`, 입력 `-`
 - 응답: `exit 1: triggerUncaughtException(err, true /* fromPromise */); | Error: DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version="1.0" encoding="UTF-8" standalone="yes"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>`
 - 소스 위치: `build/lib/corp-code.js:55`, `build/lib/dart-client.js:49`
 
-### 기관 API 실패를 JSON-RPC 내부 오류(-32603)로 응답 (발생 44건, 원인 1개)
+### 기관 API 실패를 JSON-RPC 내부 오류(-32603)로 응답 (발생 44건)
 
 - 예시: 툴 `resolve_corp_code`, 입력 `{}`
 - 응답: `missing_required: DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version="1.0" encoding="UTF-8" standalone="yes"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>`

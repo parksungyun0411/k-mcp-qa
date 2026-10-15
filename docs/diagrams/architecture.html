@@ -53,7 +53,7 @@
     <div class="rail"><div class="en">ISOLATION</div><div class="ko">격리 실행</div></div>
     <div class="box sandbox">
       <div class="card"><div class="n">서버마다 작업 디렉터리</div><div class="s">임시 HOME·TMPDIR·패키지 캐시. 환경 변수 비움, 키는 자리 표시자 문자열</div></div>
-      <div class="card"><div class="n">sandbox-exec</div><div class="s">작업 디렉터리 밖 쓰기 금지, 실제 HOME 내용 읽기 금지. 네트워크는 허용</div></div>
+      <div class="card"><div class="n">sandbox-exec</div><div class="s">작업 디렉터리·임시 폴더 밖 쓰기 금지, 실제 HOME 내용 읽기 금지. 네트워크는 허용</div></div>
       <div class="card"><div class="n">설치</div><div class="s"><code>npm ci --ignore-scripts</code> + <code>tsc</code>, <code>uv sync --frozen</code></div></div>
     </div>
   </div>
@@ -78,7 +78,7 @@
   <div class="layer">
     <div class="rail"><div class="en">REPORT</div><div class="ko">결과</div></div>
     <div class="box out">
-      <div class="card"><div class="n">관찰 유형 분류<span class="tag t-own">새로 만듦</span></div><div class="s">20개 코드. 출처(서버 코드 / SDK 기본 동작)를 소스 파일·줄로 가리고 원인별로 묶음</div></div>
+      <div class="card"><div class="n">관찰 유형 분류<span class="tag t-own">새로 만듦</span></div><div class="s">20개 코드. 출처(서버 코드 / SDK 기본 동작)를 소스 파일·줄로 가리고 문구 유형별로 묶음</div></div>
       <div class="card"><div class="n">reports/</div><div class="s">RESULTS.md · findings/ · raw/(wire.jsonl, stderr, install.log) · upstream-drafts/(제출 안 함)</div></div>
       <div class="card" style="border-style:dashed"><div class="n">직접 호출 일치<span class="tag t-own">새로 만듦</span></div><div class="s">MCP 응답 대 OpenDART·국세청 직접 호출. 키 필요, 측정 전</div></div>
     </div>

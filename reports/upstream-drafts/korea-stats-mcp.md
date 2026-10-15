@@ -12,14 +12,14 @@
 
 ## 관찰
 
-### inputSchema 의 properties 가 비어 있는데 런타임은 특정 인자를 요구함 (발생 1건, 원인 1개)
+### inputSchema 의 properties 가 비어 있는데 런타임은 특정 인자를 요구함 (발생 1건)
 
 - 예시: 툴 `get_indicator`, 입력 `{}`
 - 응답: `properties=[] → MCP error -32602: Input validation error: Invalid arguments for tool get_indicator: Required at indicatorId
 Required at kind`
 - 소스 위치: `src/tools/indicators.ts:121`, `node_modules/@modelcontextprotocol/sdk/dist/esm/server/mcp.js:222` — tools/list 의 inputSchema 는 properties 가 비어 있고, 검증은 서버가 등록한 스키마로 SDK 가 수행함. 스키마를 JSON Schema 로 바꾸는 과정에서 생겼을 수 있음(확인하지 않음)
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건)
 
 - 예시: 툴 `search_statistics`, 입력 `{"query": "서울"}`
 - 응답: `marker='"success": false': {
@@ -39,7 +39,7 @@ Required at kind`
 - 소스 위치: `src/utils/errorHandler.ts:41`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건)
 
 - 예시: 툴 `get_statistics_data`, 입력 `{"orgId": "test", "tableId": "test", "objL1": "test", "periodType": "Y"}`
 - 응답: `marker='"success": false': {
@@ -53,7 +53,7 @@ Required at kind`
 - 소스 위치: 소스 위치 미확인
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건)
 
 - 예시: 툴 `compare_statistics`, 입력 `{"orgId": "test", "tableId": "test", "compareType": "period", "periodType": "Y"}`
 - 응답: `marker='"success": false': {
@@ -69,7 +69,7 @@ Required at kind`
 - 소스 위치: 소스 위치 미확인
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건)
 
 - 예시: 툴 `analyze_time_series`, 입력 `{"orgId": "test", "tableId": "test", "objL1": "test", "periodType": "Y"}`
 - 응답: `marker='"success": false': {
@@ -84,7 +84,7 @@ Required at kind`
 - 소스 위치: 소스 위치 미확인
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건)
 
 - 예시: 툴 `get_table_info`, 입력 `{"orgId": "test", "tableId": "test"}`
 - 응답: `marker='"success": false': {
@@ -99,7 +99,7 @@ Required at kind`
 - 소스 위치: `src/utils/errorHandler.ts:41`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건)
 
 - 예시: 툴 `quick_stats`, 입력 `{"query": "서울"}`
 - 응답: `marker='"success": false': {
@@ -109,7 +109,7 @@ Required at kind`
 - 소스 위치: 소스 위치 미확인
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건)
 
 - 예시: 툴 `quick_trend`, 입력 `{"keyword": "서울"}`
 - 응답: `marker='"success": false': {

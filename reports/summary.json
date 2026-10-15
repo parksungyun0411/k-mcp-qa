@@ -1,7 +1,7 @@
 {
  "assembly-api-mcp": {
   "tools": 6,
-  "server_causes": 0,
+  "server_phrase_types": 0,
   "server_occurrences": 0,
   "server_codes": [],
   "sdk_codes": [
@@ -11,7 +11,7 @@
  },
  "dart-mcp-server": {
   "tools": 89,
-  "server_causes": 16,
+  "server_phrase_types": 16,
   "server_occurrences": 351,
   "server_codes": [
    "E1",
@@ -27,7 +27,7 @@
  },
  "data-go-nts-business-verification-mcp1": {
   "tools": 3,
-  "server_causes": 3,
+  "server_phrase_types": 3,
   "server_occurrences": 3,
   "server_codes": [
    "E1",
@@ -41,7 +41,7 @@
  },
  "data-go-nts-business-verification": {
   "tools": 0,
-  "server_causes": 1,
+  "server_phrase_types": 1,
   "server_occurrences": 1,
   "server_codes": [
    "I2"
@@ -51,7 +51,7 @@
  },
  "data4library-mcp": {
   "tools": 27,
-  "server_causes": 1,
+  "server_phrase_types": 1,
   "server_occurrences": 13,
   "server_codes": [
    "E1"
@@ -63,7 +63,7 @@
  },
  "korea-stats-mcp": {
   "tools": 14,
-  "server_causes": 8,
+  "server_phrase_types": 8,
   "server_occurrences": 8,
   "server_codes": [
    "E1",
@@ -76,7 +76,7 @@
  },
  "korea-stock-mcp": {
   "tools": 8,
-  "server_causes": 1,
+  "server_phrase_types": 1,
   "server_occurrences": 1,
   "server_codes": [
    "R3"
@@ -88,7 +88,7 @@
  },
  "korean-dart-mcp": {
   "tools": 15,
-  "server_causes": 2,
+  "server_phrase_types": 2,
   "server_occurrences": 45,
   "server_codes": [
    "E2",
@@ -99,7 +99,7 @@
  },
  "korean-law-mcp": {
   "tools": 10,
-  "server_causes": 3,
+  "server_phrase_types": 3,
   "server_occurrences": 3,
   "server_codes": [
    "P4",
@@ -110,7 +110,7 @@
  },
  "mcp-korea-tourism-api": {
   "tools": 8,
-  "server_causes": 0,
+  "server_phrase_types": 0,
   "server_occurrences": 0,
   "server_codes": [],
   "sdk_codes": [
@@ -121,7 +121,7 @@
  },
  "real-estate-mcp": {
   "tools": 16,
-  "server_causes": 3,
+  "server_phrase_types": 3,
   "server_occurrences": 12,
   "server_codes": [
    "E1"

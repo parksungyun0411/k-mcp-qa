@@ -12,7 +12,7 @@
 
 ## 관찰
 
-### 자리 표시자 키를 넣어도 initialize 응답이 오지 않음 (발생 1건, 원인 1개)
+### 자리 표시자 키를 넣어도 initialize 응답이 오지 않음 (발생 1건)
 
 - 예시: 툴 `-`, 입력 `-`
 - 응답: `initialize closed, stderr 마지막 줄:     raise ModuleNotFoundError(_MESSAGE, name=__name__) | ModuleNotFoundError: No module named 'mcp.server.fastmcp'. This is mcp 2.x, where FastMCP was renamed to MCPServer (from mcp.server.mcpserver import M`

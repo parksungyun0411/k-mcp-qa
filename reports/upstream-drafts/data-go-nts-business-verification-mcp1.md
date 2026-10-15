@@ -12,7 +12,7 @@
 
 ## 관찰
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건)
 
 - 예시: 툴 `validate_business`, 입력 `{"business_number": "1248100998", "start_date": "20250101", "representative_name": "서울"}`
 - 응답: `marker='401': {
@@ -22,7 +22,7 @@
 - 소스 위치: `data_go_mcp/nts_business_verification/api_client.py:98`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건)
 
 - 예시: 툴 `check_business_status`, 입력 `{"business_numbers": "1248100998"}`
 - 응답: `marker='401': {
@@ -34,7 +34,7 @@
 - 소스 위치: `data_go_mcp/nts_business_verification/api_client.py:98`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건, 원인 1개)
+### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건)
 
 - 예시: 툴 `batch_validate_businesses`, 입력 `{"businesses_json": "test"}`
 - 응답: `valid(합성 입력): {

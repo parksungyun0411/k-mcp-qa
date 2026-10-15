@@ -4,7 +4,8 @@
 - 출처(origin): server(서버 코드) | sdk(SDK 기본 동작, 소스 위치 확인) | unknown(위치 미확인)
   P3·P4·P6·I3·E2 는 응답 문구·stderr 스택을 서버 소스와 SDK 소스에서 찾아 가린다(attribution.py).
   툴 응답 내용에서 나온 유형(E1·E3·R·S·H1)은 툴 핸들러가 만든 것이라 server 로 두고, 문구 위치를 찾으면 붙인다.
-- 원인(cause): 같은 코드·같은 출처·같은 문구(입력 값·숫자 제거)를 하나의 원인으로 묶는다.
+- 문구 유형: 같은 코드·같은 출처·같은 문구(입력 값·숫자 제거)를 하나로 묶는다. 근본 원인 수와 같지 않다
+  (같은 소스 줄에서 나온 응답도 입력 종류나 응답 모양에 따라 여러 유형으로 나뉜다).
 판단이 들어가는 말은 쓰지 않고 "무엇을 보냈고 무엇이 돌아왔는가"만 남긴다.
 """
 
@@ -82,7 +83,7 @@ def _exc_lines(lines: list[str] | None, n: int = 2) -> str:
 
 
 def cause_key(f: dict) -> str:
-    """같은 원인으로 묶을 키: 코드 + 출처 + 문구(입력 값·숫자·프로브 이름 제거)."""
+    """같은 문구 유형으로 묶을 키: 코드 + 출처 + 문구(입력 값·숫자·프로브 이름 제거)."""
     text = re.sub(r"^(missing_required|wrong_type|valid): ", "", f["evidence"])
     for v in attribution.dynamic_values(f.get("args"), [f.get("tool") or ""]):
         if len(v) >= 3:
@@ -221,7 +222,7 @@ def findings(record: dict, server_root: Path | None = None) -> list[dict]:
 
 
 def group_causes(fs: list[dict]) -> list[dict]:
-    """원인별로 묶는다: [{"code", "origin", "where", "count", "example"}]"""
+    """문구 유형별로 묶는다: [{"code", "origin", "where", "count", "example"}]"""
     groups: dict[str, dict] = {}
     for f in fs:
         k = cause_key(f)

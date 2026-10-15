@@ -2,8 +2,9 @@
 
 - 서버마다 작업 디렉터리 하나: src(체크아웃), home(임시 HOME), tmp, logs
 - 환경 변수는 비우고 PATH·HOME·TMPDIR·로캘·패키지 캐시 위치만 넣는다. 이 머신의 토큰·키는 넘기지 않는다.
-- macOS 에서는 sandbox-exec 로 감싼다: 작업 디렉터리 밖 쓰기 금지, 실제 HOME 읽기 금지
-  (uv 가 설치한 Python 인터프리터 경로만 예외). 네트워크는 막지 않는다(패키지 설치와 기관 API 호출에 필요).
+- macOS 에서는 sandbox-exec 로 감싼다: 작업 디렉터리와 시스템 임시 폴더(/private/var/folders) 밖 쓰기 금지,
+  실제 HOME 내용 읽기 금지(uv 가 설치한 Python 인터프리터 경로만 예외, 파일 메타데이터 조회는 허용).
+  네트워크는 막지 않는다(패키지 설치와 기관 API 호출에 필요).
 """
 
 from __future__ import annotations

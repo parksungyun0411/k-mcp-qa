@@ -4,7 +4,7 @@
 
 만드는 파일
 - reports/RESULTS.md               서버별 요약, 출처별 관찰(서버 코드 / SDK 기본 동작 / 미확인), 실행 환경
-- reports/findings/<id>.md         원인별 관찰, 소스 위치, 재현 명령
+- reports/findings/<id>.md         문구 유형별 관찰, 소스 위치, 재현 명령
 - reports/upstream-drafts/<id>.md  서버 코드에서 나온 관찰만 담은 이슈 초안. 올리지 않는다(사용자 검토용)
 """
 
@@ -171,9 +171,12 @@ def render(meta: dict, recs: dict[str, dict], manifest_path: Path, workdir: Path
     server_codes = [c for c in TAXONOMY if any(g["code"] == c and g["origin"] == "server"
                                                for gs in causes.values() for g in gs)]
     lines += ["", "## 서버 코드에서 나온 관찰", "",
-              "칸의 값은 `원인 수/발생 수`. 발생 수는 툴 수에 비례해 늘어나므로 서버 사이 비교에는 원인 수나 "
-              "툴당 발생 수를 본다. 같은 문구·같은 출처는 한 원인으로 묶었다.", "",
-              "| 서버 | 툴 수 | 원인 수 | 발생 수 | 툴당 발생 | " + " | ".join(server_codes) + " |",
+              "칸의 값은 `문구 유형 수/발생 수`. 같은 코드·같은 출처·같은 문구(입력 값·숫자 제거)를 한 문구 유형으로 "
+              "묶었다. 근본 원인 수가 아니며, 같은 소스 줄에서 나온 응답도 입력 종류나 응답 모양에 따라 여러 유형으로 "
+              "나뉠 수 있다. 발생 수는 툴 수에 비례해 늘어나므로 서버 사이 비교에는 문구 유형 수나 "
+              "툴당 발생 수를 본다.",
+              "",
+              "| 서버 | 툴 수 | 문구 유형 수 | 발생 수 | 툴당 발생 | " + " | ".join(server_codes) + " |",
               "|---|---:|---:|---:|---:|" + "---|" * len(server_codes)]
     summary: dict[str, dict] = {}
     for sid, gs in causes.items():
@@ -186,7 +189,7 @@ def render(meta: dict, recs: dict[str, dict], manifest_path: Path, workdir: Path
             cg = [g for g in sg if g["code"] == code]
             cells.append(f"{len(cg)}/{sum(g['count'] for g in cg)}" if cg else "")
         lines.append(f"| {sid} | {n_tools or '-'} | {len(sg)} | {occ} | {per_tool} | " + " | ".join(cells) + " |")
-        summary[sid] = {"tools": n_tools, "server_causes": len(sg), "server_occurrences": occ,
+        summary[sid] = {"tools": n_tools, "server_phrase_types": len(sg), "server_occurrences": occ,
                         "server_codes": sorted({g["code"] for g in sg}),
                         "sdk_codes": sorted({g["code"] for g in gs if g["origin"] == "sdk"}),
                         "unknown_codes": sorted({g["code"] for g in gs if g["origin"] == "unknown"})}
@@ -266,7 +269,7 @@ def render(meta: dict, recs: dict[str, dict], manifest_path: Path, workdir: Path
         for g in sorted(sg, key=lambda g: list(TAXONOMY).index(g["code"])):
             ex = g["example"]
             args = json.dumps(ex["args"], ensure_ascii=False) if ex["args"] is not None else "-"
-            draft += [f"### {TAXONOMY[g['code']][1]} (발생 {g['count']}건, 원인 1개)", "",
+            draft += [f"### {TAXONOMY[g['code']][1]} (발생 {g['count']}건)", "",
                       f"- 예시: 툴 `{ex['tool'] or '-'}`, 입력 `{args}`",
                       f"- 응답: `{ex['evidence'][:240]}`", f"- 소스 위치: {where_text(g)}"]
             if TAXONOMY[g["code"]][2] == "tools_errors":

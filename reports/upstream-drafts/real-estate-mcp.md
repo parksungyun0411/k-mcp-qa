@@ -12,7 +12,7 @@
 
 ## 관찰
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 10건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 10건)
 
 - 예시: 툴 `get_apartment_rent`, 입력 `{"region_code": "11110", "year_month": "2024"}`
 - 응답: `marker='403': {
@@ -22,7 +22,7 @@
 - 소스 위치: `src/real_estate/mcp_server/_helpers.py:66`, `src/real_estate/mcp_server/_helpers.py:69`, `src/real_estate/mcp_server/_helpers.py:73`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건)
 
 - 예시: 툴 `get_apt_subscription_results`, 입력 `{"stat_kind": "test"}`
 - 응답: `marker='error': {
@@ -32,7 +32,7 @@
 - 소스 위치: `src/real_estate/mcp_server/tools/subscription.py:156`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 1건)
 
 - 예시: 툴 `get_region_code`, 입력 `{"query": "서울"}`
 - 응답: `marker='오류': {

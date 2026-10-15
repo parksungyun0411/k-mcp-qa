@@ -12,14 +12,14 @@
 
 ## 관찰
 
-### 알 수 없는 툴 호출에 JSON-RPC 오류가 아닌 isError 결과로 응답 (발생 1건, 원인 1개)
+### 알 수 없는 툴 호출에 JSON-RPC 오류가 아닌 isError 결과로 응답 (발생 1건)
 
 - 예시: 툴 `kmcpqa_no_such_tool`, 입력 `{}`
 - 응답: `tool_error: Function 'kmcpqa_no_such_tool' not found in any module`
 - 소스 위치: `dart/mcp_factory.py:81`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 8건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 8건)
 
 - 예시: 툴 `xmlparser_step1_structure`, 입력 `{"path_xml": "test", "max_depth": 1}`
 - 응답: `marker='error': [Execution result]
@@ -30,7 +30,7 @@ error : Traceback (most recent call last):
 - 소스 위치: `dart/mcp_factory.py:96`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 79건, 원인 1개)
+### 실행 실패(기관 API 오류·처리 불가)를 isError 없는 결과로 응답 (자리 표시자 키 호출) (발생 79건)
 
 - 예시: 툴 `get_disclosurelist`, 입력 `{"corp_code": "00126380", "bgn_de": "20250101", "end_de": "20250131"}`
 - 응답: `marker='등록되지 않은': [Execution result]
@@ -41,7 +41,7 @@ error : Traceback (most recent call last):
 - 소스 위치: `dart/mcp_factory.py:96`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건, 원인 1개)
+### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건)
 
 - 예시: 툴 `get_corpcode`, 입력 `{}`
 - 응답: `missing_required: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_corpcode
@@ -51,7 +51,7 @@ corp_name
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건, 원인 1개)
+### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건)
 
 - 예시: 툴 `get_corpcode`, 입력 `{"corp_name": 12345}`
 - 응답: `wrong_type: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_corpcode
@@ -61,7 +61,7 @@ corp_name
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건, 원인 1개)
+### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건)
 
 - 예시: 툴 `get_corp_candidates`, 입력 `{}`
 - 응답: `missing_required: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_get_corp_candidates
@@ -71,7 +71,7 @@ corp_name
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건, 원인 1개)
+### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건)
 
 - 예시: 툴 `get_corp_candidates`, 입력 `{"corp_name": 12345, "n": "not-a-number"}`
 - 응답: `wrong_type: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_get_corp_candidates
@@ -81,7 +81,7 @@ corp_name
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 4건, 원인 1개)
+### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 4건)
 
 - 예시: 툴 `xmlparser_step1_structure`, 입력 `{}`
 - 응답: `missing_required: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_xmlparser_step1_structure
@@ -91,7 +91,7 @@ path_xml
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 4건, 원인 1개)
+### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 4건)
 
 - 예시: 툴 `xmlparser_step1_structure`, 입력 `{"path_xml": 12345, "max_depth": "not-a-number"}`
 - 응답: `wrong_type: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_xmlparser_step1_structure
@@ -101,7 +101,7 @@ path_xml
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 78건, 원인 1개)
+### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 78건)
 
 - 예시: 툴 `get_disclosurelist`, 입력 `{}`
 - 응답: `missing_required: ERROR: You provided invalid Tool inputs: 3 validation errors for Schema_get_disclosurelist
@@ -111,7 +111,7 @@ corp_code
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 78건, 원인 1개)
+### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 78건)
 
 - 예시: 툴 `get_disclosurelist`, 입력 `{"corp_code": 12345, "bgn_de": 12345, "end_de": 12345, "last_reprt_at": 12345, "pblntf_ty": 12345, "pblntf_detail_ty": 12345, "corp_cls": 12345, "sort": 12345, "sort_mth": 12345, "page_no": "not-a-number", "page_count": "not-a-number"}`
 - 응답: `wrong_type: ERROR: You provided invalid Tool inputs: 11 validation errors for Schema_get_disclosurelist
@@ -121,7 +121,7 @@ corp_code
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 3건, 원인 1개)
+### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 3건)
 
 - 예시: 툴 `get_corpinfo`, 입력 `{}`
 - 응답: `missing_required: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_corpinfo
@@ -131,7 +131,7 @@ corp_code
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 3건, 원인 1개)
+### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 3건)
 
 - 예시: 툴 `get_corpinfo`, 입력 `{"corp_code": 12345}`
 - 응답: `wrong_type: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_corpinfo
@@ -141,7 +141,7 @@ corp_code
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건, 원인 1개)
+### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건)
 
 - 예시: 툴 `get_xbrl_taxonomy_format`, 입력 `{}`
 - 응답: `missing_required: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_xbrl_taxonomy_format
@@ -151,7 +151,7 @@ sj_div
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건, 원인 1개)
+### 입력 검증·파싱 오류를 isError 없는 결과로 응답 (발생 1건)
 
 - 예시: 툴 `get_xbrl_taxonomy_format`, 입력 `{"sj_div": 12345}`
 - 응답: `wrong_type: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_xbrl_taxonomy_format
@@ -161,7 +161,7 @@ sj_div
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
-### 응답 본문에 Python traceback 과 서버 파일 경로가 담김 (발생 87건, 원인 1개)
+### 응답 본문에 Python traceback 과 서버 파일 경로가 담김 (발생 87건)
 
 - 예시: 툴 `xmlparser_step1_structure`, 입력 `{"path_xml": "test", "max_depth": 1}`
 - 응답: `valid: [Execution result]
