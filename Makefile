@@ -15,8 +15,8 @@ external:  ## 공식 conformance 와 mcp-audit 을 같은 격리 환경에서 �
 report:  ## reports/RESULTS.md, findings/, upstream-drafts/ 생성
 	$(PY) -m kmcpqa.report --workdir $(WORKDIR)
 
-agreement:  ## MCP 응답 대 기관 API 직접 호출 (키 필요)
-	$(PY) -m kmcpqa.agreement --workdir $(WORKDIR)
+agreement:  ## MCP 응답 대 기관 API 직접 호출 (키 필요, .env 를 읽는다. make probe 로 설치된 서버를 띄운다)
+	uv run $(if $(wildcard .env),--env-file .env,) python -m kmcpqa.agreement --workdir $(WORKDIR)
 
 test:
 	uv run pytest -q

@@ -1,0 +1,35 @@
+[
+ {
+  "tool": "get_company",
+  "args": {
+   "corp": "00126380"
+  },
+  "direct": "dart_company",
+  "status": "mcp_failed",
+  "reply": "error",
+  "text": null,
+  "error": "Could not locate the bindings file. Tried:"
+ },
+ {
+  "tool": "get_company",
+  "args": {
+   "corp": "00164779"
+  },
+  "direct": "dart_company",
+  "status": "mcp_failed",
+  "reply": "error",
+  "text": null,
+  "error": "Could not locate the bindings file. Tried:"
+ },
+ {
+  "tool": "get_company",
+  "args": {
+   "corp": "00164742"
+  },
+  "direct": "dart_company",
+  "status": "mcp_failed",
+  "reply": "error",
+  "text": null,
+  "error": "Could not locate the bindings file. Tried:"
+ }
+]

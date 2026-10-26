@@ -1,0 +1,71 @@
+[
+ {
+  "tool": "get_corpinfo",
+  "args": {
+   "corp_code": "00126380"
+  },
+  "direct": "dart_company",
+  "status": "compared",
+  "agree": true,
+  "fields": {
+   "corp_name": {
+    "direct": "삼성전자(주)",
+    "found_in_mcp": true
+   },
+   "crno": {
+    "direct": "1301110006246",
+    "found_in_mcp": true
+   },
+   "bzno": {
+    "direct": "1248100998",
+    "found_in_mcp": true
+   }
+  }
+ },
+ {
+  "tool": "get_corpinfo",
+  "args": {
+   "corp_code": "00164779"
+  },
+  "direct": "dart_company",
+  "status": "compared",
+  "agree": true,
+  "fields": {
+   "corp_name": {
+    "direct": "에스케이하이닉스(주)",
+    "found_in_mcp": true
+   },
+   "crno": {
+    "direct": "1344110001387",
+    "found_in_mcp": true
+   },
+   "bzno": {
+    "direct": "1268103725",
+    "found_in_mcp": true
+   }
+  }
+ },
+ {
+  "tool": "get_corpinfo",
+  "args": {
+   "corp_code": "00164742"
+  },
+  "direct": "dart_company",
+  "status": "compared",
+  "agree": true,
+  "fields": {
+   "corp_name": {
+    "direct": "현대자동차(주)",
+    "found_in_mcp": true
+   },
+   "crno": {
+    "direct": "1101110085450",
+    "found_in_mcp": true
+   },
+   "bzno": {
+    "direct": "1018109147",
+    "found_in_mcp": true
+   }
+  }
+ }
+]

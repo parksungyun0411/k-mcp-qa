@@ -3,7 +3,7 @@
 - 서버마다 작업 디렉터리 하나: src(체크아웃), home(임시 HOME), tmp, logs
 - 환경 변수는 비우고 PATH·HOME·TMPDIR·로캘·패키지 캐시 위치만 넣는다. 이 머신의 토큰·키는 넘기지 않는다.
 - macOS 에서는 sandbox-exec 로 감싼다: 작업 디렉터리와 시스템 임시 폴더(/private/var/folders) 밖 쓰기 금지,
-  실제 HOME 내용 읽기 금지(uv 가 설치한 Python 인터프리터 경로만 예외, 파일 메타데이터 조회는 허용).
+  실제 HOME 내용 읽기 금지(uv 가 설치한 Python 인터프리터와 node 설치 경로만 예외, 파일 메타데이터 조회는 허용).
   네트워크는 막지 않는다(패키지 설치와 기관 API 호출에 필요).
 """
 
@@ -35,13 +35,26 @@ def uv_python_dir() -> Path:
     return Path(os.environ.get("UV_PYTHON_INSTALL_DIR", Path.home() / ".local/share/uv/python"))
 
 
-def sandbox_profile(workspace: Path, real_home: Path, python_dir: Path) -> str:
+def node_prefix() -> Path | None:
+    """node 설치 루트(bin 의 부모). nvm 처럼 HOME 아래에 있으면 읽기를 열어 줘야 node 가 돈다."""
+    p = shutil.which("node")
+    if not p:
+        return None
+    prefix = Path(os.path.realpath(p)).parent.parent
+    home = Path(os.path.realpath(Path.home()))
+    # ~/bin/node 처럼 HOME 바로 아래면 HOME 전체 읽기가 열리므로 예외를 두지 않는다.
+    return None if prefix in (home, *home.parents) else prefix
+
+
+def sandbox_profile(workspace: Path, real_home: Path, python_dir: Path,
+                    extra_read: tuple[Path, ...] = ()) -> str:
     ws = os.path.realpath(workspace)
+    reads = " ".join(f'(subpath "{os.path.realpath(p)}")' for p in (python_dir, *extra_read))
     return f"""(version 1)
 (allow default)
 (deny file-read* (subpath "{os.path.realpath(real_home)}"))
 (allow file-read-metadata)
-(allow file-read* (subpath "{os.path.realpath(python_dir)}") (subpath "{ws}"))
+(allow file-read* {reads} (subpath "{ws}"))
 (deny file-write*)
 (allow file-write*
   (subpath "{ws}")
@@ -107,7 +120,9 @@ class Workspace:
         if not self.use_sandbox:
             return argv
         profile = self.dir(spec) / "sandbox.sb"
-        profile.write_text(sandbox_profile(self.root, Path.home(), uv_python_dir()), encoding="utf-8")
+        node = node_prefix()
+        profile.write_text(sandbox_profile(self.root, Path.home(), uv_python_dir(),
+                                           (node,) if node else ()), encoding="utf-8")
         return ["sandbox-exec", "-f", str(profile), *argv]
 
     async def fetch(self, spec: ServerSpec) -> str:
@@ -117,6 +132,9 @@ class Workspace:
             src.parent.mkdir(parents=True, exist_ok=True)
             await _run(["git", "clone", "-q", f"https://github.com/{spec.repo}", str(src)], None,
                        None, self.logs(spec) / "fetch.log", 600)
+        # 고정 커밋이 이후 히스토리 재작성으로 브랜치에서 빠지면 clone 에 들어오지 않는다. 커밋 번호로 직접 받는다.
+        await _run(["git", "-C", str(src), "fetch", "-q", "origin", spec.sha], None, None,
+                   self.logs(spec) / "fetch.log", 300)
         await _run(["git", "-C", str(src), "checkout", "-q", "--detach", spec.sha], None, None,
                    self.logs(spec) / "fetch.log", 120)
         proc = await asyncio.create_subprocess_exec("git", "-C", str(src), "rev-parse", "HEAD",

@@ -40,6 +40,14 @@ class Case:
     fields: list[str]
 
 
+def scrub(text: str, keys: dict) -> str:
+    """서버가 오류 문구에 요청 URL 을 그대로 넣는 경우가 있어, 기록 전에 키 값을 지운다."""
+    for v in keys.values():
+        if v:
+            text = text.replace(v, "<KEY>")
+    return text
+
+
 def norm(value: object) -> str:
     return "".join(str(value).split()).replace("-", "")
 
@@ -76,8 +84,10 @@ async def run_case(session: WireSession, case: Case, http: httpx.AsyncClient, ke
         return out | {"status": "direct_failed", "error": e.error.to_dict()}
     reply = await session.request("tools/call", {"name": case.tool, "arguments": case.args}, timeout_s)
     if reply.kind != "result" or (reply.result or {}).get("isError"):
+        error = (reply.error or {}).get("message") if reply.kind == "error" else None
         return out | {"status": "mcp_failed", "reply": reply.kind,
-                      "text": text_of(reply.result)[:300] if reply.result else None}
+                      "text": scrub(text_of(reply.result)[:300], keys) if reply.result else None,
+                      "error": scrub(error.splitlines()[0][:300], keys) if error else None}
     return out | {"status": "compared"} | compare(case, record, reply.result)
 
 

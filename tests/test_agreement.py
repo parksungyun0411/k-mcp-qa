@@ -10,7 +10,7 @@ import httpx
 import pytest
 import uvicorn
 
-from kmcpqa.agreement import Case, compare, run_case
+from kmcpqa.agreement import Case, compare, run_case, scrub
 from kmcpqa.direct.fake_upstream import build_fake_upstream, load_companies
 from kmcpqa.wire import WireSession
 
@@ -73,3 +73,9 @@ def test_compare_uses_structured_content_and_text():
     record = {"b_no": "000-00-00011"}
     result = {"content": [], "structuredContent": {"bno": "0000000011"}}
     assert compare(Case("t", {}, "nts_status", {}, ["b_no"]), record, result)["agree"] is True
+
+
+def test_scrub_removes_key_values_from_error_text():
+    text = "GET https://opendart.fss.or.kr/api/company.json?crtfc_key=SECRET123&corp_code=1 failed"
+    assert scrub(text, {"OPENDART_API_KEY": "SECRET123", "DATA_GO_KR_SERVICE_KEY": ""}) == \
+        "GET https://opendart.fss.or.kr/api/company.json?crtfc_key=<KEY>&corp_code=1 failed"

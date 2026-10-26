@@ -1,0 +1,21 @@
+[
+ {
+  "tool": "check_business_status",
+  "args": {
+   "business_numbers": "1248100998"
+  },
+  "direct": "nts_status",
+  "status": "compared",
+  "agree": true,
+  "fields": {
+   "b_no": {
+    "direct": "1248100998",
+    "found_in_mcp": true
+   },
+   "b_stt": {
+    "direct": "계속사업자",
+    "found_in_mcp": true
+   }
+  }
+ }
+]

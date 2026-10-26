@@ -5,7 +5,7 @@ from pathlib import Path
 
 from kmcpqa.manifest import ServerSpec, load
 from kmcpqa.report import render
-from kmcpqa.sandbox import PLACEHOLDER, Workspace, sandbox_profile
+from kmcpqa.sandbox import PLACEHOLDER, Workspace, node_prefix, sandbox_profile
 from kmcpqa.specschema import check_json_schema, spec_errors
 from kmcpqa.synth import valid_args, wrong_type_args
 
@@ -38,6 +38,26 @@ def test_sandbox_profile_denies_home_and_outside_writes(tmp_path):
     assert '(deny file-read* (subpath "/Users/someone"))' in prof
     assert "(deny file-write*)" in prof
     assert str(tmp_path.resolve()) in prof
+    node = Path("/Users/someone/.nvm/versions/node/v20.20.2")
+    prof2 = sandbox_profile(tmp_path, Path("/Users/someone"), Path("/Users/someone/.local/share/uv/python"),
+                            (node,))
+    assert f'(subpath "{node}")' in prof2
+
+
+def test_node_prefix_never_opens_home(tmp_path, monkeypatch):
+    import kmcpqa.sandbox as sb
+    monkeypatch.setattr(sb.Path, "home", lambda: tmp_path)
+    monkeypatch.setattr(sb.shutil, "which", lambda n: None)
+    assert node_prefix() is None
+    (tmp_path / "bin").mkdir()
+    (tmp_path / "bin" / "node").touch()
+    monkeypatch.setattr(sb.shutil, "which", lambda n: str(tmp_path / "bin" / "node"))
+    assert node_prefix() is None
+    nvm = tmp_path / ".nvm/versions/node/v20/bin"
+    nvm.mkdir(parents=True)
+    (nvm / "node").touch()
+    monkeypatch.setattr(sb.shutil, "which", lambda n: str(nvm / "node"))
+    assert node_prefix() == nvm.parent.resolve()
 
 
 def test_synth_valid_and_wrong_type():
