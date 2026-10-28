@@ -14,5 +14,5 @@
 - 소스 위치: `pyproject.toml:24`, `.venv/lib/python3.12/site-packages/mcp/server/fastmcp.py:16`, `data_go_mcp/nts_business_verification/server.py:6` — 의존성 선언과 설치된 SDK 의 조합
 - 예시 입력: `-`
 - 응답: "initialize closed, stderr 마지막 줄:     raise ModuleNotFoundError(_MESSAGE, name=__name__) | ModuleNotFoundError: No module named 'mcp.server.fastmcp'. This is mcp 2.x, where FastMCP was renamed to MCPServer (from mcp.server.mcpserver import MCPServer) and other APIs changed; see the migration guide at https://py.sdk.modelcontextprotocol.io/v2/migration/#fastmcp-renamed-to-mcpserver or pin 'mcp<2' to"
-- 재현: `python -m kmcpqa.runner --only data-go-nts-business-verification`
+- 재현: `uv run python -m kmcpqa.runner --only data-go-nts-business-verification`
 

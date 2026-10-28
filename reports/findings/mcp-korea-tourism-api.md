@@ -14,7 +14,7 @@
 - 소스 위치: `.venv/lib/python3.12/site-packages/mcp/shared/session.py:367`
 - 예시 입력: `{}`
 - 응답: 'method=kmcpqa/unknown_method → error code=-32602 Invalid request parameters'
-- 재현: `python -m kmcpqa.repro mcp-korea-tourism-api kmcpqa/unknown_method '{}'`
+- 재현: `uv run python -m kmcpqa.repro mcp-korea-tourism-api kmcpqa/unknown_method '{}'`
 - 근거: [https://www.jsonrpc.org/specification#error_object](https://www.jsonrpc.org/specification#error_object) (JSON-RPC 2.0 오류 코드 표)
 
 ### P4 · 알 수 없는 툴 호출에 JSON-RPC 오류가 아닌 isError 결과로 응답 — 발생 1건
@@ -23,6 +23,6 @@
 - 소스 위치: `.venv/lib/python3.12/site-packages/fastmcp/server/server.py:348`, `.venv/lib/python3.12/site-packages/fastmcp/server/server.py:609`, `.venv/lib/python3.12/site-packages/fastmcp/server/server.py:611`
 - 예시 입력: `{}`
 - 응답: 'tool_error: Unknown tool: kmcpqa_no_such_tool'
-- 재현: `python -m kmcpqa.repro mcp-korea-tourism-api tools/call '{"name": "kmcpqa_no_such_tool", "arguments": {}}'`
+- 재현: `uv run python -m kmcpqa.repro mcp-korea-tourism-api tools/call '{"name": "kmcpqa_no_such_tool", "arguments": {}}'`
 - 근거: [https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling](https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) (서술적 설명(규범 키워드 없음))
 

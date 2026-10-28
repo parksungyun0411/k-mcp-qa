@@ -6,7 +6,9 @@
 ## 환경
 
 - 커밋: `4b2e072491f193833efb01c7fc76af1699ec176f`
+- 설치: `npm ci --ignore-scripts --no-audit --no-fund && npx --no-install tsc`
 - 실행 명령: `node build/index.js`
+- 키 변수: `DART_API_KEY` (실제 키가 아닌 값)
 - MCP SDK: @modelcontextprotocol/sdk 1.29.0, 클라이언트 요청 프로토콜 버전 2025-11-25
 - 날짜: 2026-10-03
 
@@ -26,5 +28,9 @@
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
 ## 재현
+
+1. 위 커밋을 받아 설치 명령을 실행합니다.
+2. 키 변수에 실제 키가 아닌 값을 넣고 실행 명령으로 서버를 stdio 로 띄웁니다.
+3. `initialize` 를 보낸 뒤 관찰마다 적은 툴과 입력으로 `tools/call` 을 보냅니다. 툴이 `-` 인 관찰은 툴 호출 전, 서버 시작이나 initialize 단계에서 나타납니다.
 
 요청·응답 원문 로그(JSON-RPC 송수신 기록)는 필요하시면 첨부하겠습니다.

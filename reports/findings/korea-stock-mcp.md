@@ -14,7 +14,7 @@
 - 소스 위치: `src/dart/get-corp-code.ts:69`
 - 예시 입력: `{}`
 - 응답: 'corp_name 또는 stock_code 중 하나를 입력해주세요.'
-- 재현: `python -m kmcpqa.repro korea-stock-mcp tools/call '{"name": "get_corp_code", "arguments": {}}'`
+- 재현: `uv run python -m kmcpqa.repro korea-stock-mcp tools/call '{"name": "get_corp_code", "arguments": {}}'`
 
 ## SDK 기본 동작(확인)
 
@@ -24,6 +24,6 @@
 - 소스 위치: `node_modules/@modelcontextprotocol/sdk/dist/esm/server/mcp.js:104`
 - 예시 입력: `{}`
 - 응답: 'tool_error: MCP error -32602: Tool kmcpqa_no_such_tool not found'
-- 재현: `python -m kmcpqa.repro korea-stock-mcp tools/call '{"name": "kmcpqa_no_such_tool", "arguments": {}}'`
+- 재현: `uv run python -m kmcpqa.repro korea-stock-mcp tools/call '{"name": "kmcpqa_no_such_tool", "arguments": {}}'`
 - 근거: [https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling](https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) (서술적 설명(규범 키워드 없음))
 

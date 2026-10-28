@@ -14,7 +14,7 @@
 - 소스 위치: 소스 위치 미확인
 - 예시 입력: `{}`
 - 응답: 'marker=\'error\': {\n  "response": {\n    "errCode": "authErr",\n    "error": "인증정보가 일치하지 않습니다."\n  }\n}'
-- 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "search_libraries", "arguments": {}}'`
+- 재현: `uv run python -m kmcpqa.repro data4library-mcp tools/call '{"name": "search_libraries", "arguments": {}}'`
 - 근거: [https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling](https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) (서술적 설명(규범 키워드 없음))
 
 ## SDK 기본 동작(확인)
@@ -25,6 +25,6 @@
 - 소스 위치: `node_modules/@modelcontextprotocol/sdk/dist/esm/server/mcp.js:104`
 - 예시 입력: `{}`
 - 응답: 'tool_error: MCP error -32602: Tool kmcpqa_no_such_tool not found'
-- 재현: `python -m kmcpqa.repro data4library-mcp tools/call '{"name": "kmcpqa_no_such_tool", "arguments": {}}'`
+- 재현: `uv run python -m kmcpqa.repro data4library-mcp tools/call '{"name": "kmcpqa_no_such_tool", "arguments": {}}'`
 - 근거: [https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling](https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) (서술적 설명(규범 키워드 없음))
 

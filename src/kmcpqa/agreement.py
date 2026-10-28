@@ -4,6 +4,8 @@
 비교 방식: 직접 호출 결과의 필드 값(정규화)이 MCP 응답(structuredContent 또는 text)에 들어 있는지.
 MCP 서버마다 응답 형식이 달라 필드 경로를 맞추지 않고 "값이 나타나는가"로 본다. 그래서 값이 짧거나
 흔한 필드(예: 코드 "01")는 우연히 일치할 수 있어, 비교 필드는 사업자번호·법인명처럼 구별되는 값으로 고른다.
+입력값과 같은 필드(예: 조회한 사업자번호)는 서버가 입력을 그대로 돌려주기만 해도 나타나므로 판정에 정보가 없다.
+비교한 건에는 MCP 응답 발췌(키 제거)를, reports/agreement/_run.json 에는 실행 시각·시험 커밋·SDK 버전을 남긴다.
 
     python -m kmcpqa.agreement     # servers.toml 의 [[server.agreement]] 를 실행 (키 필요)
 """
@@ -14,7 +16,9 @@ import argparse
 import asyncio
 import json
 import os
+import subprocess
 from dataclasses import dataclass
+from datetime import UTC, datetime
 from pathlib import Path
 
 import httpx
@@ -24,6 +28,7 @@ from kmcpqa.direct.errors import ToolFailure
 from kmcpqa.direct.nts import NtsClient
 from kmcpqa.manifest import ServerSpec, load
 from kmcpqa.probe import text_of
+from kmcpqa.runner import sdk_versions
 from kmcpqa.sandbox import Workspace
 from kmcpqa.wire import WireSession
 
@@ -88,7 +93,8 @@ async def run_case(session: WireSession, case: Case, http: httpx.AsyncClient, ke
         return out | {"status": "mcp_failed", "reply": reply.kind,
                       "text": scrub(text_of(reply.result)[:300], keys) if reply.result else None,
                       "error": scrub(error.splitlines()[0][:300], keys) if error else None}
-    return out | {"status": "compared"} | compare(case, record, reply.result)
+    shown = text_of(reply.result) or json.dumps((reply.result or {}).get("structuredContent"), ensure_ascii=False)
+    return out | {"status": "compared", "text": scrub(shown[:2000], keys)} | compare(case, record, reply.result)
 
 
 def server_env(spec: ServerSpec, ws: Workspace, keys: dict, key_map: dict) -> dict:
@@ -107,6 +113,7 @@ async def _main(args: argparse.Namespace) -> None:
     ws = Workspace(Path(args.workdir))
     out_dir = Path(args.reports) / "agreement"
     out_dir.mkdir(parents=True, exist_ok=True)
+    meta: dict = {"run_at": datetime.now(UTC).isoformat(timespec="seconds"), "servers": {}}
     async with httpx.AsyncClient() as http:
         for spec in targets:
             needed = {v for c in spec.agreement for v in c["key_map"].values()}
@@ -123,7 +130,11 @@ async def _main(args: argparse.Namespace) -> None:
                 results.append(await run_case(session, case, http, keys))
             await session.close()
             (out_dir / f"{spec.id}.json").write_text(json.dumps(results, ensure_ascii=False, indent=1))
+            sha = subprocess.run(["git", "-C", str(ws.cwd(spec)), "rev-parse", "HEAD"], capture_output=True,
+                                 text=True).stdout.strip()
+            meta["servers"][spec.id] = {"sha_expected": spec.sha, "sha_tested": sha, "sdk": sdk_versions(ws.cwd(spec))}
             print(f"[{spec.id}] {sum(r.get('agree') is True for r in results)}/{len(results)} agree")
+    (out_dir / "_run.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1))
 
 
 def main() -> None:

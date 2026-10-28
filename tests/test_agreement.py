@@ -50,6 +50,7 @@ async def test_agreeing_server(upstream):
     out = await _run("good", upstream)
     assert out["status"] == "compared" and out["agree"] is True
     assert out["fields"]["b_no"] == {"direct": "0000000011", "found_in_mcp": True}
+    assert "0000000011" in out["text"]
 
 
 async def test_disagreeing_server_is_detected(upstream):

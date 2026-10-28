@@ -14,7 +14,7 @@
 - 소스 위치: `build/lib/corp-code.js:55`, `build/lib/dart-client.js:49`
 - 예시 입력: `-`
 - 응답: 'exit 1: triggerUncaughtException(err, true /* fromPromise */); | Error: DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version="1.0" encoding="UTF-8" standalone="yes"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>'
-- 재현: `python -m kmcpqa.runner --only korean-dart-mcp`
+- 재현: `uv run python -m kmcpqa.runner --only korean-dart-mcp`
 
 ### E2 · 기관 API 실패를 JSON-RPC 내부 오류(-32603)로 응답 — 발생 44건
 
@@ -22,6 +22,6 @@
 - 소스 위치: `src/lib/dart-client.ts:67`, `src/server/mcp-server.ts:45`, `node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js:398` — 서버의 low-level CallTool 핸들러가 던진 예외를 SDK 프로토콜 계층이 -32603 으로 바꿈
 - 예시 입력: `{}`
 - 응답: 'missing_required: DART corpCode.xml → 비-ZIP 응답 (150B): <?xml version="1.0" encoding="UTF-8" standalone="yes"?><result><status>010</status><message>등록되지 않은 인증키입니다.</message></result>'
-- 재현: `python -m kmcpqa.repro korean-dart-mcp tools/call '{"name": "resolve_corp_code", "arguments": {}}'`
+- 재현: `uv run python -m kmcpqa.repro korean-dart-mcp tools/call '{"name": "resolve_corp_code", "arguments": {}}'`
 - 근거: [https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling](https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) (서술적 설명(규범 키워드 없음))
 

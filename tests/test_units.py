@@ -105,6 +105,25 @@ def test_render_writes_results_findings_and_drafts(tmp_path):
     assert not (tmp_path / "upstream-drafts" / "korea-stock-mcp.md").exists()  # 서버 코드 관찰만 초안
 
 
+def test_draft_has_install_repro_steps_and_variant_note(tmp_path, monkeypatch):
+    sid = "data-go-nts-business-verification-mcp1"
+    record = {"id": sid, "repo": "Koomook/data-go-mcp-servers", "sha_tested": "a" * 40,
+              "started_at": "2026-10-03T00:00:00+00:00", "protocol_version_requested": "2025-11-25",
+              "command": [".venv/bin/python", "-m", "x"], "install_steps": [["uv", "pip", "install", "mcp[cli]<2"]],
+              "install": {"ok": True}, "probe": {"tools_list": {"count": 1}}}
+    long_text = "x" * 300
+    monkeypatch.setattr("kmcpqa.report.findings", lambda r, root: [
+        {"code": "E1", "origin": "server", "where": ["a.py:1"], "tool": "t", "args": {}, "evidence": long_text}])
+    render({}, {sid: record}, ROOT / "servers.toml", tmp_path / "work", tmp_path)
+    draft = (tmp_path / "upstream-drafts" / f"{sid}.md").read_text()
+    assert "- 설치: `uv pip install mcp[cli]<2` (`src/nts-business-verification` 에서 실행)" in draft
+    assert "- 키 변수: `API_KEY` (실제 키가 아닌 값)" in draft
+    assert "- 이 프로젝트의 수정: mcp<2 고정." in draft
+    assert f"`{'x' * 240}` (이하 생략)" in draft
+    assert "1. 위 커밋을 받아 설치 명령을 실행합니다." in draft
+    assert "uv run python -m kmcpqa.repro" in (tmp_path / "findings" / f"{sid}.md").read_text()
+
+
 def test_redact_tree_replaces_home_path(tmp_path):
     from kmcpqa.report import redact_tree
 

@@ -6,7 +6,9 @@
 ## 환경
 
 - 커밋: `cf8af3dc52eee8f3085f947adc43bb7f65c8ea9b`
+- 설치: `npm install --ignore-scripts --no-audit --no-fund --no-package-lock && npx --no-install tsc`
 - 실행 명령: `node dist/index.js`
+- 키 변수: `KOSIS_API_KEY` (실제 키가 아닌 값)
 - MCP SDK: @modelcontextprotocol/sdk 1.32.0, 클라이언트 요청 프로토콜 버전 2025-11-25
 - 날짜: 2026-10-03
 
@@ -49,7 +51,7 @@ Required at kind`
   "completionScope": "requested_period_traversal",
   "success": false,
   "data": [],
-  "validationLevel": "u`
+  "validationLevel": "u` (이하 생략)
 - 소스 위치: 소스 위치 미확인
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -65,7 +67,7 @@ Required at kind`
     "provider": "kosis",
     "orgId": "test",
     "tableId": "test",
-    "sourceUrl": "htt`
+    "sourceUrl": "htt` (이하 생략)
 - 소스 위치: 소스 위치 미확인
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -80,7 +82,7 @@ Required at kind`
     "provider": "kosis",
     "orgId": "test",
     "tableId": "test",
-    "sourceUrl": "https://kosis.kr/openapi/Param`
+    "sourceUrl": "https://kosis.kr/openapi/Param` (이하 생략)
 - 소스 위치: 소스 위치 미확인
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -105,7 +107,7 @@ Required at kind`
 - 응답: `marker='"success": false': {
   "success": false,
   "answer": "\"서울\"에 대한 빠른 조회가 지원되지 않습니다.",
-  "note": "📊 지원 키워드 (카테고리별 대표 예시):\n• 인구/출산: 인구, 출산율, 출생아수, 사망률, 기대수명\n• 고령화: 고령인구, 노인인구, 노령화지수, 65세이상인구\n• 고용/노동: 실업률, 고용률, 취업자수, 임금\n• 경제: GDP, G`
+  "note": "📊 지원 키워드 (카테고리별 대표 예시):\n• 인구/출산: 인구, 출산율, 출생아수, 사망률, 기대수명\n• 고령화: 고령인구, 노인인구, 노령화지수, 65세이상인구\n• 고용/노동: 실업률, 고용률, 취업자수, 임금\n• 경제: GDP, G` (이하 생략)
 - 소스 위치: 소스 위치 미확인
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -121,10 +123,14 @@ Required at kind`
   "summary": "\"서울\"에 대한 추세 분석이 지원되지 않습니다.",
   "dataPoints": [],
   "insights": [],
-  "note": "지원 키워드: 인구, 총`
+  "note": "지원 키워드: 인구, 총` (이하 생략)
 - 소스 위치: 소스 위치 미확인
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
 ## 재현
+
+1. 위 커밋을 받아 설치 명령을 실행합니다.
+2. 키 변수에 실제 키가 아닌 값을 넣고 실행 명령으로 서버를 stdio 로 띄웁니다.
+3. `initialize` 를 보낸 뒤 관찰마다 적은 툴과 입력으로 `tools/call` 을 보냅니다. 툴이 `-` 인 관찰은 툴 호출 전, 서버 시작이나 initialize 단계에서 나타납니다.
 
 요청·응답 원문 로그(JSON-RPC 송수신 기록)는 필요하시면 첨부하겠습니다.

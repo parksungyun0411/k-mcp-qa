@@ -98,13 +98,13 @@ def start_cell(rec: dict) -> str:
 
 def repro_cmd(server_id: str, f: dict) -> str:
     if f["code"] == "P3" or (f["code"] == "P6" and f["tool"] is None):
-        return f"python -m kmcpqa.repro {server_id} kmcpqa/unknown_method '{{}}'"
+        return f"uv run python -m kmcpqa.repro {server_id} kmcpqa/unknown_method '{{}}'"
     if f["code"] in ("I2", "I3"):
-        return f"python -m kmcpqa.runner --only {server_id}"
+        return f"uv run python -m kmcpqa.runner --only {server_id}"
     if f["tool"] and f["args"] is not None:
         params = json.dumps({"name": f["tool"], "arguments": f["args"]}, ensure_ascii=False)
-        return f"python -m kmcpqa.repro {server_id} tools/call {shlex.quote(params)}"
-    return f"python -m kmcpqa.runner --only {server_id}"
+        return f"uv run python -m kmcpqa.repro {server_id} tools/call {shlex.quote(params)}"
+    return f"uv run python -m kmcpqa.runner --only {server_id}"
 
 
 def where_text(g: dict) -> str:
@@ -258,25 +258,39 @@ def render(meta: dict, recs: dict[str, dict], manifest_path: Path, workdir: Path
         sg = [g for g in gs if g["origin"] == "server"]
         if not sg:
             continue
+        spec = specs.get(sid)
         draft = ["<!-- k-mcp-qa 이슈 초안. 자동 생성. 제출하지 않았음. 올리기 전 내용을 직접 재현·검토할 것. -->",
                  f"# [재현 보고] {sid}: 공통 시험에서 관찰한 동작", "",
                  "한국 공공데이터 MCP 서버 여러 개에 같은 시험을 돌려 보다가 아래 동작을 관찰해 공유드립니다. "
                  "실제 API 키 없이(자리 표시자 값) 실행한 결과입니다. SDK 기본 동작으로 확인된 항목은 뺐습니다.", "",
                  "## 환경", "", f"- 커밋: `{r.get('sha_tested')}`",
+                 f"- 설치: `{' && '.join(' '.join(s) for s in r.get('install_steps', []))}`"
+                 + (f" (`{spec.subdir}` 에서 실행)" if spec and spec.subdir else ""),
                  f"- 실행 명령: `{' '.join(r.get('command', []))}`",
+                 f"- 키 변수: {', '.join(f'`{k}`' for k in spec.key_env) if spec else '-'} (실제 키가 아닌 값)",
                  f"- MCP SDK: {sdk_label(r)}, 클라이언트 요청 프로토콜 버전 {r.get('protocol_version_requested')}",
-                 f"- 날짜: {r.get('started_at', '')[:10]}", "", "## 관찰", ""]
+                 f"- 날짜: {r.get('started_at', '')[:10]}"]
+        if spec and spec.modification:
+            draft.append(f"- 이 프로젝트의 수정: {spec.modification}. 원 저장소의 설치 절차가 아니라 위 설치 명령으로 "
+                         "설치한 결과입니다.")
+        draft += ["", "## 관찰", ""]
         for g in sorted(sg, key=lambda g: list(TAXONOMY).index(g["code"])):
             ex = g["example"]
             args = json.dumps(ex["args"], ensure_ascii=False) if ex["args"] is not None else "-"
             draft += [f"### {TAXONOMY[g['code']][1]} (발생 {g['count']}건)", "",
                       f"- 예시: 툴 `{ex['tool'] or '-'}`, 입력 `{args}`",
-                      f"- 응답: `{ex['evidence'][:240]}`", f"- 소스 위치: {where_text(g)}"]
+                      f"- 응답: `{ex['evidence'][:240]}`" + (" (이하 생략)" if len(ex["evidence"]) > 240 else ""),
+                      f"- 소스 위치: {where_text(g)}"]
             if TAXONOMY[g["code"]][2] == "tools_errors":
                 draft.append(f"- 참고: MCP 2025-11-25 Tools › Error Handling ({SPEC_TOOLS_ERRORS_URL}) 의 서술과 "
                              "다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.")
             draft.append("")
-        draft += ["## 재현", "", "요청·응답 원문 로그(JSON-RPC 송수신 기록)는 필요하시면 첨부하겠습니다.", ""]
+        draft += ["## 재현", "",
+                  "1. 위 커밋을 받아 설치 명령을 실행합니다.",
+                  "2. 키 변수에 실제 키가 아닌 값을 넣고 실행 명령으로 서버를 stdio 로 띄웁니다.",
+                  "3. `initialize` 를 보낸 뒤 관찰마다 적은 툴과 입력으로 `tools/call` 을 보냅니다. "
+                  "툴이 `-` 인 관찰은 툴 호출 전, 서버 시작이나 initialize 단계에서 나타납니다.", "",
+                  "요청·응답 원문 로그(JSON-RPC 송수신 기록)는 필요하시면 첨부하겠습니다.", ""]
         (ddir / f"{sid}.md").write_text("\n".join(draft), encoding="utf-8")
     return summary
 

@@ -14,6 +14,6 @@
 - 소스 위치: `node_modules/@modelcontextprotocol/sdk/dist/esm/server/mcp.js:104`
 - 예시 입력: `{}`
 - 응답: 'tool_error: MCP error -32602: Tool kmcpqa_no_such_tool not found'
-- 재현: `python -m kmcpqa.repro assembly-api-mcp tools/call '{"name": "kmcpqa_no_such_tool", "arguments": {}}'`
+- 재현: `uv run python -m kmcpqa.repro assembly-api-mcp tools/call '{"name": "kmcpqa_no_such_tool", "arguments": {}}'`
 - 근거: [https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling](https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) (서술적 설명(규범 키워드 없음))
 

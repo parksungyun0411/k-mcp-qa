@@ -6,7 +6,9 @@
 ## 환경
 
 - 커밋: `7fdc7c472c99aef1a0536e43ee4c7963bf4bf4bb`
+- 설치: `uv sync --frozen --no-dev` (`mcp_server` 에서 실행)
 - 실행 명령: `.venv/bin/python run_server.py`
+- 키 변수: `DART_API_KEY` (실제 키가 아닌 값)
 - MCP SDK: mcp 1.6.0, 클라이언트 요청 프로토콜 버전 2025-11-25
 - 날짜: 2026-10-03
 
@@ -26,7 +28,7 @@
 ---
 error : Traceback (most recent call last):
   File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function
-    responses = await function(*args, **kwarg`
+    responses = await function(*args, **kwarg` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:96`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -37,7 +39,7 @@ error : Traceback (most recent call last):
 ---
 error : Traceback (most recent call last):
   File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function
-    responses = await function(*args, **kwa`
+    responses = await function(*args, **kwa` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:96`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -47,7 +49,7 @@ error : Traceback (most recent call last):
 - 응답: `missing_required: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_corpcode
 corp_name
   Field required [type=missing, input_value={}, input_type=dict]
-    For further information visit https://errors.pydantic.dev/2`
+    For further information visit https://errors.pydantic.dev/2` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -57,7 +59,7 @@ corp_name
 - 응답: `wrong_type: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_corpcode
 corp_name
   Input should be a valid string [type=string_type, input_value=12345, input_type=int]
-    For further information visit https://error`
+    For further information visit https://error` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -67,7 +69,7 @@ corp_name
 - 응답: `missing_required: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_get_corp_candidates
 corp_name
   Field required [type=missing, input_value={}, input_type=dict]
-    For further information visit https://errors.pydant`
+    For further information visit https://errors.pydant` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -77,7 +79,7 @@ corp_name
 - 응답: `wrong_type: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_get_corp_candidates
 corp_name
   Input should be a valid string [type=string_type, input_value=12345, input_type=int]
-    For further information visit https`
+    For further information visit https` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -87,7 +89,7 @@ corp_name
 - 응답: `missing_required: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_xmlparser_step1_structure
 path_xml
   Field required [type=missing, input_value={}, input_type=dict]
-    For further information visit https://errors.p`
+    For further information visit https://errors.p` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -97,7 +99,7 @@ path_xml
 - 응답: `wrong_type: ERROR: You provided invalid Tool inputs: 2 validation errors for Schema_xmlparser_step1_structure
 path_xml
   Input should be a valid string [type=string_type, input_value=12345, input_type=int]
-    For further information visit `
+    For further information visit ` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -107,7 +109,7 @@ path_xml
 - 응답: `missing_required: ERROR: You provided invalid Tool inputs: 3 validation errors for Schema_get_disclosurelist
 corp_code
   Field required [type=missing, input_value={}, input_type=dict]
-    For further information visit https://errors.pydanti`
+    For further information visit https://errors.pydanti` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -117,7 +119,7 @@ corp_code
 - 응답: `wrong_type: ERROR: You provided invalid Tool inputs: 11 validation errors for Schema_get_disclosurelist
 corp_code
   Input should be a valid string [type=string_type, input_value=12345, input_type=int]
-    For further information visit https`
+    For further information visit https` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -127,7 +129,7 @@ corp_code
 - 응답: `missing_required: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_corpinfo
 corp_code
   Field required [type=missing, input_value={}, input_type=dict]
-    For further information visit https://errors.pydantic.dev/2`
+    For further information visit https://errors.pydantic.dev/2` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -137,7 +139,7 @@ corp_code
 - 응답: `wrong_type: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_corpinfo
 corp_code
   Input should be a valid string [type=string_type, input_value=12345, input_type=int]
-    For further information visit https://error`
+    For further information visit https://error` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -147,7 +149,7 @@ corp_code
 - 응답: `missing_required: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_xbrl_taxonomy_format
 sj_div
   Field required [type=missing, input_value={}, input_type=dict]
-    For further information visit https://errors.pydan`
+    For further information visit https://errors.pydan` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -157,7 +159,7 @@ sj_div
 - 응답: `wrong_type: ERROR: You provided invalid Tool inputs: 1 validation error for Schema_get_xbrl_taxonomy_format
 sj_div
   Input should be a valid string [type=string_type, input_value=12345, input_type=int]
-    For further information visit http`
+    For further information visit http` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:117`
 - 참고: MCP 2025-11-25 Tools › Error Handling (https://modelcontextprotocol.io/specification/2025-11-25/server/tools#error-handling) 의 서술과 다른 동작입니다. 이 절은 규범 키워드가 없는 서술이라 의도된 동작일 수 있습니다.
 
@@ -169,9 +171,13 @@ sj_div
 error : Traceback (most recent call last):
   File "/private/tmp/kmcp-work/dart-mcp-server/src/mcp_server/dart/mcp_factory.py", line 98, in dynamic_function
     responses = await function(*args, **kwargs)
-  File`
+  File` (이하 생략)
 - 소스 위치: `dart/mcp_factory.py:96`
 
 ## 재현
+
+1. 위 커밋을 받아 설치 명령을 실행합니다.
+2. 키 변수에 실제 키가 아닌 값을 넣고 실행 명령으로 서버를 stdio 로 띄웁니다.
+3. `initialize` 를 보낸 뒤 관찰마다 적은 툴과 입력으로 `tools/call` 을 보냅니다. 툴이 `-` 인 관찰은 툴 호출 전, 서버 시작이나 initialize 단계에서 나타납니다.
 
 요청·응답 원문 로그(JSON-RPC 송수신 기록)는 필요하시면 첨부하겠습니다.
