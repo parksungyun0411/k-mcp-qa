@@ -80,3 +80,9 @@ def test_scrub_removes_key_values_from_error_text():
     text = "GET https://opendart.fss.or.kr/api/company.json?crtfc_key=SECRET123&corp_code=1 failed"
     assert scrub(text, {"OPENDART_API_KEY": "SECRET123", "DATA_GO_KR_SERVICE_KEY": ""}) == \
         "GET https://opendart.fss.or.kr/api/company.json?crtfc_key=<KEY>&corp_code=1 failed"
+
+
+def test_scrub_removes_url_encoded_key():
+    text = "GET https://apis.data.go.kr/x?serviceKey=ab%2Bcd%2Fef%3D%3D&LAWD_CD=1 failed"
+    assert scrub(text, {"DATA_GO_KR_SERVICE_KEY": "ab+cd/ef==", "OPENDART_API_KEY": ""}) == \
+        "GET https://apis.data.go.kr/x?serviceKey=<KEY>&LAWD_CD=1 failed"

@@ -6,7 +6,7 @@
 ## 환경
 
 - 커밋: `dd27f99490400b31fa14f96045a138fa217580a4`
-- 설치: `uv venv -q -p 3.12 .venv && uv pip install -q -p .venv -e . mcp[cli]<2` (`src/nts-business-verification` 에서 실행)
+- 설치: `uv venv -q -p 3.12 .venv && uv pip install -q -p .venv -e . 'mcp[cli]<2'` (`src/nts-business-verification` 에서 실행)
 - 실행 명령: `.venv/bin/python -m data_go_mcp.nts_business_verification.server`
 - 키 변수: `API_KEY` (실제 키가 아닌 값)
 - MCP SDK: mcp 1.30.0, 클라이언트 요청 프로토콜 버전 2025-11-25

@@ -2,7 +2,7 @@
 
 - 저장소: https://github.com/Koomook/data-go-mcp-servers @ `dd27f99490400b31fa14f96045a138fa217580a4`
 - 실행 시각: 2026-10-03T10:58:13+00:00 (UTC), 샌드박스: True
-- 설치: uv venv -q -p 3.12 .venv && uv pip install -q -p .venv -e . mcp[cli]<2
+- 설치: uv venv -q -p 3.12 .venv && uv pip install -q -p .venv -e . 'mcp[cli]<2'
 - 실행 명령: `.venv/bin/python -m data_go_mcp.nts_business_verification.server`, MCP SDK: mcp 1.30.0
 - 툴 수: 3, 원본 로그: `reports/raw/data-go-nts-business-verification-mcp1/`
 

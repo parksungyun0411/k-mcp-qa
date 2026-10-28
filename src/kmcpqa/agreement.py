@@ -20,6 +20,7 @@ import subprocess
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
+from urllib.parse import quote, quote_plus, unquote
 
 import httpx
 
@@ -46,10 +47,12 @@ class Case:
 
 
 def scrub(text: str, keys: dict) -> str:
-    """서버가 오류 문구에 요청 URL 을 그대로 넣는 경우가 있어, 기록 전에 키 값을 지운다."""
+    """서버가 오류 문구에 요청 URL 을 그대로 넣는 경우가 있어, 기록 전에 키 값을 지운다.
+    URL 인코딩된 형태도 지운다. 자르기 전에 불러야 경계에 걸친 키의 앞부분이 남지 않는다."""
     for v in keys.values():
         if v:
-            text = text.replace(v, "<KEY>")
+            for form in sorted({v, quote(v, safe=""), quote_plus(v), unquote(v)}, key=len, reverse=True):
+                text = text.replace(form, "<KEY>")
     return text
 
 
@@ -91,10 +94,10 @@ async def run_case(session: WireSession, case: Case, http: httpx.AsyncClient, ke
     if reply.kind != "result" or (reply.result or {}).get("isError"):
         error = (reply.error or {}).get("message") if reply.kind == "error" else None
         return out | {"status": "mcp_failed", "reply": reply.kind,
-                      "text": scrub(text_of(reply.result)[:300], keys) if reply.result else None,
-                      "error": scrub(error.splitlines()[0][:300], keys) if error else None}
+                      "text": scrub(text_of(reply.result), keys)[:300] if reply.result else None,
+                      "error": scrub(error.splitlines()[0], keys)[:300] if error else None}
     shown = text_of(reply.result) or json.dumps((reply.result or {}).get("structuredContent"), ensure_ascii=False)
-    return out | {"status": "compared", "text": scrub(shown[:2000], keys)} | compare(case, record, reply.result)
+    return out | {"status": "compared", "text": scrub(shown, keys)[:2000]} | compare(case, record, reply.result)
 
 
 def server_env(spec: ServerSpec, ws: Workspace, keys: dict, key_map: dict) -> dict:

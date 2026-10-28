@@ -84,7 +84,7 @@ uv run python -m kmcpqa.repro dart-mcp-server kmcpqa/unknown_method '{}'
 uv run python -m kmcpqa.repro korean-dart-mcp tools/call '{"name": "get_company", "arguments": {}}'
 ```
 
-`reports/findings/` 에서 재현 명령이 `kmcpqa.runner --only <서버>` 인 관찰은 그 서버의 공통 시험을 다시 돌리며, `reports/results/` 의 해당 결과 파일과 `_run.json` 을 덮어씁니다.
+`reports/findings/` 에서 재현 명령이 `kmcpqa.runner --only <서버>` 인 관찰은 그 서버의 공통 시험을 다시 돌리며, `reports/results/<서버>.json`, `_run.json`, `reports/raw/<서버>/` 를 덮어씁니다.
 
 ### 직접 호출 일치 검사 (키 필요)
 

@@ -116,7 +116,7 @@ def test_draft_has_install_repro_steps_and_variant_note(tmp_path, monkeypatch):
         {"code": "E1", "origin": "server", "where": ["a.py:1"], "tool": "t", "args": {}, "evidence": long_text}])
     render({}, {sid: record}, ROOT / "servers.toml", tmp_path / "work", tmp_path)
     draft = (tmp_path / "upstream-drafts" / f"{sid}.md").read_text()
-    assert "- 설치: `uv pip install mcp[cli]<2` (`src/nts-business-verification` 에서 실행)" in draft
+    assert "- 설치: `uv pip install 'mcp[cli]<2'` (`src/nts-business-verification` 에서 실행)" in draft
     assert "- 키 변수: `API_KEY` (실제 키가 아닌 값)" in draft
     assert "- 이 프로젝트의 수정: mcp<2 고정." in draft
     assert f"`{'x' * 240}` (이하 생략)" in draft

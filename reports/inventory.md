@@ -28,9 +28,9 @@
 | slicequeue/k-mfds-fooddb-mcp-server | Public Data | 없음 | 2025-08-02 | - | 검토만 |
 | slicequeue/k-targo-subway-mcp-server | Public Data | 없음 | 2025-08-02 | - | 검토만 |
 | hjsh200219/korea-public-data-mcp | Public Data | 없음 | 2026-09-27 | - | 검토만 |
-| jaykim429/korea-statistic-MCP-cginside | Public Data | MIT | 2026-10-02 | - | 제외: 표본 제한 |
+| jaykim429/korea-statistic-MCP-cginside | Public Data | MIT | 2026-10-02 | - | 검토만(표본 제한) |
 | jayjodev/vivory-mcp | Public Data | 없음 | 2026-06-05 | - | 검토만 |
-| pinnaclesoft-ko/be-node-seoul-data-mcp | Public Data | MIT | 2025-04-03 | - | 제외: 표본 제한 |
+| pinnaclesoft-ko/be-node-seoul-data-mcp | Public Data | MIT | 2025-04-03 | - | 검토만(표본 제한) |
 | pjookim/mcp-visit-korea | Tourism | 없음 | 2025-04-10 | - | 검토만 |
 | woongaro/KMA-WEATHER-MCP | Weather | 없음 | 2026-01-14 | - | 검토만 |
 | ohhan777/korea_weather | Weather | 없음 | 2026-02-22 | - | 검토만 |

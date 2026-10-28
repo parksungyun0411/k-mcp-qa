@@ -232,7 +232,7 @@ def render(meta: dict, recs: dict[str, dict], manifest_path: Path, workdir: Path
         body = [f"# {sid}", "",
                 f"- 저장소: https://github.com/{r['repo']} @ `{r.get('sha_tested')}`",
                 f"- 실행 시각: {r.get('started_at')} (UTC), 샌드박스: {r.get('sandbox')}",
-                f"- 설치: {' && '.join(' '.join(s) for s in r.get('install_steps', []))}",
+                f"- 설치: {' && '.join(shlex.join(s) for s in r.get('install_steps', []))}",
                 f"- 실행 명령: `{' '.join(r.get('command', []))}`, MCP SDK: {sdk_label(r)}",
                 f"- 툴 수: {tool_count(r)}, 원본 로그: `reports/raw/{sid}/`", ""]
         if not gs:
@@ -264,7 +264,7 @@ def render(meta: dict, recs: dict[str, dict], manifest_path: Path, workdir: Path
                  "한국 공공데이터 MCP 서버 여러 개에 같은 시험을 돌려 보다가 아래 동작을 관찰해 공유드립니다. "
                  "실제 API 키 없이(자리 표시자 값) 실행한 결과입니다. SDK 기본 동작으로 확인된 항목은 뺐습니다.", "",
                  "## 환경", "", f"- 커밋: `{r.get('sha_tested')}`",
-                 f"- 설치: `{' && '.join(' '.join(s) for s in r.get('install_steps', []))}`"
+                 f"- 설치: `{' && '.join(shlex.join(s) for s in r.get('install_steps', []))}`"
                  + (f" (`{spec.subdir}` 에서 실행)" if spec and spec.subdir else ""),
                  f"- 실행 명령: `{' '.join(r.get('command', []))}`",
                  f"- 키 변수: {', '.join(f'`{k}`' for k in spec.key_env) if spec else '-'} (실제 키가 아닌 값)",
